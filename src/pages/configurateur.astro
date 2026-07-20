@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Configurator from '../components/configurator/Configurator.vue';
+---
+
+<BaseLayout
+	title="Configurateur | Keenton"
+	description="Composez le périmètre de votre accompagnement Keenton et transmettez un brief structuré à nos équipes."
+>
+	<section class="bg-surface-alt py-16 md:py-20">
+		<Container>
+			<div class="mx-auto mb-10 max-w-3xl text-center">
+				<p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+					Configurateur
+				</p>
+				<h1 class="mt-4 text-3xl font-bold text-ink md:text-4xl">
+					Composez votre accompagnement
+				</h1>
+				<p class="mt-4 text-ink-secondary">
+					Quatre étapes pour décrire votre entreprise, sélectionner les services utiles et préciser le niveau de protection attendu. Un ingénieur reprend ensuite votre brief pour le valider et le chiffrer.
+				</p>
+			</div>
+
+			<Configurator client:only="vue" />
+		</Container>
+	</section>
+</BaseLayout>

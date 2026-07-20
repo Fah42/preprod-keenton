@@ -1,0 +1,17 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const { services = [] } = Astro.props;
+---
+
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+	{
+		services.map((service) => (
+			<ServiceCard
+				title={service.title}
+				description={service.description}
+				href={service.href}
+			/>
+		))
+	}
+</div>

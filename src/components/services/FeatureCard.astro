@@ -1,0 +1,31 @@
+---
+// Pilier d'une page service : icone + titre + description, puis liste de
+// points forts en pastilles sombres (cf. maquette objectif.png).
+import Icon from '../ui/Icon.astro';
+
+const { icon, title, text, features = [] } = Astro.props;
+---
+
+<div class="flex h-full flex-col">
+	<div class="flex gap-4">
+		<Icon name={icon} class="h-10 w-10 shrink-0 text-accent" />
+		<div>
+			<h3 class="text-lg font-semibold text-accent">{title}</h3>
+			<p class="mt-2 text-base leading-relaxed text-ink-secondary">{text}</p>
+		</div>
+	</div>
+	<!-- mt-auto ancre les boutons en bas de la carte : comme chaque carte a le
+	     meme nombre de boutons, ils restent alignes entre colonnes quelle que
+	     soit la longueur du texte. pt-6 garantit l'ecart minimal avec le texte. -->
+	<ul class="mt-auto max-w-72 space-y-3 pt-6">
+		{
+			features.map((feature) => (
+				<li class="flex items-center gap-3 rounded-xl bg-night px-4 py-3.5 text-white">
+					<Icon name={feature.icon} class="h-4.5 w-4.5 shrink-0 text-accent-light" />
+					<span class="flex-1 text-sm font-medium">{feature.label}</span>
+					<Icon name="chevron" class="h-3.5 w-3.5 shrink-0" />
+				</li>
+			))
+		}
+	</ul>
+</div>

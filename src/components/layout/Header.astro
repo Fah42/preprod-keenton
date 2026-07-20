@@ -1,0 +1,40 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import MainNav from './MainNav.vue';
+import MobileNav from './MobileNav.vue';
+import { site, mainNav } from '../../data/site.js';
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur">
+	<Container class="flex h-20 items-center justify-between gap-6">
+		<a href="/">
+			<img
+				src="/images/logo-keenton-header.png"
+				alt="Keenton"
+				class="h-7 w-auto"
+				width="227"
+				height="44"
+			/>
+		</a>
+
+		<MainNav items={mainNav} client:media="(min-width: 768px)" />
+
+		<div class="flex items-center gap-2">
+			<div class="hidden items-center gap-2 md:flex">
+				<Button href={site.configuratorCta.href} variant="dark" class="px-5 py-2.5">
+					{site.configuratorCta.label}
+				</Button>
+				<Button href={site.cta.href} variant="primary" arrow class="px-5 py-2.5">
+					{site.cta.label}
+				</Button>
+			</div>
+			<MobileNav
+				items={mainNav}
+				cta={site.cta}
+				configuratorCta={site.configuratorCta}
+				client:media="(max-width: 767px)"
+			/>
+		</div>
+	</Container>
+</header>

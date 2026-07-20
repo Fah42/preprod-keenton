@@ -1,0 +1,41 @@
+---
+// Variantes : primary (CTA bleu plein), dark (plein quasi noir sur fond clair),
+// secondary (contour sur fond sombre), outline (contour sur fond clair).
+// arrow: true ajoute le chevron directionnel (cf. maquette objectif.png).
+const { href, variant = 'primary', arrow = false, class: className = '' } = Astro.props;
+
+const variants = {
+	primary:
+		'bg-accent text-white hover:bg-accent-dark focus-visible:outline-accent',
+	dark:
+		'bg-night text-white hover:bg-ink focus-visible:outline-night',
+	secondary:
+		'border border-dark-line text-dark-text hover:border-accent-light hover:text-white focus-visible:outline-accent-light',
+	outline:
+		'border border-line text-ink hover:border-accent hover:text-accent-dark focus-visible:outline-accent',
+};
+---
+
+<a
+	href={href}
+	class:list={[
+		'inline-flex items-center gap-2.5 rounded-lg px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2',
+		variants[variant],
+		className,
+	]}
+>
+	<slot />
+	{
+		arrow && (
+			<svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+				<path
+					d="M5.5 3.5 10 8l-4.5 4.5"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg>
+		)
+	}
+</a>

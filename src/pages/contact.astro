@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import ContactForm from '../components/contact/ContactForm.vue';
+import Icon from '../components/ui/Icon.astro';
+import { site } from '../data/site.js';
+---
+
+<BaseLayout
+  title="Contact | Keenton"
+  description="Échangez avec Keenton au sujet de votre infrastructure, de votre cloud, de votre sécurité ou de vos projets DevOps et automatisation."
+>
+  <section class="border-b border-line bg-surface">
+    <Container class="grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent-dark">Contact</p>
+        <h1 class="mt-5 max-w-2xl text-4xl font-bold leading-tight text-ink md:text-5xl">
+          Parlons de votre contexte avant de parler de solution
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-secondary">
+          Décrivez-nous votre besoin, vos contraintes ou la difficulté que vous cherchez à résoudre.
+          Un premier échange permettra de clarifier le périmètre et les prochaines étapes utiles.
+        </p>
+      </div>
+
+      <div class="flex min-h-52 items-center justify-center rounded-xl border border-dashed border-line bg-surface-alt" aria-label="Emplacement réservé à la future illustration de la page contact">
+        <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-secondary/70">Illustration à venir</span>
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-surface-alt py-14 md:py-20">
+    <Container class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+      <aside class="space-y-6">
+        <div class="rounded-xl border border-line bg-surface p-6">
+          <Icon name="globe" class="h-6 w-6 text-accent" />
+          <h2 class="mt-4 font-semibold text-ink">Où nous trouver</h2>
+          <p class="mt-2 text-base text-ink-secondary">{site.location}</p>
+        </div>
+
+        <div class="rounded-xl border border-line bg-surface p-6">
+          <Icon name="users" class="h-6 w-6 text-accent" />
+          <h2 class="mt-4 font-semibold text-ink">Pour préparer l’échange</h2>
+          <ul class="mt-3 space-y-3 text-base leading-relaxed text-ink-secondary">
+            <li>— Le contexte et le périmètre concernés</li>
+            <li>— Les difficultés rencontrées aujourd’hui</li>
+            <li>— Les contraintes techniques ou réglementaires</li>
+            <li>— L’échéance éventuelle du projet</li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border border-line bg-surface p-6">
+          <h2 class="font-semibold text-ink">Besoin déjà identifié ?</h2>
+          <p class="mt-2 text-base leading-relaxed text-ink-secondary">Le configurateur permet de préparer un brief multi-services avant de nous le transmettre.</p>
+          <a href="/configurateur" class="mt-4 inline-flex text-sm font-semibold text-accent-dark hover:text-accent">Ouvrir le configurateur →</a>
+        </div>
+      </aside>
+
+      <div class="rounded-2xl border border-line bg-surface p-6 shadow-[0_1px_3px_rgb(10_16_27/0.06)] md:p-10">
+        <h2 class="text-2xl font-bold text-ink">Votre demande</h2>
+        <p class="mt-2 text-base leading-relaxed text-ink-secondary">Les champs marqués comme obligatoires nous permettent de vous répondre avec suffisamment de contexte.</p>
+        <div class="mt-8">
+          <ContactForm client:load />
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

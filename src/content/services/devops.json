@@ -1,0 +1,89 @@
+{
+  "description": "CI/CD, Kubernetes, GitOps, Infrastructure as Code et observabilité : Keenton construit des plateformes DevOps fiables, reproductibles et adaptées à vos équipes.",
+  "hero": {
+    "eyebrow": "Plateformes DevOps",
+    "title": "Des livraisons fiables,",
+    "titleAccent": "sans friction",
+    "subtitle": "CI/CD, Kubernetes, infrastructure as code et observabilité : nous structurons les outils qui rendent vos déploiements plus rapides, plus lisibles et plus reproductibles.",
+    "image": {
+      "src": "/images/hero-devops.png",
+      "alt": "Robots représentant les pratiques CI/CD, Kubernetes, GitOps, Infrastructure as Code et observabilité"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "capabilities",
+      "eyebrow": "CI/CD & GitLab",
+      "title": "Une chaîne de livraison qui donne confiance",
+      "body": "Une chaîne CI/CD bien conçue permet de livrer régulièrement tout en gardant une trace précise des changements. Les étapes de construction, de test et de déploiement sont structurées pour rendre chaque livraison plus prévisible.",
+      "items": [
+        { "title": "Dépôts structurés", "text": "Les projets, branches et règles de revue sont organisés pour créer un cadre de travail lisible par les équipes.", "icon": "layers" },
+        { "title": "Pipelines reproductibles", "text": "Les étapes de construction, de test et de publication sont décrites dans le code et exécutées de manière homogène.", "icon": "refresh" },
+        { "title": "Tests intégrés", "text": "Les contrôles pertinents sont ajoutés au bon moment du pipeline pour détecter les régressions avant la mise en production.", "icon": "check-circle" },
+        { "title": "Déploiements maîtrisés", "text": "Les environnements reçoivent les versions attendues avec des règles explicites, des validations et des possibilités de retour arrière.", "icon": "zap" },
+        { "title": "Traçabilité", "text": "Chaque changement peut être relié à son auteur, à sa revue, à son pipeline et à l'environnement sur lequel il a été livré.", "icon": "eye" },
+        { "title": "Transmission", "text": "Les pratiques et conventions sont documentées pour que vos équipes puissent maintenir et faire évoluer la plateforme.", "icon": "users" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Kubernetes",
+      "title": "Une plateforme adaptée à la réalité de vos applications",
+      "body": "Kubernetes apporte des mécanismes puissants, à condition que son niveau de complexité corresponde aux besoins. Nous concevons une plateforme cohérente avec vos charges, vos contraintes de disponibilité et les compétences de vos équipes.",
+      "layout": "six",
+      "items": [
+        { "title": "Architecture de cluster", "text": "Le choix d'un cluster léger, haute disponibilité ou managé part de vos usages et des services à faire fonctionner.", "icon": "layers" },
+        { "title": "Déploiements sur la plateforme", "text": "Les mécanismes de déploiement, de configuration et de retour arrière sont structurés pour les charges exécutées sur Kubernetes.", "icon": "package" },
+        { "title": "Réseau & accès", "text": "Les communications internes, les entrées externes et les droits d'accès sont structurés dès la conception.", "icon": "link" },
+        { "title": "Gestion des ressources", "text": "Processeur, mémoire et limites sont définis pour protéger le cluster et prévoir les évolutions de charge.", "icon": "chart" },
+        { "title": "Résilience", "text": "Les mécanismes de redémarrage, de réplication et de mise à l'échelle sont adaptés au niveau de continuité attendu.", "icon": "refresh" },
+        { "title": "Mises à jour", "text": "Les versions du cluster et de ses composants sont planifiées pour maintenir un environnement fiable et supporté.", "icon": "shield-check" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "GitOps",
+      "title": "L'état attendu de vos environnements reste dans Git",
+      "body": "Avec GitOps, les changements d'infrastructure et de déploiement sont versionnés, revus puis synchronisés avec les environnements. Les opérations gagnent en traçabilité sans dépendre de modifications manuelles opaques.",
+      "icon": "link",
+      "variant": "list",
+      "points": [
+        "Versionner les configurations attendues de chaque environnement dans des dépôts identifiés.",
+        "Faire passer les changements par une revue claire avant leur prise en compte par la plateforme.",
+        "Synchroniser les environnements avec les déclarations validées à l'aide d'outils comme Flux CD ou Argo CD.",
+        "Détecter les écarts entre l'état déclaré et l'état réellement présent sur la plateforme.",
+        "Retrouver simplement l'historique d'un changement et les éléments qui l'ont accompagné.",
+        "Revenir à un état connu lorsque la situation le demande, sans intervention manuelle non tracée."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Infrastructure as Code (Terraform, Ansible)",
+      "title": "Une infrastructure décrite, versionnée et reproductible",
+      "body": "Le provisionnement et la configuration de vos environnements sont traités comme du code. Les éléments deviennent plus faciles à relire, à réutiliser et à décliner entre développement, recette et production.",
+      "layout": "four",
+      "items": [
+        { "title": "Provisionnement", "text": "Terraform permet de décrire et de créer les ressources nécessaires sur les environnements ciblés.", "icon": "cloud" },
+        { "title": "Configuration", "text": "Ansible automatise la configuration des systèmes et limite les écarts entre les machines.", "icon": "cog" },
+        { "title": "Modules réutilisables", "text": "Les composants communs sont structurés pour éviter de réécrire les mêmes fondations à chaque projet.", "icon": "layers" },
+        { "title": "Revue & traçabilité", "text": "Les évolutions suivent les mêmes pratiques de revue et de versionnement que le code applicatif.", "icon": "eye" }
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Observabilité & Supervision",
+      "title": "Comprendre les services avant que les utilisateurs ne signalent un problème",
+      "body": "Métriques, logs et traces donnent une lecture concrète de la santé des applications et de leur infrastructure. Nous structurons les tableaux de bord et les alertes pour privilégier les signaux réellement exploitables.",
+      "items": [
+        { "title": "Métriques", "text": "Les indicateurs de disponibilité, de charge et de performance sont réunis pour suivre les services dans le temps.", "icon": "chart" },
+        { "title": "Logs", "text": "Les journaux utiles sont centralisés pour accélérer l'analyse d'une erreur ou d'un comportement inattendu.", "icon": "layers" },
+        { "title": "Traces", "text": "Les parcours d'une requête peuvent être suivis entre les composants afin d'identifier les dépendances qui ralentissent un service.", "icon": "link" },
+        { "title": "Tableaux de bord", "text": "Les vues sont organisées par service et par usage pour donner une lecture rapide de la situation.", "icon": "monitor" },
+        { "title": "Alertes utiles", "text": "Les seuils et notifications sont limités aux événements qui demandent réellement une action de l'équipe.", "icon": "bell" },
+        { "title": "Fiabilité suivie", "text": "Les signaux observés servent à établir des objectifs et à guider les améliorations de la plateforme.", "icon": "eye" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Hero from '../components/sections/Hero.astro';
+import ExpertiseCenteredCards from '../components/sections/ExpertiseCenteredCards.astro';
+import HomePhilosophyVariants from '../components/sections/HomePhilosophyVariants.astro';
+import ReferenceCarouselVariants from '../components/sections/ReferenceCarouselVariants.astro';
+import TrustBlock from '../components/sections/TrustBlock.astro';
+import ExpertiseJourney from '../components/sections/ExpertiseJourney.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import ConfiguratorPromo from '../components/sections/ConfiguratorPromo.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import StakeholderReasons from '../components/sections/StakeholderReasons.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import ArticleCard from '../components/blog/ArticleCard.astro';
+import Button from '../components/ui/Button.astro';
+
+import { expertises } from '../data/site.js';
+import {
+	hero,
+	reassurance,
+	stakeholderReasons,
+	expertiseHighlights,
+	pourquoi,
+	methode,
+	philosophy,
+	references,
+	configuratorPromo,
+	blogSection,
+	faq,
+	finalCta,
+} from '../data/home.js';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+	.sort((a, b) => b.data.date - a.data.date)
+	.slice(0, 3);
+
+// Blocs historiques de l'accueil conservés à la demande : passer à `true`
+// pour les réafficher sans avoir à les reconstruire.
+const showLegacyHomeBlocks = false;
+---
+
+<BaseLayout
+	title="Keenton | Services informatiques pour les entreprises"
+	description="Cloud, infogérance, sécurité, DevOps et IA : Keenton conçoit, déploie et maintient des infrastructures adaptées à vos usages."
+>
+	<Hero {...hero} />
+	<ExpertiseCenteredCards items={expertises} />
+
+		{/* Blocs historiques masqués, conservés pour réactivation ultérieure. */}
+		{showLegacyHomeBlocks && <TrustBlock items={reassurance} />}
+
+		{showLegacyHomeBlocks && <StakeholderReasons {...stakeholderReasons} />}
+
+		{showLegacyHomeBlocks && <ExpertiseJourney items={expertises} highlights={expertiseHighlights} />}
+
+		{
+			showLegacyHomeBlocks && (
+				<Section eyebrow={pourquoi.eyebrow} title={pourquoi.title} intro="Une équipe capable de relier les décisions d’architecture aux réalités quotidiennes de l’exploitation." theme="alt">
+					<ul class="divide-y divide-line border-t border-b border-line">
+						{
+							pourquoi.items.map((item) => (
+								<li class="grid gap-2 py-6 md:grid-cols-[18rem_1fr] md:gap-6">
+									<h3 class="font-semibold text-ink">{item.title}</h3>
+									<p class="text-base leading-relaxed text-ink-secondary">{item.text}</p>
+								</li>
+							))
+						}
+					</ul>
+				</Section>
+			)
+		}
+
+	<Section eyebrow={methode.eyebrow} title={methode.title} intro="Chaque étape produit un résultat concret et vérifiable avant de passer à la suivante." theme="light">
+		<ProcessSteps steps={methode.steps} />
+	</Section>
+
+	<HomePhilosophyVariants {...philosophy} />
+	<ReferenceCarouselVariants items={references} />
+
+	<ConfiguratorPromo {...configuratorPromo} />
+
+	{
+		posts.length > 0 && (
+			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="alt">
+				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+					{posts.map((post) => (
+						<ArticleCard post={post} />
+					))}
+				</div>
+				<div class="mt-10">
+					<Button href="/blog" variant="outline">
+						{blogSection.allLabel}
+					</Button>
+				</div>
+			</Section>
+		)
+	}
+
+	<FAQSection items={faq} />
+
+	<CTASection {...finalCta} />
+</BaseLayout>

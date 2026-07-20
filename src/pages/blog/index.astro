@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogHeader from '../../components/blog/BlogHeader.astro';
+import BlogSearch from '../../components/blog/BlogSearch.vue';
+import ArticleCard from '../../components/blog/ArticleCard.astro';
+import Container from '../../components/ui/Container.astro';
+import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
+import { expertises } from '../../data/site.js';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.date - a.data.date);
+const featured = posts.find((post) => post.data.featured) ?? posts[0];
+const remaining = posts.filter((post) => post.id !== featured?.id);
+const featuredExpertise = featured ? getExpertiseForPost(featured) : null;
+
+// Boutons de filtre par expertise : sobres par defaut, teinte de la categorie
+// au survol et a l'etat presse via --item-accent (classes litterales
+// uniquement, cf. CLAUDE.md). Le bouton "Tous" reste sur le bleu de marque.
+const filterButtonClass =
+  'rounded-full border border-line bg-surface px-4 py-1.5 text-sm font-medium text-ink-secondary transition-colors duration-200 hover:border-[var(--item-accent)] hover:text-[var(--item-accent)] aria-pressed:border-[var(--item-accent)] aria-pressed:bg-[color-mix(in_srgb,var(--item-accent)_8%,white)] aria-pressed:text-[var(--item-accent)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--item-accent)]';
+---
+
+<BaseLayout title="Blog | Keenton" description="Analyses et retours d'expérience Keenton sur le cloud, la cybersécurité, le DevOps, l'automatisation et Microsoft 365.">
+  <BlogHeader />
+  <section class="bg-surface py-16 md:py-20">
+    <Container>
+      <div class="mb-14">
+        <div class="mx-auto flex max-w-3xl flex-wrap justify-center gap-2" role="group" aria-label="Filtrer les articles par expertise">
+          <button type="button" data-filter="" aria-pressed="true" style="--item-accent: #29aae3" class={filterButtonClass}>Tous</button>
+          {expertises.map((expertise) => (
+            <button
+              type="button"
+              data-filter={expertise.slug}
+              aria-pressed="false"
+              title={expertise.title}
+              style={`--item-accent: ${expertise.accentColor}`}
+              class={filterButtonClass}
+            >{expertise.shortLabel}</button>
+          ))}
+        </div>
+        <div class="mt-10">
+          <BlogSearch client:idle />
+        </div>
+      </div>
+      {featured && (
+        <div data-expertise-item={featured.data.expertise}>
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-ink-secondary">À la une</p>
+          <a href={`/blog/${featured.id}`} style={`--post-accent: ${featuredExpertise?.accentColor ?? '#29aae3'}`} class="group mt-5 grid overflow-hidden rounded-2xl border border-line bg-surface-alt lg:grid-cols-[0.8fr_1.2fr]">
+            {featured.data.image ? (
+              <div class="min-h-64 border-b border-line lg:border-r lg:border-b-0">
+                <img src={featured.data.image} alt={featured.data.imageAlt ?? ''} class="h-full w-full object-cover" loading="lazy" />
+              </div>
+            ) : (
+              <div class="flex min-h-64 items-center justify-center border-b border-dashed border-[var(--post-accent)]/40 bg-[color-mix(in_srgb,var(--post-accent)_8%,white)] lg:border-r lg:border-b-0">
+                <span class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--post-accent)]">Illustration à venir</span>
+              </div>
+            )}
+            <div class="p-8 md:p-12">
+              <p class="font-mono text-xs uppercase tracking-[0.15em] text-[var(--post-accent)]">
+                {featured.data.category} · {formatPostDate(featured.data.date)}{featured.data.readTime && ` · ${featured.data.readTime} min`}
+              </p>
+              <h2 class="mt-5 text-3xl font-bold text-ink transition-colors group-hover:text-[var(--post-accent)] md:text-4xl">{featured.data.title}</h2>
+              <p class="mt-5 leading-relaxed text-ink-secondary">{featured.data.description}</p>
+              <p class="mt-8 font-semibold text-[var(--post-accent)]">Lire l’article →</p>
+            </div>
+          </a>
+        </div>
+      )}
+
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {remaining.map((post) => (
+          <div class="h-full" data-expertise-item={post.data.expertise}>
+            <ArticleCard post={post} />
+          </div>
+        ))}
+      </div>
+
+      <p id="blog-filter-empty" hidden class="mt-14 text-center text-ink-secondary">
+        Aucun article pour cette expertise pour le moment.
+      </p>
+    </Container>
+  </section>
+</BaseLayout>
+
+<script>
+  // Filtrage cote client des cartes rendues au build (pas d'ile Vue : simple
+  // toggle d'attribut hidden). Filtre refletable dans l'URL (?expertise=slug)
+  // pour permettre les liens partageables, comme le configurateur.
+  const buttons = [...document.querySelectorAll('[data-filter]')];
+  const items = [...document.querySelectorAll('[data-expertise-item]')];
+  const empty = document.getElementById('blog-filter-empty');
+
+  function applyFilter(slug, updateUrl = true) {
+    let visible = 0;
+    for (const item of items) {
+      const match = !slug || item.dataset.expertiseItem === slug;
+      item.hidden = !match;
+      if (match) visible += 1;
+    }
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String((button.dataset.filter || '') === (slug || '')));
+    }
+    if (empty) empty.hidden = visible > 0;
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (slug) url.searchParams.set('expertise', slug);
+      else url.searchParams.delete('expertise');
+      history.replaceState(null, '', url);
+    }
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => applyFilter(button.dataset.filter));
+  }
+
+  const initial = new URLSearchParams(window.location.search).get('expertise');
+  if (initial && buttons.some((button) => button.dataset.filter === initial)) {
+    applyFilter(initial, false);
+  }
+</script>

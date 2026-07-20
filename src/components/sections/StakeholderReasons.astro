@@ -1,0 +1,27 @@
+---
+import Container from '../ui/Container.astro';
+
+const { eyebrow, title, intro, audiences = [] } = Astro.props;
+---
+
+<section class="bg-surface-alt py-20 md:py-28">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+      <header>
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent-dark">{eyebrow}</p>
+        <h2 class="mt-4 text-3xl font-semibold text-ink md:text-4xl">{title}</h2>
+        <p class="mt-5 leading-relaxed text-ink-secondary">{intro}</p>
+      </header>
+      <div class="grid gap-5 md:grid-cols-2">
+        {audiences.map((audience) => (
+          <article class="rounded-xl border border-line bg-surface p-7">
+            <h3 class="text-xl font-semibold text-ink">{audience.title}</h3>
+            <ul class="mt-5 space-y-4">
+              {audience.points.map((point) => <li class="flex gap-3 text-base leading-relaxed text-ink-secondary"><span class="font-mono text-accent">—</span>{point}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

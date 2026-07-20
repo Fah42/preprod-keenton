@@ -1,0 +1,53 @@
+---
+// Hero des 7 pages categorie -- meme structure que PageHero.astro (texte a
+// gauche, illustration pleine hauteur a droite) mais : (1) l'eyebrow et
+// l'accent du titre utilisent --cat-accent (teinte de la categorie), pas le
+// bleu de marque global ; (2) l'illustration est un emplacement "creature"
+// a venir (PlaceholderVisual en bleed), pas une vraie image. Les CTA restent
+// sur les variantes globales du Button (chrome du site, cf. plan).
+import Container from '../ui/Container.astro';
+
+const { eyebrow, title, titleAccent, subtitle, image, primaryCta, icon } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-line bg-surface">
+	<div
+		class="pointer-events-none absolute inset-0"
+		style="background: linear-gradient(90deg, color-mix(in srgb, var(--cat-accent) 17%, white) 0%, color-mix(in srgb, var(--cat-accent) 9%, white) 38%, white 58%, white 100%)"
+		aria-hidden="true"
+	></div>
+	<Container class="relative grid items-center gap-6 py-0 lg:grid-cols-2 lg:gap-10">
+		<div class="max-w-2xl py-6 md:py-8 lg:py-3">
+			<h1 class="reveal reveal-1 text-4xl leading-[1.1] font-bold text-[var(--cat-accent)] md:text-[2.6rem] lg:text-[2.8rem]">
+				{eyebrow}
+			</h1>
+			<h3 class="reveal reveal-2 mt-5 text-2xl leading-[1.2] font-semibold text-ink md:text-3xl lg:text-[2rem]">
+				{title}
+				<span class="text-[var(--cat-accent)]"> {titleAccent}</span>
+			</h3>
+			<p class="reveal reveal-3 mt-5 text-base leading-relaxed text-ink-secondary">
+				{subtitle}
+			</p>
+			<div class="reveal reveal-4 mt-7">
+				<a
+					href={primaryCta.href}
+					class="inline-flex items-center gap-2.5 rounded-lg bg-[var(--cat-accent)] px-6 py-3 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--cat-accent)]"
+				>
+					{primaryCta.label}<span aria-hidden="true">→</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="my-3 aspect-[4/3] w-full max-w-[36rem] justify-self-center lg:w-[36rem] lg:justify-self-end">
+			{
+				image ? (
+					<img src={image.src} alt={image.alt} class="h-full w-full object-contain" />
+				) : (
+					<div class="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-line bg-surface-alt">
+						<span class="text-xs font-medium uppercase tracking-[0.14em] text-ink-secondary/70">Illustration à venir</span>
+					</div>
+				)
+			}
+		</div>
+	</Container>
+</section>

@@ -1,0 +1,120 @@
+{
+  "description": "Connectivité, réseau, communications, systèmes et contrôle des accès : Keenton conçoit une infrastructure fiable, lisible et adaptée à vos usages.",
+  "hero": {
+    "eyebrow": "Informatique d'entreprise",
+    "title": "Une infrastructure pensée",
+    "titleAccent": "pour votre activité",
+    "subtitle": "De la connectivité aux services de partage, nous concevons un environnement cohérent, documenté et capable d'évoluer avec vos usages.",
+    "image": {
+      "src": "/images/hero-informatique-entreprise.jpg",
+      "alt": "Gardienne reliant les sites d'une infrastructure informatique d'entreprise"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "capabilities",
+      "eyebrow": "Connectivité Internet",
+      "title": "Des accès conçus pour rester disponibles",
+      "body": "La connectivité soutient vos applications, vos outils collaboratifs et vos échanges avec vos clients. Nous étudions les technologies et les opérateurs adaptés à votre implantation, puis organisons la continuité de service selon vos contraintes.",
+      "items": [
+        { "title": "Dimensionnement", "text": "Fibre, xDSL ou accès dédié : le choix part des usages, de la zone géographique, de la bande passante attendue et des applications à desservir.", "icon": "chart" },
+        { "title": "Redondance", "text": "Un second lien, actif ou de secours, limite l'impact d'une défaillance opérateur sur votre activité et vos outils externalisés.", "icon": "refresh" },
+        { "title": "Rétablissement", "text": "Les engagements de rétablissement sont étudiés en fonction du caractère critique de vos accès et des conséquences d'une interruption.", "icon": "clock" },
+        { "title": "Interconnexion", "text": "Vos sites peuvent communiquer de manière sécurisée tout en conservant des accès Internet adaptés à chaque implantation.", "icon": "link" },
+        { "title": "Sécurisation", "text": "Firewall administré, ou architecture redondée lorsque le besoin le justifie : les flux sont filtrés et les règles restent documentées.", "icon": "shield" },
+        { "title": "Supervision", "text": "Les liens et leurs performances sont suivis afin de détecter les dérives, qualifier les incidents et faciliter leur prise en charge.", "icon": "eye" },
+        { "title": "Accompagnement", "text": "Keenton peut coordonner les opérateurs, les escalades et l'administration courante tout au long de l'usage des accès Internet.", "icon": "users" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Réseau d'entreprise",
+      "title": "Les six leviers d'un réseau exploitable",
+      "body": "Seconde proposition : une lecture plus détaillée en six cartes, organisée sur deux lignes. Elle convient lorsqu'il faut expliciter les principaux chantiers réseau.",
+      "layout": "six",
+      "items": [
+        { "title": "Câblage", "text": "Un socle physique organisé et documenté.", "icon": "layers" },
+        { "title": "Routage & segmentation", "text": "Des flux maîtrisés entre les différents usages.", "icon": "shield" },
+        { "title": "Wi-Fi", "text": "Une couverture fiable pour les équipes et les visiteurs.", "icon": "wifi" },
+        { "title": "Sécurité", "text": "Des accès et des équipements protégés selon leur rôle.", "icon": "lock" },
+        { "title": "Performance & redondance", "text": "Des capacités adaptées et des points de secours identifiés.", "icon": "chart" },
+        { "title": "Supervision", "text": "Des alertes utiles pour suivre la disponibilité et intervenir.", "icon": "eye" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Wi-Fi professionnel",
+      "title": "Un Wi-Fi fiable, là où les équipes en ont besoin",
+      "body": "Le Wi-Fi professionnel ne se limite pas à installer des bornes. La couverture, la capacité et les règles d'accès sont étudiées en fonction de vos espaces, de vos usages et de la densité d'équipements à connecter.",
+      "layout": "four",
+      "items": [
+        { "title": "Étude de couverture", "text": "Les zones de travail, les espaces de réunion, les entrepôts et les zones d'accueil sont pris en compte pour positionner les bornes avec cohérence.", "icon": "wifi" },
+        { "title": "Accès séparés", "text": "Les collaborateurs, invités et équipements connectés disposent de réseaux distincts, avec des droits adaptés à chaque usage.", "icon": "shield" },
+        { "title": "Mobilité fluide", "text": "Les déplacements dans les locaux restent transparents afin que les appels, réunions et applications continuent de fonctionner sans rupture inutile.", "icon": "refresh" },
+        { "title": "Exploitation suivie", "text": "La qualité des connexions et les alertes utiles sont suivies pour identifier les zones à optimiser et faciliter les interventions.", "icon": "eye" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Téléphonie & communications unifiées",
+      "title": "Des échanges accessibles, quel que soit le lieu de travail",
+      "body": "Téléphonie, messagerie, réunions et postes mobiles gagnent à fonctionner comme un ensemble. Nous structurons les outils et les règles d'usage pour que les équipes restent joignables sans complexifier leur quotidien.",
+      "layout": "four",
+      "items": [
+        { "title": "Téléphonie IP", "text": "Des lignes et des postes adaptés aux habitudes de travail, aux accueils et aux besoins de mobilité.", "icon": "phone" },
+        { "title": "Réunions & collaboration", "text": "Les outils de communication sont intégrés à vos usages collaboratifs pour limiter les ruptures entre appel, chat et visioconférence.", "icon": "users" },
+        { "title": "Continuité d'activité", "text": "Les appels peuvent rester accessibles lors d'un déplacement, d'un télétravail ou d'une indisponibilité locale selon l'architecture retenue.", "icon": "refresh" },
+        { "title": "Administration lisible", "text": "Numéros, groupes d'appel, horaires et règles de transfert restent documentés et simples à faire évoluer.", "icon": "cog" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Serveurs & virtualisation",
+      "title": "Un socle applicatif dimensionné pour évoluer sereinement",
+      "body": "Les serveurs restent au cœur de nombreuses applications métier. Nous organisons leur capacité, leur disponibilité et leur administration afin de créer un environnement plus simple à maintenir et à faire évoluer.",
+      "layout": "six",
+      "items": [
+        { "title": "Étude des charges", "text": "Les ressources processeur, mémoire et stockage sont dimensionnées à partir des applications, des volumes et des usages réels.", "icon": "chart" },
+        { "title": "Virtualisation maîtrisée", "text": "Les services sont regroupés sur une plateforme adaptée pour faciliter les évolutions, les opérations de maintenance et la reprise.", "icon": "layers" },
+        { "title": "Disponibilité adaptée", "text": "Les mécanismes de redondance sont choisis selon le niveau de continuité attendu pour chaque service, sans surdimensionnement systématique.", "icon": "refresh" },
+        { "title": "Sauvegarde & reprise", "text": "Les données et configurations critiques sont protégées avec des objectifs de restauration compréhensibles et régulièrement vérifiés.", "icon": "shield-check" },
+        { "title": "Mises à jour & sécurité", "text": "Les systèmes sont maintenus dans le temps afin de limiter les vulnérabilités et de conserver un environnement maîtrisé.", "icon": "lock" },
+        { "title": "Supervision", "text": "Les alertes portent sur la disponibilité, les ressources et les écarts significatifs afin d'intervenir avant qu'un service ne soit dégradé.", "icon": "eye" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Stockage & partage de fichiers",
+      "title": "Des fichiers accessibles, organisés et protégés",
+      "body": "Les documents de travail doivent être faciles à retrouver et à partager, sans perdre la maîtrise des accès. Nous structurons les espaces de stockage autour des équipes, des projets et des règles de sécurité qui correspondent à votre organisation.",
+      "icon": "folder",
+      "variant": "list",
+      "points": [
+        "Organiser les espaces de partage par équipe, projet ou activité, avec une structure comprise par tous.",
+        "Définir les droits d'accès selon les rôles pour éviter les partages trop larges ou les demandes répétées.",
+        "Permettre la synchronisation des fichiers pour les usages au bureau, sur site ou à distance.",
+        "Accompagner le partage externe avec des règles adaptées aux clients, partenaires et prestataires.",
+        "Prévoir la sauvegarde des données partagées ainsi que les durées de conservation utiles.",
+        "Conserver une organisation simple à administrer lorsque les équipes, projets ou responsabilités évoluent."
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Contrôle d'accès & vidéosurveillance",
+      "title": "Définir des droits d'accès cohérents",
+      "body": "Les badges et lecteurs doivent refléter l'organisation réelle, y compris lorsqu'une personne change de rôle ou qu'un prestataire intervient temporairement.",
+      "icon": "lock",
+      "variant": "list",
+      "points": [
+        "Définir les zones accessibles : accueil, bureaux, locaux techniques, stock ou espaces sensibles.",
+        "Associer les droits à des profils lisibles plutôt qu'à une succession d'exceptions individuelles.",
+        "Appliquer les horaires d'accès adaptés aux équipes, aux astreintes et aux périodes de fermeture.",
+        "Créer des accès temporaires pour les visiteurs, prestataires ou interventions ponctuelles.",
+        "Retirer ou ajuster les droits lorsqu'une personne change de rôle ou quitte l'organisation.",
+        "Conserver une vue claire des droits attribués et des événements utiles en cas de besoin."
+      ]
+    }
+  ]
+}

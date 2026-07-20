@@ -1,0 +1,29 @@
+---
+// Bandeau sombre de chiffres cles (cf. maquette tete1.png) : icone cerclee,
+// valeur en gras, libelle secondaire. S'affiche sous le hero des pages.
+import Container from '../ui/Container.astro';
+import Icon from '../ui/Icon.astro';
+
+const { items = [] } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-t border-dark-line bg-dark bg-grid-dark text-dark-text">
+	<div class="glow-accent pointer-events-none absolute inset-0" aria-hidden="true"></div>
+	<Container class="relative">
+		<ul class="grid grid-cols-2 gap-x-6 gap-y-8 py-8 md:grid-cols-4">
+			{
+				items.map((item) => (
+					<li class="flex items-center gap-4">
+						<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40">
+							<Icon name={item.icon} class="h-5 w-5 text-white" />
+						</span>
+						<p>
+							<span class="block text-base font-bold text-white">{item.value}</span>
+							<span class="block text-sm text-dark-text-secondary">{item.label}</span>
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</Container>
+</section>

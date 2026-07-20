@@ -1,0 +1,36 @@
+---
+// Hero de page service : fond clair, texte a gauche, illustration pleine
+// hauteur a droite (cf. maquette objectif.png).
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+
+const { eyebrow, title, titleAccent, subtitle, image, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="relative overflow-hidden border-b border-line bg-surface">
+	<div class="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] max-w-[61rem] lg:block" aria-hidden="true">
+		<img src={image.src} alt="" class="h-full w-full object-cover object-center" />
+		<div class="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-surface to-transparent"></div>
+	</div>
+
+	<Container class="relative py-12 md:py-14">
+		<div class="max-w-xl lg:max-w-[34rem]">
+			<p class="reveal reveal-1 text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+				{eyebrow}
+			</p>
+			<h1 class="reveal reveal-2 mt-5 text-4xl leading-[1.1] font-bold text-ink md:text-5xl lg:text-[3.4rem]">
+				{title}
+				<span class="text-accent"> {titleAccent}</span>
+			</h1>
+			<p class="reveal reveal-3 mt-6 text-lg leading-relaxed text-ink-secondary">
+				{subtitle}
+			</p>
+			<div class="reveal reveal-4 mt-9 flex flex-wrap gap-4">
+				<Button href={primaryCta.href} variant="primary" arrow>{primaryCta.label}</Button>
+				<Button href={secondaryCta.href} variant="dark" arrow>{secondaryCta.label}</Button>
+			</div>
+		</div>
+	</Container>
+
+	<img src={image.src} alt={image.alt} class="w-full object-cover lg:hidden" />
+</section>

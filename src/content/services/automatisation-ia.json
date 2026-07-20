@@ -1,0 +1,105 @@
+{
+  "description": "Intégrations, workflows, agents IA, RAG et applications métier : Keenton construit des outils connectés à vos données et à vos processus.",
+  "hero": {
+    "eyebrow": "Automatisation & IA",
+    "title": "Des outils connectés",
+    "titleAccent": "à vos données",
+    "subtitle": "Automatisez les tâches répétitives, connectez vos outils et intégrez l'IA à vos processus avec des règles claires, un contrôle humain et des résultats mesurables.",
+    "image": {
+      "src": "/images/hero-automatisation-ia.jpg",
+      "alt": "Figure violette représentant l'automatisation et l'intelligence artificielle"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "split",
+      "eyebrow": "Intégration d'applications & APIs",
+      "title": "Faire circuler les bonnes données entre les bons outils",
+      "body": "Lorsque les applications ne communiquent pas, les informations sont ressaisies et les équipes perdent du temps à rapprocher les écarts. Nous cartographions les flux, créons les intégrations utiles et organisons leur exploitation pour rendre les échanges fiables et lisibles.",
+      "icon": "link",
+      "variant": "list",
+      "points": [
+        "Cartographier les applications, les données et les flux qui composent un processus existant.",
+        "Définir les informations à échanger ainsi que la source de référence pour chaque donnée importante.",
+        "Connecter CRM, ERP, outils collaboratifs et applications métier au moyen des APIs ou connecteurs adaptés.",
+        "Gérer les erreurs, les doublons et les reprises pour éviter qu'une intégration ne crée de nouveaux écarts.",
+        "Préserver les droits d'accès et les règles de sécurité lors de la circulation des données.",
+        "Documenter les échanges afin qu'ils puissent être compris, maintenus et faire évoluer par la suite."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Workflows & automatisation métier",
+      "title": "Retirer les tâches répétitives du quotidien des équipes",
+      "body": "Les relances, ressaisies et circuits de validation peuvent devenir des workflows suivis et mesurables. L'automatisation intervient là où elle apporte du temps et de la fiabilité, tout en gardant une validation humaine lorsque la décision le demande.",
+      "layout": "four",
+      "items": [
+        { "title": "Identifier les tâches utiles", "text": "Les étapes répétitives et les points de friction sont repérés avec les équipes avant de choisir ce qui doit être automatisé.", "icon": "search" },
+        { "title": "Structurer le workflow", "text": "Les déclencheurs, étapes, règles et validations sont définis pour correspondre au fonctionnement réel du métier.", "icon": "layers" },
+        { "title": "Conserver les arbitrages", "text": "Les décisions qui demandent du jugement restent confiées aux personnes concernées, au bon moment du parcours.", "icon": "users" },
+        { "title": "Suivre les résultats", "text": "Les volumes, délais et exceptions permettent de mesurer le bénéfice du workflow et d'en préparer les évolutions.", "icon": "chart" }
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Agents IA",
+      "title": "Des assistants cadrés pour agir dans un périmètre utile",
+      "body": "Un agent IA peut qualifier une demande, rechercher une information ou déclencher une action dans vos outils. Sa valeur dépend du cas d'usage choisi, des données auxquelles il accède et du cadre défini pour les actions qu'il peut réaliser.",
+      "items": [
+        { "title": "Cas d'usage ciblé", "text": "Le rôle de l'agent est défini autour d'un besoin concret pour éviter les assistants trop génériques et difficiles à évaluer.", "icon": "search" },
+        { "title": "Périmètre explicite", "text": "Les données, outils et actions accessibles sont limités à ce qui est nécessaire à la mission confiée.", "icon": "shield" },
+        { "title": "Connexion aux outils", "text": "L'agent est relié aux applications et aux informations utiles afin de répondre dans le contexte réel du travail.", "icon": "link" },
+        { "title": "Validation humaine", "text": "Les décisions sensibles, actions irréversibles ou communications externes peuvent rester soumises à validation.", "icon": "users" },
+        { "title": "Journalisation", "text": "Les échanges et actions significatives sont conservés pour comprendre le fonctionnement et faciliter les ajustements.", "icon": "eye" },
+        { "title": "Amélioration suivie", "text": "Les retours des équipes et les résultats observés permettent d'améliorer l'agent au fil de son usage.", "icon": "refresh" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "RAG",
+      "title": "Interroger vos connaissances avec des réponses sourcées",
+      "body": "Le RAG transforme une base documentaire en source de connaissance interrogeable en langage naturel. Les réponses s'appuient sur les documents autorisés, respectent les droits existants et peuvent renvoyer vers les sources utilisées.",
+      "icon": "search",
+      "variant": "list",
+      "points": [
+        "Identifier les procédures, documents et bases de connaissance qui apportent une valeur réelle aux équipes.",
+        "Préparer les contenus pour les rendre exploitables tout en conservant leur origine et leur contexte.",
+        "Respecter les droits d'accès afin qu'une réponse ne révèle pas une information indisponible à son utilisateur.",
+        "Présenter les sources qui soutiennent une réponse pour permettre aux équipes de vérifier et d'approfondir.",
+        "Mettre à jour les contenus lorsque les règles, procédures ou informations de référence évoluent.",
+        "Choisir un environnement d'hébergement adapté à la sensibilité des données et aux contraintes de l'organisation."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Applications métier",
+      "title": "Construire l'outil qui correspond réellement au processus",
+      "body": "Lorsqu'aucun logiciel du marché ne répond au besoin, une application métier peut reprendre les données utiles et s'intégrer au système d'information existant. Elle se conçoit avec ses futurs utilisateurs, puis évolue avec leurs usages.",
+      "layout": "six",
+      "items": [
+        { "title": "Cadrage du besoin", "text": "Les utilisateurs et les objectifs du processus sont réunis pour définir un périmètre utile et compréhensible.", "icon": "search" },
+        { "title": "Parcours utilisateur", "text": "Les écrans et étapes sont conçus autour du travail réel afin de limiter les saisies et les détours inutiles.", "icon": "users" },
+        { "title": "Données métier", "text": "Les données nécessaires sont structurées et reliées aux sources existantes pour éviter les doublons et les écarts.", "icon": "database" },
+        { "title": "Intégrations", "text": "L'application peut échanger avec les outils déjà présents grâce aux connecteurs ou APIs adaptés.", "icon": "link" },
+        { "title": "Sécurité & droits", "text": "Les profils, accès et règles de protection sont intégrés à l'application dès sa conception.", "icon": "shield-check" },
+        { "title": "Maintenance & évolution", "text": "Les corrections et évolutions sont organisées pour que l'outil continue de suivre le développement de l'activité.", "icon": "refresh" }
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Intégration de l'IA dans les processus métier",
+      "title": "Faire de l'IA une étape utile du travail quotidien",
+      "body": "La valeur d'un projet IA apparaît lorsqu'il s'intègre à un processus existant et apporte un bénéfice observable. Nous sélectionnons les cas d'usage, intégrons les assistants dans les outils et suivons leur qualité, leurs coûts et leurs usages après la mise en production.",
+      "items": [
+        { "title": "Cas d'usage mesurable", "text": "Les opportunités sont sélectionnées à partir d'un gain de temps, de qualité ou de capacité qui peut être observé.", "icon": "chart" },
+        { "title": "Données préparées", "text": "Les données nécessaires sont identifiées, organisées et rendues accessibles dans le respect des règles définies.", "icon": "database" },
+        { "title": "Modèle adapté", "text": "Le choix du modèle et de son environnement dépend du cas d'usage, des contraintes et du niveau de contrôle attendu.", "icon": "brain" },
+        { "title": "Intégration dans le flux", "text": "L'assistance apparaît au moment où elle est utile, directement dans les applications et processus déjà utilisés.", "icon": "zap" },
+        { "title": "Contrôle de qualité", "text": "Les résultats sont évalués avec les équipes pour vérifier leur pertinence et ajuster les règles si nécessaire.", "icon": "check-circle" },
+        { "title": "Coûts & usages suivis", "text": "Les consommations, volumes et retours d'usage sont suivis pour maintenir une solution utile dans la durée.", "icon": "eye" }
+      ]
+    }
+  ]
+}

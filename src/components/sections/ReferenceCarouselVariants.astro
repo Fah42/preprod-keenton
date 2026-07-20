@@ -1,0 +1,57 @@
+---
+// Carrousel de références retenu.
+import Container from '../ui/Container.astro';
+
+const { items = [] } = Astro.props;
+const duplicatedItems = [...items, ...items];
+---
+
+<!-- Rail monochrome avec révélation couleur au survol -->
+<section class="overflow-hidden bg-surface-alt py-20 md:py-28">
+  <Container>
+    <header class="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+      <h2 class="text-3xl leading-tight font-semibold text-ink md:text-[2.5rem]">Ils nous font confiance</h2>
+    </header>
+  </Container>
+  <div class="reference-marquee border-y border-line bg-surface py-8">
+    <div class="reference-marquee__track">
+      {duplicatedItems.map((item) => (
+        <figure class="reference-marquee__logo--tint flex h-20 w-48 shrink-0 items-center justify-center px-6">
+          <img src={item.src} alt={item.name} class="reference-logo-tint max-h-16 max-w-full object-contain" loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reference-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: references-scroll 21.9s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .reference-marquee:hover .reference-marquee__track {
+    animation-play-state: running;
+  }
+
+  .reference-logo-tint {
+    filter: grayscale(1) contrast(0.75) brightness(0.78);
+    opacity: 0.55;
+    transition: filter 180ms ease, opacity 180ms ease;
+  }
+
+  .reference-marquee:hover .reference-logo-tint {
+    filter: none;
+    opacity: 1;
+  }
+
+  @keyframes references-scroll {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reference-marquee__track { animation: none; }
+  }
+</style>

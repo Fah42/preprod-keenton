@@ -1,0 +1,48 @@
+{
+  "description": "Messagerie, Teams, SharePoint, Intune et Entra ID : Keenton déploie et gère votre environnement Microsoft 365.",
+  "hero": {
+    "eyebrow": "Microsoft 365",
+    "title": "Votre environnement Microsoft",
+    "titleAccent": "géré de bout en bout",
+    "subtitle": "Teams, Outlook, SharePoint, OneDrive, Intune et Entra ID : nous structurons un environnement de travail sécurisé, administrable et réellement adopté par vos équipes.",
+    "image": {
+      "src": "/images/hero-microsoft-365.png",
+      "alt": "Écosystème Microsoft 365 reliant Outlook, Teams, SharePoint, OneDrive et Entra ID"
+    },
+    "primaryCta": {
+      "label": "Parler de votre projet",
+      "href": "/contact"
+    },
+    "secondaryCta": {
+      "label": "Découvrir nos services",
+      "href": "#sections"
+    }
+  },
+  "sections": [
+    {
+      "title": "Messagerie & Archivage",
+      "icon": "mail",
+      "body": "Nous migrons vos boîtes vers Exchange Online sans interruption planifiée, puis structurons les règles de flux, les délégations et les boîtes partagées. La protection contre le spam et le phishing ainsi que les politiques de conservation sont configurées selon vos usages et vos obligations."
+    },
+    {
+      "title": "Microsoft Teams & Teams Phone",
+      "icon": "video",
+      "body": "Nous organisons vos équipes, canaux et règles de création pour éviter la prolifération d'espaces sans responsable. Teams Phone peut remplacer votre téléphonie existante tout en conservant vos numéros, avec standards automatiques, files d'appels et équipements de visioconférence adaptés à vos salles."
+    },
+    {
+      "title": "SharePoint & OneDrive",
+      "icon": "folder",
+      "body": "Nous migrons vos serveurs de fichiers vers une architecture documentaire structurée. Les bibliothèques, droits et partages externes sont organisés selon vos équipes et vos projets. La coédition, le versioning et le cycle de vie des documents améliorent la collaboration sans perdre le contrôle sur les données."
+    },
+    {
+      "title": "Microsoft Intune",
+      "icon": "cog",
+      "body": "Intune permet d'administrer les postes et appareils mobiles sans dépendre du réseau local. Nous configurons l'enrôlement, les politiques de conformité et le déploiement des applications. Avec Windows Autopilot, un poste neuf peut être livré directement à son utilisateur et préparé automatiquement lors de sa première connexion."
+    },
+    {
+      "title": "Microsoft Entra ID",
+      "icon": "lock",
+      "body": "L'identité devient le principal périmètre de sécurité lorsque les équipes travaillent depuis plusieurs lieux et appareils. Nous centralisons l'authentification, généralisons le MFA et appliquons des règles d'accès conditionnel. Les comptes privilégiés et les droits sont revus régulièrement pour limiter les accès permanents inutiles."
+    }
+  ]
+}

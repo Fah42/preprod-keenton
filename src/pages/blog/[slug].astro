@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/ui/Container.astro';
+import MarkdownContent from '../../components/blog/MarkdownContent.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import { finalCta } from '../../data/home.js';
+import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const expertise = getExpertiseForPost(post);
+const accent = expertise?.accentColor ?? '#29aae3';
+---
+
+<BaseLayout title={`${post.data.title} | Keenton`} description={post.data.description}>
+  {/* data-pagefind-body : seules les pages portant cet attribut sont indexees
+      par Pagefind (etape `pagefind --site dist` de npm run build), donc la
+      recherche du blog ne remonte que des articles. */}
+  <div style={`--post-accent: ${accent}`} data-pagefind-body>
+    <header class="border-b border-line bg-surface-alt">
+      <Container class="py-14 md:py-20">
+        {/* Meme colonne centree max-w-3xl que le corps de l'article, pour que
+            titre, sous-titre et texte partagent le meme axe vertical. */}
+        <div class="mx-auto max-w-3xl">
+          <a href="/blog" class="text-sm font-medium text-[var(--post-accent)]" data-pagefind-ignore>← Retour au blog</a>
+          <p class="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-[var(--post-accent)]">
+            {post.data.category} · {formatPostDate(post.data.date)}{post.data.readTime && ` · ${post.data.readTime} min de lecture`}
+          </p>
+          <h1 class="mt-5 text-4xl font-bold leading-tight text-ink md:text-5xl">{post.data.title}</h1>
+          <p class="mt-6 text-lg leading-relaxed text-ink-secondary">{post.data.description}</p>
+        </div>
+      </Container>
+    </header>
+
+    <Container class="py-14 md:py-20">
+      <div class="mx-auto max-w-3xl">
+        {post.data.image && (
+          <img
+            src={post.data.image}
+            alt={post.data.imageAlt ?? ''}
+            width="1200"
+            height="630"
+            class="mb-12 w-full rounded-2xl border border-line"
+          />
+        )}
+        <MarkdownContent><Content /></MarkdownContent>
+        <div class="mt-14 border-t border-line pt-8">
+          <p class="text-sm text-ink-secondary">Publié par {post.data.author}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => <span class="rounded-full bg-surface-alt px-3 py-1 text-xs text-ink">{tag}</span>)}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+  <CTASection {...finalCta} />
+</BaseLayout>

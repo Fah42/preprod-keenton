@@ -1,0 +1,39 @@
+---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource-variable/manrope/wght.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
+	</head>
+	<body class="bg-surface font-sans text-ink antialiased">
+		<a
+			href="#contenu"
+			class="sr-only focus:not-sr-only focus:absolute focus:z-100 focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+		>
+			Aller au contenu
+		</a>
+		<Header />
+		<main id="contenu">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

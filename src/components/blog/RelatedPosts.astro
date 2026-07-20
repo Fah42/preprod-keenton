@@ -1,0 +1,28 @@
+---
+// Derniers articles de blog lies a une expertise (champ `expertise` du
+// frontmatter). Rendu uniquement s'il existe au moins un article. Herite de
+// --cat-accent : doit etre place dans le wrapper de page de [slug].astro.
+import ArticleCard from './ArticleCard.astro';
+import Container from '../ui/Container.astro';
+
+const { posts = [] } = Astro.props;
+---
+
+{posts.length > 0 && (
+	<section class="border-t border-line bg-surface py-16 md:py-20">
+		<Container>
+			<div class="flex flex-wrap items-end justify-between gap-4">
+				<div>
+					<p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--cat-accent)]">Sur le blog</p>
+					<h2 class="mt-3 text-2xl font-bold text-ink md:text-3xl">Pour aller plus loin</h2>
+				</div>
+				<a href="/blog" class="text-sm font-semibold text-[var(--cat-accent)] transition-opacity hover:opacity-75">
+					Tous nos articles <span aria-hidden="true">&rarr;</span>
+				</a>
+			</div>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				{posts.map((post) => <ArticleCard post={post} />)}
+			</div>
+		</Container>
+	</section>
+)}

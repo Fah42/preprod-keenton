@@ -1,0 +1,128 @@
+---
+// Variantes de mise en page conservées pour comparaison.
+import Container from '../ui/Container.astro';
+import Icon from '../ui/Icon.astro';
+
+const { eyebrow, intro, principles = [] } = Astro.props;
+const groups = [
+  { title: 'Concevoir', items: principles.slice(0, 3) },
+  { title: 'Accompagner', items: principles.slice(3, 6) },
+];
+const principleIcons = ['layers', 'shield-check', 'infinity', 'users', 'refresh', 'lightbulb'];
+// Variantes conservées dans le code mais masquées à la demande.
+const showPhilosophyChapters = false;
+const showPhilosophyProposal02 = false;
+const showPhilosophyProposal03 = false;
+---
+
+<!-- Principes en chapitres typographiques -->
+{showPhilosophyChapters && (
+<section class="bg-surface py-20 md:py-28">
+  <Container>
+    <header class="mx-auto mb-12 max-w-6xl text-center md:mb-16">
+      <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-dark">{eyebrow}</p>
+      <h2 class="mt-5 text-3xl leading-tight font-semibold text-ink md:text-[2.5rem]">Les fondations de notre manière de faire</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-secondary">{intro}</p>
+    </header>
+    <ul class="grid gap-x-10 gap-y-14 md:grid-cols-3">
+      {principles.map((principle) => (
+        <li class="border-t-2 border-accent pt-6">
+          <h3 class="text-2xl font-semibold leading-tight text-ink">{principle.title}</h3>
+          <p class="mt-4 text-sm leading-relaxed text-ink-secondary">{principle.text}</p>
+        </li>
+      ))}
+    </ul>
+  </Container>
+</section>
+)}
+
+<!-- Variante : double triptyque -->
+{showPhilosophyProposal02 && (
+<section class="bg-surface-alt py-20 md:py-28">
+  <Container>
+    <header class="mx-auto mb-12 max-w-6xl text-center md:mb-16">
+      <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-dark">{eyebrow}</p>
+      <h2 class="mt-5 text-3xl leading-tight font-semibold text-ink md:text-[2.5rem]">Concevoir aujourd’hui, accompagner demain</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-secondary">{intro}</p>
+    </header>
+    <div class="space-y-10 md:space-y-14">
+      {groups.map((group) => (
+        <div>
+          <div class="mb-5 flex items-center gap-4">
+            <span class="h-px flex-1 bg-accent/25"></span>
+            <h3 class="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent-dark">{group.title}</h3>
+            <span class="h-px flex-1 bg-accent/25"></span>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            {group.items.map((principle) => (
+              <article class="min-h-60 border-t-2 border-accent bg-surface p-7 shadow-sm">
+                <h4 class="text-xl font-semibold leading-tight text-ink">{principle.title}</h4>
+                <p class="mt-4 text-sm leading-relaxed text-ink-secondary">{principle.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+)}
+
+<!-- Variante : frise sur deux lignes -->
+{showPhilosophyProposal03 && (
+<section class="bg-surface py-20 md:py-28">
+  <Container>
+    <header class="mx-auto mb-12 max-w-6xl text-center md:mb-16">
+      <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-dark">{eyebrow}</p>
+      <h2 class="mt-5 text-3xl leading-tight font-semibold text-ink md:text-[2.5rem]">Une ligne directrice, de la conception à l’évolution</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-secondary">{intro}</p>
+    </header>
+    <div class="space-y-10 md:space-y-12">
+      {groups.map((group) => (
+        <div class="relative grid gap-6 md:grid-cols-3 md:gap-8">
+          <span class="absolute top-5 right-[16.66%] left-[16.66%] hidden h-px bg-accent/30 md:block"></span>
+          {group.items.map((principle) => (
+            <article class="relative min-h-60 bg-surface px-5 text-center">
+              <h3 class="mt-2 text-xl font-semibold leading-tight text-ink">{principle.title}</h3>
+              <p class="mt-4 text-sm leading-relaxed text-ink-secondary">{principle.text}</p>
+            </article>
+          ))}
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+)}
+
+<!-- Principes regroupés par intention -->
+<section class="overflow-hidden bg-dark bg-grid-dark py-20 text-dark-text md:py-28">
+  <Container>
+    <header class="mx-auto mb-12 max-w-6xl text-center md:mb-16">
+      <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-light">{eyebrow}</p>
+      <h2 class="mt-5 text-3xl leading-tight font-semibold text-white md:text-[2.5rem]">Des fondations qui restent lisibles dans le temps</h2>
+      <p class="mt-5 text-lg leading-relaxed text-dark-text-secondary">{intro}</p>
+    </header>
+    <div class="space-y-10 md:space-y-14">
+      {groups.map((group, groupIndex) => (
+        <div>
+          <div class="mb-5 flex items-center gap-4">
+            <span class="h-px flex-1 bg-accent/25"></span>
+            <h3 class="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent-light">{group.title}</h3>
+            <span class="h-px flex-1 bg-accent/25"></span>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            {group.items.map((principle, index) => (
+              <article class="relative min-h-64 overflow-hidden border border-dark-line bg-white/4 p-7">
+                <span class="relative flex h-9 w-9 items-center justify-center border border-accent-light/60 text-accent-light">
+                  <Icon name={principleIcons[(groupIndex * 3) + index]} class="h-4.5 w-4.5" />
+                </span>
+                <h4 class="relative mt-7 text-xl font-semibold leading-tight text-white">{principle.title}</h4>
+                <p class="relative mt-4 text-sm leading-relaxed text-dark-text-secondary">{principle.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

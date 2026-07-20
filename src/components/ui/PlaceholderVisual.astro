@@ -1,0 +1,24 @@
+---
+// Emplacement visuel neutre en attendant les vraies illustrations
+// ("creatures") -- Farid les fournira plus tard, ne jamais faire semblant
+// d'avoir une image ici. Teinte via la CSS custom property --cat-accent
+// posee par la page parente (src/pages/expertises/[slug].astro).
+import Icon from './Icon.astro';
+
+const { icon, label = 'Illustration à venir', class: className = '' } = Astro.props;
+---
+
+<div
+	class:list={[
+		'flex aspect-4/3 w-full items-center justify-center rounded-2xl border-2 border-dashed bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)]',
+		className,
+	]}
+	style="border-color: color-mix(in srgb, var(--cat-accent) 35%, white)"
+>
+	<div class="flex flex-col items-center gap-3 px-6 text-center">
+		{icon && <Icon name={icon} class="h-10 w-10 text-[var(--cat-accent)] opacity-70" />}
+		<span class="text-xs font-medium uppercase tracking-[0.14em] text-[var(--cat-accent)] opacity-70">
+			{label}
+		</span>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+---
+// Bandeau de reassurance : carte blanche bordee, items icone + titre + texte
+// separes par des filets verticaux (cf. maquette objectif.png).
+import Container from '../ui/Container.astro';
+import Icon from '../ui/Icon.astro';
+
+const { items = [] } = Astro.props;
+const gridCols = items.length === 4 ? 'lg:grid-cols-4' : items.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-3';
+---
+
+<section class="bg-surface py-10 md:py-14">
+	<Container>
+		<div class:list={['grid rounded-2xl border border-line bg-surface-alt sm:grid-cols-2 lg:gap-0 lg:divide-x lg:divide-line', gridCols]}>
+			{
+				items.map((item) => (
+					<div class="flex items-start gap-4 border-b border-line p-6 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:border-b-0 lg:px-7 lg:py-8">
+						<Icon name={item.icon} class="mt-0.5 h-8 w-8 shrink-0 text-accent" />
+						<div>
+							<h3 class="text-base font-semibold text-ink">{item.title}</h3>
+							<p class="mt-1.5 text-base leading-relaxed text-ink-secondary">{item.text}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</section>

@@ -1,0 +1,105 @@
+{
+  "description": "Gouvernance, évaluation des risques, conformité, protection et sensibilisation : Keenton renforce votre système d'information en fonction de vos risques réels.",
+  "hero": {
+    "eyebrow": "Cybersécurité",
+    "title": "Protéger votre activité,",
+    "titleAccent": "sans complexité inutile",
+    "subtitle": "Étude sur site, protection des accès, surveillance et accompagnement des équipes : nous renforçons durablement votre sécurité en fonction de vos risques réels.",
+    "image": {
+      "src": "/images/hero-cybersecurite.jpg",
+      "alt": "Dragon rouge protégeant une infrastructure informatique"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "split",
+      "eyebrow": "Gouvernance & conformité",
+      "title": "Une sécurité pilotée, pas une succession de réactions",
+      "body": "La sécurité ne peut pas reposer sur les seuls incidents. Nous aidons à construire une gouvernance adaptée à votre activité afin que les responsabilités, les priorités et les décisions restent compréhensibles pour l'ensemble de l'organisation.",
+      "icon": "award",
+      "variant": "list",
+      "points": [
+        "Définir les responsabilités et les rôles qui permettent de prendre les bonnes décisions au bon niveau.",
+        "Formaliser des règles de sécurité adaptées à vos usages, sans créer de contraintes inapplicables au quotidien.",
+        "Identifier les actifs, services et données dont la protection est prioritaire pour l'activité.",
+        "Suivre un plan d'action clair avec des échéances, des responsables et des critères de réalisation partagés.",
+        "Mettre à disposition des indicateurs utiles pour suivre le niveau de sécurité et les actions en cours.",
+        "Faire évoluer la démarche lorsque l'organisation, les outils ou les risques changent."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Évaluation des risques",
+      "title": "Comprendre les risques avant de choisir les protections",
+      "body": "L'étude sur site, l'analyse des usages et des vérifications ciblées permettent d'établir une vision factuelle de l'exposition. Les écarts sont replacés dans leur contexte métier pour construire un plan d'action réaliste et priorisé.",
+      "layout": "four",
+      "items": [
+        { "title": "Étude du périmètre", "text": "Les activités, données, outils et dépendances sont identifiés pour comprendre ce qui doit être protégé en priorité.", "icon": "search" },
+        { "title": "Analyse des scénarios", "text": "Les menaces pertinentes sont rapprochées de vos usages pour ne pas traiter tous les risques comme équivalents.", "icon": "alert-triangle" },
+        { "title": "Évaluation des écarts", "text": "Les protections existantes sont examinées afin d'identifier les vulnérabilités et les dépendances à renforcer.", "icon": "shield" },
+        { "title": "Plan d'action", "text": "Les mesures sont ordonnées selon leur impact, leur probabilité et l'effort nécessaire pour les mettre en œuvre.", "icon": "chart" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Conformité & réglementation",
+      "title": "Des obligations traduites en pratiques applicables",
+      "body": "RGPD, NIS2, exigences clients ou assureurs : seules les obligations qui concernent réellement votre organisation doivent guider la démarche. L'objectif est de produire des règles, des preuves et des habitudes de travail qui restent utiles dans le temps.",
+      "icon": "check-circle",
+      "variant": "list",
+      "points": [
+        "Identifier les exigences réglementaires, contractuelles ou sectorielles qui s'appliquent à votre activité.",
+        "Mesurer les écarts entre les attentes applicables et les pratiques réellement en place.",
+        "Définir les politiques, registres et procédures nécessaires sans multiplier la documentation inutile.",
+        "Conserver les éléments de preuve qui permettent de démontrer les mesures mises en œuvre.",
+        "Associer les équipes concernées pour que les règles soient comprises et intégrées dans les opérations.",
+        "Prévoir des revues régulières afin que la conformité reste alignée sur l'évolution de l'organisation."
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Protection du système d'information",
+      "title": "Réduire progressivement la surface d'attaque",
+      "body": "Les protections gagnent en efficacité lorsqu'elles sont cohérentes entre les postes, les identités, les réseaux et les données. Les mesures sont déployées de manière progressive, administrées puis contrôlées dans le temps.",
+      "items": [
+        { "title": "Protection des postes", "text": "Les postes et serveurs sont protégés, mis à jour et suivis pour limiter les vecteurs d'attaque les plus courants.", "icon": "monitor" },
+        { "title": "Gestion des identités", "text": "Les comptes, rôles et privilèges sont structurés pour donner les accès nécessaires sans multiplier les droits excessifs.", "icon": "users" },
+        { "title": "Authentification renforcée", "text": "L'authentification multifacteur est intégrée aux accès sensibles pour réduire le risque lié aux identifiants compromis.", "icon": "lock" },
+        { "title": "Cloisonnement réseau", "text": "Les flux entre les zones, utilisateurs et équipements sont séparés pour limiter les déplacements inutiles dans le SI.", "icon": "link" },
+        { "title": "Sauvegardes protégées", "text": "Les copies critiques sont sécurisées et pensées pour rester exploitables après un incident majeur.", "icon": "database" },
+        { "title": "Durcissement", "text": "Les configurations sont ajustées pour réduire les services inutiles et appliquer les protections attendues.", "icon": "shield-check" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Surveillance & maintien en condition de sécurité",
+      "title": "Des protections qui restent efficaces dans la durée",
+      "body": "Le niveau de sécurité se dégrade sans entretien. Nous suivons les vulnérabilités, qualifions les alertes utiles et organisons les actions nécessaires pour que les protections restent adaptées aux évolutions de votre environnement.",
+      "layout": "six",
+      "items": [
+        { "title": "Veille des vulnérabilités", "text": "Les vulnérabilités qui concernent vos composants sont suivies afin d'identifier les corrections à engager.", "icon": "eye" },
+        { "title": "Gestion des correctifs", "text": "Les mises à jour sont priorisées selon leur criticité, leur impact et les contraintes de vos services.", "icon": "refresh" },
+        { "title": "Surveillance des alertes", "text": "Les événements significatifs sont qualifiés pour distinguer les signaux utiles du bruit quotidien.", "icon": "bell" },
+        { "title": "Revue des accès", "text": "Les droits et comptes sensibles sont revus pour détecter les écarts, départs ou privilèges devenus inutiles.", "icon": "lock" },
+        { "title": "Réponse à incident", "text": "Les rôles, contacts et premières actions sont préparés pour réagir avec méthode lorsqu'un incident survient.", "icon": "alert-triangle" },
+        { "title": "Amélioration continue", "text": "Les enseignements des alertes, incidents et revues alimentent les prochaines priorités de sécurité.", "icon": "chart" }
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Sensibilisation",
+      "title": "Faire de chaque équipe un maillon attentif",
+      "body": "Les utilisateurs sont souvent les premiers à voir une situation inhabituelle. La sensibilisation donne des repères concrets pour reconnaître, signaler et limiter les risques sans transformer la sécurité en contrainte abstraite.",
+      "items": [
+        { "title": "Messages à risque", "text": "Les équipes apprennent à repérer les signaux d'un e-mail, d'un lien ou d'une pièce jointe suspecte.", "icon": "mail" },
+        { "title": "Phishing simulé", "text": "Des campagnes adaptées permettent d'entraîner les réflexes dans un cadre pédagogique et mesurable.", "icon": "alert-triangle" },
+        { "title": "Ateliers métier", "text": "Les exemples et mises en situation sont reliés aux outils et aux usages réels de chaque équipe.", "icon": "users" },
+        { "title": "Signalement simple", "text": "Les collaborateurs savent à qui transmettre un doute et quelles informations permettent de qualifier rapidement une situation.", "icon": "bell" },
+        { "title": "Rappels ciblés", "text": "Des messages courts prolongent la démarche dans le temps et répondent aux risques observés.", "icon": "lightbulb" },
+        { "title": "Progrès suivis", "text": "Les résultats permettent de mesurer les évolutions et d'adapter les prochaines actions de sensibilisation.", "icon": "chart" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "description": "Support, supervision et maintenance des serveurs, infrastructures, clouds publics et postes de travail : Keenton opère votre système d'information tout en vous en laissant la maîtrise.",
+  "hero": {
+    "eyebrow": "Infogérance",
+    "title": "Votre SI reste disponible,",
+    "titleAccent": "vos équipes restent concentrées",
+    "subtitle": "Support, supervision et maintenance pour les serveurs, l'infrastructure, le cloud et les postes de travail : une exploitation suivie, lisible et adaptée à votre organisation.",
+    "image": {
+      "src": "/images/hero-infogerance.png",
+      "alt": "Équipe Keenton assurant la supervision des systèmes, du réseau et des postes de travail"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "mosaic",
+      "eyebrow": "Infogérance serveur",
+      "title": "Les environnements qui portent vos services métier",
+      "body": "Les systèmes, hyperviseurs et applications sont suivis comme un ensemble. Nous intervenons sur les plateformes qui composent votre environnement pour préserver leur disponibilité, leur sécurité et leur capacité à évoluer.",
+      "layout": "six",
+      "items": [
+        { "title": "Windows Server", "text": "Administration et maintenance des serveurs Windows qui soutiennent les services internes et les applications métier.", "icon": "monitor" },
+        { "title": "Linux", "text": "Prise en charge des environnements Linux pour les services applicatifs, web ou d'infrastructure.", "icon": "layers" },
+        { "title": "VMware", "text": "Suivi des plateformes de virtualisation VMware et des machines qui y sont hébergées.", "icon": "database" },
+        { "title": "Microsoft Hyper-V", "text": "Exploitation des environnements Hyper-V et accompagnement de leurs évolutions planifiées.", "icon": "layers" },
+        { "title": "Nutanix", "text": "Gestion des plateformes hyperconvergées lorsque ce modèle correspond à vos besoins d'exploitation.", "icon": "cloud" },
+        { "title": "Applications serveur", "text": "Messagerie, bases de données, annuaires, sauvegarde ou conteneurs : les services sont suivis avec leurs dépendances.", "icon": "cog" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Infogérance infrastructure",
+      "title": "Les fondations techniques restent maîtrisées",
+      "body": "Réseau, pare-feu et stockage font partie du même environnement d'exploitation. Leur configuration, leur suivi et leurs évolutions sont traités de manière cohérente, avec une documentation qui reste à jour.",
+      "layout": "four",
+      "items": [
+        { "title": "Réseau & routage", "text": "Les équipements réseau et leurs configurations sont suivis pour préserver la connectivité entre les sites, les utilisateurs et les services.", "icon": "link" },
+        { "title": "Firewall", "text": "Les règles, mises à jour et alertes du pare-feu sont administrées pour maintenir un filtrage adapté aux usages réels.", "icon": "shield" },
+        { "title": "Stockage", "text": "Les capacités, alertes et évolutions des espaces de stockage sont surveillées pour protéger l'accès aux données utiles.", "icon": "database" },
+        { "title": "Amélioration continue", "text": "Les observations issues de l'exploitation alimentent des recommandations concrètes, planifiées avec vous selon les priorités.", "icon": "chart" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Infogérance cloud public",
+      "title": "Des environnements cloud suivis avec la même exigence",
+      "body": "Le cloud public doit rester lisible, sécurisé et maîtrisé. Nous accompagnons l'exploitation de vos environnements afin de conserver une vision claire des accès, des consommations et des services qui soutiennent votre activité.",
+      "icon": "cloud",
+      "variant": "list",
+      "points": [
+        "Conserver la propriété de vos comptes, abonnements et données tout au long de l'accompagnement.",
+        "Revoir les identités et les droits pour qu'ils correspondent aux rôles et aux usages réels.",
+        "Suivre les services en production afin d'identifier les alertes et les écarts de disponibilité utiles.",
+        "Documenter l'organisation des ressources pour faciliter les évolutions et les échanges avec vos équipes.",
+        "Analyser les consommations pour mieux comprendre les coûts et anticiper les évolutions nécessaires.",
+        "Appliquer les mêmes principes de supervision, de sauvegarde et de sécurité qu'aux environnements internes."
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Infogérance poste de travail (Windows / macOS / Linux)",
+      "title": "Des environnements de travail homogènes et accompagnés",
+      "body": "Chaque collaborateur doit pouvoir travailler avec un poste adapté, protégé et maintenu. Nous prenons en charge les environnements Windows, macOS et Linux, ainsi que les applications qui structurent le quotidien des équipes.",
+      "icon": "monitor",
+      "variant": "list",
+      "points": [
+        "Préparer et maintenir les postes Windows, macOS et Linux selon les besoins de chaque équipe.",
+        "Installer, mettre à jour et dépanner les applications de collaboration, de création ou de production métier.",
+        "Accompagner les utilisateurs à distance avec une prise en charge claire des demandes et incidents.",
+        "Gérer les correctifs, la protection et les paramètres nécessaires à des postes de travail cohérents.",
+        "Suivre le cycle de vie du matériel, de la préparation d'un nouveau poste jusqu'à son remplacement.",
+        "Prévoir des interventions sur site pour les opérations qui demandent une présence auprès des équipes."
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Support et maintenance",
+      "title": "Une exploitation présente au quotidien",
+      "body": "L'infogérance associe le support des utilisateurs, la supervision des systèmes et la maintenance préventive. Les demandes sont suivies, les alertes qualifiées et les actions documentées pour que l'informatique reste un soutien concret de l'activité.",
+      "items": [
+        { "title": "Prise en main à distance", "text": "Un technicien peut intervenir à distance pour diagnostiquer une situation et accompagner l'utilisateur sans attendre un déplacement lorsque cela est pertinent.", "icon": "monitor" },
+        { "title": "Support par ticket", "text": "Une demande par e-mail suffit pour ouvrir un ticket, suivre son traitement et conserver l'historique des interventions.", "icon": "mail" },
+        { "title": "Protection des postes", "text": "L'état de la protection antivirus et les alertes utiles sont centralisés pour repérer les écarts et faciliter leur traitement.", "icon": "shield-check" },
+        { "title": "Supervision proactive", "text": "Disponibilité et performances des services sont suivies afin d'identifier les dérives avant qu'elles ne deviennent bloquantes.", "icon": "eye" },
+        { "title": "Sauvegarde suivie", "text": "Les sauvegardes internes et externes sont contrôlées, avec une attention portée aux restaurations lorsque le besoin se présente.", "icon": "database" },
+        { "title": "Présence sur site", "text": "Des interventions planifiées sur place complètent le support à distance pour la maintenance, les vérifications et les besoins des équipes.", "icon": "users" }
+      ]
+    }
+  ]
+}

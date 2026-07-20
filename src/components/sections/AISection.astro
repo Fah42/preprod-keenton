@@ -1,0 +1,70 @@
+---
+// Bandeau "solutions IA" (cf. maquette ai.png) : carte bleue en degrade
+// (clair a gauche, nuit a droite), argumentaire a gauche, illustration
+// nuage-circuit + puce IA en fond au centre, citation en panneau a droite.
+import Container from '../ui/Container.astro';
+import Icon from '../ui/Icon.astro';
+
+const { eyebrow, text, items = [], cta, quote } = Astro.props;
+---
+
+<div class="bg-surface pb-20 md:pb-24">
+	<Container>
+		<div class="relative overflow-hidden rounded-2xl bg-linear-to-r from-[#4180cd] via-[#2c5fb2] to-[#1f3b70] text-white">
+			<!-- Fond haute resolution issu de la maquette (ai2.png), cadre du
+			     panneau citation efface. Le degrade CSS sert de secours mobile. -->
+			<img
+				src="/images/ia-banner.webp"
+				alt=""
+				aria-hidden="true"
+				class="absolute inset-0 hidden h-full w-full object-cover md:block"
+			/>
+
+			<div class="relative grid items-center gap-10 p-8 md:p-10 lg:grid-cols-[1.05fr_1fr_0.95fr] lg:gap-10">
+				<div>
+					<p class="text-sm font-bold uppercase tracking-[0.08em] text-[#d6ecff]">
+						{eyebrow}
+					</p>
+					<p class="mt-2.5 max-w-sm text-base leading-relaxed text-white/90">{text}</p>
+					<ul class="mt-4 space-y-2">
+						{
+							items.map((item) => (
+								<li class="flex items-center gap-2.5 text-base font-medium">
+									<Icon name="check-circle" class="h-4.5 w-4.5 shrink-0 text-white/90" />
+									{item}
+								</li>
+							))
+						}
+					</ul>
+					<a
+						href={cta.href}
+						class="mt-6 inline-flex items-center gap-2.5 rounded-md bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-[#0f5aa8] transition-colors hover:bg-[#d6ecff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					>
+						{cta.label}
+						<svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+							<path
+								d="M2 8h11M9.5 4l4 4-4 4"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</a>
+				</div>
+
+				<!-- Colonne centrale : espace pour l'illustration en fond -->
+				<div class="hidden lg:block" aria-hidden="true"></div>
+
+				<figure class="rounded-xl border border-white/25 bg-white/10 p-6 md:p-7">
+					<span class="block font-serif text-5xl leading-none text-[#8fc6f5]" aria-hidden="true">
+						&ldquo;
+					</span>
+					<blockquote class="mt-2 text-lg leading-snug font-semibold text-balance md:text-xl">
+						{quote.lead}{' '}<span class="text-[#8fc6f5]">{quote.accent}</span>
+					</blockquote>
+				</figure>
+			</div>
+		</div>
+	</Container>
+</div>

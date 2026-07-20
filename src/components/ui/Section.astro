@@ -1,0 +1,46 @@
+---
+// Section standard : repère éditorial, titre et introduction optionnelle.
+// theme: light (fond blanc), alt (fond bleu pale), dark (fond marine).
+import Container from './Container.astro';
+
+const {
+	id,
+	eyebrow,
+	title,
+	intro,
+	theme = 'light',
+	number,
+	class: className = '',
+} = Astro.props;
+
+const themes = {
+	light: 'bg-surface text-ink',
+	alt: 'bg-surface-alt text-ink',
+	dark: 'bg-dark bg-grid-dark text-dark-text',
+};
+
+const eyebrowColor = theme === 'dark' ? 'text-accent-light' : 'text-accent-dark';
+const introColor = theme === 'dark' ? 'text-dark-text-secondary' : 'text-ink-secondary';
+---
+
+<section id={id} class:list={[themes[theme], 'py-20 md:py-28', className]}>
+	<Container>
+		{
+			(eyebrow || title) && (
+				<header class="mb-12 max-w-6xl md:mb-16">
+					{eyebrow && (
+						<p class:list={['font-heading text-base leading-none font-semibold tracking-[0.02em]', eyebrowColor]}>
+							{number && <span class="mr-3 opacity-60">{number}</span>}
+							{eyebrow}
+						</p>
+					)}
+					{title && (
+						<h2 class="mt-5 text-3xl leading-tight font-semibold md:text-[2.5rem]">{title}</h2>
+					)}
+					{intro && <p class:list={['mt-6 text-base leading-relaxed md:text-lg', introColor]}>{intro}</p>}
+				</header>
+			)
+		}
+		<slot />
+	</Container>
+</section>

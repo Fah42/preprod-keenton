@@ -1,0 +1,104 @@
+{
+  "description": "Cloud privé, cloud public, hébergement web, infrastructure sur mesure, sauvegarde et datacenters : Keenton conçoit et opère des environnements adaptés à vos usages.",
+  "hero": {
+    "eyebrow": "Hébergement & Cloud",
+    "title": "Des infrastructures dimensionnées",
+    "titleAccent": "pour vos usages",
+    "subtitle": "Cloud privé, public ou hybride, hébergement, sauvegarde et haute disponibilité : nous concevons une architecture adaptée à vos charges, à vos exigences et à votre niveau de dépendance acceptable.",
+    "image": {
+      "src": "/images/hero-hebergement-cloud.jpg",
+      "alt": "Gardien de pierre portant une infrastructure cloud et datacenter"
+    },
+    "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
+    "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
+  },
+  "sections": [
+    {
+      "type": "split",
+      "eyebrow": "Cloud privé / Cloud Public",
+      "title": "Choisir le bon modèle pour chaque charge",
+      "body": "Le choix entre cloud privé, public ou hybride dépend de vos données, de vos contraintes de performance, de votre budget et du niveau de dépendance acceptable. Chaque charge mérite un environnement cohérent avec ses usages et sa trajectoire d'évolution.",
+      "icon": "cloud",
+      "variant": "list",
+      "points": [
+        "Étudier les usages, les données et les dépendances avant de positionner une charge dans un environnement.",
+        "Organiser les comptes, identités et droits pour conserver une administration lisible des services cloud.",
+        "Prévoir les interconnexions nécessaires entre les services hébergés, les sites et les applications internes.",
+        "Dimensionner les ressources au plus près des besoins, puis les ajuster lorsque les usages évoluent.",
+        "Maintenir une vision claire des coûts et des engagements associés à chaque plateforme.",
+        "Documenter les conditions de réversibilité afin de préserver vos choix d'évolution dans le temps."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Instances / VPS / Machines virtuelles",
+      "title": "Des ressources de calcul qui suivent vos applications",
+      "body": "Instances, VPS et machines virtuelles permettent d'adapter les ressources aux besoins réels des applications, sans immobiliser une infrastructure surdimensionnée. Leur exploitation reste suivie afin de préserver disponibilité, performance et capacité d'évolution.",
+      "layout": "four",
+      "items": [
+        { "title": "Dimensionnement", "text": "Processeur, mémoire et stockage sont définis à partir des charges observées et des besoins attendus.", "icon": "chart" },
+        { "title": "Provisionnement", "text": "Les machines sont préparées avec les systèmes, accès et paramètres nécessaires à une mise en service maîtrisée.", "icon": "layers" },
+        { "title": "Supervision", "text": "Disponibilité, capacité et signaux utiles sont suivis pour intervenir avant qu'un service ne se dégrade.", "icon": "eye" },
+        { "title": "Évolution", "text": "Les ressources peuvent être ajustées lorsque le trafic, les usages ou les applications changent.", "icon": "refresh" }
+      ]
+    },
+    {
+      "type": "capabilities",
+      "eyebrow": "Hébergement Web",
+      "title": "Un environnement web construit autour de votre projet",
+      "body": "Vos sites et applications ont besoin d'un hébergement maintenu, sécurisé et capable d'évoluer. Nous organisons l'environnement web, les bases de données, les sauvegardes et l'exploitation quotidienne avec un accompagnement adapté à votre projet.",
+      "items": [
+        { "title": "Hébergement sur mesure", "text": "L'espace et les ressources sont configurés selon le projet afin de concilier sécurité, performances et capacité d'évolution.", "icon": "cog" },
+        { "title": "Migration clé en main", "text": "La préparation et la bascule sont prises en charge pour déplacer un site ou une application sans laisser les équipes seules face à la migration.", "icon": "refresh" },
+        { "title": "Sécurité", "text": "Pare-feu, prévention des intrusions, certificats et mises à jour contribuent à protéger l'environnement web.", "icon": "shield-check" },
+        { "title": "Redondance", "text": "Répartition de charge et réplication peuvent être prévues lorsque la disponibilité du service le justifie.", "icon": "layers" },
+        { "title": "CMS & applications", "text": "WordPress, PrestaShop, Magento, Odoo et les environnements dédiés sont accompagnés avec les outils adaptés.", "icon": "globe" },
+        { "title": "Infogérance", "text": "La maintenance quotidienne de l'hébergement est suivie pour que vos équipes se concentrent sur leur projet plutôt que sur la plateforme.", "icon": "users" }
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Infrastructure sur mesure",
+      "title": "Lorsque les contraintes demandent une architecture dédiée",
+      "body": "Certaines applications nécessitent des choix spécifiques de performance, de disponibilité ou de conformité. Nous cadrons les exigences, concevons l'architecture puis préparons les conditions de recette et d'exploitation avant la mise en production.",
+      "layout": "six",
+      "items": [
+        { "title": "Cadrage", "text": "Les contraintes de charge, de disponibilité, de sécurité et d'exploitation sont clarifiées avec vos équipes.", "icon": "search" },
+        { "title": "Architecture", "text": "Les composants nécessaires sont sélectionnés et documentés pour former un environnement cohérent.", "icon": "layers" },
+        { "title": "Haute disponibilité", "text": "Les points de redondance sont définis là où une interruption aurait un impact significatif.", "icon": "refresh" },
+        { "title": "Sécurité", "text": "Les accès, flux et protections sont intégrés dès la conception de la plateforme.", "icon": "shield" },
+        { "title": "Recette", "text": "Les conditions de validation, de charge et de bascule sont préparées avant le passage en production.", "icon": "check-circle" },
+        { "title": "Exploitation", "text": "La supervision, la documentation et les procédures nécessaires sont prévues pour faire vivre la plateforme.", "icon": "eye" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Sauvegarde externalisée & PRA",
+      "title": "Des données protégées et des restaurations préparées",
+      "body": "Une sauvegarde n'a de valeur que si elle reste disponible après un incident et peut être restaurée au bon moment. Les copies sont externalisées, chiffrées et suivies afin de préparer une reprise adaptée à la valeur de vos données.",
+      "icon": "cloud-download",
+      "variant": "list",
+      "points": [
+        "Sauvegarder les fichiers et, lorsque c'est nécessaire, l'état complet des postes, serveurs ou machines virtuelles.",
+        "Chiffrer les accès, les transferts et le stockage afin de protéger les données tout au long de leur parcours.",
+        "Répliquer les sauvegardes dans des datacenters distincts pour limiter l'exposition à un incident localisé.",
+        "Surveiller les exécutions afin de détecter rapidement une sauvegarde incomplète ou en échec.",
+        "Prendre en charge les restaurations partielles ou complètes lorsque la situation l'exige.",
+        "Définir les durées de conservation et les objectifs de reprise, puis les vérifier par des tests réguliers."
+      ]
+    },
+    {
+      "type": "mosaic",
+      "eyebrow": "Datacenter",
+      "title": "Savoir où résident vos services et dans quelles conditions",
+      "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
+      "layout": "four",
+      "items": [
+        { "title": "Hébergement en France", "text": "Les environnements peuvent être localisés en France pour répondre aux attentes de proximité et de maîtrise des données.", "icon": "globe" },
+        { "title": "Redondance", "text": "Les alimentations, connectivités et composants critiques sont conçus pour limiter l'impact d'une défaillance.", "icon": "refresh" },
+        { "title": "Normes & exigences", "text": "Les contraintes de qualité, de sécurité ou de données sensibles sont prises en compte dans le choix des sites d'hébergement.", "icon": "shield-check" },
+        { "title": "Réversibilité", "text": "Les éléments utiles à une évolution ou à une sortie de plateforme sont documentés avec votre environnement.", "icon": "link" }
+      ]
+    }
+  ]
+}

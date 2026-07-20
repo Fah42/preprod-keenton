@@ -1,0 +1,48 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
+
+const { items = [], highlights = {} } = Astro.props;
+---
+
+<section id="expertises" class="bg-surface">
+  <Container class="py-20 md:py-28">
+    <header class="max-w-5xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent-dark">Nos expertises</p>
+      <h2 class="mt-4 text-3xl font-semibold text-ink md:text-4xl">Un même système d’information, sept domaines complémentaires</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink-secondary">Chaque expertise peut répondre à un besoin ponctuel ou s’intégrer dans un accompagnement plus large.</p>
+    </header>
+  </Container>
+
+  <div class="border-t border-line">
+    {items.map((item, index) => {
+      const content = highlights[item.slug];
+      const reverse = index % 2 === 1;
+      return (
+        <article class:list={['border-b border-line py-14 md:py-20', reverse ? 'bg-surface-alt' : 'bg-surface']} style={`--cat-accent: ${item.accentColor}`}>
+          <Container>
+            <div class:list={['grid items-center gap-10 lg:grid-cols-2 lg:gap-16', reverse && 'lg:[&>*:first-child]:order-2']}>
+              <div class="flex min-h-64 items-center justify-center rounded-xl border border-dashed border-line bg-surface md:min-h-80">
+                <div class="text-center">
+                  <Icon name={item.icon} class="mx-auto h-10 w-10 text-[var(--cat-accent)] opacity-65" />
+                  <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-secondary/65">Illustration à venir</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.18em] text-[var(--cat-accent)]">Expertise · {item.title}</p>
+                <h3 class="mt-5 text-3xl font-bold leading-tight text-ink">{content?.title ?? item.short}</h3>
+                <p class="mt-5 leading-relaxed text-ink-secondary">{content?.text}</p>
+                <ul class="mt-6 grid gap-2 sm:grid-cols-2">
+                  {item.points.slice(0, 4).map((point) => <li class="flex gap-2 text-base leading-relaxed text-ink"><span class="text-[var(--cat-accent)]">—</span>{point}</li>)}
+                </ul>
+                <div class="mt-8"><Button href={item.href} variant="outline" arrow>Découvrir cette expertise</Button></div>
+              </div>
+            </div>
+          </Container>
+        </article>
+      );
+    })}
+  </div>
+</section>

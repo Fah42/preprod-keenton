@@ -1,0 +1,21 @@
+---
+import AlternatingFeature from '../sections/AlternatingFeature.astro';
+import CapabilityGrid from './CapabilityGrid.astro';
+import ProcessBlock from './ProcessBlock.astro';
+import DecisionPanel from './DecisionPanel.astro';
+import SpotlightPanel from './SpotlightPanel.astro';
+import ChecklistBlock from './ChecklistBlock.astro';
+import MosaicGrid from './MosaicGrid.astro';
+
+const { type = 'split', reverse = false, ...block } = Astro.props;
+---
+
+<div class="service-block border-b border-[color-mix(in_srgb,var(--cat-accent)_16%,transparent)]" data-service-type={type}>
+	{type === 'capabilities' && <CapabilityGrid {...block} />}
+	{type === 'process' && <ProcessBlock {...block} />}
+	{type === 'decision' && <DecisionPanel {...block} />}
+	{type === 'spotlight' && <SpotlightPanel {...block} />}
+	{type === 'checklist' && <ChecklistBlock {...block} />}
+	{type === 'mosaic' && <MosaicGrid {...block} />}
+	{type === 'split' && <AlternatingFeature {...block} reverse={reverse} />}
+</div>
