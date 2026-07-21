@@ -70,7 +70,7 @@ const filterButtonClass =
       <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {remaining.map((post) => (
           <div class="h-full" data-expertise-item={post.data.expertise}>
-            <ArticleCard post={post} />
+            <ArticleCard post={post} showTopline={false} />
           </div>
         ))}
       </div>

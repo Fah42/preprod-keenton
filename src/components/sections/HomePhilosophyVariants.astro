@@ -114,7 +114,7 @@ const showPhilosophyProposal03 = false;
           <div class="grid gap-4 md:grid-cols-3">
             {group.items.map((principle, index) => (
               <article class="aurora-border aurora-border--hover relative min-h-64 overflow-hidden rounded-xl p-7 transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0" style="--aurora-bg: linear-gradient(145deg, color-mix(in srgb, var(--color-footer-from) 82%, var(--color-accent) 18%), color-mix(in srgb, var(--color-footer-from) 92%, white 8%));">
-                <span class="relative flex h-9 w-9 items-center justify-center rounded-md border border-white text-white">
+                <span class="relative flex h-9 w-9 items-center justify-center rounded-md border border-accent-light/60 text-accent-light">
                   <Icon name={principleIcons[(groupIndex * 3) + index]} class="h-4.5 w-4.5" />
                 </span>
                 <h4 class="relative mt-7 text-xl font-semibold leading-tight text-white">{principle.title}</h4>

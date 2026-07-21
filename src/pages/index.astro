@@ -129,7 +129,7 @@ const faqSchema = {
 			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="muted" spacing="tight" class="border-y border-line">
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{posts.map((post) => (
-						<ArticleCard post={post} />
+						<ArticleCard post={post} showTopline={false} alwaysAccent={true} />
 					))}
 				</div>
 				<div class="mt-10">

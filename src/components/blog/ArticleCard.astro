@@ -1,7 +1,7 @@
 ---
 import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
 
-const { post } = Astro.props;
+const { post, showTopline = true, alwaysAccent = false } = Astro.props;
 const { title, description, date, category } = post.data;
 const expertise = getExpertiseForPost(post);
 const formattedDate = formatPostDate(date);
@@ -10,10 +10,13 @@ const formattedDate = formatPostDate(date);
 <a
 	href={`/blog/${post.id}`}
 	style={`--post-accent: ${expertise?.accentColor ?? '#29aae3'}`}
-	class="blog-card group relative flex h-full flex-col overflow-hidden rounded-lg border border-line p-8 transition-all duration-200 hover:-translate-y-1"
+	class:list={[
+		'blog-card group relative flex h-full flex-col overflow-hidden rounded-lg border border-line p-8 transition-all duration-200 hover:-translate-y-1',
+		{ 'blog-card--always-accent': alwaysAccent },
+	]}
 >
 	<div class="blog-card__rail absolute inset-y-0 left-0 w-[3px]"></div>
-	<div class="blog-card__topline absolute inset-x-0 top-0 h-[2px]" aria-hidden="true"></div>
+	{showTopline && <div class="blog-card__topline absolute inset-x-0 top-0 h-[2px]" aria-hidden="true"></div>}
 	<p class="relative flex flex-wrap items-center gap-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-accent-dark">
 		<span>{category}</span>
 		<span class="text-ink-secondary/60 normal-case tracking-normal">{formattedDate}</span>
@@ -71,6 +74,21 @@ const formattedDate = formatPostDate(date);
 
 	.blog-card:hover .blog-card__title,
 	.blog-card:hover .blog-card__cta {
+		color: var(--post-accent);
+	}
+
+	.blog-card--always-accent {
+		border-color: var(--post-accent);
+		background: color-mix(in srgb, var(--post-accent) 5%, var(--color-surface));
+		box-shadow: 0 18px 34px color-mix(in srgb, var(--post-accent) 8%, transparent);
+	}
+
+	.blog-card--always-accent .blog-card__rail {
+		background: var(--post-accent);
+	}
+
+	.blog-card--always-accent .blog-card__title,
+	.blog-card--always-accent .blog-card__cta {
 		color: var(--post-accent);
 	}
 </style>
