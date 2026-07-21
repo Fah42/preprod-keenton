@@ -32,6 +32,36 @@ const category = expertises.find((e) => e.slug === entry.id);
 const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && data.expertise === entry.id))
 	.sort((a, b) => b.data.date - a.data.date)
 	.slice(0, 3);
+
+// Sur la page Informatique d'entreprise, chaque sujet est affiche dans ses
+// deux presentations pour comparaison : la version existante, puis sa
+// variante opposee avec ou sans illustration.
+const displayedSections = entry.id === 'informatique-entreprise'
+	? sections.flatMap((section, index) => {
+		const reverse = index % 2 === 1;
+		const hasIllustration = section.type === 'split';
+
+		if (hasIllustration) {
+			return [
+				{ block: section, reverse },
+				{ block: { ...section, showIllustration: false }, reverse },
+				{ block: section, reverse: !reverse },
+			];
+		}
+
+		const illustratedVersion = {
+			...section,
+			showIllustration: true,
+			illustrationIcon: section.icon ?? section.items.find((item) => item.icon)?.icon ?? category?.icon,
+		};
+
+		return [
+			{ block: section, reverse },
+			{ block: illustratedVersion, reverse },
+			{ block: illustratedVersion, reverse: !reverse },
+		];
+	})
+	: sections.map((section, index) => ({ block: section, reverse: index % 2 === 1 }));
 ---
 
 
@@ -49,7 +79,7 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 		{entry.id !== 'infogerance' && <InfogeranceStrip />}
 
 		<div id="sections">
-			{sections.map((section, i) => <ServiceBlock {...section} reverse={i % 2 === 1} />)}
+			{displayedSections.map(({ block, reverse }) => <ServiceBlock {...block} reverse={reverse} />)}
 		</div>
 
 		<RelatedPosts posts={relatedPosts} />

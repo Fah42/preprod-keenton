@@ -50,6 +50,7 @@ const cta = z.object({ label: z.string(), href: z.string() });
 const contentColumn = z.object({ title: z.string(), items: z.array(z.string()) });
 const serviceItem = z.object({
   title: z.string(),
+  subtitle: z.string().optional(),
   text: z.string(),
   icon: z.string().optional(),
 });

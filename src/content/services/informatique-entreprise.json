@@ -16,16 +16,15 @@
     {
       "type": "capabilities",
       "eyebrow": "Connectivité Internet",
-      "title": "Des accès conçus pour rester disponibles",
-      "body": "La connectivité soutient vos applications, vos outils collaboratifs et vos échanges avec vos clients. Nous étudions les technologies et les opérateurs adaptés à votre implantation, puis organisons la continuité de service selon vos contraintes.",
+      "title": "Des connexions conçues pour assurer la continuité de votre activité",
+      "body": "Une connexion Internet est aujourd’hui essentielle au fonctionnement de l’entreprise. Nous concevons des solutions de connectivité adaptées à vos besoins, en combinant performance, disponibilité et sécurité. De l’accès fibre aux solutions de secours, en passant par l’interconnexion de vos sites et la gestion centralisée de votre réseau, nous construisons une infrastructure fiable et évolutive.",
       "items": [
-        { "title": "Dimensionnement", "text": "Fibre, xDSL ou accès dédié : le choix part des usages, de la zone géographique, de la bande passante attendue et des applications à desservir.", "icon": "chart" },
-        { "title": "Redondance", "text": "Un second lien, actif ou de secours, limite l'impact d'une défaillance opérateur sur votre activité et vos outils externalisés.", "icon": "refresh" },
-        { "title": "Rétablissement", "text": "Les engagements de rétablissement sont étudiés en fonction du caractère critique de vos accès et des conséquences d'une interruption.", "icon": "clock" },
-        { "title": "Interconnexion", "text": "Vos sites peuvent communiquer de manière sécurisée tout en conservant des accès Internet adaptés à chaque implantation.", "icon": "link" },
-        { "title": "Sécurisation", "text": "Firewall administré, ou architecture redondée lorsque le besoin le justifie : les flux sont filtrés et les règles restent documentées.", "icon": "shield" },
-        { "title": "Supervision", "text": "Les liens et leurs performances sont suivis afin de détecter les dérives, qualifier les incidents et faciliter leur prise en charge.", "icon": "eye" },
-        { "title": "Accompagnement", "text": "Keenton peut coordonner les opérateurs, les escalades et l'administration courante tout au long de l'usage des accès Internet.", "icon": "users" }
+        { "title": "Fibre Dédiée", "subtitle": "FTTO - Fiber To The Office (Fibre professionnelle)", "text": "Une connexion Internet exclusivement réservée à votre entreprise, offrant des performances garanties et un niveau de service élevé.", "icon": "chart" },
+        { "title": "Fibre Classique", "subtitle": "FTTH - Fiber To The Home (Fibre grand public)", "text": "Une solution performante et économique pour les entreprises ayant des besoins standards en connectivité.", "icon": "link" },
+        { "title": "Connexion mobile de secours", "text": "Une solution de continuité de service qui utilise le réseau mobile des opérateurs pour prendre automatiquement le relais en cas de coupure de votre accès Internet principal.", "icon": "refresh" },
+        { "title": "Connexion satellite de secours", "text": "Une solution de secours totalement indépendante des réseaux terrestres. Contrairement à la 4G/5G, elle ne dépend ni des infrastructures fibre locales ni de la couverture mobile.", "icon": "wifi" },
+        { "title": "Interconnexion des sites", "subtitle": "SD-WAN / VPN IPsec", "text": "Reliez l’ensemble de vos agences, bureaux ou entrepôts au sein d’un réseau privé sécurisé. Vos collaborateurs accèdent aux mêmes ressources, quel que soit leur site, tout en bénéficiant d’une connexion sécurisée et centralisée.", "icon": "layers" },
+        { "title": "Firewall", "text": "Le firewall centralise, sécurise et pilote l’ensemble de vos connexions Internet. Il assure la protection de votre réseau tout en garantissant la continuité de service et l’interconnexion de vos sites.", "icon": "shield" }
       ]
     },
     {
