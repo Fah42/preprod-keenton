@@ -18,7 +18,7 @@ const formattedDate = formatPostDate(date);
 	<div class="blog-card__rail absolute inset-y-0 left-0 w-[3px]"></div>
 	{showTopline && <div class="blog-card__topline absolute inset-x-0 top-0 h-[2px]" aria-hidden="true"></div>}
 	<p class="relative flex flex-wrap items-center gap-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-accent-dark">
-		<span>{category}</span>
+		<span class="blog-card__category">{category}</span>
 		<span class="text-ink-secondary/60 normal-case tracking-normal">{formattedDate}</span>
 	</p>
 	<h3 class="blog-card__title relative mt-4 text-xl leading-snug font-semibold text-ink">{title}</h3>
@@ -88,7 +88,8 @@ const formattedDate = formatPostDate(date);
 	}
 
 	.blog-card--always-accent .blog-card__title,
-	.blog-card--always-accent .blog-card__cta {
+	.blog-card--always-accent .blog-card__cta,
+	.blog-card--always-accent .blog-card__category {
 		color: var(--post-accent);
 	}
 </style>
