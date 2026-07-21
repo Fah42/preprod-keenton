@@ -17,9 +17,10 @@ import CTASection from '../components/sections/CTASection.astro';
 import ArticleCard from '../components/blog/ArticleCard.astro';
 import Button from '../components/ui/Button.astro';
 
-import { expertises } from '../data/site.js';
+import { site, expertises } from '../data/site.js';
 import {
 	hero,
+	expertisesSection,
 	reassurance,
 	stakeholderReasons,
 	expertiseHighlights,
@@ -40,14 +41,46 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 // Blocs historiques de l'accueil conservés à la demande : passer à `true`
 // pour les réafficher sans avoir à les reconstruire.
 const showLegacyHomeBlocks = false;
+
+// Donnees structurees : identite de l'entreprise + FAQ (rich results Google).
+const organizationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'ProfessionalService',
+	name: site.name,
+	description:
+		"Services informatiques pour entreprises : infogérance, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et automatisation IA.",
+	url: Astro.site?.href,
+	logo: Astro.site ? new URL('/images/logo-keenton-full.png', Astro.site).href : undefined,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Pantin',
+		addressRegion: 'Île-de-France',
+		addressCountry: 'FR',
+	},
+	areaServed: 'Île-de-France',
+	knowsAbout: expertises.map((e) => e.title),
+};
+
+const faqSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faq.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: { '@type': 'Answer', text: item.answer },
+	})),
+};
 ---
 
 <BaseLayout
-	title="Keenton | Services informatiques pour les entreprises"
-	description="Cloud, infogérance, sécurité, DevOps et IA : Keenton conçoit, déploie et maintient des infrastructures adaptées à vos usages."
+	title="Services informatiques pour entreprises | Keenton"
+	description="Infogérance, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et IA : Keenton conçoit, sécurise et exploite le système d'information des entreprises depuis Pantin, en Île-de-France."
 >
-	<Hero {...hero} />
-	<ExpertiseCenteredCards items={expertises} />
+	<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+	<Hero {...hero} highlights={reassurance} />
+	<ExpertiseCenteredCards items={expertises} {...expertisesSection} />
 
 		{/* Blocs historiques masqués, conservés pour réactivation ultérieure. */}
 		{showLegacyHomeBlocks && <TrustBlock items={reassurance} />}
@@ -73,7 +106,7 @@ const showLegacyHomeBlocks = false;
 			)
 		}
 
-	<Section eyebrow={methode.eyebrow} title={methode.title} intro="Chaque étape produit un résultat concret et vérifiable avant de passer à la suivante." theme="light">
+	<Section eyebrow={methode.eyebrow} title={methode.title} intro="Chaque étape produit un résultat concret et vérifiable avant de passer à la suivante." theme="alt">
 		<ProcessSteps steps={methode.steps} />
 	</Section>
 
@@ -84,7 +117,7 @@ const showLegacyHomeBlocks = false;
 
 	{
 		posts.length > 0 && (
-			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="alt">
+			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="muted" spacing="tight" class="border-y border-line">
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{posts.map((post) => (
 						<ArticleCard post={post} />

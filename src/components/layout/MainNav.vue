@@ -58,6 +58,7 @@ onBeforeUnmount(() => {
             :href="child.href"
             :style="{ '--item-accent': child.accentColor }"
             class="group block rounded-md px-4 py-3 transition-colors hover:bg-[color-mix(in_srgb,var(--item-accent)_8%,white)]"
+            @click="open = false"
           >
             <span class="block text-sm font-medium text-ink transition-colors group-hover:text-[var(--item-accent)]">{{ child.label }}</span>
             <span class="mt-0.5 block text-xs text-ink-secondary">{{ child.short }}</span>

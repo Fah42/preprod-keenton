@@ -1,12 +1,20 @@
 ---
+// Frise des 5 etapes de la methode. Les pastilles s'allument en cascade a
+// l'entree dans le viewport : l'etat ALLUME est l'etat CSS par defaut, un
+// script inline pose l'etat eteint avant peinture puis l'observer le retire.
+// Sans JS ou avec prefers-reduced-motion, tout est allume d'emblee.
 const { steps = [] } = Astro.props;
 ---
 
-<ol class="relative grid gap-8 md:grid-cols-5 md:gap-5">
-  <div class="absolute top-4 right-[10%] left-[10%] hidden h-px bg-line md:block" aria-hidden="true"></div>
+<ol class="process-steps relative grid gap-8 md:grid-cols-5 md:gap-5">
+  <div
+		class="absolute top-7 right-[10%] left-[10%] hidden h-px opacity-45 md:block"
+    style="background: linear-gradient(90deg, transparent, var(--color-accent) 15%, var(--color-accent) 85%, transparent)"
+    aria-hidden="true"
+  ></div>
   {steps.map((step, index) => (
     <li class="relative flex gap-4 md:block">
-      <span class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent bg-surface font-mono text-xs text-accent-dark md:mx-auto">
+			<span class="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-accent font-mono text-sm tabular-nums md:mx-auto">
         {String(index + 1).padStart(2, '0')}
       </span>
       <div class="md:mt-6 md:text-center">
@@ -16,3 +24,61 @@ const { steps = [] } = Astro.props;
     </li>
   ))}
 </ol>
+<script is:inline data-astro-rerun>
+  (() => {
+    const ol = document.currentScript.previousElementSibling;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    ol.classList.add('is-unlit');
+  })();
+</script>
+<script>
+  let processObserver: IntersectionObserver | undefined;
+
+  function initializeProcessSteps() {
+    const timeline = document.querySelector<HTMLOListElement>('.process-steps:not([data-process-ready])');
+    if (!timeline) return;
+
+    timeline.dataset.processReady = 'true';
+    processObserver?.disconnect();
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      timeline.classList.remove('is-unlit');
+      return;
+    }
+
+    timeline.classList.add('is-unlit');
+    processObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          timeline.classList.remove('is-unlit');
+          processObserver?.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    processObserver.observe(timeline);
+  }
+
+  document.addEventListener('astro:page-load', initializeProcessSteps);
+</script>
+
+<style>
+  /* Etat par defaut : pastille allumee (supervision active). */
+  .process-steps li > span {
+    background: var(--color-accent);
+		color: white;
+    box-shadow: 0 0 16px rgb(41 170 227 / 0.175);
+		transition: background-color 650ms ease, color 650ms ease, box-shadow 650ms ease;
+  }
+
+	.process-steps li:nth-of-type(2) > span { transition-delay: 220ms; }
+	.process-steps li:nth-of-type(3) > span { transition-delay: 440ms; }
+	.process-steps li:nth-of-type(4) > span { transition-delay: 660ms; }
+	.process-steps li:nth-of-type(5) > span { transition-delay: 880ms; }
+
+  .process-steps.is-unlit li > span {
+    background: var(--color-surface);
+    color: var(--color-accent-dark);
+    box-shadow: none;
+  }
+</style>

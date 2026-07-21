@@ -11,6 +11,12 @@ const { eyebrow, title, titleAccent, subtitle, image, primaryCta, icon } = Astro
 ---
 
 <section class="relative overflow-hidden border-b border-line bg-surface">
+	{/* Meme mouvement que l'accueil, decline dans la couleur de la categorie. */}
+	<div
+		class="spectrum-beam pointer-events-none absolute inset-x-0 top-0 z-20 h-[3px]"
+		style="--beam-color: var(--cat-accent)"
+		aria-hidden="true"
+	></div>
 	<div
 		class="pointer-events-none absolute inset-0"
 		style="background: linear-gradient(90deg, color-mix(in srgb, var(--cat-accent) 17%, white) 0%, color-mix(in srgb, var(--cat-accent) 9%, white) 38%, white 58%, white 100%)"
@@ -18,13 +24,14 @@ const { eyebrow, title, titleAccent, subtitle, image, primaryCta, icon } = Astro
 	></div>
 	<Container class="relative grid items-center gap-6 py-0 lg:grid-cols-2 lg:gap-10">
 		<div class="max-w-2xl py-6 md:py-8 lg:py-3">
-			<h1 class="reveal reveal-1 text-4xl leading-[1.1] font-bold text-[var(--cat-accent)] md:text-[2.6rem] lg:text-[2.8rem]">
+			<h1 class="reveal reveal-1 text-4xl leading-[1.1] font-bold text-[var(--cat-accent)] md:text-[2.4rem] lg:text-[2.6rem]">
 				{eyebrow}
 			</h1>
-			<h3 class="reveal reveal-2 mt-5 text-2xl leading-[1.2] font-semibold text-ink md:text-3xl lg:text-[2rem]">
+			{/* h2 et non h3 : la hierarchie h1 > h2 ne doit pas sauter de niveau (SEO). */}
+			<h2 class="reveal reveal-2 mt-5 text-2xl leading-[1.2] font-semibold text-ink md:text-3xl lg:text-[1.8rem]">
 				{title}
 				<span class="text-[var(--cat-accent)]"> {titleAccent}</span>
-			</h3>
+			</h2>
 			<p class="reveal reveal-3 mt-5 text-base leading-relaxed text-ink-secondary">
 				{subtitle}
 			</p>

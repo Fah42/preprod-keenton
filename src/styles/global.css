@@ -1,47 +1,99 @@
 @import "tailwindcss";
 
 /*
- * Palette Keenton (cf. CLAUDE.md)
- * En Tailwind 4, les couleurs se declarent ici via @theme :
- * chaque token --color-x genere les utilitaires bg-x, text-x, border-x, etc.
+ * Palette "Profondeur Aurora" : une seule famille chromatique, du bleu
+ * Keenton #29aae3 (obligatoire) au cyan lumineux. Site clair et precis,
+ * ponctue de sections sombres navy abysse ou le bleu devient une source
+ * de lumiere (halos, bordures aurora, grille technique revelee).
+ * En Tailwind 4, chaque token --color-x genere bg-x, text-x, border-x, etc.
+ * et chaque --shadow-x genere shadow-x.
  */
 @theme {
   /* Accent */
-  --color-accent: #29aae3;        /* bleu primaire : CTA, liens, highlights */
-  --color-accent-light: #8bceea;  /* reflets, degrades, icones sur fond sombre */
-  --color-accent-dark: #1f8cbf;   /* etat hover */
+  --color-accent: #29aae3;        /* bleu Keenton : CTA, liens, filets, puces.
+                                     Label des boutons pleins en night, jamais
+                                     blanc (2.6:1, echec AA) */
+  --color-accent-light: #7fd4ff;  /* cyan lumineux : eyebrows et icones sur fond sombre */
+  --color-accent-dark: #0f6fa6;   /* texte accent sur fond clair : 5.5:1 sur blanc (AA) */
+  --color-aurora: #6fe0ff;        /* extremite cyan des degrades lumineux ;
+                                     jamais en texte seul sur fond clair */
 
-  /* Surfaces claires */
+  /* Surfaces claires : blanc franc partout, plus de fond bleu pale.
+     surface-alt ne sert plus qu'aux petites surfaces (cards, mocks). */
   --color-surface: #ffffff;       /* fond principal */
-  --color-surface-alt: #eef2fc;   /* sections alternees, cards */
-  --color-ink: #0a101b;           /* texte principal (quasi noir bleute) */
-  --color-ink-secondary: #4d5766; /* texte secondaire (gris-bleu) */
-  --color-line: #e6e9ef;          /* bordures */
-  --color-night: #0d0c11;         /* pastilles et boutons sombres (quasi noir) */
+  --color-surface-alt: #f5f6f8;   /* petites surfaces : gris neutre discret */
+  --color-ink: #0a1a33;           /* titres et texte fort : navy encre (~17:1) */
+  --color-ink-secondary: #46586e; /* texte courant : ardoise bleutee (7.3:1) */
+  --color-slate: #16294a;         /* hover des boutons dark, emphase sombre */
+  --color-line: #dfe7f0;          /* bordures et filets sur clair */
+  --color-night: #0a1a33;         /* boutons dark + label des boutons bleus pleins */
 
-  /* Surfaces sombres : hero, navigation, section IA, footer */
-  --color-dark: #07142b;              /* fond sombre */
-  --color-dark-text: #f4f8fc;         /* texte clair */
-  --color-dark-text-secondary: #aebfd0;
-  --color-dark-line: #ffffff1f;       /* bordure blanche 12% */
+  /* Surfaces sombres : Philosophie, CTA final */
+  --color-dark: #050b1c;               /* navy abysse, support des halos aurora */
+  --color-dark-card: #0d1b33;          /* fond OPAQUE des cartes sur sombre */
+  --color-dark-text: #eaf3fb;
+  --color-dark-text-secondary: #9db2cc; /* 7.9:1 sur dark-card */
+  --color-dark-line: #7fd4ff29;        /* bordures sur sombre : cyan 16% */
 
-  /* Degrade footer */
-  --color-footer-from: #1a6ea6;
-  --color-footer-to: #0b3c61;
+  /* Footer : continuite exacte avec le CTA sombre */
+  --color-footer-from: #050b1c;
+  --color-footer-to: #0b1730;
 
-  /* Typographie : Poppins pour les titres, Manrope pour les textes. */
+  /* Ombres signature : froide multi-couches (cartes claires) et electrique (CTA) */
+  --shadow-cold: 0 1px 2px rgb(10 26 51 / 0.05), 0 6px 16px rgb(10 26 51 / 0.05), 0 16px 32px rgb(10 26 51 / 0.04);
+  --shadow-cold-lg: 0 2px 4px rgb(10 26 51 / 0.05), 0 12px 28px rgb(10 26 51 / 0.08), 0 32px 64px rgb(41 170 227 / 0.035);
+  --shadow-cta: inset 0 1px 0 rgb(255 255 255 / 0.25), 0 8px 24px rgb(41 170 227 / 0.16);
+  --shadow-cta-hover: inset 0 1px 0 rgb(255 255 255 / 0.25), 0 12px 32px rgb(41 170 227 / 0.2);
+
+  /* Typographie : Archivo pour les titres display geants, Poppins pour les
+     titres courants, Manrope pour les textes, IBM Plex Mono en signature. */
   --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo Variable", "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Echelle typographique resserree : corps 15px, paliers de lecture
+     reguliers et titres moins massifs sur desktop. */
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.0625rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.1875rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.375rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 2.125rem;
+  --text-4xl--line-height: 1.12;
+  --text-5xl: 2.75rem;
+  --text-5xl--line-height: 1.08;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Navigation interne : fondu tres court, sans mouvement de mise en page. */
+::view-transition-old(root) {
+  animation: page-fade-out 120ms ease-out both;
+}
+
+::view-transition-new(root) {
+  animation: page-fade-in 120ms ease-in both;
+}
+
+@keyframes page-fade-out {
+  to { opacity: 0.96; }
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0.96; }
+}
+
 body {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9375rem;
+  line-height: 1.55;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -51,8 +103,8 @@ body {
 }
 
 /*
- * Signature visuelle des surfaces sombres : fine grille technique
- * (facon schema d'infrastructure) + halo bleu discret.
+ * Signature visuelle : fine grille technique (facon schema d'infrastructure).
+ * Sur les surfaces sombres elle est "revelee par la lumiere" via .grid-masked.
  */
 .bg-grid-dark {
   background-image:
@@ -61,12 +113,129 @@ body {
   background-size: 3rem 3rem;
 }
 
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgb(10 26 51 / 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 26 51 / 0.028) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+/* La grille n'apparait que dans le halo de lumiere central. */
+.grid-masked {
+  mask-image: radial-gradient(50rem 30rem at 50% 20%, black, transparent 78%);
+}
+
+/* Champ aurora des sections sombres : cyan en haut, bleu Keenton en bas. */
+.aurora-halos {
+  background:
+    radial-gradient(40rem 24rem at 50% 0%, rgb(111 224 255 / 0.08), transparent 70%),
+    radial-gradient(32rem 22rem at 82% 100%, rgb(41 170 227 / 0.065), transparent 70%);
+}
+
+/* Halo central du CTA final. */
 .glow-accent {
-  background: radial-gradient(
-    42rem 26rem at 78% 12%,
-    rgb(41 170 227 / 0.14),
-    transparent 70%
+  background:
+    radial-gradient(42rem 26rem at 50% 38%, rgb(41 170 227 / 0.1), transparent 70%),
+    radial-gradient(24rem 16rem at 50% 28%, rgb(111 224 255 / 0.07), transparent 70%);
+}
+
+/*
+ * Le spectre Keenton : les 7 couleurs d'expertise en un seul degrade,
+ * signature vibrante du site (filets, soulignements, barre du hero).
+ * Ordre choisi pour la fluidite des teintes, il se referme sur le bleu
+ * de marque #29aae3.
+ */
+.spectrum-bar {
+  background: linear-gradient(90deg, #388e3c, #e6a700, #b87333, #dc2626, #6f2dbd, #1565c0, #00a4ef, #29aae3);
+}
+
+/*
+ * Filet anime des heros : une seule teinte va vers le blanc puis revient.
+ * --beam-color vaut le bleu Keenton par defaut ; les pages d'expertise la
+ * remplacent par leur propre couleur d'accent.
+ */
+.spectrum-beam {
+  --beam-color: var(--color-accent);
+  background: linear-gradient(
+    90deg,
+    var(--beam-color) 0%,
+    color-mix(in srgb, var(--beam-color) 58%, white) 24%,
+    white 50%,
+    color-mix(in srgb, var(--beam-color) 58%, white) 76%,
+    var(--beam-color) 100%
   );
+  background-size: 200% 100%;
+  animation: spectrum-slide 14s linear infinite;
+}
+
+@keyframes spectrum-slide {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Titres display geants (Archivo) : hierarchie visuelle assumee. */
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+/* Revelation au scroll : active uniquement si le JS a pose js-reveal. */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.1rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-reveal [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/*
+ * Bordure aurora : liseret 1px degrade bleu -> cyan sur les cartes sombres.
+ * Fond opaque via padding-box (dark-card par defaut, surchargeable avec
+ * --aurora-bg pour un fond degrade), liseret via border-box.
+ */
+.aurora-border {
+  border: 1px solid transparent;
+  background:
+    var(--aurora-bg, linear-gradient(var(--color-dark-card), var(--color-dark-card))) padding-box,
+    linear-gradient(150deg, rgb(41 170 227 / 0.55), rgb(111 224 255 / 0.18) 40%, rgb(127 212 255 / 0.06) 70%) border-box;
+}
+
+.aurora-border--hover:hover {
+  background:
+    var(--aurora-bg, linear-gradient(var(--color-dark-card), var(--color-dark-card))) padding-box,
+    linear-gradient(150deg, rgb(41 170 227 / 0.9), rgb(111 224 255 / 0.45) 45%, rgb(127 212 255 / 0.2) 80%) border-box;
+}
+
+/* Filet horizontal lumineux (footer, bande reassurance, rail references). */
+.hairline-aurora {
+  background: linear-gradient(90deg, transparent, rgb(41 170 227 / 0.45) 30%, rgb(127 212 255 / 0.45) 70%, transparent);
+}
+
+.home-reference-logo {
+  filter: grayscale(1) contrast(0.75) brightness(0.78);
+  opacity: 0.55;
+  transition: filter 180ms ease, opacity 180ms ease;
+}
+
+.home-reference-item:hover .home-reference-logo {
+  filter: none;
+  opacity: 1;
+}
+
+/* Point de statut "supervision" (bandeau infogerance) : halo qui respire. */
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(230 167 0 / 0.225); }
+  50% { box-shadow: 0 0 0 6px rgb(230 167 0 / 0); }
+}
+
+.status-dot {
+  animation: status-pulse 2.4s ease-in-out infinite;
 }
 
 /* Apparition du hero au chargement : une seule sequence, sobre */
@@ -93,7 +262,17 @@ body {
   html {
     scroll-behavior: auto;
   }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
   .reveal {
+    animation: none;
+  }
+  .status-dot {
+    animation: none;
+  }
+  .spectrum-beam {
     animation: none;
   }
 }

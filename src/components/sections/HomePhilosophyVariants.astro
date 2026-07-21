@@ -94,26 +94,28 @@ const showPhilosophyProposal03 = false;
 </section>
 )}
 
-<!-- Principes regroupés par intention -->
-<section class="overflow-hidden bg-dark bg-grid-dark py-20 text-dark-text md:py-28">
-  <Container>
-    <header class="mx-auto mb-12 max-w-6xl text-center md:mb-16">
-      <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-light">{eyebrow}</p>
-      <h2 class="mt-5 text-3xl leading-tight font-semibold text-white md:text-[2.5rem]">Des fondations qui restent lisibles dans le temps</h2>
-      <p class="mt-5 text-lg leading-relaxed text-dark-text-secondary">{intro}</p>
+<!-- Principes regroupés par intention : navy abysse, champ aurora, cartes opaques -->
+<section class="relative overflow-hidden bg-dark pt-12 pb-16 text-dark-text md:pt-14 md:pb-20">
+  <div class="aurora-halos pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="bg-grid-dark grid-masked pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <Container class="relative">
+	<header class="mb-12 max-w-6xl md:mb-16" data-reveal>
+		<h2 class="display-title text-[clamp(2.1rem,4vw,3rem)] text-white">{eyebrow}</h2>
+      <p class="mt-6 text-xl leading-snug font-semibold text-dark-text md:text-2xl">Des fondations qui restent lisibles dans le temps</p>
+      <p class="mt-4 text-lg leading-relaxed text-dark-text-secondary">{intro}</p>
     </header>
     <div class="space-y-10 md:space-y-14">
       {groups.map((group, groupIndex) => (
         <div>
           <div class="mb-5 flex items-center gap-4">
-            <span class="h-px flex-1 bg-accent/25"></span>
+            <span class="h-px flex-1 bg-linear-to-r from-transparent via-accent/40 to-accent-light/45"></span>
             <h3 class="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent-light">{group.title}</h3>
-            <span class="h-px flex-1 bg-accent/25"></span>
+            <span class="h-px flex-1 bg-linear-to-l from-transparent via-accent/40 to-accent-light/45"></span>
           </div>
           <div class="grid gap-4 md:grid-cols-3">
             {group.items.map((principle, index) => (
-              <article class="relative min-h-64 overflow-hidden border border-dark-line bg-white/4 p-7">
-                <span class="relative flex h-9 w-9 items-center justify-center border border-accent-light/60 text-accent-light">
+              <article class="aurora-border aurora-border--hover relative min-h-64 overflow-hidden rounded-xl p-7 transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0">
+                <span class="relative flex h-9 w-9 items-center justify-center rounded-md border border-accent-light/60 text-accent-light shadow-[0_0_20px_rgb(111_224_255/0.15)]">
                   <Icon name={principleIcons[(groupIndex * 3) + index]} class="h-4.5 w-4.5" />
                 </span>
                 <h4 class="relative mt-7 text-xl font-semibold leading-tight text-white">{principle.title}</h4>

@@ -10,6 +10,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryHero from '../../components/sections/CategoryHero.astro';
 import ServiceBlock from '../../components/services/ServiceBlock.astro';
+import InfogeranceStrip from '../../components/sections/InfogeranceStrip.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import CTASection from '../../components/sections/CTASection.astro';
 
@@ -45,6 +46,7 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 		entry.id === 'automatisation-ia' && 'expertise-page--automatisation-ia',
 	]} style={`--cat-accent: ${category?.accentColor}`}>
 		<CategoryHero {...hero} icon={category?.icon} />
+		{entry.id !== 'infogerance' && <InfogeranceStrip />}
 
 		<div id="sections">
 			{sections.map((section, i) => <ServiceBlock {...section} reverse={i % 2 === 1} />)}
@@ -57,9 +59,20 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 </BaseLayout>
 
 <style is:global>
+	/* Moitie du rythme initial py-16/md:py-24 : 32 px puis 48 px. */
+	.expertise-page .service-block > section {
+		padding-block: 2rem;
+	}
+
+	@media (min-width: 48rem) {
+		.expertise-page .service-block > section {
+			padding-block: 3rem;
+		}
+	}
+
 	.expertise-page[class*='expertise-page--'] #sections {
 		background:
-			radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--cat-accent) 7%, transparent), transparent 24%),
+			radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--cat-accent) 3.5%, transparent), transparent 24%),
 			linear-gradient(to bottom, color-mix(in srgb, var(--cat-accent) 2.5%, white), transparent 18%);
 	}
 
@@ -82,7 +95,7 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 
 	.expertise-page[class*='expertise-page--'] .service-block[data-service-type='mosaic'] article:hover {
 		background: color-mix(in srgb, var(--cat-accent) 5%, white);
-		box-shadow: inset 0 0 0 1px var(--cat-accent), 0 16px 36px color-mix(in srgb, var(--cat-accent) 15%, transparent);
+		box-shadow: inset 0 0 0 1px var(--cat-accent), 0 16px 36px color-mix(in srgb, var(--cat-accent) 7.5%, transparent);
 	}
 
 	.expertise-page[class*='expertise-page--'] .service-block[data-service-type='split'] section {
@@ -98,7 +111,7 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 		border-color: var(--cat-accent);
 		transform: translateY(-0.25rem);
 		background: color-mix(in srgb, var(--cat-accent) 5%, white);
-		box-shadow: inset 0 0 0 1px var(--cat-accent), 0 16px 36px color-mix(in srgb, var(--cat-accent) 15%, transparent);
+		box-shadow: inset 0 0 0 1px var(--cat-accent), 0 16px 36px color-mix(in srgb, var(--cat-accent) 7.5%, transparent);
 	}
 
 	.expertise-page[class*='expertise-page--'] .service-block[data-service-type='capabilities'] article {

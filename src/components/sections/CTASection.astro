@@ -1,19 +1,23 @@
 ---
+// CTA final : navy abysse, double halo central bleu -> cyan, grille technique
+// revelee par la lumiere. Echo exact de la section Philosophie ; le footer
+// (footer-from identique au fond) enchaine sans rupture.
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 
 const { title, text, cta } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-dark bg-grid-dark text-dark-text">
+<section class="relative overflow-hidden bg-dark text-dark-text">
 	<div class="glow-accent pointer-events-none absolute inset-0" aria-hidden="true"></div>
+	<div class="bg-grid-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(46rem_28rem_at_50%_45%,black,transparent_78%)]" aria-hidden="true"></div>
 	<Container class="relative py-20 text-center md:py-28">
-		<h2 class="mx-auto max-w-5xl text-3xl leading-tight font-semibold text-white md:text-[2.5rem]">
+		<h2 class="display-title mx-auto max-w-5xl text-[clamp(2.05rem,4vw,3.2rem)] text-white">
 			{title}
 		</h2>
 		<p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dark-text-secondary md:text-lg">{text}</p>
 		<div class="mt-10">
-			<Button href={cta.href} variant="primary">{cta.label}</Button>
+			<Button href={cta.href} variant="primary" arrow>{cta.label}</Button>
 		</div>
 	</Container>
 </section>

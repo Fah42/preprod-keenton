@@ -6,13 +6,13 @@ import MobileNav from './MobileNav.vue';
 import { site, mainNav } from '../../data/site.js';
 ---
 
-<header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur">
+<header transition:persist="site-header" class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur">
 	<Container class="flex h-20 items-center justify-between gap-6">
 		<a href="/">
 			<img
 				src="/images/logo-keenton-header.png"
 				alt="Keenton"
-				class="h-7 w-auto"
+				class="h-[2.1rem] w-auto"
 				width="227"
 				height="44"
 			/>

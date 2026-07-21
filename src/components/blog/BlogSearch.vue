@@ -13,7 +13,10 @@ let pagefind = null;
 
 onMounted(async () => {
   try {
-    pagefind = await import(/* @vite-ignore */ '/pagefind/pagefind.js');
+		// Une variable empeche Vite de tenter de resoudre ce fichier au build :
+		// Pagefind ne le genere qu'apres la compilation d'Astro.
+		const pagefindPath = '/pagefind/pagefind.js';
+		pagefind = await import(/* @vite-ignore */ pagefindPath);
     await pagefind.init();
     ready.value = true;
   } catch {

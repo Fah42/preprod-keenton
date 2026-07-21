@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onBeforeUnmount } from 'vue';
 
 defineProps({
   items: { type: Array, required: true },
@@ -11,6 +11,10 @@ const open = ref(false);
 
 watch(open, (value) => {
   document.body.classList.toggle('overflow-hidden', value);
+});
+
+onBeforeUnmount(() => {
+  document.body.classList.remove('overflow-hidden');
 });
 </script>
 
@@ -46,6 +50,7 @@ watch(open, (value) => {
             :href="child.href"
             :style="{ '--item-accent': child.accentColor }"
             class="mt-3 block text-base text-ink transition-colors hover:text-[var(--item-accent)]"
+            @click="open = false"
           >
             {{ child.label }}
           </a>
@@ -54,6 +59,7 @@ watch(open, (value) => {
           v-else
           :href="item.href"
           class="border-b border-line py-4 text-base text-ink transition-colors hover:text-accent"
+          @click="open = false"
         >
           {{ item.label }}
         </a>
@@ -61,12 +67,14 @@ watch(open, (value) => {
       <a
         :href="configuratorCta.href"
         class="mt-8 inline-flex items-center justify-center rounded-lg bg-night px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-ink"
+        @click="open = false"
       >
         {{ configuratorCta.label }}
       </a>
       <a
         :href="cta.href"
         class="mt-3 inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+        @click="open = false"
       >
         {{ cta.label }}
       </a>

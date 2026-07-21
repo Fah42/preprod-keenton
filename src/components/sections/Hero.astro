@@ -1,33 +1,56 @@
 ---
-// Hero de la page d'accueil : même réservation d'illustration 4:3 que les expertises.
+// Hero de la page d'accueil, direction "Profondeur Aurora" : fond blanc,
+// grille technique revelee autour de l'illustration, double halo bleu/cyan,
+// H1 Poppins 700 avec accent en degrade texte, bande de reassurance posee
+// sur un filet lumineux (items `reassurance` de home.js via `highlights`).
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
 
-const { eyebrow, title, titleAccent, subtitle, image, primaryCta, secondaryCta } = Astro.props;
+const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlights = [] } = Astro.props;
 ---
 
-<section class="border-b border-line bg-surface">
-	<Container class="grid items-center gap-6 py-0 lg:grid-cols-2 lg:gap-10">
-		<div class="max-w-2xl py-6 md:py-8 lg:py-3">
-			<p class="reveal reveal-1 font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent">
-				{eyebrow}
-			</p>
-			<h1 class="reveal reveal-2 mt-5 text-4xl leading-[1.12] font-semibold text-ink md:text-[2.6rem] lg:text-[2.8rem]">
+<section class="relative overflow-hidden border-b border-line bg-surface">
+	{/* Filet lumineux anime : bleu Keenton vers blanc, puis retour au bleu. */}
+	<div class="spectrum-beam pointer-events-none absolute inset-x-0 top-0 z-20 h-[3px]" aria-hidden="true"></div>
+	{/* Grille technique, revelee par la lumiere autour de l'illustration */}
+	<div
+		class="bg-grid-light pointer-events-none absolute inset-0 [mask-image:radial-gradient(52rem_38rem_at_72%_38%,black,transparent_80%)]"
+		aria-hidden="true"
+	></div>
+
+	<Container class="relative grid items-center gap-6 py-0 lg:grid-cols-2 lg:gap-10">
+		<div class="max-w-2xl py-10 md:py-12 lg:py-8">
+			<h1 class="display-title reveal reveal-1 text-[clamp(2.3rem,4.2vw,3.25rem)] text-ink">
 				{title}
-				<span class="text-accent"> {titleAccent}</span>
+				<span class="bg-linear-to-r from-accent-dark via-accent to-[#45bdf0] bg-clip-text text-transparent"> {titleAccent}</span>
 			</h1>
-			<p class="reveal reveal-3 mt-6 text-base leading-relaxed text-ink-secondary md:text-lg">
+			<p class="reveal reveal-2 mt-6 text-base leading-relaxed text-ink-secondary md:text-lg">
 				{subtitle}
 			</p>
-			<div class="reveal reveal-4 mt-7 flex flex-wrap gap-4">
+			<div class="reveal reveal-3 mt-8 flex flex-wrap gap-4">
 				<Button href={primaryCta.href} variant="primary" arrow>{primaryCta.label}</Button>
 				<Button href={secondaryCta.href} variant="dark" arrow>{secondaryCta.label}</Button>
 			</div>
 		</div>
-		<div class="my-3 aspect-[4/3] w-full max-w-[36rem] justify-self-center lg:w-[36rem] lg:justify-self-end">
+		<div class="relative my-3 aspect-[4/3] w-full max-w-[36rem] justify-self-center lg:w-[36rem] lg:justify-self-end">
+			{/* Double halo : bleu Keenton + pointe cyan, derriere l'illustration */}
+			<div
+				class="pointer-events-none absolute -inset-10"
+				style="background: radial-gradient(30rem 22rem at 50% 45%, rgb(41 170 227 / 0.07), transparent 70%), radial-gradient(18rem 14rem at 68% 28%, rgb(111 224 255 / 0.05), transparent 70%)"
+				aria-hidden="true"
+			></div>
 			{
 				image ? (
-					<img src={image.src} alt={image.alt} class="h-full w-full object-contain" />
+					<img
+						src={image.src}
+						alt={image.alt}
+						width="1600"
+						height="1200"
+						loading="eager"
+						fetchpriority="high"
+						class="relative h-full w-full object-contain"
+					/>
 				) : (
 					<div class="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-line bg-surface-alt">
 						<span class="text-xs font-medium uppercase tracking-[0.14em] text-ink-secondary/70">Illustration à venir</span>
@@ -36,4 +59,27 @@ const { eyebrow, title, titleAccent, subtitle, image, primaryCta, secondaryCta }
 			}
 		</div>
 	</Container>
+
+	{
+		highlights.length > 0 && (
+			<div class="relative">
+				<div class="absolute inset-x-0 top-0 h-px bg-line" aria-hidden="true" />
+				<Container>
+					<ul class="grid grid-cols-2 divide-line md:grid-cols-4 md:divide-x">
+						{highlights.map((item) => (
+							<li class="flex items-start gap-3 px-0 py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-dark">
+									<Icon name={item.icon} class="h-4 w-4" />
+								</span>
+								<div>
+									<p class="font-heading text-base font-semibold text-ink">{item.title}</p>
+									<p class="mt-1 text-sm leading-relaxed text-ink-secondary">{item.text}</p>
+								</div>
+							</li>
+						))}
+					</ul>
+				</Container>
+			</div>
+		)
+	}
 </section>

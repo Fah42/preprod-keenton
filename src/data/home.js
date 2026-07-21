@@ -1,18 +1,27 @@
 // Contenu editorial de la page d'accueil.
 // Modifier les textes ici ne doit jamais necessiter de toucher aux composants.
 
+// H1 de la page : porte le mot-cle principal "services informatiques pour
+// entreprises" + "infogérance" en debut de titre, lisible par un humain.
 export const hero = {
-	eyebrow: "De la stratégie à l'exploitation",
-	title: "Votre informatique d'entreprise,",
-	titleAccent: 'conçue et pilotée dans la durée',
+	title: 'Services informatiques pour entreprises,',
+	titleAccent: "de la conception à l'infogérance",
 	image: {
 		src: '/images/hero-home.png',
 		alt: 'Les sept domaines d’expertise Keenton',
 	},
 	subtitle:
-		"Infrastructure, cloud, infogérance, cybersécurité, DevOps et IA : Keenton réunit les expertises nécessaires pour concevoir, sécuriser et exploiter votre système d'information.",
+		"Infrastructure, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et IA : une équipe d'ingénieurs conçoit, sécurise et exploite votre système d'information. Et en répond dans la durée.",
   primaryCta: { label: 'Parler de votre projet', href: '/contact' },
   secondaryCta: { label: 'Découvrir nos expertises', href: '#expertises' },
+};
+
+// En-tete de la section "Nos expertises" (H2 porteur pour le SEO).
+export const expertisesSection = {
+	eyebrow: 'Nos expertises',
+	title: "Sept domaines d'expertise, un seul système d'information",
+	intro:
+		"Réseau, serveurs, cloud, sécurité, déploiements, postes de travail : ces sujets ne vivent jamais isolément. Nous les traitons comme un ensemble, pour que les décisions prises sur un périmètre n'en fragilisent pas un autre, et pour que vous ayez en face de vous une seule équipe, capable d'en répondre.",
 };
 
 export const reassurance = [
@@ -122,7 +131,7 @@ export const expertiseHighlights = {
 };
 
 export const configuratorPromo = {
-  eyebrow: 'Configurateur',
+  eyebrow: 'Le configurateur',
   title: 'Préparez un premier périmètre en quelques étapes',
   text: "Décrivez votre entreprise, sélectionnez les services utiles et précisez vos attentes de sécurité et de supervision. Un ingénieur reprend ensuite ce brief avec vous.",
   cta: { label: 'Composer mon accompagnement', href: '/configurateur' },
@@ -197,7 +206,7 @@ export const besoins = {
 };
 
 export const methode = {
-  eyebrow: 'Méthode',
+  eyebrow: 'Notre méthode',
   title: 'Une démarche simple et vérifiable',
   steps: [
     {
@@ -224,7 +233,7 @@ export const methode = {
 };
 
 export const blogSection = {
-  eyebrow: 'Blog',
+  eyebrow: 'Le blog',
   title: 'Nos derniers articles',
   allLabel: 'Tous les articles',
 };

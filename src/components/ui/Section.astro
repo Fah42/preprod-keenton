@@ -1,6 +1,10 @@
 ---
-// Section standard : repère éditorial, titre et introduction optionnelle.
-// theme: light (fond blanc), alt (fond bleu pale), dark (fond marine).
+// Section standard, hierarchie inversee : `eyebrow` (le nom court de la
+// section, ex. "Notre méthode") devient le H2 display GEANT, `title` (la
+// phrase descriptive) passe en accroche sous le titre, `intro` reste le
+// paragraphe secondaire. `number` est le numero mono du kicker.
+// theme: light (fond blanc), alt (fond gris neutre), muted (gris bleute),
+// dark (fond abysse).
 import Container from './Container.astro';
 
 const {
@@ -9,6 +13,7 @@ const {
 	title,
 	intro,
 	theme = 'light',
+	spacing = 'default',
 	number,
 	class: className = '',
 } = Astro.props;
@@ -16,28 +21,39 @@ const {
 const themes = {
 	light: 'bg-surface text-ink',
 	alt: 'bg-surface-alt text-ink',
-	dark: 'bg-dark bg-grid-dark text-dark-text',
+	muted: 'bg-[#f7f9fa] text-ink',
+	dark: 'bg-dark text-dark-text',
 };
 
-const eyebrowColor = theme === 'dark' ? 'text-accent-light' : 'text-accent-dark';
+const sectionSpacing = spacing === 'tight'
+	? 'pt-12 pb-14 md:pt-14 md:pb-16'
+	: spacing === 'compact'
+		? 'pt-12 pb-16 md:pt-14 md:pb-20'
+		: 'pt-12 pb-20 md:pt-14 md:pb-28';
+const headerSpacing = spacing === 'default' ? 'mb-12 md:mb-16' : 'mb-10 md:mb-12';
+
+const kickerColor = theme === 'dark' ? 'text-accent-light' : 'text-accent-dark';
+const titleColor = theme === 'dark' ? 'text-white' : 'text-ink';
+const leadColor = theme === 'dark' ? 'text-dark-text' : 'text-ink';
 const introColor = theme === 'dark' ? 'text-dark-text-secondary' : 'text-ink-secondary';
 ---
 
-<section id={id} class:list={[themes[theme], 'py-20 md:py-28', className]}>
-	<Container>
+<section id={id} class:list={[themes[theme], sectionSpacing, className]}>
+	<Container class="relative">
 		{
 			(eyebrow || title) && (
-				<header class="mb-12 max-w-6xl md:mb-16">
-					{eyebrow && (
-						<p class:list={['font-heading text-base leading-none font-semibold tracking-[0.02em]', eyebrowColor]}>
-							{number && <span class="mr-3 opacity-60">{number}</span>}
-							{eyebrow}
+				<header class:list={[headerSpacing, 'max-w-6xl']} data-reveal>
+					{number && (
+						<p class:list={['flex items-center gap-3 font-mono text-sm', kickerColor]}>
+							{number}
+							<span class="spectrum-bar h-px w-10 opacity-70" aria-hidden="true" />
 						</p>
 					)}
-					{title && (
-						<h2 class="mt-5 text-3xl leading-tight font-semibold md:text-[2.5rem]">{title}</h2>
+					<h2 class:list={['display-title text-[clamp(2.1rem,4vw,3rem)]', number && 'mt-4', titleColor]}>{eyebrow || title}</h2>
+					{eyebrow && title && (
+						<p class:list={['mt-6 max-w-4xl text-xl leading-snug font-semibold md:text-2xl', leadColor]}>{title}</p>
 					)}
-					{intro && <p class:list={['mt-6 text-base leading-relaxed md:text-lg', introColor]}>{intro}</p>}
+					{intro && <p class:list={['mt-4 max-w-4xl text-base leading-relaxed md:text-lg', introColor]}>{intro}</p>}
 				</header>
 			)
 		}

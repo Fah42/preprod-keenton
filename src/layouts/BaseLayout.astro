@@ -4,14 +4,21 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import '@fontsource-variable/manrope/wght.css';
+import '@fontsource-variable/archivo/wght.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 
-const { title, description } = Astro.props;
+const { title, description, ogImage = '/images/hero-home.png' } = Astro.props;
+
+// URLs absolues pour canonical + Open Graph, derivees de `site` dans
+// astro.config.mjs. Sans `site` configure, ces balises sont omises.
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : undefined;
 ---
 
 <html lang="fr">
@@ -22,6 +29,57 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
+		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Keenton" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:title" content={title} />
+		{description && <meta property="og:description" content={description} />}
+		{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+		{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		{description && <meta name="twitter:description" content={description} />}
+		{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+		<ClientRouter fallback="swap" />
+		<script is:inline data-astro-rerun>
+			// Revelation au scroll des en-tetes de section ([data-reveal]).
+			// La classe js-reveal est posee AVANT le rendu : sans JS ou avec
+			// prefers-reduced-motion, rien n'est masque.
+			(() => {
+				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+				document.documentElement.classList.add('js-reveal');
+			})();
+		</script>
+		<script>
+			let revealObserver: IntersectionObserver | undefined;
+
+			function initializeReveals() {
+				revealObserver?.disconnect();
+
+				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+					document.documentElement.classList.remove('js-reveal');
+					return;
+				}
+
+				document.documentElement.classList.add('js-reveal');
+				revealObserver = new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-in');
+								revealObserver?.unobserve(entry.target);
+							}
+						}
+					},
+					{ threshold: 0.2, rootMargin: '0px 0px -8% 0px' }
+				);
+
+				document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver?.observe(element));
+			}
+
+			document.addEventListener('astro:page-load', initializeReveals);
+		</script>
 	</head>
 	<body class="bg-surface font-sans text-ink antialiased">
 		<a

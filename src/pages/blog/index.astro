@@ -22,7 +22,7 @@ const filterButtonClass =
 
 <BaseLayout title="Blog | Keenton" description="Analyses et retours d'expérience Keenton sur le cloud, la cybersécurité, le DevOps, l'automatisation et Microsoft 365.">
   <BlogHeader />
-  <section class="bg-surface py-16 md:py-20">
+  <section class="bg-surface py-16 md:py-20" data-blog-filter-root>
     <Container>
       <div class="mb-14">
         <div class="mx-auto flex max-w-3xl flex-wrap justify-center gap-2" role="group" aria-label="Filtrer les articles par expertise">
@@ -86,35 +86,44 @@ const filterButtonClass =
   // Filtrage cote client des cartes rendues au build (pas d'ile Vue : simple
   // toggle d'attribut hidden). Filtre refletable dans l'URL (?expertise=slug)
   // pour permettre les liens partageables, comme le configurateur.
-  const buttons = [...document.querySelectorAll('[data-filter]')];
-  const items = [...document.querySelectorAll('[data-expertise-item]')];
-  const empty = document.getElementById('blog-filter-empty');
+  function initializeBlogFilters() {
+    const root = document.querySelector<HTMLElement>('[data-blog-filter-root]:not([data-filter-ready])');
+    if (!root) return;
 
-  function applyFilter(slug, updateUrl = true) {
-    let visible = 0;
-    for (const item of items) {
-      const match = !slug || item.dataset.expertiseItem === slug;
-      item.hidden = !match;
-      if (match) visible += 1;
+    root.dataset.filterReady = 'true';
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const items = [...root.querySelectorAll<HTMLElement>('[data-expertise-item]')];
+    const empty = root.querySelector<HTMLElement>('#blog-filter-empty');
+
+    function applyFilter(slug = '', updateUrl = true) {
+      let visible = 0;
+      for (const item of items) {
+        const match = !slug || item.dataset.expertiseItem === slug;
+        item.hidden = !match;
+        if (match) visible += 1;
+      }
+      for (const button of buttons) {
+        button.setAttribute('aria-pressed', String((button.dataset.filter || '') === slug));
+      }
+      if (empty) empty.hidden = visible > 0;
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (slug) url.searchParams.set('expertise', slug);
+        else url.searchParams.delete('expertise');
+        history.replaceState(history.state, '', url);
+      }
     }
+
     for (const button of buttons) {
-      button.setAttribute('aria-pressed', String((button.dataset.filter || '') === (slug || '')));
+      button.addEventListener('click', () => applyFilter(button.dataset.filter));
     }
-    if (empty) empty.hidden = visible > 0;
-    if (updateUrl) {
-      const url = new URL(window.location.href);
-      if (slug) url.searchParams.set('expertise', slug);
-      else url.searchParams.delete('expertise');
-      history.replaceState(null, '', url);
+
+    const initial = new URLSearchParams(window.location.search).get('expertise');
+    if (initial && buttons.some((button) => button.dataset.filter === initial)) {
+      applyFilter(initial, false);
     }
   }
 
-  for (const button of buttons) {
-    button.addEventListener('click', () => applyFilter(button.dataset.filter));
-  }
-
-  const initial = new URLSearchParams(window.location.search).get('expertise');
-  if (initial && buttons.some((button) => button.dataset.filter === initial)) {
-    applyFilter(initial, false);
-  }
+  document.addEventListener('astro:page-load', initializeBlogFilters);
+  initializeBlogFilters();
 </script>

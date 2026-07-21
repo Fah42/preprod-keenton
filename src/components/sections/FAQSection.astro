@@ -1,27 +1,53 @@
 ---
+// FAQ sur fond blanc (retablit l'alternance clair/glacier avant le CTA
+// sombre). Numerotation mono en compteur CSS pur : decorative, aucun texte
+// modifie, invisible pour les lecteurs d'ecran (::before sur summary).
 import Container from '../ui/Container.astro';
 
 const { items = [] } = Astro.props;
 ---
 
-<section class="bg-surface-alt py-20 md:py-28">
+<section class="bg-surface pt-10 pb-14 md:pt-12 md:pb-16">
   <Container>
     <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-      <header>
-        <p class="font-heading text-base leading-none font-semibold tracking-[0.02em] text-accent-dark">Questions fréquentes</p>
-        <h2 class="mt-5 text-3xl leading-tight font-semibold text-ink md:text-[2.5rem]">Avant de commencer</h2>
-        <p class="mt-6 text-base leading-relaxed text-ink-secondary md:text-lg">Les premières réponses aux questions qui reviennent avant une étude sur site ou une reprise de périmètre.</p>
+      <header data-reveal>
+		<h2 class="display-title text-[clamp(2.1rem,3.6vw,3rem)] text-ink">Questions fréquentes</h2>
+        <p class="mt-6 text-xl leading-snug font-semibold text-ink">Avant de commencer</p>
+        <p class="mt-4 text-base leading-relaxed text-ink-secondary md:text-lg">Les premières réponses aux questions qui reviennent avant une étude sur site ou une reprise de périmètre.</p>
       </header>
-      <div class="divide-y divide-line border-y border-line">
+      <div class="faq-list divide-y divide-line border-y border-line">
         {items.map((item) => (
-          <details class="group py-5">
-            <summary class="font-heading flex cursor-pointer list-none items-center justify-between gap-5 text-lg leading-snug font-semibold text-ink">
-              {item.question}<span class="text-xl font-normal text-accent transition-transform group-open:rotate-45">+</span>
+          <details class="faq-item group py-5">
+            <summary class="font-heading flex cursor-pointer list-none items-center gap-5 text-lg leading-snug font-semibold text-ink transition-colors hover:text-accent-dark group-open:text-accent-dark">
+              <span class="grow">{item.question}</span>
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-lg font-normal text-accent-dark transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
-            <p class="max-w-2xl pt-4 text-base leading-relaxed text-ink-secondary">{item.answer}</p>
+            <p class="max-w-2xl pt-4 pl-[2.4rem] text-base leading-relaxed text-ink-secondary">{item.answer}</p>
           </details>
         ))}
       </div>
     </div>
   </Container>
 </section>
+
+<style>
+  .faq-list {
+    counter-reset: faq;
+  }
+
+  .faq-item summary::before {
+    counter-increment: faq;
+    content: counter(faq, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: color-mix(in srgb, var(--color-ink-secondary) 55%, transparent);
+    min-width: 1.4rem;
+    transition: color 200ms ease;
+  }
+
+  .faq-item[open] summary::before,
+  .faq-item summary:hover::before {
+    color: var(--color-accent-dark);
+  }
+</style>

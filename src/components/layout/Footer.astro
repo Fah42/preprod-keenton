@@ -3,14 +3,27 @@ import Container from '../ui/Container.astro';
 import { site, expertises } from '../../data/site.js';
 
 const year = new Date().getFullYear();
+
+const blogTopics = [
+	{ label: 'Cloud hybride', href: '/blog/migrer-cloud-hybride', accent: '#1565C0', size: 'lg', x: 24, y: 10, depth: 0.9, delay: '-1.4s', duration: '6.8s' },
+	{ label: 'Sauvegarde & PRA', href: '/blog/sauvegarde-3-2-1', accent: '#1565C0', size: 'sm', x: 76, y: 10, depth: 0.7, delay: '-4.2s', duration: '7.6s' },
+	{ label: 'Kubernetes & GitOps', href: '/blog/kubecon-amsterdam-2026', accent: '#B87333', size: 'md', x: 33, y: 32, depth: 1, delay: '-2.7s', duration: '8.2s' },
+	{ label: 'CI/CD', href: '/blog/cicd-industrialiser-deploiements', accent: '#B87333', size: 'sm', x: 79, y: 32, depth: 0.65, delay: '-5.1s', duration: '6.4s' },
+	{ label: 'Agents IA', href: '/blog/agents-ia-sans-perdre-controle', accent: '#6F2DBD', size: 'sm', x: 24, y: 54, depth: 0.75, delay: '-0.8s', duration: '7.2s' },
+	{ label: 'IA souveraine', href: '/blog/gero-ia-souveraine', accent: '#6F2DBD', size: 'md', x: 70, y: 54, depth: 1, delay: '-3.6s', duration: '8.6s' },
+	{ label: 'Cybersécurité', href: '/blog/signaux-attaque', accent: '#DC2626', size: 'sm', x: 22, y: 76, depth: 0.8, delay: '-6.1s', duration: '7.8s' },
+	{ label: 'Infogérance 24/7', href: '/blog/infogerance-24-7', accent: '#E6A700', size: 'md', x: 75, y: 76, depth: 0.9, delay: '-2.1s', duration: '6.9s' },
+	{ label: 'Microsoft 365', href: '/blog/copilot-microsoft-365', accent: '#00A4EF', size: 'sm', x: 50, y: 95, depth: 0.7, delay: '-4.8s', duration: '8s' },
+];
 ---
 
-<footer class="bg-linear-to-b from-footer-from to-footer-to text-white">
-	<Container class="py-16">
-		<div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+<footer transition:persist="site-footer" class="relative bg-linear-to-b from-footer-from to-footer-to text-white">
+	<div class="hairline-aurora absolute inset-x-0 top-0 h-px" aria-hidden="true"></div>
+	<Container class="py-10 md:py-12">
+		<div class="grid gap-8 md:grid-cols-2 xl:grid-cols-[1.15fr_0.95fr_0.65fr_1.35fr] xl:gap-7">
 			<div>
 				<img
-					src="/images/logo-keenton-full.png"
+					src="/images/logo-keenton-full-white.png"
 					alt="Keenton"
 					class="h-7 w-auto"
 					width="221"
@@ -26,7 +39,7 @@ const year = new Date().getFullYear();
 			</div>
 
 			<nav aria-label="Expertises">
-				<p class="font-mono text-xs uppercase tracking-[0.2em] text-white/60">Expertises</p>
+				<p class="font-mono text-xs uppercase tracking-[0.2em] text-white">Expertises</p>
 				<ul class="mt-4 space-y-2.5">
 					{
 						expertises.map((expertise) => (
@@ -41,7 +54,7 @@ const year = new Date().getFullYear();
 			</nav>
 
 			<nav aria-label="Navigation secondaire">
-				<p class="font-mono text-xs uppercase tracking-[0.2em] text-white/60">Keenton</p>
+				<p class="font-mono text-xs uppercase tracking-[0.2em] text-white">Keenton</p>
 				<ul class="mt-4 space-y-2.5">
 					<li><a href="/" class="text-sm text-white/85 transition-colors hover:text-white">Accueil</a></li>
 					<li><a href="/blog" class="text-sm text-white/85 transition-colors hover:text-white">Blog</a></li>
@@ -53,11 +66,292 @@ const year = new Date().getFullYear();
 					</li>
 				</ul>
 			</nav>
+
+			<section class="w-full max-w-[23rem] justify-self-center md:justify-self-end" aria-labelledby="footer-topics-title">
+				<h2 id="footer-topics-title" class="font-mono text-xs font-normal uppercase tracking-[0.2em] text-white">
+					Explorer nos sujets
+				</h2>
+
+				<div class="footer-topics relative mt-4 h-[14.5rem] overflow-hidden rounded-2xl p-3" data-footer-topics>
+					<div class="footer-topics__grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+					<div class="footer-topics__aurora footer-topics__aurora--left pointer-events-none absolute" aria-hidden="true"></div>
+					<div class="footer-topics__aurora footer-topics__aurora--right pointer-events-none absolute" aria-hidden="true"></div>
+					<div class="footer-topics__cursor-light pointer-events-none absolute" aria-hidden="true"></div>
+
+					<ul class="footer-topic-cloud relative z-10 h-full" aria-label="Sujets du blog">
+						{
+							blogTopics.map((topic) => (
+								<li
+									class="footer-topic__item"
+									data-footer-topic
+									style={`--topic-accent: ${topic.accent}; --topic-x: ${topic.x}%; --topic-y: ${topic.y}%; --topic-depth: ${topic.depth}; --topic-delay: ${topic.delay}; --topic-duration: ${topic.duration}`}
+								>
+									<div class="footer-topic__float">
+										<a href={topic.href} class:list={['footer-topic group', `footer-topic--${topic.size}`]}>
+											<span class="footer-topic__shine" aria-hidden="true"></span>
+											<span class="footer-topic__dot" aria-hidden="true"></span>
+											<span class="relative">{topic.label}</span>
+											<span class="footer-topic__arrow relative" aria-hidden="true">↗</span>
+										</a>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</section>
 		</div>
 
-		<div class="mt-14 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs text-white/60 md:flex-row md:items-center md:justify-between">
+		<div class="mt-8 flex flex-col gap-3 border-t border-white/15 pt-5 text-xs text-white/60 md:flex-row md:items-center md:justify-between">
 			<p>© {year} {site.name}. Tous droits réservés.</p>
 			<a href="/mentions-legales" class="transition-colors hover:text-white">Mentions légales</a>
 		</div>
 	</Container>
 </footer>
+
+<style>
+	.footer-topics {
+		--glow-x: 50%;
+		--glow-y: 50%;
+		border: 1px solid rgb(127 212 255 / 0.16);
+		background: linear-gradient(145deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.018));
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 20px 50px rgb(0 0 0 / 0.18);
+	}
+
+	.footer-topics__grid {
+		background-image:
+			linear-gradient(to right, rgb(127 212 255 / 0.04) 1px, transparent 1px),
+			linear-gradient(to bottom, rgb(127 212 255 / 0.04) 1px, transparent 1px);
+		background-size: 1.5rem 1.5rem;
+		mask-image: radial-gradient(ellipse at center, black 8%, transparent 78%);
+	}
+
+	.footer-topics__aurora {
+		width: 12rem;
+		height: 12rem;
+		border-radius: 9999px;
+		filter: blur(54px);
+		opacity: 0.065;
+	}
+
+	.footer-topics__aurora--left {
+		top: -7rem;
+		left: -4rem;
+		background: #29aae3;
+	}
+
+	.footer-topics__aurora--right {
+		right: -4rem;
+		bottom: -7rem;
+		background: #6f2dbd;
+	}
+
+	.footer-topics__cursor-light {
+		left: var(--glow-x);
+		top: var(--glow-y);
+		width: 11rem;
+		height: 11rem;
+		border-radius: 9999px;
+		background: radial-gradient(circle, rgb(127 212 255 / 0.09), transparent 68%);
+		opacity: 0;
+		transform: translate(-50%, -50%);
+		transition: left 90ms linear, top 90ms linear, opacity 260ms ease;
+	}
+
+	.footer-topics[data-pointer-active='true'] .footer-topics__cursor-light {
+		opacity: 0.35;
+	}
+
+	.footer-topic__item {
+		position: absolute;
+		left: var(--topic-x);
+		top: var(--topic-y);
+		transform: translate(-50%, -50%) translate3d(var(--topic-offset-x, 0px), var(--topic-offset-y, 0px), 0);
+		transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: transform;
+	}
+
+	.footer-topic__float {
+		animation: footer-topic-drift var(--topic-duration) ease-in-out var(--topic-delay) infinite;
+	}
+
+	.footer-topic {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.38rem;
+		white-space: nowrap;
+		overflow: hidden;
+		border: 1px solid color-mix(in srgb, var(--topic-accent) 42%, rgb(255 255 255 / 0.12));
+		border-radius: 9999px;
+		background: linear-gradient(145deg, color-mix(in srgb, var(--topic-accent) 10%, transparent), rgb(255 255 255 / 0.025));
+		color: rgb(255 255 255 / 0.82);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 0 0 transparent;
+		transition: color 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+	}
+
+	.footer-topic--sm {
+		padding: 0.38rem 0.58rem;
+		font-size: 0.6875rem;
+	}
+
+	.footer-topic--md {
+		padding: 0.43rem 0.66rem;
+		font-size: 0.75rem;
+	}
+
+	.footer-topic--lg {
+		padding: 0.47rem 0.72rem;
+		font-size: 0.8125rem;
+	}
+
+	.footer-topic__shine {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(105deg, transparent 24%, color-mix(in srgb, var(--topic-accent) 36%, white) 48%, transparent 70%);
+		opacity: 0;
+		transform: translateX(-125%);
+		transition: transform 560ms ease, opacity 220ms ease;
+	}
+
+	.footer-topic__dot {
+		position: relative;
+		width: 0.34rem;
+		height: 0.34rem;
+		flex: none;
+		border-radius: 9999px;
+		background: var(--topic-accent);
+		box-shadow: 0 0 0 2px color-mix(in srgb, var(--topic-accent) 7.5%, transparent), 0 0 10px color-mix(in srgb, var(--topic-accent) 35%, transparent);
+	}
+
+	.footer-topic__arrow {
+		opacity: 0.45;
+		transition: opacity 220ms ease, transform 220ms ease;
+	}
+
+	.footer-topic:hover,
+	.footer-topic:focus-visible {
+		border-color: color-mix(in srgb, var(--topic-accent) 82%, white);
+		background: linear-gradient(145deg, color-mix(in srgb, var(--topic-accent) 20%, transparent), rgb(255 255 255 / 0.055));
+		color: white;
+		box-shadow:
+			inset 0 1px 0 rgb(255 255 255 / 0.12),
+			0 0 0 1px color-mix(in srgb, var(--topic-accent) 10%, transparent),
+			0 8px 22px color-mix(in srgb, var(--topic-accent) 12%, transparent);
+		transform: translateY(-0.12rem) scale(1.035);
+	}
+
+	.footer-topic:focus-visible {
+		outline: 2px solid var(--topic-accent);
+		outline-offset: 3px;
+	}
+
+	.footer-topic:hover .footer-topic__shine,
+	.footer-topic:focus-visible .footer-topic__shine {
+		opacity: 0.55;
+		transform: translateX(125%);
+	}
+
+	.footer-topic:hover .footer-topic__arrow,
+	.footer-topic:focus-visible .footer-topic__arrow {
+		opacity: 1;
+		transform: translate(0.1rem, -0.1rem);
+	}
+
+	@keyframes footer-topic-drift {
+		0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.2deg); }
+		50% { transform: translate3d(0, -0.28rem, 0) rotate(0.25deg); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.footer-topic__float {
+			animation: none;
+		}
+
+		.footer-topic__item,
+		.footer-topic,
+		.footer-topic__shine,
+		.footer-topic__arrow,
+		.footer-topics__cursor-light {
+			transition-duration: 0.01ms;
+		}
+	}
+</style>
+
+<script>
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+	const precisePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+	function initializeFooterTopics() {
+		document.querySelectorAll<HTMLElement>('[data-footer-topics]:not([data-magnetic])').forEach((cloud) => {
+			if (reducedMotion.matches || !precisePointer.matches) {
+				cloud.dataset.magnetic = 'disabled';
+				return;
+			}
+
+			const topics = [...cloud.querySelectorAll<HTMLElement>('[data-footer-topic]')];
+			let frame = 0;
+			let pointerX = 0;
+			let pointerY = 0;
+			let pointerTarget: EventTarget | null = null;
+
+			const render = () => {
+				const cloudRect = cloud.getBoundingClientRect();
+				cloud.style.setProperty('--glow-x', `${pointerX - cloudRect.left}px`);
+				cloud.style.setProperty('--glow-y', `${pointerY - cloudRect.top}px`);
+
+				topics.forEach((topic) => {
+					const topicRect = topic.getBoundingClientRect();
+					const centerX = topicRect.left + topicRect.width / 2;
+					const centerY = topicRect.top + topicRect.height / 2;
+					const deltaX = pointerX - centerX;
+					const deltaY = pointerY - centerY;
+					const distance = Math.max(Math.hypot(deltaX, deltaY), 1);
+					const isHovered = pointerTarget instanceof Node && topic.contains(pointerTarget);
+
+					let offsetX = 0;
+					let offsetY = 0;
+
+					if (isHovered) {
+						offsetX = Math.max(-10, Math.min(10, deltaX * 0.14));
+						offsetY = Math.max(-10, Math.min(10, deltaY * 0.14));
+					} else if (distance < 155) {
+						const depth = Number.parseFloat(getComputedStyle(topic).getPropertyValue('--topic-depth')) || 1;
+						const force = (1 - distance / 155) * 15 * depth;
+						offsetX = -(deltaX / distance) * force;
+						offsetY = -(deltaY / distance) * force;
+					}
+
+					topic.style.setProperty('--topic-offset-x', `${offsetX.toFixed(2)}px`);
+					topic.style.setProperty('--topic-offset-y', `${offsetY.toFixed(2)}px`);
+				});
+
+				frame = 0;
+			};
+
+			cloud.dataset.magnetic = 'ready';
+			cloud.addEventListener('pointermove', (event) => {
+				pointerX = event.clientX;
+				pointerY = event.clientY;
+				pointerTarget = event.target;
+				cloud.dataset.pointerActive = 'true';
+				if (!frame) frame = window.requestAnimationFrame(render);
+			});
+
+			cloud.addEventListener('pointerleave', () => {
+				if (frame) window.cancelAnimationFrame(frame);
+				frame = 0;
+				cloud.dataset.pointerActive = 'false';
+				topics.forEach((topic) => {
+					topic.style.setProperty('--topic-offset-x', '0px');
+					topic.style.setProperty('--topic-offset-y', '0px');
+				});
+			});
+		});
+	}
+
+	document.addEventListener('astro:page-load', initializeFooterTopics);
+	initializeFooterTopics();
+</script>

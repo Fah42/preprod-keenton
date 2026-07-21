@@ -43,22 +43,6 @@
       ]
     },
     {
-      "type": "split",
-      "eyebrow": "Conformité & réglementation",
-      "title": "Des obligations traduites en pratiques applicables",
-      "body": "RGPD, NIS2, exigences clients ou assureurs : seules les obligations qui concernent réellement votre organisation doivent guider la démarche. L'objectif est de produire des règles, des preuves et des habitudes de travail qui restent utiles dans le temps.",
-      "icon": "check-circle",
-      "variant": "list",
-      "points": [
-        "Identifier les exigences réglementaires, contractuelles ou sectorielles qui s'appliquent à votre activité.",
-        "Mesurer les écarts entre les attentes applicables et les pratiques réellement en place.",
-        "Définir les politiques, registres et procédures nécessaires sans multiplier la documentation inutile.",
-        "Conserver les éléments de preuve qui permettent de démontrer les mesures mises en œuvre.",
-        "Associer les équipes concernées pour que les règles soient comprises et intégrées dans les opérations.",
-        "Prévoir des revues régulières afin que la conformité reste alignée sur l'évolution de l'organisation."
-      ]
-    },
-    {
       "type": "capabilities",
       "eyebrow": "Protection du système d'information",
       "title": "Réduire progressivement la surface d'attaque",
@@ -85,6 +69,22 @@
         { "title": "Revue des accès", "text": "Les droits et comptes sensibles sont revus pour détecter les écarts, départs ou privilèges devenus inutiles.", "icon": "lock" },
         { "title": "Réponse à incident", "text": "Les rôles, contacts et premières actions sont préparés pour réagir avec méthode lorsqu'un incident survient.", "icon": "alert-triangle" },
         { "title": "Amélioration continue", "text": "Les enseignements des alertes, incidents et revues alimentent les prochaines priorités de sécurité.", "icon": "chart" }
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Conformité & réglementation",
+      "title": "Des obligations traduites en pratiques applicables",
+      "body": "RGPD, NIS2, exigences clients ou assureurs : seules les obligations qui concernent réellement votre organisation doivent guider la démarche. L'objectif est de produire des règles, des preuves et des habitudes de travail qui restent utiles dans le temps.",
+      "icon": "check-circle",
+      "variant": "list",
+      "points": [
+        "Identifier les exigences réglementaires, contractuelles ou sectorielles qui s'appliquent à votre activité.",
+        "Mesurer les écarts entre les attentes applicables et les pratiques réellement en place.",
+        "Définir les politiques, registres et procédures nécessaires sans multiplier la documentation inutile.",
+        "Conserver les éléments de preuve qui permettent de démontrer les mesures mises en œuvre.",
+        "Associer les équipes concernées pour que les règles soient comprises et intégrées dans les opérations.",
+        "Prévoir des revues régulières afin que la conformité reste alignée sur l'évolution de l'organisation."
       ]
     },
     {
