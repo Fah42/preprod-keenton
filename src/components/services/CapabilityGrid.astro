@@ -1,6 +1,7 @@
 ---
 import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
+import ConceptDetailCard from './ConceptDetailCard.vue';
 
 const { eyebrow, title, body, items = [] } = Astro.props;
 ---
@@ -13,7 +14,9 @@ const { eyebrow, title, body, items = [] } = Astro.props;
       <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
     </header>
     <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {items.map((item) => (
+      {items.map((item, index) => item.detail ? (
+        <ConceptDetailCard item={item} instanceKey={`${item.detail.slug}-${index}`} client:load />
+      ) : (
         <article class="rounded-xl border border-line bg-surface p-6 transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg">
           {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}
           <h3 class="mt-4 font-semibold text-ink">{item.title}</h3>

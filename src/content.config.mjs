@@ -46,10 +46,21 @@ const blog = defineCollection({
 // `expertises.find(e => e.slug === entry.id)`.
 const cta = z.object({ label: z.string(), href: z.string() });
 const contentColumn = z.object({ title: z.string(), items: z.array(z.string()) });
+const conceptDetail = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  eyebrow: z.string(),
+  title: z.string(),
+  introduction: z.string(),
+  flow: z.array(z.string()).length(3),
+  sections: z.array(z.object({ title: z.string(), text: z.string() })),
+  checkpoints: z.array(z.string()),
+  callout: z.string(),
+});
 const serviceItem = z.object({
   title: z.string(),
   text: z.string(),
   icon: z.string().optional(),
+  detail: conceptDetail.optional(),
 });
 
 const services = defineCollection({

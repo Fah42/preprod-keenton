@@ -20,7 +20,39 @@
       "body": "La connectivité soutient vos applications, vos outils collaboratifs et vos échanges avec vos clients. Nous étudions les technologies et les opérateurs adaptés à votre implantation, puis organisons la continuité de service selon vos contraintes.",
       "items": [
         { "title": "Dimensionnement", "text": "Fibre, xDSL ou accès dédié : le choix part des usages, de la zone géographique, de la bande passante attendue et des applications à desservir.", "icon": "chart" },
-        { "title": "Redondance", "text": "Un second lien, actif ou de secours, limite l'impact d'une défaillance opérateur sur votre activité et vos outils externalisés.", "icon": "refresh" },
+        {
+          "title": "Redondance",
+          "text": "Un second lien, actif ou de secours, limite l'impact d'une défaillance opérateur sur votre activité et vos outils externalisés.",
+          "icon": "refresh",
+          "detail": {
+            "slug": "redondance",
+            "eyebrow": "Continuité de service",
+            "title": "La redondance Internet, au-delà du simple lien de secours",
+            "introduction": "La redondance consiste à prévoir un second chemin réellement exploitable lorsque l'accès principal devient indisponible. Elle associe plusieurs liens, une stratégie de bascule et une supervision capable de distinguer une coupure franche d'une dégradation progressive.",
+            "flow": ["Accès principal", "Bascule maîtrisée", "Accès de secours"],
+            "sections": [
+              {
+                "title": "Deux chemins suffisamment indépendants",
+                "text": "Deux abonnements ne suffisent pas s'ils dépendent du même opérateur, du même point de raccordement ou du même chemin physique. L'indépendance réelle des parcours doit être vérifiée dès la conception."
+              },
+              {
+                "title": "Une bascule adaptée aux usages",
+                "text": "La bascule peut être automatique ou supervisée. Les flux critiques, les sessions VPN, la téléphonie et les services publiés doivent conserver un comportement prévisible pendant la transition."
+              },
+              {
+                "title": "Un secours testé, pas seulement installé",
+                "text": "Le lien secondaire, les règles du firewall et les procédures de retour à la normale sont testés régulièrement afin d'éviter de découvrir une dépendance le jour de l'incident."
+              }
+            ],
+            "checkpoints": [
+              "Identifier les applications qui doivent rester accessibles.",
+              "Définir le temps de bascule acceptable pour chaque usage.",
+              "Vérifier l'indépendance des opérateurs et des parcours physiques.",
+              "Superviser les deux liens et documenter le retour à la normale."
+            ],
+            "callout": "La bonne architecture n'est pas celle qui multiplie les liens, mais celle dont le comportement en cas de panne est compris, testé et documenté."
+          }
+        },
         { "title": "Rétablissement", "text": "Les engagements de rétablissement sont étudiés en fonction du caractère critique de vos accès et des conséquences d'une interruption.", "icon": "clock" },
         { "title": "Interconnexion", "text": "Vos sites peuvent communiquer de manière sécurisée tout en conservant des accès Internet adaptés à chaque implantation.", "icon": "link" },
         { "title": "Sécurisation", "text": "Firewall administré, ou architecture redondée lorsque le besoin le justifie : les flux sont filtrés et les règles restent documentées.", "icon": "shield" },
