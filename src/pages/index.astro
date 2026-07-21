@@ -112,6 +112,18 @@ const faqSchema = {
 	<HomePhilosophyVariants {...philosophy} />
 	<ReferenceCarouselVariants items={references} />
 
+	{commercialSections.map(({ backgroundColor, titleColor, textColor, buttonVariant }) => (
+		<CTASection
+			{...finalCta}
+			backgroundColor={backgroundColor}
+			titleColor={titleColor}
+			textColor={textColor}
+			buttonVariant={buttonVariant}
+		/>
+	))}
+
+	<FAQSection items={faq} />
+
 	{
 		posts.length > 0 && (
 			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="muted" spacing="tight" class="border-y border-line">
@@ -128,17 +140,4 @@ const faqSchema = {
 			</Section>
 		)
 	}
-
-	<FAQSection items={faq} />
-
-	<CTASection {...finalCta} />
-	{commercialSections.map(({ backgroundColor, titleColor, textColor, buttonVariant }) => (
-		<CTASection
-			{...finalCta}
-			backgroundColor={backgroundColor}
-			titleColor={titleColor}
-			textColor={textColor}
-			buttonVariant={buttonVariant}
-		/>
-	))}
 </BaseLayout>
