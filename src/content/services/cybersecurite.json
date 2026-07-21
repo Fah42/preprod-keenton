@@ -19,6 +19,10 @@
       "title": "Une sécurité pilotée, pas une succession de réactions",
       "body": "La sécurité ne peut pas reposer sur les seuls incidents. Nous aidons à construire une gouvernance adaptée à votre activité afin que les responsabilités, les priorités et les décisions restent compréhensibles pour l'ensemble de l'organisation.",
       "icon": "award",
+      "image": {
+        "src": "/images/cybersecurite/risques-connus-caches.webp",
+        "alt": "Dragon rouge dominant un iceberg représentant les risques connus et les risques cachés"
+      },
       "variant": "list",
       "points": [
         "Définir les responsabilités et les rôles qui permettent de prendre les bonnes décisions au bon niveau.",
@@ -77,6 +81,10 @@
       "title": "Des obligations traduites en pratiques applicables",
       "body": "RGPD, NIS2, exigences clients ou assureurs : seules les obligations qui concernent réellement votre organisation doivent guider la démarche. L'objectif est de produire des règles, des preuves et des habitudes de travail qui restent utiles dans le temps.",
       "icon": "check-circle",
+      "image": {
+        "src": "/images/cybersecurite/protection-systeme-information.webp",
+        "alt": "Dragon rouge entouré d'icônes représentant les protections du système d'information"
+      },
       "variant": "list",
       "points": [
         "Identifier les exigences réglementaires, contractuelles ou sectorielles qui s'appliquent à votre activité.",

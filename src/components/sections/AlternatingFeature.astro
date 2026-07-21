@@ -8,7 +8,7 @@ import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
 import PlaceholderVisual from '../ui/PlaceholderVisual.astro';
 
-const { eyebrow, title, body, icon, reverse = false, variant = 'simple', points = [], stats = [], columns = [] } = Astro.props;
+const { eyebrow, title, body, icon, image, reverse = false, variant = 'simple', points = [], stats = [], columns = [] } = Astro.props;
 ---
 
 <section class:list={['py-14 md:py-20', reverse ? 'bg-surface-alt' : 'bg-surface']}>
@@ -20,7 +20,20 @@ const { eyebrow, title, body, icon, reverse = false, variant = 'simple', points 
 			]}
 		>
 			<div class="lg:w-[30%]">
-				<PlaceholderVisual icon={icon} />
+				{image ? (
+					<img
+						src={image.src}
+						alt={image.alt}
+						width="1200"
+						height="900"
+						loading="lazy"
+						decoding="async"
+						class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
+						style="border-color: color-mix(in srgb, var(--cat-accent) 35%, white)"
+					/>
+				) : (
+					<PlaceholderVisual icon={icon} />
+				)}
 			</div>
 			<div class="lg:w-[70%]">
 				{eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}

@@ -35,11 +35,9 @@ const blog = defineCollection({
 // rendues par la route dynamique src/pages/expertises/[slug].astro. Un futur
 // CMS pourra editer ces fichiers sans toucher aux composants.
 //
-// Squelette valide par Jeremy : hero avec illustration ("creature", pas
-// encore fournie -- cf PlaceholderVisual) + N sections alternees
-// visuel/texte (CategoryHero + AlternatingFeature). Pas de champ `image` sur
-// les sections : contenu 100% lorem ipsum pour cette passe, la redaction
-// reelle + les vraies illustrations viendront dans une passe ulterieure.
+// Squelette valide par Jeremy : hero avec illustration + N sections alternees
+// visuel/texte (CategoryHero + AlternatingFeature). Une section peut fournir
+// une image reelle ; sans image, le gabarit conserve PlaceholderVisual.
 //
 // Pas de `title` ni `accentColor` ici : ces deux champs existent deja dans
 // `expertises` (src/data/site.js), source unique de verite pour tout ce qui
@@ -72,6 +70,7 @@ const services = defineCollection({
         title: z.string(),
         body: z.string(),
         icon: z.string().optional(),
+        image: z.object({ src: z.string(), alt: z.string() }).optional(),
         type: z.enum(['split', 'capabilities', 'process', 'decision', 'spotlight', 'checklist', 'mosaic']).default('split'),
         eyebrow: z.string().optional(),
         items: z.array(serviceItem).default([]),
