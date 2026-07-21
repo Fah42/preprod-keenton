@@ -132,7 +132,13 @@ const faqSchema = {
 	<FAQSection items={faq} />
 
 	<CTASection {...finalCta} />
-	{commercialSections.map(({ backgroundColor, textColor }) => (
-		<CTASection {...finalCta} backgroundColor={backgroundColor} textColor={textColor} />
+	{commercialSections.map(({ backgroundColor, titleColor, textColor, buttonVariant }) => (
+		<CTASection
+			{...finalCta}
+			backgroundColor={backgroundColor}
+			titleColor={titleColor}
+			textColor={textColor}
+			buttonVariant={buttonVariant}
+		/>
 	))}
 </BaseLayout>

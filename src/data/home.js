@@ -238,5 +238,10 @@ export const finalCta = {
 };
 
 export const commercialSections = [
-  { backgroundColor: '#1B7196', textColor: '#FFFFFF' },
+  {
+    backgroundColor: '#FFCE6B',
+    titleColor: '#0A1A33',
+    textColor: '#0A1A33',
+    buttonVariant: 'light',
+  },
 ];
