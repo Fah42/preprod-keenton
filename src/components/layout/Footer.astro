@@ -5,15 +5,15 @@ import { site, expertises } from '../../data/site.js';
 const year = new Date().getFullYear();
 
 const blogTopics = [
-	{ label: 'Cloud hybride', href: '/blog/migrer-cloud-hybride', accent: '#1565C0', size: 'lg', x: 24, y: 10, depth: 0.9, delay: '-1.4s', duration: '6.8s' },
-	{ label: 'Sauvegarde & PRA', href: '/blog/sauvegarde-3-2-1', accent: '#1565C0', size: 'sm', x: 76, y: 10, depth: 0.7, delay: '-4.2s', duration: '7.6s' },
-	{ label: 'Kubernetes & GitOps', href: '/blog/kubecon-amsterdam-2026', accent: '#B87333', size: 'md', x: 33, y: 32, depth: 1, delay: '-2.7s', duration: '8.2s' },
-	{ label: 'CI/CD', href: '/blog/cicd-industrialiser-deploiements', accent: '#B87333', size: 'sm', x: 79, y: 32, depth: 0.65, delay: '-5.1s', duration: '6.4s' },
-	{ label: 'Agents IA', href: '/blog/agents-ia-sans-perdre-controle', accent: '#6F2DBD', size: 'sm', x: 24, y: 54, depth: 0.75, delay: '-0.8s', duration: '7.2s' },
-	{ label: 'IA souveraine', href: '/blog/gero-ia-souveraine', accent: '#6F2DBD', size: 'md', x: 70, y: 54, depth: 1, delay: '-3.6s', duration: '8.6s' },
-	{ label: 'Cybersécurité', href: '/blog/signaux-attaque', accent: '#DC2626', size: 'sm', x: 22, y: 76, depth: 0.8, delay: '-6.1s', duration: '7.8s' },
-	{ label: 'Infogérance 24/7', href: '/blog/infogerance-24-7', accent: '#E6A700', size: 'md', x: 75, y: 76, depth: 0.9, delay: '-2.1s', duration: '6.9s' },
-	{ label: 'Microsoft 365', href: '/blog/copilot-microsoft-365', accent: '#00A4EF', size: 'sm', x: 50, y: 95, depth: 0.7, delay: '-4.8s', duration: '8s' },
+	{ label: 'Cloud hybride', href: '/blog/migrer-cloud-hybride', accent: '#1565C0', size: 'lg', x: 24, y: 10 },
+	{ label: 'Sauvegarde & PRA', href: '/blog/sauvegarde-3-2-1', accent: '#1565C0', size: 'sm', x: 76, y: 10 },
+	{ label: 'Kubernetes & GitOps', href: '/blog/kubecon-amsterdam-2026', accent: '#B87333', size: 'md', x: 33, y: 32 },
+	{ label: 'CI/CD', href: '/blog/cicd-industrialiser-deploiements', accent: '#B87333', size: 'sm', x: 79, y: 32 },
+	{ label: 'Agents IA', href: '/blog/agents-ia-sans-perdre-controle', accent: '#6F2DBD', size: 'sm', x: 24, y: 54 },
+	{ label: 'IA souveraine', href: '/blog/gero-ia-souveraine', accent: '#6F2DBD', size: 'md', x: 70, y: 54 },
+	{ label: 'Cybersécurité', href: '/blog/signaux-attaque', accent: '#DC2626', size: 'sm', x: 22, y: 76 },
+	{ label: 'Infogérance 24/7', href: '/blog/infogerance-24-7', accent: '#E6A700', size: 'md', x: 75, y: 76 },
+	{ label: 'Microsoft 365', href: '/blog/copilot-microsoft-365', accent: '#00A4EF', size: 'sm', x: 50, y: 95 },
 ];
 ---
 
@@ -59,11 +59,6 @@ const blogTopics = [
 					<li><a href="/" class="text-sm text-white/85 transition-colors hover:text-white">Accueil</a></li>
 					<li><a href="/blog" class="text-sm text-white/85 transition-colors hover:text-white">Blog</a></li>
 					<li><a href="/contact" class="text-sm text-white/85 transition-colors hover:text-white">Contact</a></li>
-					<li>
-						<a href={site.cta.href} class="text-sm font-medium text-accent-light transition-colors hover:text-white">
-							{site.cta.label}
-						</a>
-					</li>
 				</ul>
 			</nav>
 
@@ -72,23 +67,20 @@ const blogTopics = [
 					Explorer nos sujets
 				</h2>
 
-				<div class="footer-topics relative mt-4 h-[14.5rem] overflow-hidden p-3" data-footer-topics>
+				<div class="footer-topics relative mt-4 h-[14.5rem] overflow-hidden p-3">
 					<ul class="footer-topic-cloud relative z-10 h-full" aria-label="Sujets du blog">
 						{
 							blogTopics.map((topic) => (
 								<li
 									class="footer-topic__item"
-									data-footer-topic
-									style={`--topic-accent: ${topic.accent}; --topic-x: ${topic.x}%; --topic-y: ${topic.y}%; --topic-depth: ${topic.depth}; --topic-delay: ${topic.delay}; --topic-duration: ${topic.duration}`}
+									style={`--topic-accent: ${topic.accent}; --topic-x: ${topic.x}%; --topic-y: ${topic.y}%`}
 								>
-									<div class="footer-topic__float">
-										<a href={topic.href} class:list={['footer-topic group', `footer-topic--${topic.size}`]}>
-											<span class="footer-topic__shine" aria-hidden="true"></span>
-											<span class="footer-topic__dot" aria-hidden="true"></span>
-											<span class="relative">{topic.label}</span>
-											<span class="footer-topic__arrow relative" aria-hidden="true">↗</span>
-										</a>
-									</div>
+									<a href={topic.href} class:list={['footer-topic group', `footer-topic--${topic.size}`]}>
+										<span class="footer-topic__shine" aria-hidden="true"></span>
+										<span class="footer-topic__dot" aria-hidden="true"></span>
+										<span class="relative">{topic.label}</span>
+										<span class="footer-topic__arrow relative" aria-hidden="true">↗</span>
+									</a>
 								</li>
 							))
 						}
@@ -109,13 +101,7 @@ const blogTopics = [
 		position: absolute;
 		left: var(--topic-x);
 		top: var(--topic-y);
-		transform: translate(-50%, -50%) translate3d(var(--topic-offset-x, 0px), var(--topic-offset-y, 0px), 0);
-		transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
-		will-change: transform;
-	}
-
-	.footer-topic__float {
-		animation: footer-topic-drift var(--topic-duration) ease-in-out var(--topic-delay) infinite;
+		transform: translate(-50%, -50%);
 	}
 
 	.footer-topic {
@@ -128,11 +114,13 @@ const blogTopics = [
 		border: 1px solid color-mix(in srgb, var(--topic-accent) 42%, rgb(255 255 255 / 0.12));
 		border-radius: 9999px;
 		background: linear-gradient(145deg, color-mix(in srgb, var(--topic-accent) 10%, transparent), rgb(255 255 255 / 0.025));
-		color: rgb(255 255 255 / 0.82);
+		color: white;
 		font-weight: 600;
 		letter-spacing: -0.01em;
-		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 0 0 transparent;
-		transition: color 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+		box-shadow: none;
+		filter: none;
+		text-shadow: none;
+		transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
 	}
 
 	.footer-topic--sm {
@@ -166,7 +154,7 @@ const blogTopics = [
 		flex: none;
 		border-radius: 9999px;
 		background: var(--topic-accent);
-		box-shadow: 0 0 0 2px color-mix(in srgb, var(--topic-accent) 7.5%, transparent), 0 0 10px color-mix(in srgb, var(--topic-accent) 35%, transparent);
+		box-shadow: 0 0 0 2px color-mix(in srgb, var(--topic-accent) 12%, transparent);
 	}
 
 	.footer-topic__arrow {
@@ -179,11 +167,7 @@ const blogTopics = [
 		border-color: color-mix(in srgb, var(--topic-accent) 82%, white);
 		background: linear-gradient(145deg, color-mix(in srgb, var(--topic-accent) 20%, transparent), rgb(255 255 255 / 0.055));
 		color: white;
-		box-shadow:
-			inset 0 1px 0 rgb(255 255 255 / 0.12),
-			0 0 0 1px color-mix(in srgb, var(--topic-accent) 10%, transparent),
-			0 8px 22px color-mix(in srgb, var(--topic-accent) 12%, transparent);
-		transform: translateY(-0.12rem) scale(1.035);
+		box-shadow: none;
 	}
 
 	.footer-topic:focus-visible {
@@ -203,17 +187,7 @@ const blogTopics = [
 		transform: translate(0.1rem, -0.1rem);
 	}
 
-	@keyframes footer-topic-drift {
-		0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.2deg); }
-		50% { transform: translate3d(0, -0.28rem, 0) rotate(0.25deg); }
-	}
-
 	@media (prefers-reduced-motion: reduce) {
-		.footer-topic__float {
-			animation: none;
-		}
-
-		.footer-topic__item,
 		.footer-topic,
 		.footer-topic__shine,
 		.footer-topic__arrow {
@@ -221,73 +195,3 @@ const blogTopics = [
 		}
 	}
 </style>
-
-<script>
-	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-	const precisePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-
-	function initializeFooterTopics() {
-		document.querySelectorAll<HTMLElement>('[data-footer-topics]:not([data-magnetic])').forEach((cloud) => {
-			if (reducedMotion.matches || !precisePointer.matches) {
-				cloud.dataset.magnetic = 'disabled';
-				return;
-			}
-
-			const topics = [...cloud.querySelectorAll<HTMLElement>('[data-footer-topic]')];
-			let frame = 0;
-			let pointerX = 0;
-			let pointerY = 0;
-			let pointerTarget: EventTarget | null = null;
-
-			const render = () => {
-				topics.forEach((topic) => {
-					const topicRect = topic.getBoundingClientRect();
-					const centerX = topicRect.left + topicRect.width / 2;
-					const centerY = topicRect.top + topicRect.height / 2;
-					const deltaX = pointerX - centerX;
-					const deltaY = pointerY - centerY;
-					const distance = Math.max(Math.hypot(deltaX, deltaY), 1);
-					const isHovered = pointerTarget instanceof Node && topic.contains(pointerTarget);
-
-					let offsetX = 0;
-					let offsetY = 0;
-
-					if (isHovered) {
-						offsetX = Math.max(-10, Math.min(10, deltaX * 0.14));
-						offsetY = Math.max(-10, Math.min(10, deltaY * 0.14));
-					} else if (distance < 155) {
-						const depth = Number.parseFloat(getComputedStyle(topic).getPropertyValue('--topic-depth')) || 1;
-						const force = (1 - distance / 155) * 15 * depth;
-						offsetX = -(deltaX / distance) * force;
-						offsetY = -(deltaY / distance) * force;
-					}
-
-					topic.style.setProperty('--topic-offset-x', `${offsetX.toFixed(2)}px`);
-					topic.style.setProperty('--topic-offset-y', `${offsetY.toFixed(2)}px`);
-				});
-
-				frame = 0;
-			};
-
-			cloud.dataset.magnetic = 'ready';
-			cloud.addEventListener('pointermove', (event) => {
-				pointerX = event.clientX;
-				pointerY = event.clientY;
-				pointerTarget = event.target;
-				if (!frame) frame = window.requestAnimationFrame(render);
-			});
-
-			cloud.addEventListener('pointerleave', () => {
-				if (frame) window.cancelAnimationFrame(frame);
-				frame = 0;
-				topics.forEach((topic) => {
-					topic.style.setProperty('--topic-offset-x', '0px');
-					topic.style.setProperty('--topic-offset-y', '0px');
-				});
-			});
-		});
-	}
-
-	document.addEventListener('astro:page-load', initializeFooterTopics);
-	initializeFooterTopics();
-</script>

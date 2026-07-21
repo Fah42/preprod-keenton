@@ -95,7 +95,7 @@ const showPhilosophyProposal03 = false;
 )}
 
 <!-- Principes regroupés par intention : navy abysse, champ aurora, cartes opaques -->
-<section class="relative overflow-hidden pt-12 pb-16 text-dark-text md:pt-14 md:pb-20" style="background-color: #2A3033;">
+<section class="relative overflow-hidden bg-linear-to-b from-footer-from to-footer-to pt-12 pb-16 text-dark-text md:pt-14 md:pb-20">
   <div class="bg-grid-dark grid-masked pointer-events-none absolute inset-0" aria-hidden="true"></div>
   <Container class="relative">
 	<header class="mb-12 max-w-6xl md:mb-16" data-reveal>
@@ -113,7 +113,7 @@ const showPhilosophyProposal03 = false;
           </div>
           <div class="grid gap-4 md:grid-cols-3">
             {group.items.map((principle, index) => (
-              <article class="aurora-border aurora-border--hover relative min-h-64 overflow-hidden rounded-xl p-7 transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0" style="--aurora-bg: linear-gradient(#3A454A, #3A454A);">
+              <article class="aurora-border aurora-border--hover relative min-h-64 overflow-hidden rounded-xl p-7 transition duration-200 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0" style="--aurora-bg: linear-gradient(145deg, color-mix(in srgb, var(--color-footer-from) 82%, var(--color-accent) 18%), color-mix(in srgb, var(--color-footer-from) 92%, white 8%));">
                 <span class="relative flex h-9 w-9 items-center justify-center rounded-md border border-accent-light/60 text-accent-light">
                   <Icon name={principleIcons[(groupIndex * 3) + index]} class="h-4.5 w-4.5" />
                 </span>
