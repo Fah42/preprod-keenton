@@ -29,7 +29,7 @@ const { eyebrow, title, body, icon, image, reverse = false, variant = 'simple', 
 						loading="lazy"
 						decoding="async"
 						class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
-						style="border-color: color-mix(in srgb, var(--cat-accent) 35%, white)"
+						style="border-color: var(--feature-image-border-color, color-mix(in srgb, var(--cat-accent) 35%, white)); padding: var(--feature-image-padding, 0);"
 					/>
 				) : (
 					<PlaceholderVisual icon={icon} />

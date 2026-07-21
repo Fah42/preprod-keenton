@@ -12,8 +12,8 @@ const { title, text, cta, backgroundColor, titleColor, textColor, buttonVariant 
 	class="relative overflow-hidden bg-dark text-dark-text"
 	style={backgroundColor ? `background-color: ${backgroundColor}` : undefined}
 >
-	<div class="glow-accent pointer-events-none absolute inset-0" aria-hidden="true"></div>
-	<div class="bg-grid-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(46rem_28rem_at_50%_45%,black,transparent_78%)]" aria-hidden="true"></div>
+	{!backgroundColor && <div class="glow-accent pointer-events-none absolute inset-0" aria-hidden="true"></div>}
+	{!backgroundColor && <div class="bg-grid-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(46rem_28rem_at_50%_45%,black,transparent_78%)]" aria-hidden="true"></div>}
 	<Container class="relative py-20 text-center md:py-28">
 		<h2
 			class="display-title mx-auto max-w-5xl text-[clamp(2.05rem,4vw,3.2rem)] text-white"

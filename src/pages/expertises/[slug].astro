@@ -80,6 +80,11 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 		border-color: color-mix(in srgb, var(--cat-accent) 18%, transparent);
 	}
 
+	.expertise-page--cybersecurite {
+		--feature-image-border-color: color-mix(in srgb, var(--cat-accent) 24.5%, white);
+		--feature-image-padding: clamp(1rem, 2.2vw, 1.75rem);
+	}
+
 	.expertise-page[class*='expertise-page--'] .service-block[data-service-type='capabilities'] section {
 		background: linear-gradient(135deg, color-mix(in srgb, var(--cat-accent) 7%, white), white 54%);
 	}
