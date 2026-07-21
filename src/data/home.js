@@ -130,13 +130,6 @@ export const expertiseHighlights = {
   },
 };
 
-export const configuratorPromo = {
-  eyebrow: 'Le configurateur',
-  title: 'Préparez un premier périmètre en quelques étapes',
-  text: "Décrivez votre entreprise, sélectionnez les services utiles et précisez vos attentes de sécurité et de supervision. Un ingénieur reprend ensuite ce brief avec vous.",
-  cta: { label: 'Composer mon accompagnement', href: '/configurateur' },
-};
-
 export const faq = [
   { question: 'Pouvez-vous reprendre une infrastructure existante ?', answer: "Oui. Nous commençons par cartographier l'existant, ses dépendances et les responsabilités en place avant de proposer une trajectoire de reprise progressive." },
   { question: 'Intervenez-vous à distance ou sur site ?', answer: "Les opérations courantes peuvent être réalisées à distance. Les études sur site, installations et interventions qui le nécessitent sont organisées selon le périmètre." },
@@ -243,3 +236,9 @@ export const finalCta = {
   text: 'Décrivez-nous votre situation : nous vous répondrons avec un avis technique honnête, pas avec une plaquette commerciale.',
   cta: { label: 'Parler de votre projet', href: '/contact' },
 };
+
+export const commercialSections = [
+  { backgroundColor: '#486D7D', textColor: '#FFFFFF' },
+  { backgroundColor: '#29AAE3', textColor: '#FFFFFF' },
+  { backgroundColor: '#438FB0', textColor: '#FFFFFF' },
+];

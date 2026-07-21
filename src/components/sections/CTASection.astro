@@ -5,17 +5,23 @@
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 
-const { title, text, cta } = Astro.props;
+const { title, text, cta, backgroundColor, textColor } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-dark text-dark-text">
+<section
+	class="relative overflow-hidden bg-dark text-dark-text"
+	style={backgroundColor ? `background-color: ${backgroundColor}` : undefined}
+>
 	<div class="glow-accent pointer-events-none absolute inset-0" aria-hidden="true"></div>
 	<div class="bg-grid-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(46rem_28rem_at_50%_45%,black,transparent_78%)]" aria-hidden="true"></div>
 	<Container class="relative py-20 text-center md:py-28">
 		<h2 class="display-title mx-auto max-w-5xl text-[clamp(2.05rem,4vw,3.2rem)] text-white">
 			{title}
 		</h2>
-		<p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dark-text-secondary md:text-lg">{text}</p>
+		<p
+			class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dark-text-secondary md:text-lg"
+			style={textColor ? `color: ${textColor}` : undefined}
+		>{text}</p>
 		<div class="mt-10">
 			<Button href={cta.href} variant="primary" arrow>{cta.label}</Button>
 		</div>

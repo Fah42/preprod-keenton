@@ -72,12 +72,7 @@ const blogTopics = [
 					Explorer nos sujets
 				</h2>
 
-				<div class="footer-topics relative mt-4 h-[14.5rem] overflow-hidden rounded-2xl p-3" data-footer-topics>
-					<div class="footer-topics__grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
-					<div class="footer-topics__aurora footer-topics__aurora--left pointer-events-none absolute" aria-hidden="true"></div>
-					<div class="footer-topics__aurora footer-topics__aurora--right pointer-events-none absolute" aria-hidden="true"></div>
-					<div class="footer-topics__cursor-light pointer-events-none absolute" aria-hidden="true"></div>
-
+				<div class="footer-topics relative mt-4 h-[14.5rem] overflow-hidden p-3" data-footer-topics>
 					<ul class="footer-topic-cloud relative z-10 h-full" aria-label="Sujets du blog">
 						{
 							blogTopics.map((topic) => (
@@ -110,58 +105,6 @@ const blogTopics = [
 </footer>
 
 <style>
-	.footer-topics {
-		--glow-x: 50%;
-		--glow-y: 50%;
-		border: 1px solid rgb(127 212 255 / 0.16);
-		background: linear-gradient(145deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.018));
-		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 20px 50px rgb(0 0 0 / 0.18);
-	}
-
-	.footer-topics__grid {
-		background-image:
-			linear-gradient(to right, rgb(127 212 255 / 0.04) 1px, transparent 1px),
-			linear-gradient(to bottom, rgb(127 212 255 / 0.04) 1px, transparent 1px);
-		background-size: 1.5rem 1.5rem;
-		mask-image: radial-gradient(ellipse at center, black 8%, transparent 78%);
-	}
-
-	.footer-topics__aurora {
-		width: 12rem;
-		height: 12rem;
-		border-radius: 9999px;
-		filter: blur(54px);
-		opacity: 0.065;
-	}
-
-	.footer-topics__aurora--left {
-		top: -7rem;
-		left: -4rem;
-		background: #29aae3;
-	}
-
-	.footer-topics__aurora--right {
-		right: -4rem;
-		bottom: -7rem;
-		background: #6f2dbd;
-	}
-
-	.footer-topics__cursor-light {
-		left: var(--glow-x);
-		top: var(--glow-y);
-		width: 11rem;
-		height: 11rem;
-		border-radius: 9999px;
-		background: radial-gradient(circle, rgb(127 212 255 / 0.09), transparent 68%);
-		opacity: 0;
-		transform: translate(-50%, -50%);
-		transition: left 90ms linear, top 90ms linear, opacity 260ms ease;
-	}
-
-	.footer-topics[data-pointer-active='true'] .footer-topics__cursor-light {
-		opacity: 0.35;
-	}
-
 	.footer-topic__item {
 		position: absolute;
 		left: var(--topic-x);
@@ -273,8 +216,7 @@ const blogTopics = [
 		.footer-topic__item,
 		.footer-topic,
 		.footer-topic__shine,
-		.footer-topic__arrow,
-		.footer-topics__cursor-light {
+		.footer-topic__arrow {
 			transition-duration: 0.01ms;
 		}
 	}
@@ -298,10 +240,6 @@ const blogTopics = [
 			let pointerTarget: EventTarget | null = null;
 
 			const render = () => {
-				const cloudRect = cloud.getBoundingClientRect();
-				cloud.style.setProperty('--glow-x', `${pointerX - cloudRect.left}px`);
-				cloud.style.setProperty('--glow-y', `${pointerY - cloudRect.top}px`);
-
 				topics.forEach((topic) => {
 					const topicRect = topic.getBoundingClientRect();
 					const centerX = topicRect.left + topicRect.width / 2;
@@ -336,14 +274,12 @@ const blogTopics = [
 				pointerX = event.clientX;
 				pointerY = event.clientY;
 				pointerTarget = event.target;
-				cloud.dataset.pointerActive = 'true';
 				if (!frame) frame = window.requestAnimationFrame(render);
 			});
 
 			cloud.addEventListener('pointerleave', () => {
 				if (frame) window.cancelAnimationFrame(frame);
 				frame = 0;
-				cloud.dataset.pointerActive = 'false';
 				topics.forEach((topic) => {
 					topic.style.setProperty('--topic-offset-x', '0px');
 					topic.style.setProperty('--topic-offset-y', '0px');

@@ -22,9 +22,6 @@ import { site, mainNav } from '../../data/site.js';
 
 		<div class="flex items-center gap-2">
 			<div class="hidden items-center gap-2 md:flex">
-				<Button href={site.configuratorCta.href} variant="dark" class="px-5 py-2.5">
-					{site.configuratorCta.label}
-				</Button>
 				<Button href={site.cta.href} variant="primary" arrow class="px-5 py-2.5">
 					{site.cta.label}
 				</Button>
@@ -32,7 +29,6 @@ import { site, mainNav } from '../../data/site.js';
 			<MobileNav
 				items={mainNav}
 				cta={site.cta}
-				configuratorCta={site.configuratorCta}
 				client:media="(max-width: 767px)"
 			/>
 		</div>

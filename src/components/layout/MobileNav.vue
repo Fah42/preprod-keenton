@@ -4,7 +4,6 @@ import { ref, watch, onBeforeUnmount } from 'vue';
 defineProps({
   items: { type: Array, required: true },
   cta: { type: Object, required: true },
-  configuratorCta: { type: Object, required: true },
 });
 
 const open = ref(false);
@@ -65,15 +64,8 @@ onBeforeUnmount(() => {
         </a>
       </template>
       <a
-        :href="configuratorCta.href"
-        class="mt-8 inline-flex items-center justify-center rounded-lg bg-night px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-ink"
-        @click="open = false"
-      >
-        {{ configuratorCta.label }}
-      </a>
-      <a
         :href="cta.href"
-        class="mt-3 inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+        class="mt-8 inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
         @click="open = false"
       >
         {{ cta.label }}

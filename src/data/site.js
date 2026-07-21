@@ -21,10 +21,6 @@ export const site = {
     label: 'Parler de votre projet',
     href: '/contact',
   },
-  configuratorCta: {
-    label: 'Configurateur',
-    href: '/configurateur',
-  },
 };
 
 export const expertises = [
