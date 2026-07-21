@@ -58,6 +58,7 @@ const conceptDetail = z.object({
 });
 const serviceItem = z.object({
   title: z.string(),
+  subtitle: z.string().optional(),
   text: z.string(),
   icon: z.string().optional(),
   detail: conceptDetail.optional(),
