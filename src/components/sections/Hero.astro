@@ -79,11 +79,44 @@ const currentYear = new Date().getFullYear();
 								<div class="min-w-0">
 									<p class="font-heading text-base font-semibold leading-snug text-ink">
 										{
-											uptimeYears !== undefined ? (
+											item.metrics ? (
+												<>
+													<span aria-hidden="true">
+														SLA{' '}
+														<span
+															class="tabular-nums"
+															data-animated-counter
+															data-counter-decimals="2"
+															data-counter-kind="percent"
+															data-counter-target={item.metrics.sla}
+														>
+															99,99%
+														</span>
+														, Passion{' '}
+														<span
+															class="tabular-nums"
+															data-animated-counter
+															data-counter-decimals="0"
+															data-counter-kind="percent"
+															data-counter-target={item.metrics.passion}
+														>
+															300%
+														</span>
+													</span>
+													<span class="sr-only">{item.title}</span>
+												</>
+											) : uptimeYears !== undefined ? (
 												<>
 													<span aria-hidden="true">
 														<span class="block lg:whitespace-nowrap">
-															<span class="tabular-nums" data-uptime-counter data-target={uptimeYears}>
+															<span
+																class="tabular-nums"
+																data-animated-counter
+																data-counter-decimals="0"
+																data-counter-kind="years"
+																data-counter-target={uptimeYears}
+																data-uptime-counter
+															>
 																{uptimeYears} ans
 															</span>{' '}
 															{displayLines[0]}
@@ -117,31 +150,40 @@ const currentYear = new Date().getFullYear();
 </section>
 
 <script>
-	function initializeUptimeCounters() {
-		const counters = document.querySelectorAll('[data-uptime-counter]');
+	function initializeAnimatedCounters() {
+		const counters = document.querySelectorAll('[data-animated-counter]');
 		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 		const animate = (counter) => {
 			if (!(counter instanceof HTMLElement) || counter.dataset.animated === 'true') return;
 
-			const target = Number(counter.dataset.target ?? 0);
+			const target = Number(counter.dataset.counterTarget ?? 0);
+			const decimals = Number(counter.dataset.counterDecimals ?? 0);
+			const kind = counter.dataset.counterKind;
+			const formatNumber = (value) =>
+				value.toLocaleString('fr-FR', {
+					minimumFractionDigits: decimals,
+					maximumFractionDigits: decimals,
+				});
 			const formatYears = (years) => `${years} ${years === 1 ? 'an' : 'ans'}`;
+			const formatValue = (value) => kind === 'years' ? formatYears(value) : `${formatNumber(value)}%`;
 			counter.dataset.animated = 'true';
 
 			if (reduceMotion || target <= 0) {
-				counter.textContent = formatYears(target);
+				counter.textContent = formatValue(target);
 				return;
 			}
 
-			counter.textContent = formatYears(0);
-			const duration = 5000;
+			counter.textContent = formatValue(0);
+			const duration = 2500;
 			let startedAt;
 
 			const tick = (timestamp) => {
 				startedAt ??= timestamp;
 				const progress = Math.min((timestamp - startedAt) / duration, 1);
-				const elapsedYears = Math.min(target, Math.floor(target * progress));
-				counter.textContent = formatYears(progress < 1 ? elapsedYears : target);
+				const factor = 10 ** decimals;
+				const currentValue = Math.min(target, Math.floor(target * progress * factor) / factor);
+				counter.textContent = formatValue(progress < 1 ? currentValue : target);
 
 				if (progress < 1) requestAnimationFrame(tick);
 			};
@@ -168,6 +210,6 @@ const currentYear = new Date().getFullYear();
 		counters.forEach((counter) => observer.observe(counter));
 	}
 
-	document.addEventListener('astro:page-load', initializeUptimeCounters);
-	initializeUptimeCounters();
+	document.addEventListener('astro:page-load', initializeAnimatedCounters);
+	initializeAnimatedCounters();
 </script>

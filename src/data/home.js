@@ -25,7 +25,11 @@ export const expertisesSection = {
 };
 
 export const reassurance = [
-  { icon: 'award', title: 'SLA 99,99%, Passion 300%' },
+  {
+    icon: 'award',
+    title: 'SLA 99,99%, Passion 300%',
+    metrics: { sla: 99.99, passion: 300 },
+  },
   {
     icon: 'crown',
     title: 'Chez nous, le ROI porte la couronne',
