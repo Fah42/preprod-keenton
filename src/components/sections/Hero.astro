@@ -8,6 +8,7 @@ import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 
 const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlights = [] } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <section class="relative overflow-hidden border-b border-line bg-surface">
@@ -65,21 +66,108 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 			<div class="relative">
 				<div class="absolute inset-x-0 top-0 h-px bg-line" aria-hidden="true" />
 				<Container>
-					<ul class="grid grid-cols-2 divide-line md:grid-cols-4 md:divide-x">
-						{highlights.map((item) => (
-							<li class="flex items-start gap-3 px-0 py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+					<ul class="grid auto-rows-fr grid-cols-2 items-stretch divide-line md:grid-cols-4 md:divide-x">
+						{highlights.map((item) => {
+							const uptimeYears = item.foundedYear ? Math.max(0, currentYear - item.foundedYear) : undefined;
+							const displayLines = item.displayLines ?? [item.title];
+
+							return (
+							<li class="flex min-h-[7.5rem] flex-col items-center justify-center gap-2 px-3 py-4 text-center sm:px-4 lg:min-h-[7rem] lg:flex-row lg:justify-start lg:gap-3 lg:px-6 lg:text-left">
 								<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent-dark">
 									<Icon name={item.icon} class="h-4 w-4" />
 								</span>
-								<div>
-									<p class="font-heading text-base font-semibold text-ink">{item.title}</p>
-									<p class="mt-1 text-sm leading-relaxed text-ink-secondary">{item.text}</p>
+								<div class="min-w-0">
+									<p class="font-heading text-base font-semibold leading-snug text-ink">
+										{
+											uptimeYears !== undefined ? (
+												<>
+													<span aria-hidden="true">
+														<span class="block lg:whitespace-nowrap">
+															<span class="tabular-nums" data-uptime-counter data-target={uptimeYears}>
+																{uptimeYears} ans
+															</span>{' '}
+															{displayLines[0]}
+														</span>
+														{displayLines.slice(1).map((line) => <span class="block lg:whitespace-nowrap">{line}</span>)}
+													</span>
+													<span class="sr-only">{uptimeYears} ans {item.title}</span>
+												</>
+											) : item.displayLines ? (
+												<>
+													<span aria-hidden="true">
+														{displayLines.map((line) => <span class="block lg:whitespace-nowrap">{line}</span>)}
+													</span>
+													<span class="sr-only">{item.title}</span>
+												</>
+											) : (
+												item.title
+											)
+										}
+									</p>
+									{item.text && <p class="mt-1 text-sm leading-relaxed text-ink-secondary">{item.text}</p>}
 								</div>
 							</li>
-						))}
+							);
+						})}
 					</ul>
 				</Container>
 			</div>
 		)
 	}
 </section>
+
+<script>
+	function initializeUptimeCounters() {
+		const counters = document.querySelectorAll('[data-uptime-counter]');
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		const animate = (counter) => {
+			if (!(counter instanceof HTMLElement) || counter.dataset.animated === 'true') return;
+
+			const target = Number(counter.dataset.target ?? 0);
+			const formatYears = (years) => `${years} ${years === 1 ? 'an' : 'ans'}`;
+			counter.dataset.animated = 'true';
+
+			if (reduceMotion || target <= 0) {
+				counter.textContent = formatYears(target);
+				return;
+			}
+
+			counter.textContent = formatYears(0);
+			const duration = 5000;
+			let startedAt;
+
+			const tick = (timestamp) => {
+				startedAt ??= timestamp;
+				const progress = Math.min((timestamp - startedAt) / duration, 1);
+				const elapsedYears = Math.min(target, Math.floor(target * progress));
+				counter.textContent = formatYears(progress < 1 ? elapsedYears : target);
+
+				if (progress < 1) requestAnimationFrame(tick);
+			};
+
+			requestAnimationFrame(tick);
+		};
+
+		if (reduceMotion || !('IntersectionObserver' in window)) {
+			counters.forEach(animate);
+			return;
+		}
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					animate(entry.target);
+					observer.unobserve(entry.target);
+				}
+			},
+			{ threshold: 0.45 },
+		);
+
+		counters.forEach((counter) => observer.observe(counter));
+	}
+
+	document.addEventListener('astro:page-load', initializeUptimeCounters);
+	initializeUptimeCounters();
+</script>

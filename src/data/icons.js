@@ -34,6 +34,8 @@ export const icons = {
 	check: '<path d="m5 13 4.5 4.5L19 7"/>',
 	'check-circle': '<circle cx="12" cy="12" r="9"/><path d="m8.3 12.3 2.4 2.4 5-5.4"/>',
 	award: '<circle cx="12" cy="8.5" r="5.5"/><path d="m15 13 1.6 8L12 18.3 7.4 21 9 13"/>',
+	crown:
+		'<path d="m2.5 5.5 4.3 4 5.2-6 5.2 6 4.3-4-2.3 12H4.8l-2.3-12Z"/><path d="M5 21h14"/>',
 	infinity:
 		'<path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/>',
 	brain:

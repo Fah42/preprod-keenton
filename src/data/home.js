@@ -19,16 +19,29 @@ export const hero = {
 // En-tete de la section "Nos expertises" (H2 porteur pour le SEO).
 export const expertisesSection = {
 	eyebrow: 'Nos expertises',
-	title: "Sept domaines d'expertise, un seul système d'information",
+	title: 'Sept expertises. Une vision. Un seul interlocuteur.',
 	intro:
-		"Réseau, serveurs, cloud, sécurité, déploiements, postes de travail : ces sujets ne vivent jamais isolément. Nous les traitons comme un ensemble, pour que les décisions prises sur un périmètre n'en fragilisent pas un autre, et pour que vous ayez en face de vous une seule équipe, capable d'en répondre.",
+		"Multiplier les prestataires, c'est souvent multiplier les interlocuteurs, les délais et les zones grises. Nous faisons le choix inverse : réunir toutes les compétences au sein d'une seule équipe. Un interlocuteur unique pilote les expertises et garantit une vision cohérente de votre système d'information.",
 };
 
 export const reassurance = [
-  { icon: 'layers', title: 'Vision globale', text: 'Une lecture cohérente de votre infrastructure et de ses dépendances.' },
-  { icon: 'users', title: 'Équipe technique', text: 'Des échanges directs avec les personnes qui conçoivent et exploitent.' },
-  { icon: 'check', title: 'Documentation', text: 'Des décisions, configurations et procédures qui restent lisibles.' },
-  { icon: 'eye', title: 'Suivi continu', text: 'Supervision, maintenance et amélioration après la mise en production.' },
+  { icon: 'award', title: 'SLA 99,99%, Passion 300%' },
+  {
+    icon: 'crown',
+    title: 'Chez nous, le ROI porte la couronne',
+    displayLines: ['Chez nous, le ROI', 'porte la couronne'],
+  },
+  {
+    icon: 'infinity',
+    title: 'Les technologies évoluent. La confiance reste.',
+    displayLines: ['Les technologies évoluent.', 'La confiance reste.'],
+  },
+  {
+    icon: 'clock',
+    title: 'd’uptime. Toujours en production.',
+    displayLines: ['d’uptime.', 'Toujours en production.'],
+    foundedYear: 2016,
+  },
 ];
 
 export const philosophy = {
