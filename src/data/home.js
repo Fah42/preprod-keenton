@@ -235,13 +235,8 @@ export const finalCta = {
   title: 'Un projet, une question, un périmètre à reprendre en main ?',
   text: 'Décrivez-nous votre situation : nous vous répondrons avec un avis technique honnête, pas avec une plaquette commerciale.',
   cta: { label: 'Parler de votre projet', href: '/contact' },
+  backgroundColor: '#FFCE6B',
+  titleColor: '#0A1A33',
+  textColor: '#0A1A33',
+  buttonVariant: 'light',
 };
-
-export const commercialSections = [
-  {
-    backgroundColor: '#FFCE6B',
-    titleColor: '#0A1A33',
-    textColor: '#0A1A33',
-    buttonVariant: 'light',
-  },
-];

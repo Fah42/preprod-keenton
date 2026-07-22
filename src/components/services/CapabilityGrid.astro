@@ -20,7 +20,13 @@ const {
 
 <section class="bg-surface-alt py-16 md:py-24">
   <Container>
+    <header class="max-w-5xl">
+      {eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}
+      <h3 class="mt-3 text-xl font-semibold text-ink md:text-2xl">{title}</h3>
+      <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
+    </header>
     <div class:list={[
+      'mt-10',
       showIllustration && 'grid gap-10 lg:items-center lg:gap-16',
       showIllustration && (reverse ? 'lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)]'),
     ]}>
@@ -29,31 +35,27 @@ const {
           <PlaceholderVisual icon={illustrationIcon} />
         </div>
       )}
-      <div class:list={[reverse && showIllustration && 'lg:order-1']}>
-        <header class="max-w-5xl">
-          {eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}
-          <h3 class="mt-3 text-xl font-semibold text-ink md:text-2xl">{title}</h3>
-          <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
-        </header>
-        <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, index) => item.detail ? (
-            <ConceptDetailCard item={item} instanceKey={`${instanceKey}-${item.detail.slug}-${index}`} client:load />
-          ) : item.compactDetail ? (
-            <CompactConceptDetailCard item={item} instanceKey={`${instanceKey}-${item.compactDetail.slug}-${index}`} client:load />
-          ) : (
-            <article class="rounded-xl border border-line bg-surface p-6 transition duration-200 hover:-translate-y-1 hover:scale-[1.01] hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg">
-              {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}
-              <h3 class="mt-4 font-semibold text-ink">{item.title}</h3>
-              {item.subtitle && <p class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{item.subtitle}</p>}
-              <p class="mt-2 text-base leading-relaxed text-ink-secondary">{item.text}</p>
-              {item.help && instanceKey.endsWith('-original') && (
-                <div class="mt-6">
-                  <HelpTooltip text={item.help} label={`En savoir plus sur ${item.title}`} triggerText="En savoir plus" client:load />
-                </div>
-              )}
-            </article>
-          ))}
-        </div>
+      <div class:list={['grid gap-4 md:grid-cols-2 lg:grid-cols-3', reverse && showIllustration && 'lg:order-1']}>
+        {items.map((item, index) => item.detail ? (
+          <ConceptDetailCard item={item} instanceKey={`${instanceKey}-${item.detail.slug}-${index}`} client:load />
+        ) : item.compactDetail ? (
+          <CompactConceptDetailCard item={item} instanceKey={`${instanceKey}-${item.compactDetail.slug}-${index}`} client:load />
+        ) : (
+          <article class:list={[
+            'rounded-xl border border-line bg-surface p-6 transition duration-200 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg',
+            !(item.help && instanceKey.endsWith('-original')) && 'hover:-translate-y-1 hover:scale-[1.01]',
+          ]}>
+            {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}
+            <h3 class="mt-4 font-semibold text-ink">{item.title}</h3>
+            {item.subtitle && <p class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{item.subtitle}</p>}
+            <p class="mt-2 text-base leading-relaxed text-ink-secondary">{item.text}</p>
+            {item.help && instanceKey.endsWith('-original') && (
+              <div class="mt-6">
+                <HelpTooltip text={item.help} label={`En savoir plus sur ${item.title}`} triggerText="En savoir plus" client:load />
+              </div>
+            )}
+          </article>
+        ))}
       </div>
     </div>
   </Container>

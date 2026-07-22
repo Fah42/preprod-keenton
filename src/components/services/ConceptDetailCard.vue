@@ -162,11 +162,11 @@ onBeforeUnmount(() => {
     <div class="flex h-full min-h-0 w-full flex-col">
           <div class="flex h-12 shrink-0 items-center gap-4 border-b border-line bg-surface-alt px-4 sm:px-5">
             <img
-              src="/images/logo-keenton-header.png"
+              src="/images/logo-keenton.png"
               alt="Keenton"
-              width="227"
-              height="44"
-              class="h-4 w-auto shrink-0 sm:h-5"
+              width="240"
+              height="240"
+              class="h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6"
             />
             <p class="min-w-0 flex-1 truncate text-center font-mono text-[0.65rem] tracking-[0.08em] text-ink-secondary sm:text-xs">
               expertise.keenton / fiche technique / {{ item.title.toLowerCase() }}

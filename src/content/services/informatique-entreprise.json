@@ -79,18 +79,82 @@
         {
           "title": "Connexion satellite de secours",
           "text": "Une solution de secours totalement indépendante des réseaux terrestres. Contrairement à la 4G/5G, elle ne dépend ni des infrastructures fibre locales ni de la couverture mobile.",
-          "icon": "wifi"
+          "icon": "wifi",
+          "compactDetail": {
+            "slug": "secours-satellite",
+            "size": "mini",
+            "eyebrow": "Fiche express",
+            "title": "Le satellite comme lien de secours",
+            "introduction": "Une liaison indépendante des réseaux fibre et mobile locaux, prévue pour maintenir les usages essentiels lorsque les accès terrestres sont indisponibles.",
+            "facts": [
+              {
+                "label": "Infrastructure",
+                "value": "Réseau satellitaire"
+              },
+              {
+                "label": "Installation",
+                "value": "Vue dégagée du ciel"
+              },
+              {
+                "label": "Usage",
+                "value": "Flux essentiels"
+              }
+            ]
+          }
         },
         {
           "title": "Interconnexion des sites",
           "subtitle": "SD-WAN / VPN IPsec",
           "text": "Reliez l’ensemble de vos agences, bureaux ou entrepôts au sein d’un réseau privé sécurisé. Vos collaborateurs accèdent aux mêmes ressources, quel que soit leur site, tout en bénéficiant d’une connexion sécurisée et centralisée.",
-          "icon": "link"
+          "icon": "link",
+          "compactDetail": {
+            "slug": "interconnexion-sites",
+            "size": "micro",
+            "eyebrow": "En bref",
+            "title": "Un réseau privé entre vos sites",
+            "introduction": "Le SD-WAN et les VPN IPsec relient vos agences, bureaux et entrepôts au sein d’un réseau sécurisé et piloté centralement.",
+            "facts": [
+              {
+                "label": "Architecture",
+                "value": "SD-WAN"
+              },
+              {
+                "label": "Sécurité",
+                "value": "VPN IPsec"
+              },
+              {
+                "label": "Pilotage",
+                "value": "Centralisé"
+              }
+            ]
+          }
         },
         {
           "title": "Firewall",
           "text": "Le firewall centralise, sécurise et pilote l’ensemble de vos connexions Internet. Il assure la protection de votre réseau tout en garantissant la continuité de service et l’interconnexion de vos sites.",
-          "icon": "shield"
+          "icon": "shield",
+          "compactDetail": {
+            "slug": "firewall",
+            "size": "micro",
+            "effect": "tooltip",
+            "eyebrow": "En bref",
+            "title": "Le contrôle central de vos flux",
+            "introduction": "Le firewall protège et pilote vos connexions Internet, la continuité de service et les échanges sécurisés entre vos sites.",
+            "facts": [
+              {
+                "label": "Protection",
+                "value": "Filtrage"
+              },
+              {
+                "label": "Continuité",
+                "value": "Multi-WAN"
+              },
+              {
+                "label": "Pilotage",
+                "value": "Centralisé"
+              }
+            ]
+          }
         }
       ]
     },

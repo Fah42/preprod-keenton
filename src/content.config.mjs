@@ -58,6 +58,8 @@ const conceptDetail = z.object({
 });
 const compactConceptDetail = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
+  size: z.enum(['default', 'mini', 'micro']).default('default'),
+  effect: z.enum(['page', 'tooltip']).default('page'),
   eyebrow: z.string(),
   title: z.string(),
   introduction: z.string(),

@@ -7,10 +7,10 @@ import SpotlightPanel from './SpotlightPanel.astro';
 import ChecklistBlock from './ChecklistBlock.astro';
 import MosaicGrid from './MosaicGrid.astro';
 
-const { type = 'split', reverse = false, ...block } = Astro.props;
+const { type = 'split', reverse = false, tone = 0, ...block } = Astro.props;
 ---
 
-<div class="service-block border-b border-[color-mix(in_srgb,var(--cat-accent)_16%,transparent)]" data-service-type={type}>
+<div class="service-block border-b border-[color-mix(in_srgb,var(--cat-accent)_16%,transparent)]" data-service-type={type} data-section-tone={tone}>
 	{type === 'capabilities' && <CapabilityGrid {...block} reverse={reverse} />}
 	{type === 'process' && <ProcessBlock {...block} />}
 	{type === 'decision' && <DecisionPanel {...block} />}

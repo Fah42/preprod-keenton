@@ -30,7 +30,6 @@ import {
 	blogSection,
 	faq,
 	finalCta,
-	commercialSections,
 } from '../data/home.js';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
@@ -112,15 +111,7 @@ const faqSchema = {
 	<HomePhilosophyVariants {...philosophy} />
 	<ReferenceCarouselVariants items={references} />
 
-	{commercialSections.map(({ backgroundColor, titleColor, textColor, buttonVariant }) => (
-		<CTASection
-			{...finalCta}
-			backgroundColor={backgroundColor}
-			titleColor={titleColor}
-			textColor={textColor}
-			buttonVariant={buttonVariant}
-		/>
-	))}
+	<CTASection {...finalCta} />
 
 	<FAQSection items={faq} />
 
