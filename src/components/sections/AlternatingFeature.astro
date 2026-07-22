@@ -1,14 +1,24 @@
 ---
-// LE bloc reutilisable "Visuel Gauche + Texte Droite" / "Visuel Droite +
-// Texte Gauche" -- un seul composant, l'inversion se pilote par la prop
-// `reverse` (calculee par la page parente a partir de l'index de la
-// section, cf. src/pages/expertises/[slug].astro). Empile en une colonne
-// sur mobile quel que soit `reverse`.
+// Bloc reutilisable "Visuel Gauche + Texte Droite" / "Visuel Droite +
+// Texte Gauche". `reverse` pilote l'inversion et `showIllustration` permet
+// de conserver exactement le meme contenu avec ou sans visuel.
 import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
 import PlaceholderVisual from '../ui/PlaceholderVisual.astro';
 
-const { eyebrow, title, body, icon, image, reverse = false, variant = 'simple', points = [], stats = [], columns = [] } = Astro.props;
+const {
+	eyebrow,
+	title,
+	body,
+	icon,
+	image,
+	reverse = false,
+	showIllustration = true,
+	variant = 'simple',
+	points = [],
+	stats = [],
+	columns = [],
+} = Astro.props;
 ---
 
 <section class:list={['py-14 md:py-20', reverse ? 'bg-surface-alt' : 'bg-surface']}>
@@ -19,23 +29,25 @@ const { eyebrow, title, body, icon, image, reverse = false, variant = 'simple', 
 				reverse ? 'lg:flex-row-reverse' : 'lg:flex-row',
 			]}
 		>
-			<div class="lg:w-[30%]">
-				{image ? (
-					<img
-						src={image.src}
-						alt={image.alt}
-						width="1200"
-						height="900"
-						loading="lazy"
-						decoding="async"
-						class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
-						style="border-color: var(--feature-image-border-color, color-mix(in srgb, var(--cat-accent) 35%, white)); padding: var(--feature-image-padding, 0);"
-					/>
-				) : (
-					<PlaceholderVisual icon={icon} />
-				)}
-			</div>
-			<div class="lg:w-[70%]">
+			{showIllustration && (
+				<div class="lg:w-[30%]">
+					{image ? (
+						<img
+							src={image.src}
+							alt={image.alt}
+							width="1200"
+							height="900"
+							loading="lazy"
+							decoding="async"
+							class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
+							style="border-color: var(--feature-image-border-color, color-mix(in srgb, var(--cat-accent) 35%, white)); padding: var(--feature-image-padding, 0);"
+						/>
+					) : (
+						<PlaceholderVisual icon={icon} />
+					)}
+				</div>
+			)}
+			<div class:list={[showIllustration ? 'lg:w-[70%]' : 'w-full']}>
 				{eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}
 				<div class="mt-3 flex items-center gap-3">
 					{icon && <Icon name={icon} class="h-6 w-6 shrink-0 text-[var(--cat-accent)]" />}

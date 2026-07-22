@@ -4,6 +4,7 @@ import { nextTick, onBeforeUnmount, ref, useId } from 'vue';
 defineProps({
   text: { type: String, required: true },
   label: { type: String, default: "Afficher l’aide" },
+  triggerText: { type: String, default: '' },
 });
 
 const isOpen = ref(false);
@@ -61,7 +62,10 @@ onBeforeUnmount(close);
     <button
       ref="trigger"
       type="button"
-      class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-bold text-white shadow-sm transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      :class="[
+        'inline-flex items-center justify-center bg-accent font-bold text-white shadow-sm transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+        triggerText ? 'h-8 gap-1.5 rounded-full px-3.5 text-sm' : 'h-5 w-5 rounded-full text-xs',
+      ]"
       :aria-label="label"
       :aria-describedby="isOpen ? tooltipId : undefined"
       @mouseenter="open"
@@ -70,7 +74,8 @@ onBeforeUnmount(close);
       @blur="close"
       @keydown.esc="close"
     >
-      ?
+      <span v-if="triggerText">{{ triggerText }}</span>
+      <span aria-hidden="true">?</span>
     </button>
 
     <Teleport to="body">

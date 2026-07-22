@@ -32,6 +32,33 @@ const category = expertises.find((e) => e.slug === entry.id);
 const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && data.expertise === entry.id))
 	.sort((a, b) => b.data.date - a.data.date)
 	.slice(0, 3);
+
+// La page Informatique d'entreprise affiche chaque section dans ses trois
+// presentations : version sans illustration, illustration a gauche et
+// illustration a droite. Le contenu source reste strictement identique.
+const displayedSections = entry.id === 'informatique-entreprise'
+	? sections.flatMap((section, index) => {
+		const reverse = index % 2 === 1;
+		const hasIllustration = section.type === 'split';
+		const illustrationIcon = section.icon ?? section.items.find((item) => item.icon)?.icon ?? category?.icon;
+
+		if (hasIllustration) {
+			return [
+				{ block: section, reverse, instanceKey: `${index}-original` },
+				{ block: { ...section, showIllustration: false }, reverse, instanceKey: `${index}-sans-illustration` },
+				{ block: section, reverse: !reverse, instanceKey: `${index}-illustration-opposee` },
+			];
+		}
+
+		const illustratedVersion = { ...section, showIllustration: true, illustrationIcon };
+
+		return [
+			{ block: section, reverse, instanceKey: `${index}-original` },
+			{ block: illustratedVersion, reverse, instanceKey: `${index}-illustration` },
+			{ block: illustratedVersion, reverse: !reverse, instanceKey: `${index}-illustration-opposee` },
+		];
+	})
+	: sections.map((section, index) => ({ block: section, reverse: index % 2 === 1, instanceKey: `${index}-original` }));
 ---
 
 
@@ -49,7 +76,7 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 		{entry.id !== 'infogerance' && <InfogeranceStrip />}
 
 		<div id="sections">
-			{sections.map((section, i) => <ServiceBlock {...section} reverse={i % 2 === 1} />)}
+			{displayedSections.map(({ block, reverse, instanceKey }) => <ServiceBlock {...block} reverse={reverse} instanceKey={instanceKey} />)}
 		</div>
 
 		<RelatedPosts posts={relatedPosts} />

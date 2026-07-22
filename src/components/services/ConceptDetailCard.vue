@@ -19,7 +19,6 @@ const testId = computed(() => `concept-${props.item.detail.slug}`);
 
 let closeTimer;
 let reducedMotion = false;
-let previousBodyOverflow = '';
 
 const panelStyle = computed(() => ({
   '--concept-accent': accent.value,
@@ -75,8 +74,6 @@ async function open() {
   accent.value = getComputedStyle(card.value).getPropertyValue('--cat-accent').trim() || '#388E3C';
   updateGeometry();
 
-  previousBodyOverflow = document.body.style.overflow;
-  document.body.style.overflow = 'hidden';
   isExpanded.value = false;
   panel.value.showModal();
 
@@ -97,10 +94,9 @@ function finishClose() {
 
   window.clearTimeout(closeTimer);
   panel.value?.close();
-  document.body.style.overflow = previousBodyOverflow;
   window.removeEventListener('resize', updateGeometry);
 
-  nextTick(() => card.value?.querySelector('[data-concept-trigger]')?.focus());
+  nextTick(() => card.value?.querySelector('[data-concept-trigger]')?.focus({ preventScroll: true }));
 }
 
 function close() {
@@ -112,7 +108,7 @@ function close() {
 
   updateGeometry();
   isExpanded.value = false;
-  closeTimer = window.setTimeout(finishClose, reducedMotion ? 20 : 560);
+  closeTimer = window.setTimeout(finishClose, reducedMotion ? 20 : 420);
 }
 
 function handleTransitionEnd(event) {
@@ -124,7 +120,6 @@ function handleTransitionEnd(event) {
 onBeforeUnmount(() => {
   window.clearTimeout(closeTimer);
   if (panel.value?.open) panel.value.close();
-  document.body.style.overflow = previousBodyOverflow;
   window.removeEventListener('resize', updateGeometry);
 });
 </script>
@@ -166,11 +161,13 @@ onBeforeUnmount(() => {
   >
     <div class="flex h-full min-h-0 w-full flex-col">
           <div class="flex h-12 shrink-0 items-center gap-4 border-b border-line bg-surface-alt px-4 sm:px-5">
-            <div class="flex gap-1.5" aria-hidden="true">
-              <span class="h-2.5 w-2.5 rounded-full bg-[#ef6b61]"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-[#f2bf4f]"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-[#63c174]"></span>
-            </div>
+            <img
+              src="/images/logo-keenton-header.png"
+              alt="Keenton"
+              width="227"
+              height="44"
+              class="h-4 w-auto shrink-0 sm:h-5"
+            />
             <p class="min-w-0 flex-1 truncate text-center font-mono text-[0.65rem] tracking-[0.08em] text-ink-secondary sm:text-xs">
               expertise.keenton / fiche technique / {{ item.title.toLowerCase() }}
             </p>
@@ -276,10 +273,10 @@ onBeforeUnmount(() => {
     rotateY(-14deg);
   filter: saturate(0.7);
   transition:
-    transform 540ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 300ms ease,
-    border-radius 540ms cubic-bezier(0.16, 1, 0.3, 1),
-    filter 400ms ease;
+    transform 405ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 225ms ease-out,
+    border-radius 405ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 300ms ease-out;
   will-change: transform, opacity;
 }
 

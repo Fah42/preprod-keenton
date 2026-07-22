@@ -56,12 +56,21 @@ const conceptDetail = z.object({
   checkpoints: z.array(z.string()),
   callout: z.string(),
 });
+const compactConceptDetail = z.object({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  eyebrow: z.string(),
+  title: z.string(),
+  introduction: z.string(),
+  facts: z.array(z.object({ label: z.string(), value: z.string() })).length(3),
+});
 const serviceItem = z.object({
   title: z.string(),
   subtitle: z.string().optional(),
   text: z.string(),
   icon: z.string().optional(),
+  help: z.string().optional(),
   detail: conceptDetail.optional(),
+  compactDetail: compactConceptDetail.optional(),
 });
 
 const services = defineCollection({

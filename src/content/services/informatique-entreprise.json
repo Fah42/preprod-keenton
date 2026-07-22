@@ -23,13 +23,25 @@
           "title": "Fibre Dédiée",
           "subtitle": "FTTO - Fiber To The Office (Fibre professionelle)",
           "text": "Une connexion Internet exclusivement réservée à votre entreprise, offrant des performances garanties et un niveau de service élevé.",
-          "icon": "zap"
+          "icon": "zap",
+          "help": "Une fibre dédiée FTTO est réservée à l’entreprise et peut inclure des engagements contractuels sur le débit, la disponibilité et le délai de rétablissement. Elle convient aux usages pour lesquels une coupure ou une baisse de performance aurait un impact direct sur l’activité."
         },
         {
           "title": "Fibre Classique",
           "subtitle": "FTTH - Fiber To The Home (Fibre grand public)",
           "text": "Une solution performante et économique pour les entreprises ayant des besoins standards en connectivité.",
-          "icon": "globe"
+          "icon": "globe",
+          "compactDetail": {
+            "slug": "fibre-ftth",
+            "eyebrow": "Fiche express",
+            "title": "La fibre FTTH en entreprise",
+            "introduction": "La FTTH s’appuie sur une infrastructure opérateur mutualisée. Elle offre un débit élevé à un coût maîtrisé, sans les garanties contractuelles d’une fibre dédiée.",
+            "facts": [
+              { "label": "Infrastructure", "value": "Réseau mutualisé" },
+              { "label": "Performance", "value": "Débit non garanti" },
+              { "label": "Usage", "value": "Bureautique & cloud" }
+            ]
+          }
         },
         {
           "title": "Connexion mobile de secours",

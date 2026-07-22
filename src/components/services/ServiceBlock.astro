@@ -11,11 +11,11 @@ const { type = 'split', reverse = false, ...block } = Astro.props;
 ---
 
 <div class="service-block border-b border-[color-mix(in_srgb,var(--cat-accent)_16%,transparent)]" data-service-type={type}>
-	{type === 'capabilities' && <CapabilityGrid {...block} />}
+	{type === 'capabilities' && <CapabilityGrid {...block} reverse={reverse} />}
 	{type === 'process' && <ProcessBlock {...block} />}
 	{type === 'decision' && <DecisionPanel {...block} />}
 	{type === 'spotlight' && <SpotlightPanel {...block} />}
 	{type === 'checklist' && <ChecklistBlock {...block} />}
-	{type === 'mosaic' && <MosaicGrid {...block} />}
+	{type === 'mosaic' && <MosaicGrid {...block} reverse={reverse} />}
 	{type === 'split' && <AlternatingFeature {...block} reverse={reverse} />}
 </div>
