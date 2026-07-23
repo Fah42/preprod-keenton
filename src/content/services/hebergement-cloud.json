@@ -18,6 +18,14 @@
       "eyebrow": "Cloud Public",
       "title": "Choisir le bon modèle pour chaque charge",
       "body": "Le choix entre cloud privé, public ou hybride dépend de vos données, de vos contraintes de performance, de votre budget et du niveau de dépendance acceptable. Chaque charge mérite un environnement cohérent avec ses usages et sa trajectoire d'évolution.",
+      "technologyTitle": "Fournisseurs de cloud public",
+      "technologies": [
+        { "name": "Amazon Web Services", "role": "Cloud public", "icon": "aws" },
+        { "name": "Google Cloud", "role": "Cloud public", "icon": "google-cloud" },
+        { "name": "Microsoft Azure", "role": "Cloud public", "icon": "microsoft-azure" },
+        { "name": "Scaleway", "role": "Cloud public", "icon": "scaleway" },
+        { "name": "OVHcloud", "role": "Cloud public", "icon": "ovhcloud" }
+      ],
       "icon": "cloud",
       "variant": "list",
       "points": [
@@ -34,6 +42,13 @@
       "eyebrow": "Instances / VPS / Machines virtuelles",
       "title": "Des ressources de calcul qui suivent vos applications",
       "body": "Instances, VPS et machines virtuelles permettent d'adapter les ressources aux besoins réels des applications, sans immobiliser une infrastructure surdimensionnée. Leur exploitation reste suivie afin de préserver disponibilité, performance et capacité d'évolution.",
+      "technologyTitle": "Technologies pour les instances et machines virtuelles",
+      "technologies": [
+        { "name": "Nutanix AHV", "role": "Virtualisation", "icon": "nutanix" },
+        { "name": "Debian 12", "role": "Système d'exploitation", "icon": "debian" },
+        { "name": "Puppet", "role": "Gestion de configuration", "icon": "puppet" },
+        { "name": "Foreman", "role": "Provisionnement et cycle de vie", "icon": "foreman" }
+      ],
       "layout": "four",
       "items": [
         { "title": "Dimensionnement", "text": "Processeur, mémoire et stockage sont définis à partir des charges observées et des besoins attendus.", "icon": "chart" },
@@ -47,6 +62,13 @@
       "eyebrow": "Hébergement Web",
       "title": "Un environnement web construit autour de votre projet",
       "body": "Vos sites et applications ont besoin d'un hébergement maintenu, sécurisé et capable d'évoluer. Nous organisons l'environnement web, les bases de données, les sauvegardes et l'exploitation quotidienne avec un accompagnement adapté à votre projet.",
+      "technologyTitle": "Technologies pour l'hébergement web",
+      "technologies": [
+        { "name": "WordPress", "role": "CMS", "icon": "wordpress" },
+        { "name": "Plesk", "role": "Administration d'hébergement", "icon": "plesk" },
+        { "name": "NGINX", "role": "Serveur web et reverse proxy", "icon": "nginx" },
+        { "name": "Dokploy", "role": "Déploiement applicatif", "icon": "dokploy" }
+      ],
       "items": [
         { "title": "Hébergement sur mesure", "text": "L'espace et les ressources sont configurés selon le projet afin de concilier sécurité, performances et capacité d'évolution.", "icon": "cog" },
         { "title": "Migration clé en main", "text": "La préparation et la bascule sont prises en charge pour déplacer un site ou une application sans laisser les équipes seules face à la migration.", "icon": "refresh" },
@@ -61,6 +83,13 @@
       "eyebrow": "Infrastructure sur mesure",
       "title": "Lorsque les contraintes demandent une architecture dédiée",
       "body": "Certaines applications nécessitent des choix spécifiques de performance, de disponibilité ou de conformité. Nous cadrons les exigences, concevons l'architecture puis préparons les conditions de recette et d'exploitation avant la mise en production.",
+      "technologyTitle": "Technologies pour l'infrastructure sur mesure",
+      "technologies": [
+        { "name": "Kubernetes", "role": "Orchestration de conteneurs", "icon": "kubernetes" },
+        { "name": "Argo CD", "role": "GitOps", "icon": "argocd" },
+        { "name": "Flux CD", "role": "GitOps", "icon": "fluxcd" },
+        { "name": "Cilium", "role": "Réseau et sécurité Kubernetes", "icon": "cilium" }
+      ],
       "layout": "six",
       "items": [
         { "title": "Cadrage", "text": "Les contraintes de charge, de disponibilité, de sécurité et d'exploitation sont clarifiées avec vos équipes.", "icon": "search" },
@@ -76,6 +105,14 @@
       "eyebrow": "Sauvegarde externalisée & PRA",
       "title": "Des données protégées et des restaurations préparées",
       "body": "Une sauvegarde n'a de valeur que si elle reste disponible après un incident et peut être restaurée au bon moment. Les copies sont externalisées, chiffrées et suivies afin de préparer une reprise adaptée à la valeur de vos données.",
+      "technologyTitle": "Technologies pour la sauvegarde et le PRA",
+      "technologies": [
+        { "name": "Velero", "role": "Sauvegarde Kubernetes", "icon": "velero" },
+        { "name": "S3", "role": "Stockage objet compatible S3", "icon": "amazon-s3" },
+        { "name": "Nutanix", "role": "Réplication inter-datacenter avec Protection Policies", "icon": "nutanix" },
+        { "name": "Veeam", "role": "Sauvegarde et réplication", "icon": "veeam" },
+        { "name": "HYCU", "role": "Protection des données Nutanix", "icon": "hycu" }
+      ],
       "icon": "cloud-download",
       "variant": "list",
       "points": [
@@ -92,6 +129,12 @@
       "eyebrow": "Nos Datacenters",
       "title": "Savoir où résident vos services et dans quelles conditions",
       "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
+      "technologyTitle": "Technologies déployées dans nos datacenters",
+      "technologies": [
+        { "name": "Nutanix", "role": "Hyperconvergence", "icon": "nutanix" },
+        { "name": "FortiGate", "role": "Sécurité réseau", "icon": "fortinet" },
+        { "name": "Cisco", "role": "Réseau & switching", "icon": "cisco" }
+      ],
       "layout": "four",
       "items": [
         { "title": "Hébergement en France", "text": "Les environnements peuvent être localisés en France pour répondre aux attentes de proximité et de maîtrise des données.", "icon": "globe" },

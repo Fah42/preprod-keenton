@@ -103,6 +103,12 @@ const services = defineCollection({
         stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
         columns: z.array(contentColumn).optional(),
         layout: z.enum(['four', 'six']).optional(),
+        technologyTitle: z.string().optional(),
+        technologies: z.array(z.object({
+          name: z.string(),
+          role: z.string(),
+          icon: z.string(),
+        })).default([]),
       })
     ),
   }),

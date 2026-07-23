@@ -5,6 +5,7 @@ import PlaceholderVisual from '../ui/PlaceholderVisual.astro';
 import HelpTooltip from '../ui/HelpTooltip.vue';
 import ConceptDetailCard from './ConceptDetailCard.vue';
 import CompactConceptDetailCard from './CompactConceptDetailCard.vue';
+import TechnologyLogos from './TechnologyLogos.astro';
 
 const {
   eyebrow,
@@ -15,15 +16,24 @@ const {
   illustrationIcon,
   reverse = false,
   instanceKey = 'capabilities',
+  technologyTitle,
+  technologies = [],
 } = Astro.props;
 ---
 
 <section class="bg-surface-alt py-16 md:py-24">
   <Container>
-    <header class="max-w-5xl">
+    <header class:list={[technologies.length > 0 ? 'max-w-none' : 'max-w-5xl']}>
       {eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}
       <h3 class="mt-3 text-xl font-semibold text-ink md:text-2xl">{title}</h3>
-      <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
+      {technologies.length > 0 ? (
+        <div class="mt-5 leading-relaxed text-ink-secondary">
+          <span>{body}</span>
+          <TechnologyLogos title={technologyTitle} items={technologies} />
+        </div>
+      ) : (
+        <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
+      )}
     </header>
     <div class:list={[
       'mt-10',

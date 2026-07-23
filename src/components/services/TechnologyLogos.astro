@@ -1,0 +1,99 @@
+---
+import {
+	siAmazonwebservices,
+	siAmazons3,
+	siArgo,
+	siCilium,
+	siCisco,
+	siDebian,
+	siFlux,
+	siFortinet,
+	siGooglecloud,
+	siKubernetes,
+	siNginx,
+	siNutanix,
+	siOvh,
+	siPlesk,
+	siPuppet,
+	siScaleway,
+	siVeeam,
+	siWordpress,
+} from 'simple-icons';
+
+const brandIcons = {
+	nutanix: siNutanix,
+	debian: siDebian,
+	puppet: siPuppet,
+	wordpress: siWordpress,
+	plesk: siPlesk,
+	nginx: siNginx,
+	kubernetes: siKubernetes,
+	argocd: siArgo,
+	fluxcd: siFlux,
+	cilium: siCilium,
+	'amazon-s3': siAmazons3,
+	veeam: siVeeam,
+	aws: siAmazonwebservices,
+	'google-cloud': siGooglecloud,
+	scaleway: siScaleway,
+	ovhcloud: siOvh,
+	fortinet: siFortinet,
+	cisco: siCisco,
+};
+
+const brandMonograms = {
+	foreman: 'FM',
+	dokploy: 'DK',
+	velero: 'VL',
+	hycu: 'HYCU',
+	'microsoft-azure': 'AZ',
+};
+
+const {
+	title = 'Technologies maîtrisées',
+	items = [],
+} = Astro.props;
+---
+
+{items.length > 0 && (
+	<ul class="ml-2 inline-flex translate-y-1 flex-wrap items-center gap-1.5 align-baseline" aria-label={title}>
+		{items.map((item) => {
+			const icon = brandIcons[item.icon];
+			const monogram = brandMonograms[item.icon];
+
+			return (
+				<li
+					class="group relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-white text-[var(--cat-accent)] shadow-sm"
+				>
+					<span class="sr-only">{item.name} — {item.role}</span>
+					{icon && (
+						<svg
+							viewBox="0 0 24 24"
+							class:list={['fill-current', item.icon === 'cisco' ? 'h-6 w-6' : 'h-5 w-5']}
+							aria-hidden="true"
+						>
+							<path d={icon.path} />
+						</svg>
+					)}
+					{!icon && monogram && (
+						<span
+							class:list={[
+								'leading-none font-bold tracking-[-0.08em]',
+								monogram.length > 2 ? 'text-[0.48rem]' : 'text-[0.62rem]',
+							]}
+							aria-hidden="true"
+						>
+							{monogram}
+						</span>
+					)}
+					<span
+						class="pointer-events-none absolute top-full left-1/2 z-20 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2.5 py-1.5 text-[0.8rem] leading-none font-semibold text-white opacity-0 shadow-sm transition-opacity duration-150 group-hover:opacity-100"
+						aria-hidden="true"
+					>
+						{item.name}
+					</span>
+				</li>
+			);
+		})}
+	</ul>
+)}

@@ -48,7 +48,8 @@ export const reassurance = [
 
 export const philosophy = {
   eyebrow: 'Notre philosophie',
-  intro: "Nous ne vendons pas des technologies. Nous construisons des systèmes d'information capables d'accompagner votre entreprise pendant des années.",
+  title: "Nous adaptons la technologie à votre entreprise, jamais l'inverse.",
+  intro: "Nous pensons qu'un bon système d'information est avant tout simple à comprendre, sécurisé par conception et capable d'évoluer dans le temps. Ces principes guident chacune de nos décisions, quelle que soit la technologie mise en œuvre.",
   principles: [
     {
       title: 'La simplicité avant tout',
@@ -59,19 +60,19 @@ export const philosophy = {
       text: "La cybersécurité ne s'ajoute pas après un projet. Elle fait partie de chaque décision : réseau, cloud, postes de travail, sauvegardes ou Microsoft 365.",
     },
     {
-      title: 'Penser long terme',
+      title: 'Penser durablement',
       text: "Chaque choix doit rester pertinent dans cinq ou dix ans. Nous privilégions les solutions pérennes aux effets de mode.",
     },
     {
-      title: 'Expliquer plutôt qu’imposer',
+      title: 'La transparence avant tout',
       text: "Nos clients restent maîtres de leur système d'information. Nous prenons le temps d'expliquer les choix techniques afin que chaque décision soit comprise.",
     },
     {
-      title: 'Faire évoluer plutôt que reconstruire',
+      title: 'Construire pour durer.',
       text: "Une bonne infrastructure grandit avec l'entreprise. Nous préférons concevoir des fondations solides plutôt que remplacer régulièrement l'existant.",
     },
     {
-      title: 'La bonne technologie est celle dont vous avez besoin',
+      title: 'Le besoin avant la technologie.',
       text: "Nous ne défendons ni une marque, ni un éditeur, ni une mode. Nous choisissons les solutions qui répondent le mieux à votre contexte. Notre objectif n'est pas de vendre un produit, mais de construire un système d'information cohérent, durable et adapté à votre entreprise.",
     },
   ],
