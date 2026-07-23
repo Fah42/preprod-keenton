@@ -215,7 +215,7 @@ export const besoins = {
 
 export const methode = {
   eyebrow: 'Notre méthode',
-  title: 'Une démarche simple et vérifiable',
+  title: 'Une méthode éprouvée. Des résultats prévisibles.',
   steps: [
     {
       title: 'Comprendre',
