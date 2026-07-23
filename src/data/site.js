@@ -156,5 +156,6 @@ export const mainNav = [
     })),
   },
   { label: 'Blog', href: '/blog' },
+  { label: 'Recrutement', href: '/recrutement' },
   { label: 'Contact', href: '/contact' },
 ];

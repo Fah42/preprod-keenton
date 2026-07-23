@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/sections/PageHero.astro';
+import StatsBand from '../components/sections/StatsBand.astro';
+import Section from '../components/ui/Section.astro';
+import Container from '../components/ui/Container.astro';
+import Icon from '../components/ui/Icon.astro';
+import Button from '../components/ui/Button.astro';
+import CTASection from '../components/sections/CTASection.astro';
+import {
+	recruitmentHero,
+	recruitmentPrinciples,
+	recruitmentRoles,
+	recruitmentSignals,
+	recruitmentValues,
+} from '../data/recruitment.js';
+---
+
+<BaseLayout
+	title="Recrutement | Keenton"
+	description="Découvrez la culture Keenton, les profils techniques et commerciaux que nous aimons rencontrer, et présentez-nous votre parcours."
+	ogImage="/images/hero-home.png"
+>
+	<PageHero {...recruitmentHero} />
+
+	<StatsBand items={recruitmentSignals} />
+
+	<Section
+		id="culture"
+		eyebrow="Ce qui compte vraiment"
+		title="Le savoir-faire compte. La manière de travailler aussi."
+		intro="Au-delà des technologies maîtrisées, nous accordons de l’importance à l’état d’esprit, à la capacité de collaborer et à l’envie de progresser."
+		theme="light"
+	>
+		<ul class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+			{
+				recruitmentValues.map((value) => (
+					<li>
+						<article class="group h-full rounded-2xl border border-line bg-surface p-7 transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-accent/55 hover:shadow-cta">
+							<div class="flex items-start">
+								<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent-dark transition-colors group-hover:bg-accent group-hover:text-white">
+									<Icon name={value.icon} class="h-5 w-5" />
+								</span>
+							</div>
+							<h3 class="mt-7 text-xl font-semibold text-ink">{value.title}</h3>
+							<p class="mt-3 text-base leading-relaxed text-ink-secondary">{value.text}</p>
+						</article>
+					</li>
+				))
+			}
+		</ul>
+	</Section>
+
+	<section class="relative overflow-hidden bg-footer-from py-20 text-white md:py-28">
+		<div class="bg-grid-dark pointer-events-none absolute inset-0 [mask-image:radial-gradient(48rem_30rem_at_20%_50%,black,transparent_78%)]" aria-hidden="true"></div>
+		<Container class="relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+			<header data-reveal>
+				<p class="font-mono text-xs uppercase tracking-[0.2em] text-accent-light">Notre manière de travailler</p>
+				<h2 class="display-title mt-5 text-[clamp(2.15rem,4vw,3.2rem)] text-white">
+					Une technique qui reste humaine.
+				</h2>
+				<p class="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+					La qualité d’une solution se mesure aussi à la confiance qu’elle crée. Chez Keenton, la technique reste compréhensible, documentée et proche de ceux qui l’utilisent.
+				</p>
+			</header>
+
+			<ol class="divide-y divide-white/12 border-y border-white/12">
+				{
+					recruitmentPrinciples.map((principle) => (
+						<li class="py-7">
+							<h3 class="text-xl font-semibold text-white">{principle.title}</h3>
+							<p class="mt-2 max-w-xl leading-relaxed text-white/75">{principle.text}</p>
+						</li>
+					))
+				}
+			</ol>
+		</Container>
+	</section>
+
+	<Section
+		id="profils"
+		eyebrow="Les profils que nous aimons rencontrer"
+		title="Quel pourrait être votre prochain terrain de jeu ?"
+		intro="Ces profils reflètent les métiers pour lesquels nous rencontrons régulièrement des candidats. Écrivez-nous pour connaître les opportunités du moment — ou pour nous présenter un parcours auquel nous n’aurions pas pensé."
+		theme="alt"
+	>
+		<div class="grid gap-6 lg:grid-cols-2">
+			{
+				recruitmentRoles.map((role) => (
+					<article id={`profil-${role.id}`} class="flex scroll-mt-28 flex-col rounded-2xl border border-line bg-surface p-7 md:p-8">
+						<div class="flex flex-wrap gap-2">
+							<span class="rounded-full bg-accent/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-accent-dark">{role.contract}</span>
+							<span class="rounded-full bg-surface-alt px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-secondary">{role.location}</span>
+							<span class="rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-secondary">{role.level}</span>
+						</div>
+
+						<h3 class="mt-6 text-2xl font-semibold leading-tight text-ink">{role.title}</h3>
+						<p class="mt-4 text-base leading-relaxed text-ink-secondary">{role.summary}</p>
+
+						<ul class="mt-6 space-y-3">
+							{
+								role.missions.map((mission) => (
+									<li class="flex gap-3 text-sm leading-relaxed text-ink">
+										<Icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-accent-dark" />
+										<span>{mission}</span>
+									</li>
+								))
+							}
+						</ul>
+
+						<ul class="mt-6 flex flex-wrap gap-2" aria-label={`Environnements associés au profil ${role.title}`}>
+							{
+								role.stack.map((technology) => (
+									<li class="rounded-md bg-surface-alt px-2.5 py-1 text-xs font-medium text-ink-secondary">{technology}</li>
+								))
+							}
+						</ul>
+
+						<p class="mt-6 border-l-2 border-accent/55 pl-4 text-sm leading-relaxed text-ink-secondary">{role.note}</p>
+
+						<div class="mt-auto pt-7">
+							<Button
+								href={`/contact?subject=recruitment&role=${encodeURIComponent(role.title)}`}
+								variant="outline"
+								arrow
+								class="w-full justify-center sm:w-auto"
+							>
+								Échanger sur ce profil
+							</Button>
+						</div>
+					</article>
+				))
+			}
+		</div>
+
+		<div class="mt-8 rounded-2xl border border-accent/30 bg-accent/10 p-7 md:flex md:items-center md:justify-between md:gap-10 md:p-9">
+			<div>
+				<p class="font-mono text-xs uppercase tracking-[0.18em] text-accent-dark">Candidature spontanée</p>
+				<h3 class="mt-3 text-2xl font-semibold text-ink">Votre profil n’entre dans aucune case ?</h3>
+				<p class="mt-3 max-w-2xl leading-relaxed text-ink-secondary">
+					Tant mieux. Présentez-nous ce que vous aimez construire, ce que vous souhaitez apprendre et la manière dont vous pourriez enrichir l’équipe.
+				</p>
+			</div>
+			<Button href="/contact?subject=recruitment&role=Candidature%20spontanée" variant="primary" arrow class="mt-6 shrink-0 md:mt-0">
+				Nous surprendre
+			</Button>
+		</div>
+	</Section>
+
+	<CTASection
+		title="Votre prochaine aventure technique peut commencer ici."
+		text="Parlez-nous de votre parcours, du rôle qui vous intéresse et de ce que vous avez envie d’apprendre. Une candidature spontanée est aussi la bienvenue."
+		cta={{ label: 'Présenter mon profil', href: '/contact?subject=recruitment' }}
+		backgroundColor="#FFCE6B"
+		titleColor="#0A1A33"
+		textColor="#0A1A33"
+		buttonVariant="light"
+	/>
+</BaseLayout>

@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import { submitContactLead } from '../../lib/submitContact.js';
 
 const fields = reactive({
@@ -14,6 +14,17 @@ const fields = reactive({
 
 const honeypot = ref('');
 const status = ref('idle');
+
+onMounted(() => {
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject');
+  const role = params.get('role');
+
+  if (subject === 'recruitment') fields.subject = 'recruitment';
+  if (role && role.length <= 120) {
+    fields.message = `Je souhaite échanger au sujet de « ${role} ».\n\n`;
+  }
+});
 
 async function onSubmit() {
   if (honeypot.value) {
@@ -61,8 +72,8 @@ async function onSubmit() {
 
       <div class="grid gap-5 sm:grid-cols-2">
         <label class="block text-sm font-medium text-ink">
-          E-mail professionnel
-          <input v-model="fields.email" required type="email" autocomplete="email" placeholder="vous@entreprise.fr" class="mt-2 w-full rounded-lg border border-line bg-surface px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink-secondary/60 focus:border-accent" />
+          E-mail
+          <input v-model="fields.email" required type="email" autocomplete="email" placeholder="vous@exemple.fr" class="mt-2 w-full rounded-lg border border-line bg-surface px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink-secondary/60 focus:border-accent" />
         </label>
         <label class="block text-sm font-medium text-ink">
           Société
@@ -82,6 +93,7 @@ async function onSubmit() {
             <option value="project">Nouveau projet</option>
             <option value="audit">Étude sur site ou conseil</option>
             <option value="managed-services">Infogérance et support</option>
+            <option value="recruitment">Recrutement / candidature</option>
             <option value="partnership">Partenariat</option>
             <option value="other">Autre demande</option>
           </select>

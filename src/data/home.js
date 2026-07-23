@@ -10,10 +10,9 @@ export const hero = {
 		src: '/images/hero-home.png',
 		alt: 'Les sept domaines d’expertise Keenton',
 	},
-	subtitle:
+  subtitle:
 		"Infrastructure, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et IA : une équipe d'ingénieurs conçoit, sécurise et exploite votre système d'information. Et en répond dans la durée.",
   primaryCta: { label: 'Parler de votre projet', href: '/contact' },
-  secondaryCta: { label: 'Découvrir nos expertises', href: '#expertises' },
 };
 
 // En-tete de la section "Nos expertises" (H2 porteur pour le SEO).
@@ -219,23 +218,23 @@ export const methode = {
   title: 'Une démarche simple et vérifiable',
   steps: [
     {
-      title: 'Compréhension du besoin',
+      title: 'Comprendre',
       text: 'Nous commençons par écouter : votre contexte, vos contraintes, vos priorités.',
     },
     {
-      title: 'Étude sur site et cadrage',
+      title: 'Cadrer',
       text: "État des lieux de l'existant, périmètre clair, engagements posés par écrit.",
     },
     {
-      title: 'Mise en place',
+      title: 'Déployer',
       text: 'Déploiement par étapes, avec des points de validation à chaque jalon.',
     },
     {
-      title: 'Documentation',
+      title: 'Documenter',
       text: 'Chaque élément mis en place est documenté pour que votre équipe garde la main.',
     },
     {
-      title: 'Maintenance et amélioration continue',
+      title: 'Accompagner',
       text: "Supervision, correctifs, évolutions : le suivi ne s'arrête pas à la mise en production.",
     },
   ],

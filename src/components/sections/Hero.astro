@@ -31,7 +31,7 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 			</p>
 			<div class="reveal reveal-3 mt-8 flex flex-wrap gap-4">
 				<Button href={primaryCta.href} variant="primary" arrow>{primaryCta.label}</Button>
-				<Button href={secondaryCta.href} variant="dark" arrow>{secondaryCta.label}</Button>
+				{secondaryCta && <Button href={secondaryCta.href} variant="dark" arrow>{secondaryCta.label}</Button>}
 			</div>
 		</div>
 		<div class="relative my-3 aspect-[4/3] w-full max-w-[36rem] justify-self-center lg:w-[36rem] lg:justify-self-end">
