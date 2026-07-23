@@ -5,12 +5,19 @@ import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 
 const { eyebrow, title, titleAccent, subtitle, image, primaryCta, secondaryCta } = Astro.props;
+const containImage = image.fit === 'contain';
 ---
 
 <section class="relative overflow-hidden border-b border-line bg-surface">
-	<div class="pointer-events-none absolute inset-y-0 right-0 hidden w-[62%] max-w-[61rem] lg:block" aria-hidden="true">
-		<img src={image.src} alt="" class="h-full w-full object-cover object-center" />
-		<div class="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-surface to-transparent"></div>
+	<div
+		class:list={[
+			'pointer-events-none absolute inset-y-0 right-0 hidden max-w-[61rem] lg:block',
+			containImage ? 'w-[56%] bg-ink' : 'w-[62%]',
+		]}
+		aria-hidden="true"
+	>
+		<img src={image.src} alt="" class:list={['h-full w-full object-center', containImage ? 'object-contain' : 'object-cover']} />
+		{!containImage && <div class="absolute inset-y-0 left-0 w-48 bg-linear-to-r from-surface to-transparent"></div>}
 	</div>
 
 	<Container class="relative py-12 md:py-14">
@@ -32,5 +39,5 @@ const { eyebrow, title, titleAccent, subtitle, image, primaryCta, secondaryCta }
 		</div>
 	</Container>
 
-	<img src={image.src} alt={image.alt} class="w-full object-cover lg:hidden" />
+	<img src={image.src} alt={image.alt} class:list={['w-full lg:hidden', containImage ? 'bg-ink object-contain' : 'object-cover']} />
 </section>
