@@ -15,7 +15,7 @@
   "sections": [
     {
       "type": "split",
-      "eyebrow": "Cloud privé / Cloud Public",
+      "eyebrow": "Cloud Public",
       "title": "Choisir le bon modèle pour chaque charge",
       "body": "Le choix entre cloud privé, public ou hybride dépend de vos données, de vos contraintes de performance, de votre budget et du niveau de dépendance acceptable. Chaque charge mérite un environnement cohérent avec ses usages et sa trajectoire d'évolution.",
       "icon": "cloud",
@@ -89,7 +89,7 @@
     },
     {
       "type": "mosaic",
-      "eyebrow": "Datacenter",
+      "eyebrow": "Nos Datacenters",
       "title": "Savoir où résident vos services et dans quelles conditions",
       "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
       "layout": "four",

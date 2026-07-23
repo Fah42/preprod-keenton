@@ -37,7 +37,9 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 // version sans illustration, illustration a gauche et illustration a droite.
 // Le contenu source reste strictement identique dans les trois variantes.
 const illustratedSectionTypes = new Set(['split', 'capabilities', 'mosaic']);
-const displayedSections = sections.flatMap((section, index) => {
+const illustrationIconFor = (section) => section.icon ?? section.items.find((item) => item.icon)?.icon ?? category?.icon;
+
+const standardDisplayedSections = sections.flatMap((section, index) => {
 	const reverse = index % 2 === 1;
 	const tone = index % 4;
 	const original = { block: section, reverse, tone, instanceKey: `${index}-original` };
@@ -45,7 +47,7 @@ const displayedSections = sections.flatMap((section, index) => {
 	if (!illustratedSectionTypes.has(section.type)) return [original];
 
 	const hasIllustration = section.type === 'split';
-	const illustrationIcon = section.icon ?? section.items.find((item) => item.icon)?.icon ?? category?.icon;
+	const illustrationIcon = illustrationIconFor(section);
 
 	if (hasIllustration) {
 		return [
@@ -63,6 +65,45 @@ const displayedSections = sections.flatMap((section, index) => {
 		{ block: illustratedVersion, reverse: !reverse, tone, instanceKey: `${index}-illustration-opposee` },
 	];
 });
+
+// Hébergement & Cloud suit une narration unique :
+// visuel gauche, section pleine largeur, visuel droite, section pleine largeur,
+// visuel gauche, section pleine largeur.
+const hebergementCloudOrder = [
+	'Nos Datacenters',
+	'Instances / VPS / Machines virtuelles',
+	'Hébergement Web',
+	'Infrastructure sur mesure',
+	'Sauvegarde externalisée & PRA',
+	'Cloud Public',
+];
+const hebergementCloudIllustrations = new Map([
+	[0, false],
+	[2, true],
+	[4, false],
+]);
+const hebergementCloudSections = [...sections]
+	.sort((a, b) => hebergementCloudOrder.indexOf(a.eyebrow) - hebergementCloudOrder.indexOf(b.eyebrow))
+	.map((section, index) => {
+		const showIllustration = hebergementCloudIllustrations.has(index);
+		const reverse = hebergementCloudIllustrations.get(index) ?? false;
+		const block = {
+			...section,
+			showIllustration,
+			...(showIllustration && section.type !== 'split' ? { illustrationIcon: illustrationIconFor(section) } : {}),
+		};
+
+		return {
+			block,
+			reverse,
+			tone: index % 4,
+			instanceKey: `${index}-${showIllustration ? (reverse ? 'illustration-droite' : 'illustration-gauche') : 'sans-illustration'}`,
+		};
+	});
+
+const displayedSections = entry.id === 'hebergement-cloud'
+	? hebergementCloudSections
+	: standardDisplayedSections;
 ---
 
 
