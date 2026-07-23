@@ -42,9 +42,8 @@ export const reassurance = [
   },
   {
     icon: 'clock',
-    title: 'd’uptime. Toujours en production.',
-    displayLines: ['d’uptime.', 'Toujours en production.'],
-    foundedYear: 2016,
+    title: 'Uptime depuis le 26 octobre 2015. Toujours en production.',
+    foundedAt: '2015-10-26T00:00:00Z',
   },
 ];
 

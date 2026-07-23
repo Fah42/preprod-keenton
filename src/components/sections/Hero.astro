@@ -6,9 +6,9 @@
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
+import { formatElapsedClock, formatElapsedDate, getElapsedTimeParts } from '../../utils/uptime.js';
 
 const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlights = [] } = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 
 <section class="relative overflow-hidden border-b border-line bg-surface">
@@ -68,7 +68,7 @@ const currentYear = new Date().getFullYear();
 				<Container>
 					<ul class="grid auto-rows-fr grid-cols-2 items-stretch divide-line md:grid-cols-4 md:divide-x">
 						{highlights.map((item) => {
-							const uptimeYears = item.foundedYear ? Math.max(0, currentYear - item.foundedYear) : undefined;
+							const uptimeParts = item.foundedAt ? getElapsedTimeParts(item.foundedAt) : undefined;
 							const displayLines = item.displayLines ?? [item.title];
 
 							return (
@@ -105,25 +105,18 @@ const currentYear = new Date().getFullYear();
 													</span>
 													<span class="sr-only">{item.title}</span>
 												</>
-											) : uptimeYears !== undefined ? (
+											) : uptimeParts ? (
 												<>
-													<span aria-hidden="true">
-														<span class="block lg:whitespace-nowrap">
-															<span
-																class="tabular-nums"
-																data-animated-counter
-																data-counter-decimals="0"
-																data-counter-kind="years"
-																data-counter-target={uptimeYears}
-																data-uptime-counter
-															>
-																{uptimeYears} ans
-															</span>{' '}
-															{displayLines[0]}
+													<span aria-hidden="true" data-live-uptime data-founded-at={item.foundedAt}>
+														<span class="block lg:whitespace-nowrap" data-live-uptime-date>
+															{formatElapsedDate(uptimeParts)}
 														</span>
-														{displayLines.slice(1).map((line) => <span class="block lg:whitespace-nowrap">{line}</span>)}
+														<span class="block lg:whitespace-nowrap">
+															<span class="tabular-nums" data-live-uptime-clock>{formatElapsedClock(uptimeParts)}</span> d’uptime.
+														</span>
+														<span class="block lg:whitespace-nowrap">Toujours en production.</span>
 													</span>
-													<span class="sr-only">{uptimeYears} ans {item.title}</span>
+													<span class="sr-only">{item.title}</span>
 												</>
 											) : item.displayLines ? (
 												<>
@@ -150,6 +143,8 @@ const currentYear = new Date().getFullYear();
 </section>
 
 <script>
+	import { formatElapsedClock, formatElapsedDate, getElapsedTimeParts } from '../../utils/uptime.js';
+
 	function initializeAnimatedCounters() {
 		const counters = document.querySelectorAll('[data-animated-counter]');
 		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -210,6 +205,40 @@ const currentYear = new Date().getFullYear();
 		counters.forEach((counter) => observer.observe(counter));
 	}
 
-	document.addEventListener('astro:page-load', initializeAnimatedCounters);
-	initializeAnimatedCounters();
+	function initializeLiveUptimes() {
+		const uptimes = document.querySelectorAll('[data-live-uptime]');
+
+		uptimes.forEach((uptime) => {
+			if (!(uptime instanceof HTMLElement) || uptime.dataset.initialized === 'true') return;
+
+			const foundedAt = uptime.dataset.foundedAt;
+			const date = uptime.querySelector('[data-live-uptime-date]');
+			const clock = uptime.querySelector('[data-live-uptime-clock]');
+			if (!foundedAt || !(date instanceof HTMLElement) || !(clock instanceof HTMLElement)) return;
+
+			uptime.dataset.initialized = 'true';
+			const update = () => {
+				const parts = getElapsedTimeParts(foundedAt);
+				date.textContent = formatElapsedDate(parts);
+				clock.textContent = formatElapsedClock(parts);
+			};
+
+			update();
+			const interval = window.setInterval(() => {
+				if (!uptime.isConnected) {
+					window.clearInterval(interval);
+					return;
+				}
+				update();
+			}, 1000);
+		});
+	}
+
+	function initializeHeroCounters() {
+		initializeAnimatedCounters();
+		initializeLiveUptimes();
+	}
+
+	document.addEventListener('astro:page-load', initializeHeroCounters);
+	initializeHeroCounters();
 </script>
