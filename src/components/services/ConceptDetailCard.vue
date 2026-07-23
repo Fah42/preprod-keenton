@@ -131,6 +131,7 @@ onBeforeUnmount(() => {
   >
     <Icon v-if="item.icon" :name="item.icon" class="h-6 w-6 text-[var(--cat-accent)]" />
     <h3 class="mt-4 font-semibold text-ink">{{ item.title }}</h3>
+    <p v-if="item.subtitle" class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{{ item.subtitle }}</p>
     <p class="mt-2 text-base leading-relaxed text-ink-secondary">{{ item.text }}</p>
     <button
       type="button"

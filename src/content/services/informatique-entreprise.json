@@ -45,6 +45,7 @@
         },
         {
           "title": "Connexion mobile de secours",
+          "subtitle": "4G / 5G - Bascule automatique",
           "text": "Une solution de continuité de service qui utilise le réseau mobile des opérateurs pour prendre automatiquement le relais en cas de coupure de votre accès Internet principal.",
           "icon": "refresh",
           "detail": {
@@ -78,6 +79,7 @@
         },
         {
           "title": "Connexion satellite de secours",
+          "subtitle": "Starlink - Lien de secours indépendant",
           "text": "Une solution de secours totalement indépendante des réseaux terrestres. Contrairement à la 4G/5G, elle ne dépend ni des infrastructures fibre locales ni de la couverture mobile.",
           "icon": "wifi",
           "compactDetail": {
@@ -131,6 +133,7 @@
         },
         {
           "title": "Firewall",
+          "subtitle": "NGFW / UTM - Sécurité et pilotage du réseau",
           "text": "Le firewall centralise, sécurise et pilote l’ensemble de vos connexions Internet. Il assure la protection de votre réseau tout en garantissant la continuité de service et l’interconnexion de vos sites.",
           "icon": "shield",
           "compactDetail": {

@@ -219,23 +219,23 @@ export const methode = {
   steps: [
     {
       title: 'Comprendre',
-      text: 'Nous commençons par écouter : votre contexte, vos contraintes, vos priorités.',
+      text: "Nous commençons par comprendre vos enjeux avant de parler de solutions. Nous analysons votre contexte, vos contraintes et vos objectifs afin de construire une réponse adaptée.",
     },
     {
       title: 'Cadrer',
-      text: "État des lieux de l'existant, périmètre clair, engagements posés par écrit.",
+      text: "Nous transformons le besoin en plan d'action. Étude de l'existant, définition du périmètre, architecture cible, planning et engagements : tout est formalisé avant le démarrage.",
     },
     {
       title: 'Déployer',
-      text: 'Déploiement par étapes, avec des points de validation à chaque jalon.',
+      text: "Nous avançons par étapes, jamais au hasard. Chaque phase est planifiée, réalisée et validée afin de sécuriser la mise en œuvre et limiter les impacts sur votre activité.",
     },
     {
       title: 'Documenter',
-      text: 'Chaque élément mis en place est documenté pour que votre équipe garde la main.',
+      text: "Nous vous transmettons les clés de votre infrastructure. Schémas, procédures, configurations et documentation : tout est consigné pour garantir votre autonomie et la pérennité des installations.",
     },
     {
       title: 'Accompagner',
-      text: "Supervision, correctifs, évolutions : le suivi ne s'arrête pas à la mise en production.",
+      text: "Notre engagement commence avec la mise en production. Supervision, maintenance, évolutions et accompagnement : nous faisons vivre votre système d'information dans la durée.",
     },
   ],
 };
