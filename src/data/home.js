@@ -49,7 +49,7 @@ export const reassurance = [
 export const philosophy = {
   eyebrow: 'Notre philosophie',
   title: "Nous adaptons la technologie à votre entreprise, jamais l'inverse.",
-  intro: "Nous pensons qu'un bon système d'information est avant tout simple à comprendre, sécurisé par conception et capable d'évoluer dans le temps. Ces principes guident chacune de nos décisions, quelle que soit la technologie mise en œuvre.",
+  intro: "Les technologies évoluent sans cesse. Nos principes, eux, restent les mêmes : privilégier la simplicité, anticiper les évolutions, sécuriser dès la conception et toujours choisir la solution la plus adaptée à votre entreprise.",
   principles: [
     {
       title: 'La simplicité avant tout',

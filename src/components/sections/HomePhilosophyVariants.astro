@@ -100,8 +100,8 @@ const showPhilosophyProposal03 = false;
   <Container class="relative">
 	<header class="mb-12 max-w-6xl md:mb-16" data-reveal>
 		<h2 class="display-title text-[clamp(2.1rem,4vw,3rem)] text-white">{eyebrow}</h2>
-      <p class="mt-6 text-xl leading-snug font-semibold text-dark-text md:text-2xl">{title}</p>
-      <p class="mt-4 text-lg leading-relaxed text-dark-text-secondary">{intro}</p>
+      {title && <p class="mt-6 text-xl leading-snug font-semibold text-dark-text md:text-2xl">{title}</p>}
+      {intro && <p class="mt-6 text-lg leading-relaxed text-dark-text-secondary">{intro}</p>}
     </header>
     <div class="space-y-10 md:space-y-14">
       {groups.map((group, groupIndex) => (
