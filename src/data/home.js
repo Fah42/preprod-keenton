@@ -4,21 +4,21 @@
 // H1 de la page : porte le mot-cle principal "services informatiques pour
 // entreprises" + "infogérance" en debut de titre, lisible par un humain.
 export const hero = {
-	title: 'Services informatiques pour entreprises,',
-	titleAccent: "de la conception à l'infogérance",
+	title: "L'informatique d'entreprise,",
+	titleAccent: "de la conception à l'infogérance.",
 	image: {
 		src: '/images/hero-home.png',
 		alt: 'Les sept domaines d’expertise Keenton',
 	},
   subtitle:
-		"Infrastructure, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et IA : une équipe d'ingénieurs conçoit, sécurise et exploite votre système d'information. Et en répond dans la durée.",
+		"Nous accompagnons les entreprises dans la conception, le déploiement, la sécurisation et l'exploitation de leur système d'information. Notre objectif : vous offrir une infrastructure performante, pérenne et adaptée à vos enjeux.",
   primaryCta: { label: 'Parler de votre projet', href: '/contact' },
 };
 
 // En-tete de la section "Nos expertises" (H2 porteur pour le SEO).
 export const expertisesSection = {
 	eyebrow: 'Nos expertises',
-	title: 'Sept expertises. Une vision. Un seul interlocuteur.',
+	title: '7 expertises. Une vision. Un seul interlocuteur.',
 	intro:
 		"Multiplier les prestataires, c'est souvent multiplier les interlocuteurs, les délais et les zones grises. Nous faisons le choix inverse : réunir toutes les compétences au sein d'une seule équipe. Un interlocuteur unique pilote les expertises et garantit une vision cohérente de votre système d'information.",
 };
