@@ -147,11 +147,61 @@ export const expertiseHighlights = {
 };
 
 export const faq = [
-  { question: 'Pouvez-vous reprendre une infrastructure existante ?', answer: "Oui. Nous commençons par cartographier l'existant, ses dépendances et les responsabilités en place avant de proposer une trajectoire de reprise progressive." },
-  { question: 'Intervenez-vous à distance ou sur site ?', answer: "Les opérations courantes peuvent être réalisées à distance. Les études sur site, installations et interventions qui le nécessitent sont organisées selon le périmètre." },
-  { question: 'Accompagnez-vous les PME comme les équipes techniques structurées ?', answer: "Oui. Le niveau d'accompagnement s'adapte à l'autonomie de vos équipes : prise en charge complète, renfort ponctuel ou responsabilité partagée." },
-  { question: 'Comment commence une collaboration ?', answer: "Par un échange de cadrage, suivi si nécessaire d'une étude sur site. Le périmètre, les priorités, les responsabilités et les prochaines étapes sont ensuite posés clairement." },
-  { question: 'Pouvez-vous intervenir sur un besoin ponctuel ?', answer: "Oui. Keenton peut traiter un projet identifié, réaliser une étude sur site ou accompagner une migration, puis vous laisser l'exploitation documentée ou poursuivre le suivi." },
+  {
+    question: "Pourquoi choisir un partenaire unique pour gérer votre système d'information ?",
+    answer: [
+      "Un partenaire unique simplifie le pilotage de votre système d'information. Vous bénéficiez d'un interlocuteur qui connaît votre environnement, coordonne les expertises et assure la cohérence des décisions techniques.",
+      "Cette organisation fluidifie les échanges, facilite le suivi des projets et vous offre une vision claire de votre infrastructure. Vous passez moins de temps à coordonner les intervenants et davantage à faire avancer vos projets.",
+    ],
+  },
+  {
+    question: "Notre système d'information est complexe et peu documenté. Pouvez-vous le reprendre ?",
+    answer: [
+      "Oui. Au fil des années, un système d'information évolue, les technologies s'accumulent, les besoins changent, les équipes se succèdent et la documentation devient parfois incomplète.",
+      "Notre première mission consiste à reprendre la maîtrise de votre environnement : documenter l'infrastructure, analyser son architecture, identifier les risques et les écarts de conformité afin de construire une feuille de route claire.",
+      "Nous pouvons ensuite simplifier, consolider et faire évoluer progressivement votre système d'information, tout en préservant la continuité de service.",
+    ],
+    link: {
+      label: 'Le defi des migrations informatique',
+      href: '/blog/le-defi-des-migrations-informatique',
+    },
+  },
+  {
+    question: "Pouvez-vous améliorer la sécurité de notre système d'information sans tout remettre en question ?",
+    answer: [
+      "Oui. Nous privilégions une approche progressive : audit de l'existant, priorisation des risques, renforcement des bonnes pratiques et renforcement progressif de votre niveau de sécurité, tout en garantissant la continuité de vos activités.",
+    ],
+  },
+  {
+    question: 'Pouvez-vous collaborer avec notre équipe informatique ou notre prestataire ?',
+    answer: [
+      "Oui. Nous pouvons intervenir en complément de votre prestataire actuel sur une expertise spécifique ou collaborer avec vos équipes internes. Nous nous intégrons à votre organisation et travaillons en coordination avec les acteurs déjà en place.",
+    ],
+  },
+  {
+    question: 'Pouvez-vous nous accompagner sur un projet ponctuel ?',
+    answer: [
+      "Oui. Nous intervenons aussi bien sur des projets ponctuels (migration Microsoft 365, renouvellement d'infrastructure, cybersécurité, déploiement cloud...) que dans le cadre d'un partenariat sur le long terme.",
+    ],
+  },
+  {
+    question: 'Comment débute un accompagnement ?',
+    answer: [
+      "Chaque collaboration débute par un temps d'échange et d'analyse de votre environnement informatique, de vos usages et de vos objectifs. Cette première étape nous permet d'identifier les priorités et de définir un accompagnement adapté à votre entreprise.",
+    ],
+  },
+  {
+    question: 'Intervenez-vous à distance ou sur site ?',
+    answer: [
+      'Les deux. Nous privilégions le support et la prévention à distance pour leur rapidité et leur efficacité. Les interventions sur site restent essentielles pour les projets, les vérifications sur site, les opérations techniques et le maintien d’une relation de proximité avec vos équipes.',
+    ],
+  },
+  {
+    question: 'Intervenez-vous partout en France ?',
+    answer: [
+      'Nous accompagnons des entreprises partout en France. Une grande partie de nos prestations est réalisée à distance. Lorsque cela est nécessaire, nous intervenons également sur site, notamment pour les projets, les installations ou les opérations techniques.',
+    ],
+  },
 ];
 
 export const pourquoi = {

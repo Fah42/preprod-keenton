@@ -12,8 +12,8 @@ const { items = [] } = Astro.props;
     <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
       <header data-reveal>
 		<h2 class="display-title text-[clamp(2.1rem,3.6vw,3rem)] text-ink">Questions fréquentes</h2>
-        <p class="mt-6 text-xl leading-snug font-semibold text-ink">Avant de commencer</p>
-        <p class="mt-4 text-base leading-relaxed text-ink-secondary md:text-lg">Les premières réponses aux questions qui reviennent avant une étude sur site ou une reprise de périmètre.</p>
+        <p class="mt-6 text-xl leading-snug font-semibold text-ink">Avant de nous rencontrer</p>
+        <p class="mt-4 text-base leading-relaxed text-ink-secondary md:text-lg">Avant toute étude ou prise en charge, nous répondons aux questions les plus fréquentes concernant notre façon de travailler, notre accompagnement et nos interventions.</p>
       </header>
       <div class="faq-list divide-y divide-line border-y border-line">
         {items.map((item) => (
@@ -22,7 +22,18 @@ const { items = [] } = Astro.props;
               <span class="grow">{item.question}</span>
               <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/10 text-lg font-normal text-accent-dark transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
-            <p class="max-w-2xl pt-4 pl-[2.4rem] text-base leading-relaxed text-ink-secondary">{item.answer}</p>
+            <div class="max-w-2xl space-y-3 pt-4 pl-[2.4rem] text-base leading-relaxed text-ink-secondary">
+              {(Array.isArray(item.answer) ? item.answer : [item.answer]).map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+              {item.link && (
+                <p>
+                  <a class="font-semibold text-accent-dark underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent" href={item.link.href}>
+                    {item.link.label}
+                  </a>
+                </p>
+              )}
+            </div>
           </details>
         ))}
       </div>

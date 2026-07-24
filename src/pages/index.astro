@@ -65,7 +65,10 @@ const faqSchema = {
 	mainEntity: faq.map((item) => ({
 		'@type': 'Question',
 		name: item.question,
-		acceptedAnswer: { '@type': 'Answer', text: item.answer },
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: Array.isArray(item.answer) ? item.answer.join(' ') : item.answer,
+		},
 	})),
 };
 ---
