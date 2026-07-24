@@ -1,0 +1,142 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<nav
+	class="expertise-toc fixed top-1/2 left-1 z-40 hidden -translate-y-1/2 lg:block"
+	aria-label="Sur cette page"
+	data-expertise-toc
+>
+	<div class="toc-panel group w-10 overflow-hidden rounded-xl border border-line bg-white/95 shadow-cold backdrop-blur transition-[width] duration-200 hover:w-72 focus-within:w-72 motion-reduce:transition-none">
+		<div class="w-72 p-3">
+			<p class="grid grid-cols-[1.5rem_1fr] items-center gap-3 px-1 pb-3 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-ink-secondary">
+				<span class="h-px w-4 bg-[var(--cat-accent)]" aria-hidden="true"></span>
+				<span>Sur cette page</span>
+			</p>
+			<ol class="space-y-1">
+				{
+					items.map((item, index) => (
+						<li>
+							<a
+								href={`#${item.id}`}
+								class="toc-link grid min-h-9 grid-cols-[1.5rem_1fr] items-center gap-3 rounded-lg px-1 text-sm leading-snug text-ink-secondary transition-colors hover:bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--cat-accent)]"
+								data-toc-link
+								data-section-id={item.id}
+							>
+								<span class="toc-index font-mono text-[0.68rem] text-ink-secondary/65">
+									{String(index + 1).padStart(2, '0')}
+								</span>
+								<span class="pr-2">{item.label}</span>
+							</a>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</div>
+</nav>
+
+<details class="expertise-toc-mobile fixed inset-x-0 top-20 z-40 border-y border-line bg-white/95 backdrop-blur lg:hidden" data-expertise-toc-mobile>
+	<summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-6">
+		<span class="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-[var(--cat-accent)]">Sur cette page</span>
+		<span class="flex min-w-0 items-center gap-2 text-sm font-semibold text-ink">
+			<span class="truncate" data-toc-current>{items[0]?.label}</span>
+			<span class="text-[var(--cat-accent)] transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+		</span>
+	</summary>
+	<div class="absolute inset-x-0 top-full border-b border-line bg-white shadow-cold-lg">
+		<ol class="mx-auto grid max-w-[90rem] gap-1 px-6 py-3 sm:grid-cols-2">
+			{
+				items.map((item, index) => (
+					<li>
+						<a
+							href={`#${item.id}`}
+							class="toc-link grid grid-cols-[1.75rem_1fr] items-center gap-2 rounded-lg px-2 py-2 text-sm text-ink-secondary hover:bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] hover:text-ink"
+							data-toc-link
+							data-section-id={item.id}
+						>
+							<span class="toc-index font-mono text-[0.68rem] text-ink-secondary/65">
+								{String(index + 1).padStart(2, '0')}
+							</span>
+							<span>{item.label}</span>
+						</a>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</details>
+
+<script>
+	let sectionObserver: IntersectionObserver | undefined;
+
+	function initializeExpertiseToc() {
+		sectionObserver?.disconnect();
+
+		const mobileToc = document.querySelector<HTMLDetailsElement>('[data-expertise-toc-mobile]');
+		const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-toc-section]'));
+		const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]'));
+		const currentLabel = document.querySelector<HTMLElement>('[data-toc-current]');
+
+		if (sections.length === 0 || links.length === 0) return;
+
+		const setActiveSection = (sectionId: string) => {
+			for (const link of links) {
+				const isActive = link.dataset.sectionId === sectionId;
+				link.toggleAttribute('data-active', isActive);
+				if (isActive) link.setAttribute('aria-current', 'location');
+				else link.removeAttribute('aria-current');
+			}
+
+			const activeSection = sections.find((section) => section.id === sectionId);
+			const activeLabel = activeSection?.querySelector('h2')?.textContent?.trim();
+			if (currentLabel && activeLabel) currentLabel.textContent = activeLabel;
+		};
+
+		sectionObserver = new IntersectionObserver(
+			(entries) => {
+				const visibleEntries = entries
+					.filter((entry) => entry.isIntersecting)
+					.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+
+				const activeEntry = visibleEntries[0];
+				if (activeEntry?.target.id) setActiveSection(activeEntry.target.id);
+			},
+			{ rootMargin: '-20% 0px -65% 0px', threshold: 0 }
+		);
+
+		for (const section of sections) sectionObserver.observe(section);
+
+		for (const link of links) {
+			link.addEventListener('click', () => {
+				if (mobileToc) mobileToc.open = false;
+			});
+		}
+
+		const hashId = window.location.hash.slice(1);
+		const initialSection = sections.find((section) => section.id === hashId) ?? sections[0];
+		if (initialSection) setActiveSection(initialSection.id);
+	}
+
+	document.addEventListener('astro:page-load', initializeExpertiseToc);
+</script>
+
+<style>
+	.toc-link[data-active] {
+		background: color-mix(in srgb, var(--cat-accent) 8%, white);
+		color: var(--color-ink);
+	}
+
+	.toc-link[data-active] .toc-index {
+		color: var(--cat-accent);
+		font-weight: 500;
+	}
+
+	.expertise-toc-mobile summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.expertise-toc-mobile[open] summary [aria-hidden='true'] {
+		transform: rotate(180deg);
+	}
+</style>

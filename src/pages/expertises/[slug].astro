@@ -10,6 +10,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryHero from '../../components/sections/CategoryHero.astro';
 import ServiceBlock from '../../components/services/ServiceBlock.astro';
+import ExpertiseToc from '../../components/services/ExpertiseToc.astro';
 import InfogeranceStrip from '../../components/sections/InfogeranceStrip.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import CTASection from '../../components/sections/CTASection.astro';
@@ -38,6 +39,12 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 // Le contenu source reste strictement identique dans les trois variantes.
 const illustratedSectionTypes = new Set(['split', 'capabilities', 'mosaic']);
 const illustrationIconFor = (section) => section.icon ?? section.items.find((item) => item.icon)?.icon ?? category?.icon;
+const sectionAnchorFor = (label) => label
+	.toLocaleLowerCase('fr-FR')
+	.normalize('NFD')
+	.replace(/[\u0300-\u036f]/g, '')
+	.replace(/[^a-z0-9]+/g, '-')
+	.replace(/^-|-$/g, '');
 
 const standardDisplayedSections = sections.flatMap((section, index) => {
 	const reverse = index % 2 === 1;
@@ -132,6 +139,12 @@ const displayedSections = entry.id === 'hebergement-cloud'
 	: entry.id === 'cybersecurite'
 		? cybersecuriteSections
 	: standardDisplayedSections;
+const expertiseTocItems = entry.id === 'cybersecurite'
+	? displayedSections.map(({ block }) => ({
+		id: sectionAnchorFor(block.eyebrow),
+		label: block.eyebrow,
+	}))
+	: [];
 ---
 
 
@@ -148,9 +161,18 @@ const displayedSections = entry.id === 'hebergement-cloud'
 	]} style={`--cat-accent: ${category?.accentColor}`}>
 		<CategoryHero {...hero} icon={category?.icon} />
 		{entry.id !== 'infogerance' && <InfogeranceStrip />}
+		{entry.id === 'cybersecurite' && <ExpertiseToc items={expertiseTocItems} />}
 
 		<div id="sections">
-			{displayedSections.map(({ block, reverse, tone, instanceKey }) => <ServiceBlock {...block} reverse={reverse} tone={tone} instanceKey={instanceKey} />)}
+			{displayedSections.map(({ block, reverse, tone, instanceKey }) => (
+				<ServiceBlock
+					{...block}
+					reverse={reverse}
+					tone={tone}
+					instanceKey={instanceKey}
+					sectionId={entry.id === 'cybersecurite' ? sectionAnchorFor(block.eyebrow) : undefined}
+				/>
+			))}
 		</div>
 
 		<RelatedPosts posts={relatedPosts} />
