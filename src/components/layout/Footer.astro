@@ -1,8 +1,19 @@
 ---
 import Container from '../ui/Container.astro';
 import { site, expertises } from '../../data/site.js';
+import { siFacebook, siX } from 'simple-icons';
 
 const year = new Date().getFullYear();
+
+const socialLinks = [
+	{ label: 'X', href: 'https://x.com/keentonsas', path: siX.path },
+	{ label: 'Facebook', href: 'https://www.facebook.com/keentonsas/', path: siFacebook.path },
+	{
+		label: 'LinkedIn',
+		href: 'https://www.linkedin.com/company/keenton-sas',
+		path: 'M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0Z',
+	},
+];
 
 const blogTopics = [
 	{ label: 'Cloud hybride', href: '/blog/migrer-cloud-hybride', accent: '#1565C0' },
@@ -20,7 +31,7 @@ const blogTopics = [
 <footer transition:persist="site-footer" class="relative bg-linear-to-b from-footer-from to-footer-to text-white">
 	<div class="hairline-aurora absolute inset-x-0 top-0 h-px" aria-hidden="true"></div>
 	<Container class="py-10 md:py-12">
-		<div class="grid gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-4">
+		<div class="grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[1.1fr_1fr_0.65fr_1.35fr] lg:gap-x-8">
 			<div>
 				<div class="flex h-10 items-center">
 					<img
@@ -31,13 +42,30 @@ const blogTopics = [
 						height="240"
 					/>
 				</div>
-				<p class="mt-4 max-w-xs text-sm text-white/75">
-					{site.baseline}. Nous concevons, déployons et maintenons des
-					infrastructures adaptées à vos usages.
-				</p>
 				<p class="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-white/60">
 					{site.location}
 				</p>
+				<nav class="mt-5" aria-label="Réseaux sociaux">
+					<ul class="flex items-center gap-2.5">
+						{
+							socialLinks.map((social) => (
+								<li>
+									<a
+										href={social.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={`Suivre Keenton sur ${social.label}`}
+										class="flex h-9 w-9 items-center justify-center rounded-md border border-white/20 bg-white/5 text-white/75 transition-colors hover:border-accent-light/60 hover:bg-white/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-light"
+									>
+										<svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true">
+											<path d={social.path} />
+										</svg>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
 			</div>
 
 			<nav aria-label="Expertises">
@@ -76,18 +104,17 @@ const blogTopics = [
 					</h2>
 				</div>
 
-				<ul class="mt-4 grid sm:grid-cols-2 sm:gap-x-5 xl:grid-cols-3 xl:gap-x-4" aria-label="Sujets du blog">
+				<ul class="mt-4 grid grid-cols-2 gap-x-5 gap-y-3" aria-label="Sujets du blog">
 					{
 						blogTopics.map((topic) => (
 							<li>
 								<a
 									href={topic.href}
 									style={`--topic-accent: ${topic.accent}`}
-									class="group grid min-h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b border-white/12 py-2.5 text-xs leading-snug text-white/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+									class="group inline-flex items-center gap-2 text-xs leading-snug text-white/75 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
 								>
 									<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--topic-accent)]" aria-hidden="true"></span>
 									<span>{topic.label}</span>
-									<span class="text-white/35 transition-transform group-hover:translate-x-0.5 group-hover:text-white/80" aria-hidden="true">↗</span>
 								</a>
 							</li>
 						))
