@@ -52,28 +52,28 @@ export const philosophy = {
   intro: "Les technologies évoluent sans cesse. Nos principes, eux, restent les mêmes : privilégier la simplicité, anticiper les évolutions, sécuriser dès la conception et toujours choisir la solution la plus adaptée à votre entreprise.",
   principles: [
     {
-      title: 'La simplicité avant tout',
-      text: "Une infrastructure doit être comprise, documentée et maintenable. Une architecture complexe n'est pas une preuve d'expertise, c'est souvent une dette technique.",
+      title: 'La simplicité',
+      text: "Une infrastructure simple est plus facile à comprendre, à maintenir et à faire évoluer. La simplicité n'est pas un compromis : c'est le résultat d'une architecture bien pensée.",
     },
     {
       title: 'La sécurité dès la conception',
-      text: "La cybersécurité ne s'ajoute pas après un projet. Elle fait partie de chaque décision : réseau, cloud, postes de travail, sauvegardes ou Microsoft 365.",
+      text: "Une infrastructure fiable commence par une architecture sécurisée. Nous intégrons les bonnes pratiques de cybersécurité dès la conception pour protéger durablement votre système d'information.",
     },
     {
-      title: 'Penser durablement',
-      text: "Chaque choix doit rester pertinent dans cinq ou dix ans. Nous privilégions les solutions pérennes aux effets de mode.",
+      title: 'Construire pour durer',
+      text: "Une infrastructure ne devrait pas être reconstruite tous les trois ans. Nous concevons des fondations solides, capables d'accompagner la croissance et les évolutions de votre entreprise.",
     },
     {
-      title: 'La transparence avant tout',
-      text: "Nos clients restent maîtres de leur système d'information. Nous prenons le temps d'expliquer les choix techniques afin que chaque décision soit comprise.",
+      title: 'La transparence',
+      text: "Votre système d'information vous appartient. Documentation, accès, mots de passe et choix techniques : nous partageons tout pour que vous restiez pleinement maître de votre infrastructure.",
     },
     {
-      title: 'Construire pour durer.',
-      text: "Une bonne infrastructure grandit avec l'entreprise. Nous préférons concevoir des fondations solides plutôt que remplacer régulièrement l'existant.",
+      title: 'Un partenariat durable',
+      text: "Nous privilégions une relation de proximité, avec des échanges réguliers et une compréhension fine de votre activité. C'est cette connaissance qui nous permet de vous accompagner efficacement dans le temps.",
     },
     {
-      title: 'Le besoin avant la technologie.',
-      text: "Nous ne défendons ni une marque, ni un éditeur, ni une mode. Nous choisissons les solutions qui répondent le mieux à votre contexte. Notre objectif n'est pas de vendre un produit, mais de construire un système d'information cohérent, durable et adapté à votre entreprise.",
+      title: 'Le besoin avant la technologie',
+      text: "Nous ne défendons ni une marque, ni un éditeur. Chaque choix est guidé par vos besoins, afin de construire un système d'information cohérent, durable et réellement adapté à votre entreprise.",
     },
   ],
 };
