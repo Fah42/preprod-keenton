@@ -6,8 +6,8 @@
     "titleAccent": "vos équipes restent concentrées",
     "subtitle": "Support, supervision et maintenance pour les serveurs, l'infrastructure, le cloud et les postes de travail : une exploitation suivie, lisible et adaptée à votre organisation.",
     "image": {
-      "src": "/images/hero-infogerance.png",
-      "alt": "Équipe Keenton assurant la supervision des systèmes, du réseau et des postes de travail"
+      "src": "/images/hero-infogerance-cloud-operations.png",
+      "alt": "Équipe d'infogérance supervisant des infrastructures et services cloud depuis un centre d'opérations"
     },
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
