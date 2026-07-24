@@ -3,7 +3,7 @@ const { items = [] } = Astro.props;
 ---
 
 <nav
-	class="expertise-toc fixed top-1/2 left-1 z-40 hidden -translate-y-1/2 lg:block"
+	class="expertise-toc pointer-events-none fixed top-1/2 left-1 z-40 hidden -translate-y-1/2 opacity-0 transition-opacity duration-200 lg:block"
 	aria-label="Sur cette page"
 	data-expertise-toc
 >
@@ -36,7 +36,7 @@ const { items = [] } = Astro.props;
 	</div>
 </nav>
 
-<details class="expertise-toc-mobile fixed inset-x-0 top-20 z-40 border-y border-line bg-white/95 backdrop-blur lg:hidden" data-expertise-toc-mobile>
+<details class="expertise-toc-mobile pointer-events-none fixed inset-x-0 top-20 z-40 border-y border-line bg-white/95 opacity-0 backdrop-blur transition-opacity duration-200 lg:hidden" data-expertise-toc-mobile>
 	<summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-6">
 		<span class="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-[var(--cat-accent)]">Sur cette page</span>
 		<span class="flex min-w-0 items-center gap-2 text-sm font-semibold text-ink">
@@ -69,10 +69,15 @@ const { items = [] } = Astro.props;
 
 <script>
 	let sectionObserver: IntersectionObserver | undefined;
+	let tocVisibilityHandler: (() => void) | undefined;
+	let tocVisibilityFrame: number | undefined;
 
 	function initializeExpertiseToc() {
 		sectionObserver?.disconnect();
+		if (tocVisibilityHandler) window.removeEventListener('scroll', tocVisibilityHandler);
+		if (tocVisibilityFrame) window.cancelAnimationFrame(tocVisibilityFrame);
 
+		const desktopToc = document.querySelector<HTMLElement>('[data-expertise-toc]');
 		const mobileToc = document.querySelector<HTMLDetailsElement>('[data-expertise-toc-mobile]');
 		const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-toc-section]'));
 		const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]'));
@@ -107,6 +112,22 @@ const { items = [] } = Astro.props;
 
 		for (const section of sections) sectionObserver.observe(section);
 
+		const activationSection = sections[1] ?? sections[0];
+		const updateTocVisibility = () => {
+			tocVisibilityFrame = undefined;
+			const isVisible = activationSection.getBoundingClientRect().top <= window.innerHeight * 0.72;
+			desktopToc?.toggleAttribute('data-visible', isVisible);
+			mobileToc?.toggleAttribute('data-visible', isVisible);
+			if (!isVisible && mobileToc) mobileToc.open = false;
+		};
+
+		tocVisibilityHandler = () => {
+			if (tocVisibilityFrame) return;
+			tocVisibilityFrame = window.requestAnimationFrame(updateTocVisibility);
+		};
+		window.addEventListener('scroll', tocVisibilityHandler, { passive: true });
+		updateTocVisibility();
+
 		for (const link of links) {
 			link.addEventListener('click', () => {
 				if (mobileToc) mobileToc.open = false;
@@ -122,6 +143,12 @@ const { items = [] } = Astro.props;
 </script>
 
 <style>
+	.expertise-toc[data-visible],
+	.expertise-toc-mobile[data-visible] {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
 	.toc-link[data-active] {
 		background: color-mix(in srgb, var(--cat-accent) 8%, white);
 		color: var(--color-ink);
