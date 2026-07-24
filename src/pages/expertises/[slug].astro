@@ -101,8 +101,36 @@ const hebergementCloudSections = [...sections]
 		};
 	});
 
+// Cybersécurité suit une composition éditoriale unique : les sections de
+// cadrage restent pleine largeur, tandis que les trois sujets opérationnels
+// alternent des illustrations réelles à gauche, à droite, puis à gauche.
+const cybersecuriteLayout = new Map([
+	['Gouvernance & conformité', { showIllustration: false, reverse: false }],
+	['Évaluation des risques', { showIllustration: true, reverse: false }],
+	["Protection du système d'information", { showIllustration: true, reverse: true }],
+	['Surveillance & maintien en condition de sécurité', { showIllustration: true, reverse: false }],
+	['Conformité & réglementation', { showIllustration: false, reverse: false }],
+	['Sensibilisation', { showIllustration: false, reverse: false }],
+]);
+const cybersecuriteSections = sections.map((section, index) => {
+	const layout = cybersecuriteLayout.get(section.eyebrow) ?? { showIllustration: false, reverse: false };
+
+	return {
+		block: {
+			...section,
+			showIllustration: layout.showIllustration,
+			...(layout.showIllustration && !section.image ? { illustrationIcon: illustrationIconFor(section) } : {}),
+		},
+		reverse: layout.reverse,
+		tone: index % 4,
+		instanceKey: `${index}-${layout.showIllustration ? (layout.reverse ? 'illustration-droite' : 'illustration-gauche') : 'sans-illustration'}`,
+	};
+});
+
 const displayedSections = entry.id === 'hebergement-cloud'
 	? hebergementCloudSections
+	: entry.id === 'cybersecurite'
+		? cybersecuriteSections
 	: standardDisplayedSections;
 ---
 

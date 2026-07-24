@@ -12,6 +12,7 @@ const {
   title,
   body,
   items = [],
+  image,
   showIllustration = false,
   illustrationIcon,
   reverse = false,
@@ -42,7 +43,20 @@ const {
     ]}>
       {showIllustration && (
         <div class:list={[reverse && 'lg:order-2']}>
-          <PlaceholderVisual icon={illustrationIcon} />
+          {image ? (
+            <img
+              src={image.src}
+              alt={image.alt}
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
+              style="border-color: var(--feature-image-border-color, color-mix(in srgb, var(--cat-accent) 35%, white)); padding: var(--feature-image-padding, 0);"
+            />
+          ) : (
+            <PlaceholderVisual icon={illustrationIcon} />
+          )}
         </div>
       )}
       <div class:list={['grid gap-4 md:grid-cols-2 lg:grid-cols-3', reverse && showIllustration && 'lg:order-1']}>

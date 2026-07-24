@@ -19,10 +19,6 @@
       "title": "Une sécurité pilotée, pas une succession de réactions",
       "body": "La sécurité ne peut pas reposer sur les seuls incidents. Nous aidons à construire une gouvernance adaptée à votre activité afin que les responsabilités, les priorités et les décisions restent compréhensibles pour l'ensemble de l'organisation.",
       "icon": "award",
-      "image": {
-        "src": "/images/cybersecurite/risques-connus-caches.webp",
-        "alt": "Dragon rouge dominant un iceberg représentant les risques connus et les risques cachés"
-      },
       "variant": "list",
       "points": [
         "Définir les responsabilités et les rôles qui permettent de prendre les bonnes décisions au bon niveau.",
@@ -38,6 +34,10 @@
       "eyebrow": "Évaluation des risques",
       "title": "Comprendre les risques avant de choisir les protections",
       "body": "L'étude sur site, l'analyse des usages et des vérifications ciblées permettent d'établir une vision factuelle de l'exposition. Les écarts sont replacés dans leur contexte métier pour construire un plan d'action réaliste et priorisé.",
+      "image": {
+        "src": "/images/cybersecurite/risques-connus-caches.webp",
+        "alt": "Dragon rouge dominant un iceberg représentant les risques connus et les risques cachés"
+      },
       "layout": "four",
       "items": [
         { "title": "Étude du périmètre", "text": "Les activités, données, outils et dépendances sont identifiés pour comprendre ce qui doit être protégé en priorité.", "icon": "search" },
@@ -51,6 +51,10 @@
       "eyebrow": "Protection du système d'information",
       "title": "Réduire progressivement la surface d'attaque",
       "body": "Les protections gagnent en efficacité lorsqu'elles sont cohérentes entre les postes, les identités, les réseaux et les données. Les mesures sont déployées de manière progressive, administrées puis contrôlées dans le temps.",
+      "image": {
+        "src": "/images/cybersecurite/protection-systeme-information.webp",
+        "alt": "Dragon rouge entouré d'icônes représentant les protections du système d'information"
+      },
       "items": [
         { "title": "Protection des postes", "text": "Les postes et serveurs sont protégés, mis à jour et suivis pour limiter les vecteurs d'attaque les plus courants.", "icon": "monitor" },
         { "title": "Gestion des identités", "text": "Les comptes, rôles et privilèges sont structurés pour donner les accès nécessaires sans multiplier les droits excessifs.", "icon": "users" },
@@ -65,6 +69,10 @@
       "eyebrow": "Surveillance & maintien en condition de sécurité",
       "title": "Des protections qui restent efficaces dans la durée",
       "body": "Le niveau de sécurité se dégrade sans entretien. Nous suivons les vulnérabilités, qualifions les alertes utiles et organisons les actions nécessaires pour que les protections restent adaptées aux évolutions de votre environnement.",
+      "image": {
+        "src": "/images/cybersecurite/surveillance-maintien-securite.webp",
+        "alt": "Tourelle de surveillance protégée par un dragon rouge symbolisant le maintien en condition de sécurité"
+      },
       "layout": "six",
       "items": [
         { "title": "Veille des vulnérabilités", "text": "Les vulnérabilités qui concernent vos composants sont suivies afin d'identifier les corrections à engager.", "icon": "eye" },
@@ -81,10 +89,6 @@
       "title": "Des obligations traduites en pratiques applicables",
       "body": "RGPD, NIS2, exigences clients ou assureurs : seules les obligations qui concernent réellement votre organisation doivent guider la démarche. L'objectif est de produire des règles, des preuves et des habitudes de travail qui restent utiles dans le temps.",
       "icon": "check-circle",
-      "image": {
-        "src": "/images/cybersecurite/protection-systeme-information.webp",
-        "alt": "Dragon rouge entouré d'icônes représentant les protections du système d'information"
-      },
       "variant": "list",
       "points": [
         "Identifier les exigences réglementaires, contractuelles ou sectorielles qui s'appliquent à votre activité.",
