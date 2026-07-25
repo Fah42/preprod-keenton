@@ -39,7 +39,8 @@ const {
     <div class:list={[
       'mt-10',
       showIllustration && 'grid gap-10 lg:items-center lg:gap-16',
-      showIllustration && (reverse ? 'lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)]'),
+      showIllustration && image && 'lg:grid-cols-2',
+      showIllustration && !image && (reverse ? 'lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)]'),
     ]}>
       {showIllustration && (
         <div class:list={[reverse && 'lg:order-2']}>
@@ -47,19 +48,20 @@ const {
             <img
               src={image.src}
               alt={image.alt}
-              width="1200"
-              height="900"
               loading="lazy"
               decoding="async"
-              class="aspect-4/3 w-full rounded-2xl border-2 bg-[color-mix(in_srgb,var(--cat-accent)_6%,white)] object-contain"
-              style="border-color: var(--feature-image-border-color, color-mix(in srgb, var(--cat-accent) 35%, white)); padding: var(--feature-image-padding, 0);"
+              class="mx-auto h-auto w-full object-contain"
             />
           ) : (
             <PlaceholderVisual icon={illustrationIcon} />
           )}
         </div>
       )}
-      <div class:list={['grid gap-4 md:grid-cols-2 lg:grid-cols-3', reverse && showIllustration && 'lg:order-1']}>
+      <div class:list={[
+        'grid gap-4 md:grid-cols-2',
+        showIllustration && image ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
+        reverse && showIllustration && 'lg:order-1',
+      ]}>
         {items.map((item, index) => item.detail ? (
           <ConceptDetailCard item={item} instanceKey={`${instanceKey}-${item.detail.slug}-${index}`} client:load />
         ) : item.compactDetail ? (
