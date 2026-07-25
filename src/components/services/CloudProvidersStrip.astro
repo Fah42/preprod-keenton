@@ -1,5 +1,4 @@
 ---
-import Container from '../ui/Container.astro';
 import {
 	siAmazonwebservices,
 	siOvh,
@@ -15,51 +14,53 @@ const providers = [
 ];
 ---
 
-<aside class="border-b border-line bg-surface py-4 md:py-5" aria-labelledby="cloud-providers-title">
-	<Container>
-		<header>
-			<h2 id="cloud-providers-title" class="font-mono text-xs font-medium uppercase tracking-[0.18em] text-[var(--cat-accent)]">
+<aside class="mt-10 md:mt-12" aria-labelledby="cloud-providers-title">
+	<header class="text-center">
+		<div class="flex items-center gap-4">
+			<span class="h-px flex-1 bg-linear-to-r from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+			<h2 id="cloud-providers-title" class="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
 				Clouds maîtrisés
 			</h2>
-			<p class="mt-1 text-xs text-ink-secondary">
-				Les principaux hyperscalers français et internationaux, maîtrisés par nos équipes.
-			</p>
-		</header>
+			<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+		</div>
+		<p class="mx-auto mt-3 max-w-2xl text-sm text-ink-secondary">
+			Les principaux hyperscalers français et internationaux, maîtrisés par nos équipes.
+		</p>
+	</header>
 
-		<ul class="-mx-6 mt-4 flex snap-x gap-3 overflow-x-auto px-6 pb-1 lg:mx-0 lg:grid lg:grid-cols-5 lg:overflow-visible lg:px-0 lg:pb-0" aria-label="Fournisseurs de cloud maîtrisés">
-			{
-				providers.map((provider) => (
-					<li
-						class:list={[
-							'w-48 shrink-0 snap-start rounded-xl p-[2px] lg:w-auto',
-							provider.french
-								? 'bg-[linear-gradient(110deg,#0055A4_0%,#0055A4_31%,#ffffff_46%,#ffffff_54%,#EF4135_69%,#EF4135_100%)]'
-								: 'bg-line',
-						]}
-					>
-						<div class="flex h-16 items-center justify-center gap-3 rounded-[calc(0.75rem-2px)] bg-white px-4">
-							{provider.image ? (
-								<img
-									src={provider.image}
-									alt=""
-									class="h-8 w-8 shrink-0 object-contain"
-									loading="lazy"
-								/>
-							) : (
-								<svg
-									viewBox="0 0 24 24"
-									class="h-8 w-8 shrink-0 fill-current"
-									style={`color: ${provider.color}`}
-									aria-hidden="true"
-								>
-									<path d={provider.icon.path} />
-								</svg>
-							)}
-							<strong class="text-sm leading-tight font-semibold text-ink">{provider.name}</strong>
-						</div>
-					</li>
-				))
-			}
-		</ul>
-	</Container>
+	<ul class="-mx-6 mt-5 flex snap-x gap-3 overflow-x-auto px-6 pb-1 lg:mx-0 lg:grid lg:grid-cols-5 lg:overflow-visible lg:px-0 lg:pb-0" aria-label="Fournisseurs de cloud maîtrisés">
+		{
+			providers.map((provider) => (
+				<li
+					class:list={[
+						'w-48 shrink-0 snap-start rounded-xl p-[2px] lg:w-auto',
+						provider.french
+							? 'bg-[linear-gradient(110deg,#0055A4_0%,#0055A4_31%,#ffffff_46%,#ffffff_54%,#EF4135_69%,#EF4135_100%)]'
+							: 'bg-line',
+					]}
+				>
+					<div class="flex h-16 items-center justify-center gap-3 rounded-[calc(0.75rem-2px)] bg-white px-4">
+						{provider.image ? (
+							<img
+								src={provider.image}
+								alt=""
+								class="h-8 w-8 shrink-0 object-contain"
+								loading="lazy"
+							/>
+						) : (
+							<svg
+								viewBox="0 0 24 24"
+								class="h-8 w-8 shrink-0 fill-current"
+								style={`color: ${provider.color}`}
+								aria-hidden="true"
+							>
+								<path d={provider.icon.path} />
+							</svg>
+						)}
+						<strong class="text-sm leading-tight font-semibold text-ink">{provider.name}</strong>
+					</div>
+				</li>
+			))
+		}
+	</ul>
 </aside>

@@ -6,8 +6,16 @@ import DecisionPanel from './DecisionPanel.astro';
 import SpotlightPanel from './SpotlightPanel.astro';
 import ChecklistBlock from './ChecklistBlock.astro';
 import MosaicGrid from './MosaicGrid.astro';
+import CloudProvidersStrip from './CloudProvidersStrip.astro';
 
-const { type = 'split', reverse = false, tone = 0, sectionId, ...block } = Astro.props;
+const {
+	type = 'split',
+	reverse = false,
+	tone = 0,
+	sectionId,
+	showCloudProviders = false,
+	...block
+} = Astro.props;
 ---
 
 <div
@@ -23,5 +31,9 @@ const { type = 'split', reverse = false, tone = 0, sectionId, ...block } = Astro
 	{type === 'spotlight' && <SpotlightPanel {...block} />}
 	{type === 'checklist' && <ChecklistBlock {...block} />}
 	{type === 'mosaic' && <MosaicGrid {...block} reverse={reverse} />}
-	{type === 'split' && <AlternatingFeature {...block} reverse={reverse} />}
+	{type === 'split' && (
+		<AlternatingFeature {...block} reverse={reverse}>
+			{showCloudProviders && <CloudProvidersStrip />}
+		</AlternatingFeature>
+	)}
 </div>
