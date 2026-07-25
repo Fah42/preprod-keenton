@@ -18,13 +18,13 @@
       "eyebrow": "Cloud Public",
       "title": "Choisir le bon modèle pour chaque charge",
       "body": "Le choix entre cloud privé, public ou hybride dépend de vos données, de vos contraintes de performance, de votre budget et du niveau de dépendance acceptable. Chaque charge mérite un environnement cohérent avec ses usages et sa trajectoire d'évolution.",
-      "technologyTitle": "Fournisseurs de cloud public",
+      "technologyTitle": "Outils d'administration et d'exploitation du cloud public",
       "technologies": [
-        { "name": "Amazon Web Services", "role": "Cloud public", "icon": "aws" },
-        { "name": "Google Cloud", "role": "Cloud public", "icon": "google-cloud" },
-        { "name": "Microsoft Azure", "role": "Cloud public", "icon": "microsoft-azure" },
-        { "name": "Scaleway", "role": "Cloud public", "icon": "scaleway" },
-        { "name": "OVHcloud", "role": "Cloud public", "icon": "ovhcloud" }
+        { "name": "Terraform", "role": "Infrastructure as Code", "icon": "terraform" },
+        { "name": "Ansible", "role": "Automatisation et configuration", "icon": "ansible" },
+        { "name": "Cloudflare", "role": "DNS, edge et sécurité", "icon": "cloudflare" },
+        { "name": "Zabbix", "role": "Supervision", "icon": "zabbix" },
+        { "name": "Grafana", "role": "Observabilité et tableaux de bord", "icon": "grafana" }
       ],
       "icon": "cloud",
       "variant": "list",

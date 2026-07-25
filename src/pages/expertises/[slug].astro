@@ -11,6 +11,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryHero from '../../components/sections/CategoryHero.astro';
 import ServiceBlock from '../../components/services/ServiceBlock.astro';
 import ExpertiseToc from '../../components/services/ExpertiseToc.astro';
+import CloudProvidersStrip from '../../components/services/CloudProvidersStrip.astro';
 import InfogeranceStrip from '../../components/sections/InfogeranceStrip.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import CTASection from '../../components/sections/CTASection.astro';
@@ -174,6 +175,7 @@ const expertiseTocItems = entry.id === 'cybersecurite'
 				/>
 			))}
 		</div>
+		{entry.id === 'hebergement-cloud' && <CloudProvidersStrip />}
 
 		<RelatedPosts posts={relatedPosts} />
 	</div>
