@@ -6,8 +6,8 @@
     "titleAccent": "sans complexité inutile",
     "subtitle": "Étude sur site, protection des accès, surveillance et accompagnement des équipes : nous renforçons durablement votre sécurité en fonction de vos risques réels.",
     "image": {
-      "src": "/images/hero-cybersecurite.jpg",
-      "alt": "Dragon rouge protégeant une infrastructure informatique"
+      "src": "/images/hero-cybersecurite-detoure.webp",
+      "alt": "Dragon rouge survolant des infrastructures informatiques dans les nuages"
     },
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
@@ -35,7 +35,7 @@
       "title": "Comprendre les risques avant de choisir les protections",
       "body": "L'étude sur site, l'analyse des usages et des vérifications ciblées permettent d'établir une vision factuelle de l'exposition. Les écarts sont replacés dans leur contexte métier pour construire un plan d'action réaliste et priorisé.",
       "image": {
-        "src": "/images/cybersecurite/risques-connus-caches.webp",
+        "src": "/images/cybersecurite/risques-connus-caches-detoure.webp",
         "alt": "Dragon rouge dominant un iceberg représentant les risques connus et les risques cachés"
       },
       "layout": "four",
@@ -70,7 +70,7 @@
       "title": "Des protections qui restent efficaces dans la durée",
       "body": "Le niveau de sécurité se dégrade sans entretien. Nous suivons les vulnérabilités, qualifions les alertes utiles et organisons les actions nécessaires pour que les protections restent adaptées aux évolutions de votre environnement.",
       "image": {
-        "src": "/images/cybersecurite/surveillance-maintien-securite.webp",
+        "src": "/images/cybersecurite/surveillance-maintien-securite-detoure.webp",
         "alt": "Tourelle de surveillance protégée par un dragon rouge symbolisant le maintien en condition de sécurité"
       },
       "layout": "six",
