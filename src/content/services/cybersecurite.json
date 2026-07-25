@@ -6,9 +6,10 @@
     "titleAccent": "sans complexité inutile",
     "subtitle": "Étude sur site, protection des accès, surveillance et accompagnement des équipes : nous renforçons durablement votre sécurité en fonction de vos risques réels.",
     "image": {
-      "src": "/images/hero-cybersecurite-detoure.webp",
+      "src": "/images/hero-cybersecurite-1600.webp",
       "alt": "Dragon rouge survolant des infrastructures informatiques dans les nuages"
     },
+    "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
   },

@@ -85,6 +85,7 @@ const services = defineCollection({
       titleAccent: z.string(),
       subtitle: z.string(),
       image: z.object({ src: z.string(), alt: z.string() }).optional(),
+      visualSize: z.enum(['default', 'large']).default('default'),
       primaryCta: cta,
       secondaryCta: cta,
     }),
