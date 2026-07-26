@@ -20,7 +20,7 @@ const {
 const largeVisual = visualSize === 'large';
 const heroGridClass = [
 	'relative grid items-center gap-6 py-0 lg:gap-10',
-	largeVisual ? 'lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]' : 'lg:grid-cols-2',
+	largeVisual ? 'lg:grid-cols-[minmax(0,3fr)_minmax(0,5fr)]' : 'lg:grid-cols-2',
 ].join(' ');
 ---
 
@@ -62,7 +62,7 @@ const heroGridClass = [
 		<div
 			class:list={[
 				'my-3 aspect-[4/3] w-full justify-self-center lg:justify-self-end',
-				largeVisual ? 'max-w-[48rem]' : 'max-w-[36rem] lg:w-[36rem]',
+				largeVisual ? 'max-w-[50rem]' : 'max-w-[36rem] lg:w-[36rem]',
 			]}
 		>
 			{

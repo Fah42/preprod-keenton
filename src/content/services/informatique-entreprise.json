@@ -9,6 +9,7 @@
       "src": "/images/hero-informatique-entreprise.jpg",
       "alt": "Gardienne reliant les sites d'une infrastructure informatique d'entreprise"
     },
+    "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
   },
