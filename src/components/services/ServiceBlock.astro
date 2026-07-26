@@ -7,6 +7,7 @@ import SpotlightPanel from './SpotlightPanel.astro';
 import ChecklistBlock from './ChecklistBlock.astro';
 import MosaicGrid from './MosaicGrid.astro';
 import CloudProvidersStrip from './CloudProvidersStrip.astro';
+import OperatingSystemsStrip from './OperatingSystemsStrip.astro';
 
 const {
 	type = 'split',
@@ -14,6 +15,7 @@ const {
 	tone = 0,
 	sectionId,
 	showCloudProviders = false,
+	showOperatingSystems = false,
 	...block
 } = Astro.props;
 ---
@@ -34,6 +36,7 @@ const {
 	{type === 'split' && (
 		<AlternatingFeature {...block} reverse={reverse}>
 			{showCloudProviders && <CloudProvidersStrip />}
+			{showOperatingSystems && <OperatingSystemsStrip />}
 		</AlternatingFeature>
 	)}
 </div>

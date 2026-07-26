@@ -60,9 +60,15 @@
     },
     {
       "type": "split",
-      "eyebrow": "Infogérance poste de travail (Windows / macOS / Linux)",
+      "eyebrow": "Infogérance poste de travail",
       "title": "Des environnements de travail homogènes et accompagnés",
       "body": "Chaque collaborateur doit pouvoir travailler avec un poste adapté, protégé et maintenu. Nous prenons en charge les environnements Windows, macOS et Linux, ainsi que les applications qui structurent le quotidien des équipes.",
+      "technologyTitle": "Outils de support et de gestion des services",
+      "technologies": [
+        { "name": "Jira Service Management", "role": "Gestion des demandes et des services", "icon": "jira-service-management" },
+        { "name": "Jira", "role": "Suivi et coordination des interventions", "icon": "jira" },
+        { "name": "TeamViewer", "role": "Assistance et prise en main à distance", "icon": "teamviewer" }
+      ],
       "image": {
         "src": "/images/infogerance/poste-travail-cycle.webp",
         "alt": "Cycle d'infogérance d'un poste de travail, de l'accueil de l'utilisateur jusqu'au recyclage du matériel"
