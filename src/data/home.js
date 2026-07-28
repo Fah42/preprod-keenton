@@ -35,9 +35,9 @@ export const reassurance = [
     displayLines: ['Chez nous, le ROI', 'porte la couronne'],
   },
   {
-    icon: 'infinity',
-    title: 'Les technologies évoluent. La confiance reste.',
-    displayLines: ['Les technologies évoluent.', 'La confiance reste.'],
+    icon: 'coffee',
+    title: 'Jusqu’à 247 litres de café consommés chaque mois.',
+    monthlyTarget: 247,
   },
   {
     icon: 'clock',

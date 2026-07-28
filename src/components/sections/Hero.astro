@@ -7,6 +7,7 @@ import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
 import { formatElapsedClock, formatElapsedDate, getElapsedTimeParts } from '../../utils/uptime.js';
+import { formatLiters, getMonthlyProgressValue } from '../../utils/monthlyCounter.js';
 
 const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlights = [] } = Astro.props;
 ---
@@ -69,6 +70,7 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 					<ul class="grid auto-rows-fr grid-cols-2 items-stretch divide-line md:grid-cols-4 md:divide-x">
 						{highlights.map((item) => {
 							const uptimeParts = item.foundedAt ? getElapsedTimeParts(item.foundedAt) : undefined;
+							const monthlyValue = item.monthlyTarget ? getMonthlyProgressValue(item.monthlyTarget) : undefined;
 							const displayLines = item.displayLines ?? [item.title];
 
 							return (
@@ -118,6 +120,26 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 													</span>
 													<span class="sr-only">{item.title}</span>
 												</>
+											) : monthlyValue !== undefined ? (
+												<>
+													<span aria-hidden="true">
+														<span class="block lg:whitespace-nowrap">
+															<span
+																class="tabular-nums"
+																data-animated-counter
+																data-counter-decimals="0"
+																data-counter-kind="liters"
+																data-counter-target={monthlyValue}
+																data-monthly-counter
+																data-monthly-target={item.monthlyTarget}
+															>
+																{formatLiters(monthlyValue)}
+															</span>
+														</span>
+														<span class="block lg:whitespace-nowrap">de café consommés.</span>
+													</span>
+													<span class="sr-only">{item.title}</span>
+												</>
 											) : item.displayLines ? (
 												<>
 													<span aria-hidden="true">
@@ -144,6 +166,43 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 
 <script>
 	import { formatElapsedClock, formatElapsedDate, getElapsedTimeParts } from '../../utils/uptime.js';
+	import { formatLiters, getMonthlyProgressValue } from '../../utils/monthlyCounter.js';
+
+	function initializeMonthlyCounters() {
+		const counters = document.querySelectorAll('[data-monthly-counter]');
+
+		counters.forEach((counter) => {
+			if (!(counter instanceof HTMLElement)) return;
+
+			const monthlyTarget = Number(counter.dataset.monthlyTarget ?? 0);
+			const currentValue = getMonthlyProgressValue(monthlyTarget);
+			const nextTarget = String(currentValue);
+			const previousTarget = counter.dataset.counterTarget;
+			counter.dataset.counterTarget = nextTarget;
+
+			if (counter.dataset.monthlyInitialized === 'true') {
+				if (previousTarget !== nextTarget && counter.dataset.animated === 'true') {
+					counter.textContent = formatLiters(currentValue);
+				}
+				return;
+			}
+
+			counter.dataset.monthlyInitialized = 'true';
+			const interval = window.setInterval(() => {
+				if (!counter.isConnected) {
+					window.clearInterval(interval);
+					return;
+				}
+
+				const updatedValue = getMonthlyProgressValue(monthlyTarget);
+				const updatedTarget = String(updatedValue);
+				if (counter.dataset.counterTarget === updatedTarget) return;
+
+				counter.dataset.counterTarget = updatedTarget;
+				counter.textContent = formatLiters(updatedValue);
+			}, 60_000);
+		});
+	}
 
 	function initializeAnimatedCounters() {
 		const counters = document.querySelectorAll('[data-animated-counter]');
@@ -161,7 +220,11 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 					maximumFractionDigits: decimals,
 				});
 			const formatYears = (years) => `${years} ${years === 1 ? 'an' : 'ans'}`;
-			const formatValue = (value) => kind === 'years' ? formatYears(value) : `${formatNumber(value)}%`;
+			const formatValue = (value) => {
+				if (kind === 'years') return formatYears(value);
+				if (kind === 'liters') return formatLiters(value);
+				return `${formatNumber(value)}%`;
+			};
 			counter.dataset.animated = 'true';
 
 			if (reduceMotion || target <= 0) {
@@ -235,6 +298,7 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 	}
 
 	function initializeHeroCounters() {
+		initializeMonthlyCounters();
 		initializeAnimatedCounters();
 		initializeLiveUptimes();
 	}

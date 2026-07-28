@@ -69,8 +69,8 @@
       "title": "Les fondations techniques restent maîtrisées",
       "body": "Nous administrons les composants qui assurent la disponibilité, la sécurité et les performances de votre système d'information.",
       "image": {
-        "src": "/images/hero-infogerance-cloud-operations.png",
-        "alt": "Équipe supervisant les serveurs, le réseau et les infrastructures depuis un centre d'opérations"
+        "src": "/images/infogerance/infrastructure.png",
+        "alt": "Technicien administrant une infrastructure serveur depuis son ordinateur"
       },
       "icon": "layers",
       "variant": "list",
