@@ -63,6 +63,10 @@
       "eyebrow": "Hébergement Web",
       "title": "Un environnement web construit autour de votre projet",
       "body": "Vos sites et applications ont besoin d'un hébergement maintenu, sécurisé et capable d'évoluer. Nous organisons l'environnement web, les bases de données, les sauvegardes et l'exploitation quotidienne avec un accompagnement adapté à votre projet.",
+      "image": {
+        "src": "/images/hebergement-cloud/hebergement-web.png",
+        "alt": "Architecture d'hébergement web reliant CDN, WAF, certificats SSL, répartition de charge et serveurs web"
+      },
       "technologyTitle": "Technologies pour l'hébergement web",
       "technologies": [
         { "name": "WordPress", "role": "CMS", "icon": "wordpress" },

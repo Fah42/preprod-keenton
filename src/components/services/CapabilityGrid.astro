@@ -33,7 +33,7 @@ const {
           <TechnologyLogos title={technologyTitle} items={technologies} />
         </div>
       ) : (
-        <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
+        body && <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
       )}
     </header>
     <div class:list={[

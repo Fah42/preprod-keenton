@@ -135,11 +135,37 @@ const cybersecuriteSections = sections.map((section, index) => {
 	};
 });
 
+// Infogérance utilise une composition unique sans duplication : trois cartes
+// pour l'approche, puis Poste à gauche, Infrastructure à droite et Cloud Public
+// en pleine largeur.
+const infogeranceLayout = new Map([
+	["Notre approche de l'infogérance", { showIllustration: false, reverse: false }],
+	['Infogérance Poste', { showIllustration: true, reverse: false }],
+	['Infogérance Infrastructure', { showIllustration: true, reverse: true }],
+	['Infogérance Cloud Public', { showIllustration: false, reverse: false }],
+]);
+const infogeranceSections = sections.map((section, index) => {
+	const layout = infogeranceLayout.get(section.eyebrow) ?? { showIllustration: false, reverse: false };
+
+	return {
+		block: {
+			...section,
+			showIllustration: layout.showIllustration,
+			...(layout.showIllustration && !section.image ? { illustrationIcon: illustrationIconFor(section) } : {}),
+		},
+		reverse: layout.reverse,
+		tone: index % 4,
+		instanceKey: `${index}-${layout.showIllustration ? (layout.reverse ? 'illustration-droite' : 'illustration-gauche') : 'sans-illustration'}`,
+	};
+});
+
 const displayedSections = entry.id === 'hebergement-cloud'
 	? hebergementCloudSections
 	: entry.id === 'cybersecurite'
 		? cybersecuriteSections
-	: standardDisplayedSections;
+		: entry.id === 'infogerance'
+			? infogeranceSections
+			: standardDisplayedSections;
 const expertiseTocItems = entry.id === 'cybersecurite'
 	? displayedSections.map(({ block }) => ({
 		id: sectionAnchorFor(block.eyebrow),
@@ -172,7 +198,7 @@ const expertiseTocItems = entry.id === 'cybersecurite'
 					tone={tone}
 					instanceKey={instanceKey}
 					sectionId={entry.id === 'cybersecurite' ? sectionAnchorFor(block.eyebrow) : undefined}
-					showOperatingSystems={entry.id === 'infogerance' && block.eyebrow === 'Infogérance poste de travail'}
+					showOperatingSystems={entry.id === 'infogerance' && block.eyebrow === 'Infogérance Poste'}
 				/>
 			))}
 		</div>

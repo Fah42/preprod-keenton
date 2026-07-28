@@ -15,52 +15,31 @@
   },
   "sections": [
     {
-      "type": "mosaic",
-      "eyebrow": "Infogérance serveur",
-      "title": "Les environnements qui portent vos services métier",
-      "body": "Les systèmes, hyperviseurs et applications sont suivis comme un ensemble. Nous intervenons sur les plateformes qui composent votre environnement pour préserver leur disponibilité, leur sécurité et leur capacité à évoluer.",
-      "layout": "six",
+      "type": "capabilities",
+      "eyebrow": "Notre approche de l'infogérance",
+      "title": "Une présence adaptée à votre système d'information.",
+      "body": "",
       "items": [
-        { "title": "Windows Server", "text": "Administration et maintenance des serveurs Windows qui soutiennent les services internes et les applications métier.", "icon": "monitor" },
-        { "title": "Linux", "text": "Prise en charge des environnements Linux pour les services applicatifs, web ou d'infrastructure.", "icon": "layers" },
-        { "title": "VMware", "text": "Suivi des plateformes de virtualisation VMware et des machines qui y sont hébergées.", "icon": "database" },
-        { "title": "Microsoft Hyper-V", "text": "Exploitation des environnements Hyper-V et accompagnement de leurs évolutions planifiées.", "icon": "layers" },
-        { "title": "Nutanix", "text": "Gestion des plateformes hyperconvergées lorsque ce modèle correspond à vos besoins d'exploitation.", "icon": "cloud" },
-        { "title": "Applications serveur", "text": "Messagerie, bases de données, annuaires, sauvegarde ou conteneurs : les services sont suivis avec leurs dépendances.", "icon": "cog" }
-      ]
-    },
-    {
-      "type": "mosaic",
-      "eyebrow": "Infogérance infrastructure",
-      "title": "Les fondations techniques restent maîtrisées",
-      "body": "Réseau, pare-feu et stockage font partie du même environnement d'exploitation. Leur configuration, leur suivi et leurs évolutions sont traités de manière cohérente, avec une documentation qui reste à jour.",
-      "layout": "four",
-      "items": [
-        { "title": "Réseau & routage", "text": "Les équipements réseau et leurs configurations sont suivis pour préserver la connectivité entre les sites, les utilisateurs et les services.", "icon": "link" },
-        { "title": "Firewall", "text": "Les règles, mises à jour et alertes du pare-feu sont administrées pour maintenir un filtrage adapté aux usages réels.", "icon": "shield" },
-        { "title": "Stockage", "text": "Les capacités, alertes et évolutions des espaces de stockage sont surveillées pour protéger l'accès aux données utiles.", "icon": "database" },
-        { "title": "Amélioration continue", "text": "Les observations issues de l'exploitation alimentent des recommandations concrètes, planifiées avec vous selon les priorités.", "icon": "chart" }
+        {
+          "title": "1. Support à distance",
+          "subtitle": "Télémaintenance & Helpdesk",
+          "text": "Notre équipe accompagne vos collaborateurs au quotidien grâce à une assistance à distance réactive. En parallèle, nous supervisons en continu vos serveurs, vos sauvegardes et vos infrastructures afin de détecter et corriger les anomalies avant qu'elles n'impactent votre activité. Les opérations de maintenance courantes et les mises à jour du quotidien sont réalisées à distance pour garantir un système d'information fiable, sécurisé et performant."
+        },
+        {
+          "title": "2. Accompagnement",
+          "subtitle": "Régie informatique (présence régulière)",
+          "text": "Selon vos besoins, un expert intervient régulièrement dans vos locaux, à partir d'une demi-journée par mois. Il pilote vos projets, assure le suivi technique de votre infrastructure et réalise les opérations de maintenance planifiées nécessitant une présence sur site, comme les évolutions d'infrastructure, les migrations techniques ou les mises à niveau majeures de vos systèmes. Vous bénéficiez ainsi de la proximité d'un service informatique interne, avec la flexibilité d'un partenaire externe."
+        },
+        {
+          "title": "3. Présence sur site au besoin",
+          "subtitle": "Interventions ponctuelles, urgences et déploiements",
+          "text": "Lorsqu'une intervention physique est nécessaire, nos techniciens se déplacent rapidement dans vos locaux pour résoudre les incidents d'infrastructure. Ce mode d'intervention est également privilégié pour les besoins ponctuels, tels que le déploiement de nouveaux équipements, les projets d'infrastructure ou les opérations de maintenance majeures. Ces interventions sont planifiées afin de garantir leur bon déroulement et de limiter l'impact sur votre activité."
+        }
       ]
     },
     {
       "type": "split",
-      "eyebrow": "Infogérance cloud public",
-      "title": "Des environnements cloud suivis avec la même exigence",
-      "body": "Le cloud public doit rester lisible, sécurisé et maîtrisé. Nous accompagnons l'exploitation de vos environnements afin de conserver une vision claire des accès, des consommations et des services qui soutiennent votre activité.",
-      "icon": "cloud",
-      "variant": "list",
-      "points": [
-        "Conserver la propriété de vos comptes, abonnements et données tout au long de l'accompagnement.",
-        "Revoir les identités et les droits pour qu'ils correspondent aux rôles et aux usages réels.",
-        "Suivre les services en production afin d'identifier les alertes et les écarts de disponibilité utiles.",
-        "Documenter l'organisation des ressources pour faciliter les évolutions et les échanges avec vos équipes.",
-        "Analyser les consommations pour mieux comprendre les coûts et anticiper les évolutions nécessaires.",
-        "Appliquer les mêmes principes de supervision, de sauvegarde et de sécurité qu'aux environnements internes."
-      ]
-    },
-    {
-      "type": "split",
-      "eyebrow": "Infogérance poste de travail",
+      "eyebrow": "Infogérance Poste",
       "title": "Des environnements de travail homogènes et accompagnés",
       "body": "Chaque collaborateur doit pouvoir travailler avec un poste adapté, protégé et maintenu. Nous prenons en charge les environnements Windows, macOS et Linux, ainsi que les applications qui structurent le quotidien des équipes.",
       "technologyTitle": "Outils de support et de gestion des services",
@@ -85,17 +64,39 @@
       ]
     },
     {
-      "type": "capabilities",
-      "eyebrow": "Support et maintenance",
-      "title": "Une exploitation présente au quotidien",
-      "body": "L'infogérance associe le support des utilisateurs, la supervision des systèmes et la maintenance préventive. Les demandes sont suivies, les alertes qualifiées et les actions documentées pour que l'informatique reste un soutien concret de l'activité.",
-      "items": [
-        { "title": "Prise en main à distance", "text": "Un technicien peut intervenir à distance pour diagnostiquer une situation et accompagner l'utilisateur sans attendre un déplacement lorsque cela est pertinent.", "icon": "monitor" },
-        { "title": "Support par ticket", "text": "Une demande par e-mail suffit pour ouvrir un ticket, suivre son traitement et conserver l'historique des interventions.", "icon": "mail" },
-        { "title": "Protection des postes", "text": "L'état de la protection antivirus et les alertes utiles sont centralisés pour repérer les écarts et faciliter leur traitement.", "icon": "shield-check" },
-        { "title": "Supervision proactive", "text": "Disponibilité et performances des services sont suivies afin d'identifier les dérives avant qu'elles ne deviennent bloquantes.", "icon": "eye" },
-        { "title": "Sauvegarde suivie", "text": "Les sauvegardes internes et externes sont contrôlées, avec une attention portée aux restaurations lorsque le besoin se présente.", "icon": "database" },
-        { "title": "Présence sur site", "text": "Des interventions planifiées sur place complètent le support à distance pour la maintenance, les vérifications et les besoins des équipes.", "icon": "users" }
+      "type": "split",
+      "eyebrow": "Infogérance Infrastructure",
+      "title": "Les fondations techniques restent maîtrisées",
+      "body": "Nous administrons les composants qui assurent la disponibilité, la sécurité et les performances de votre système d'information.",
+      "image": {
+        "src": "/images/hero-infogerance-cloud-operations.png",
+        "alt": "Équipe supervisant les serveurs, le réseau et les infrastructures depuis un centre d'opérations"
+      },
+      "icon": "layers",
+      "variant": "list",
+      "points": [
+        "Serveurs",
+        "Firewall et ligne Internet",
+        "Réseau : switch, routeur et Wi-Fi",
+        "Hyperviseurs",
+        "Stockage",
+        "Sauvegardes"
+      ]
+    },
+    {
+      "type": "split",
+      "eyebrow": "Infogérance Cloud Public",
+      "title": "Des environnements cloud suivis avec la même exigence",
+      "body": "Le cloud public doit rester lisible, sécurisé et maîtrisé. Nous accompagnons l'exploitation de vos environnements afin de conserver une vision claire des accès, des consommations et des services qui soutiennent votre activité.",
+      "icon": "cloud",
+      "variant": "list",
+      "points": [
+        "Conserver la propriété de vos comptes, abonnements et données tout au long de l'accompagnement.",
+        "Revoir les identités et les droits pour qu'ils correspondent aux rôles et aux usages réels.",
+        "Suivre les services en production afin d'identifier les alertes et les écarts de disponibilité utiles.",
+        "Documenter l'organisation des ressources pour faciliter les évolutions et les échanges avec vos équipes.",
+        "Analyser les consommations pour mieux comprendre les coûts et anticiper les évolutions nécessaires.",
+        "Appliquer les mêmes principes de supervision, de sauvegarde et de sécurité qu'aux environnements internes."
       ]
     }
   ]
