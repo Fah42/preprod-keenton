@@ -9,6 +9,7 @@
       "src": "/images/hero-hebergement-cloud-detoure.webp",
       "alt": "Gardien de pierre portant un datacenter installé sur une île flottante"
     },
+    "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
   },
@@ -129,6 +130,10 @@
       "eyebrow": "Nos Datacenters",
       "title": "Savoir où résident vos services et dans quelles conditions",
       "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
+      "image": {
+        "src": "/images/datacenters-connectes.webp",
+        "alt": "Datacenters interconnectés installés sur des îles flottantes"
+      },
       "technologyTitle": "Technologies déployées dans nos datacenters",
       "technologies": [
         { "name": "Nutanix", "role": "Hyperconvergence", "icon": "nutanix" },

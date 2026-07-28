@@ -9,6 +9,7 @@
       "src": "/images/hero-devops.png",
       "alt": "Robots représentant les pratiques CI/CD, Kubernetes, GitOps, Infrastructure as Code et observabilité"
     },
+    "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
     "secondaryCta": { "label": "Découvrir nos services", "href": "#sections" }
   },

@@ -26,6 +26,9 @@ const blog = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     readTime: z.number().int().positive().optional(),
+    // URL publique historique, conservée pour préparer les redirections lors
+    // de la bascule de l'ancien site WordPress vers le nouveau blog.
+    legacyUrl: z.string().url().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),

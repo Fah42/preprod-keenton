@@ -2,7 +2,7 @@
 import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
 
 const { post, showTopline = true, alwaysAccent = false } = Astro.props;
-const { title, description, date, category } = post.data;
+const { title, description, date, category, image, imageAlt } = post.data;
 const expertise = getExpertiseForPost(post);
 const formattedDate = formatPostDate(date);
 ---
@@ -11,22 +11,35 @@ const formattedDate = formatPostDate(date);
 	href={`/blog/${post.id}`}
 	style={`--post-accent: ${expertise?.accentColor ?? '#29aae3'}`}
 	class:list={[
-		'blog-card group relative flex h-full flex-col overflow-hidden rounded-lg border border-line p-8 transition-all duration-200 hover:-translate-y-1',
+		'blog-card group relative flex h-full flex-col overflow-hidden rounded-lg border border-line transition-all duration-200 hover:-translate-y-1',
 		{ 'blog-card--always-accent': alwaysAccent },
 	]}
 >
 	<div class="blog-card__rail absolute inset-y-0 left-0 w-[3px]"></div>
 	{showTopline && <div class="blog-card__topline absolute inset-x-0 top-0 h-[2px]" aria-hidden="true"></div>}
-	<p class="relative flex flex-wrap items-center gap-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-accent-dark">
-		<span class="blog-card__category">{category}</span>
-		<span class="text-ink-secondary/60 normal-case tracking-normal">{formattedDate}</span>
-	</p>
-	<h3 class="blog-card__title relative mt-4 text-xl leading-snug font-semibold text-ink">{title}</h3>
-	<p class="mt-3 grow text-base leading-relaxed text-ink-secondary">{description}</p>
-	<p class="blog-card__cta mt-6 inline-flex items-center gap-2 text-sm font-medium">
-		Lire l'article
-		<span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-	</p>
+	{image && (
+		<div class="blog-card__image aspect-[16/9] overflow-hidden border-b border-line bg-surface-alt">
+			<img
+				src={image}
+				alt={imageAlt ?? ''}
+				loading="lazy"
+				decoding="async"
+				class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+			/>
+		</div>
+	)}
+	<div class="relative flex grow flex-col p-8">
+		<p class="flex flex-wrap items-center gap-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-accent-dark">
+			<span class="blog-card__category">{category}</span>
+			<span class="text-ink-secondary/60 normal-case tracking-normal">{formattedDate}</span>
+		</p>
+		<h3 class="blog-card__title mt-4 text-xl leading-snug font-semibold text-ink">{title}</h3>
+		<p class="mt-3 grow text-base leading-relaxed text-ink-secondary">{description}</p>
+		<p class="blog-card__cta mt-6 inline-flex items-center gap-2 text-sm font-medium">
+			Lire l'article
+			<span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+		</p>
+	</div>
 </a>
 
 <style>
