@@ -64,7 +64,7 @@
       "title": "Un environnement web construit autour de votre projet",
       "body": "Vos sites et applications ont besoin d'un hébergement maintenu, sécurisé et capable d'évoluer. Nous organisons l'environnement web, les bases de données, les sauvegardes et l'exploitation quotidienne avec un accompagnement adapté à votre projet.",
       "image": {
-        "src": "/images/hebergement-cloud/hebergement-web.png",
+        "src": "/images/hebergement-cloud/hebergement-web-portrait.png",
         "alt": "Architecture d'hébergement web reliant CDN, WAF, certificats SSL, répartition de charge et serveurs web"
       },
       "technologyTitle": "Technologies pour l'hébergement web",
@@ -135,7 +135,7 @@
       "title": "Savoir où résident vos services et dans quelles conditions",
       "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
       "image": {
-        "src": "/images/datacenters-connectes.webp",
+        "src": "/images/hebergement-cloud/datacenters.png",
         "alt": "Datacenters interconnectés installés sur des îles flottantes"
       },
       "technologyTitle": "Technologies déployées dans nos datacenters",
