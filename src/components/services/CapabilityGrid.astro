@@ -13,6 +13,7 @@ const {
   body,
   items = [],
   image,
+  imageSize = 'default',
   showIllustration = false,
   illustrationIcon,
   reverse = false,
@@ -50,7 +51,10 @@ const {
               alt={image.alt}
               loading="lazy"
               decoding="async"
-              class="mx-auto h-auto w-full object-contain"
+              class:list={[
+                'mx-auto h-auto object-contain',
+                imageSize === 'compact' ? 'max-h-[44rem] w-auto max-w-full' : 'w-full',
+              ]}
             />
           ) : (
             <PlaceholderVisual icon={illustrationIcon} />

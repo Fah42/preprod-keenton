@@ -98,6 +98,7 @@ const services = defineCollection({
         body: z.string(),
         icon: z.string().optional(),
         image: z.object({ src: z.string(), alt: z.string() }).optional(),
+        imageSize: z.enum(['default', 'compact']).default('default'),
         type: z.enum(['split', 'capabilities', 'process', 'decision', 'spotlight', 'checklist', 'mosaic']).default('split'),
         eyebrow: z.string().optional(),
         items: z.array(serviceItem).default([]),

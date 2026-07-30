@@ -67,6 +67,7 @@
         "src": "/images/hebergement-cloud/hebergement-web-portrait.png",
         "alt": "Architecture d'hébergement web reliant CDN, WAF, certificats SSL, répartition de charge et serveurs web"
       },
+      "imageSize": "compact",
       "technologyTitle": "Technologies pour l'hébergement web",
       "technologies": [
         { "name": "WordPress", "role": "CMS", "icon": "wordpress" },

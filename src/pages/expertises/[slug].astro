@@ -14,8 +14,9 @@ import ExpertiseToc from '../../components/services/ExpertiseToc.astro';
 import InfogeranceStrip from '../../components/sections/InfogeranceStrip.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import CTASection from '../../components/sections/CTASection.astro';
+import FAQSection from '../../components/sections/FAQSection.astro';
 
-import { finalCta } from '../../data/home.js';
+import { blogSection, faq, finalCta } from '../../data/home.js';
 import { expertises } from '../../data/site.js';
 
 export async function getStaticPaths() {
@@ -203,10 +204,10 @@ const expertiseTocItems = entry.id === 'cybersecurite'
 			))}
 		</div>
 
-		<RelatedPosts posts={relatedPosts} />
+		<CTASection {...finalCta} />
+		<FAQSection items={faq} />
+		<RelatedPosts posts={relatedPosts} {...blogSection} />
 	</div>
-
-	<CTASection {...finalCta} />
 </BaseLayout>
 
 <style is:global>

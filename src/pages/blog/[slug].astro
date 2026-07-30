@@ -29,11 +29,11 @@ const accent = expertise?.accentColor ?? '#29aae3';
             titre, sous-titre et texte partagent le meme axe vertical. */}
         <div class="mx-auto max-w-4xl">
           <a href="/blog" class="text-sm font-medium text-[var(--post-accent)]" data-pagefind-ignore>← Retour au blog</a>
-          <p class="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-[var(--post-accent)]">
+          <p class="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-[var(--post-accent)]" data-pagefind-ignore>
             {post.data.category} · {formatPostDate(post.data.date)}{post.data.readTime && ` · ${post.data.readTime} min de lecture`}
           </p>
-          <h1 class="mt-5 text-4xl font-bold leading-tight text-ink md:text-5xl">{post.data.title}</h1>
-          <p class="mt-6 text-lg leading-relaxed text-ink-secondary">{post.data.description}</p>
+          <h1 class="mt-5 text-4xl font-bold leading-tight text-ink md:text-5xl" data-pagefind-meta="title">{post.data.title}</h1>
+          <p class="mt-6 text-lg leading-relaxed text-ink-secondary" data-pagefind-meta="description">{post.data.description}</p>
         </div>
       </Container>
     </header>
@@ -50,7 +50,7 @@ const accent = expertise?.accentColor ?? '#29aae3';
           />
         )}
         <MarkdownContent><Content /></MarkdownContent>
-        <div class="mt-14 border-t border-line pt-8">
+        <div class="mt-14 border-t border-line pt-8" data-pagefind-ignore>
           <p class="text-sm text-ink-secondary">Publié par {post.data.author}</p>
           <div class="mt-4 flex flex-wrap gap-2">
             {post.data.tags.map((tag) => <span class="rounded-full bg-surface-alt px-3 py-1 text-xs text-ink">{tag}</span>)}

@@ -36,6 +36,18 @@ async function onInput() {
   results.value = await Promise.all(search.results.slice(0, 6).map((result) => result.data()));
   searched.value = true;
 }
+
+function resultSummary(result) {
+  const summary = result.meta?.description || result.plain_excerpt || '';
+  const cleaned = summary
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/(?:^|\s)#[\p{L}\p{N}_-]+/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!cleaned || /[.!?…]$/.test(cleaned)) return cleaned;
+  return `${cleaned}…`;
+}
 </script>
 
 <template>
@@ -59,20 +71,10 @@ async function onInput() {
         <li v-for="result in results" :key="result.url">
           <a :href="result.url" class="block px-5 py-4 transition-colors duration-200 hover:bg-surface-alt">
             <span class="font-semibold text-ink">{{ result.meta.title }}</span>
-            <!-- v-html sans risque : excerpt genere par Pagefind a partir de notre propre contenu statique -->
-            <span class="search-excerpt mt-1 block text-sm leading-relaxed text-ink-secondary" v-html="result.excerpt"></span>
+            <span class="mt-1 block text-sm leading-relaxed text-ink-secondary">{{ resultSummary(result) }}</span>
           </a>
         </li>
       </ul>
     </div>
   </div>
 </template>
-
-<style scoped>
-.search-excerpt :deep(mark) {
-  background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
-  color: inherit;
-  border-radius: 0.15rem;
-  padding: 0 0.1rem;
-}
-</style>

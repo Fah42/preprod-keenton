@@ -13,8 +13,7 @@ import ProcessSteps from '../components/sections/ProcessSteps.astro';
 import FAQSection from '../components/sections/FAQSection.astro';
 import StakeholderReasons from '../components/sections/StakeholderReasons.astro';
 import CTASection from '../components/sections/CTASection.astro';
-import ArticleCard from '../components/blog/ArticleCard.astro';
-import Button from '../components/ui/Button.astro';
+import RelatedPosts from '../components/blog/RelatedPosts.astro';
 
 import { site, expertises } from '../data/site.js';
 import {
@@ -118,20 +117,5 @@ const faqSchema = {
 
 	<FAQSection items={faq} />
 
-	{
-		posts.length > 0 && (
-			<Section eyebrow={blogSection.eyebrow} title={blogSection.title} intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain." theme="muted" spacing="tight" class="border-y border-line">
-				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-					{posts.map((post) => (
-						<ArticleCard post={post} showTopline={false} alwaysAccent={true} />
-					))}
-				</div>
-				<div class="mt-10">
-					<Button href="/blog" variant="outline">
-						{blogSection.allLabel}
-					</Button>
-				</div>
-			</Section>
-		)
-	}
+	<RelatedPosts posts={posts} {...blogSection} />
 </BaseLayout>
