@@ -111,6 +111,10 @@
       "eyebrow": "Sauvegarde externalisée & PRA",
       "title": "Des données protégées et des restaurations préparées",
       "body": "Une sauvegarde n'a de valeur que si elle reste disponible après un incident et peut être restaurée au bon moment. Les copies sont externalisées, chiffrées et suivies afin de préparer une reprise adaptée à la valeur de vos données.",
+      "image": {
+        "src": "/src/assets/images/hebergement-cloud/sauvegarde-externalisee-pra.png",
+        "alt": "Infrastructure externalisée protégée et prête pour un plan de reprise d'activité"
+      },
       "technologyTitle": "Technologies pour la sauvegarde et le PRA",
       "technologies": [
         { "name": "Velero", "role": "Sauvegarde Kubernetes", "icon": "velero" },

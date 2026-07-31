@@ -120,7 +120,7 @@ import {
 
 						<div class="mt-auto pt-7">
 							<Button
-								href={`/contact?subject=recruitment&role=${encodeURIComponent(role.title)}`}
+								href={`/contact-recrutement?role=${encodeURIComponent(role.title)}`}
 								variant="outline"
 								arrow
 								class="w-full justify-center sm:w-auto"
@@ -141,7 +141,7 @@ import {
 					Tant mieux. Présentez-nous ce que vous aimez construire, ce que vous souhaitez apprendre et la manière dont vous pourriez enrichir l’équipe.
 				</p>
 			</div>
-			<Button href="/contact?subject=recruitment&role=Candidature%20spontanée" variant="primary" arrow class="mt-6 shrink-0 md:mt-0">
+			<Button href="/contact-recrutement?role=Candidature%20spontanée" variant="primary" arrow class="mt-6 shrink-0 md:mt-0">
 				Nous surprendre
 			</Button>
 		</div>
@@ -150,7 +150,7 @@ import {
 	<CTASection
 		title="Votre prochaine aventure technique peut commencer ici."
 		text="Parlez-nous de votre parcours, du rôle qui vous intéresse et de ce que vous avez envie d’apprendre. Une candidature spontanée est aussi la bienvenue."
-		cta={{ label: 'Présenter mon profil', href: '/contact?subject=recruitment' }}
+		cta={{ label: 'Présenter mon profil', href: '/contact-recrutement' }}
 		backgroundColor="#FFCE6B"
 		titleColor="#0A1A33"
 		textColor="#0A1A33"

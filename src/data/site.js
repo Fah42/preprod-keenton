@@ -34,7 +34,6 @@ export const expertises = [
     points: [
       'Connectivité Internet',
       "Réseaux d'entreprise",
-      'Wi-Fi professionnel',
       'Téléphonie & Communications unifiées',
       'Serveurs & Virtualisation',
       'Stockage & Partage de fichiers',

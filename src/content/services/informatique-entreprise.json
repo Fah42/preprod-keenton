@@ -167,6 +167,10 @@
       "eyebrow": "Réseau d'entreprise",
       "title": "Les six leviers d'un réseau exploitable",
       "body": "Seconde proposition : une lecture plus détaillée en six cartes, organisée sur deux lignes. Elle convient lorsqu'il faut expliciter les principaux chantiers réseau.",
+      "image": {
+        "src": "/src/assets/images/informatique-entreprise/reseau-entreprise.png",
+        "alt": "Réseau informatique distribué dans les différents espaces d'une entreprise"
+      },
       "layout": "six",
       "items": [
         { "title": "Câblage", "text": "Un socle physique organisé et documenté.", "icon": "layers" },
@@ -175,19 +179,6 @@
         { "title": "Sécurité", "text": "Des accès et des équipements protégés selon leur rôle.", "icon": "lock" },
         { "title": "Performance & redondance", "text": "Des capacités adaptées et des points de secours identifiés.", "icon": "chart" },
         { "title": "Supervision", "text": "Des alertes utiles pour suivre la disponibilité et intervenir.", "icon": "eye" }
-      ]
-    },
-    {
-      "type": "mosaic",
-      "eyebrow": "Wi-Fi professionnel",
-      "title": "Un Wi-Fi fiable, là où les équipes en ont besoin",
-      "body": "Le Wi-Fi professionnel ne se limite pas à installer des bornes. La couverture, la capacité et les règles d'accès sont étudiées en fonction de vos espaces, de vos usages et de la densité d'équipements à connecter.",
-      "layout": "four",
-      "items": [
-        { "title": "Étude de couverture", "text": "Les zones de travail, les espaces de réunion, les entrepôts et les zones d'accueil sont pris en compte pour positionner les bornes avec cohérence.", "icon": "wifi" },
-        { "title": "Accès séparés", "text": "Les collaborateurs, invités et équipements connectés disposent de réseaux distincts, avec des droits adaptés à chaque usage.", "icon": "shield" },
-        { "title": "Mobilité fluide", "text": "Les déplacements dans les locaux restent transparents afin que les appels, réunions et applications continuent de fonctionner sans rupture inutile.", "icon": "refresh" },
-        { "title": "Exploitation suivie", "text": "La qualité des connexions et les alertes utiles sont suivies pour identifier les zones à optimiser et faciliter les interventions.", "icon": "eye" }
       ]
     },
     {
@@ -208,6 +199,10 @@
       "eyebrow": "Serveurs & virtualisation",
       "title": "Un socle applicatif dimensionné pour évoluer sereinement",
       "body": "Les serveurs restent au cœur de nombreuses applications métier. Nous organisons leur capacité, leur disponibilité et leur administration afin de créer un environnement plus simple à maintenir et à faire évoluer.",
+      "image": {
+        "src": "/src/assets/images/informatique-entreprise/serveurs-virtualisation.png",
+        "alt": "Infrastructure de serveurs virtualisés compatible avec plusieurs systèmes et plateformes"
+      },
       "layout": "six",
       "items": [
         { "title": "Étude des charges", "text": "Les ressources processeur, mémoire et stockage sont dimensionnées à partir des applications, des volumes et des usages réels.", "icon": "chart" },
@@ -239,6 +234,10 @@
       "eyebrow": "Contrôle d'accès & vidéosurveillance",
       "title": "Définir des droits d'accès cohérents",
       "body": "Les badges et lecteurs doivent refléter l'organisation réelle, y compris lorsqu'une personne change de rôle ou qu'un prestataire intervient temporairement.",
+      "image": {
+        "src": "/src/assets/images/informatique-entreprise/controle-acces-videosurveillance.png",
+        "alt": "Entrée d'entreprise équipée d'un contrôle d'accès et d'une caméra de vidéosurveillance"
+      },
       "icon": "lock",
       "variant": "list",
       "points": [
