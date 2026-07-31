@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Keenton Apps"
 expertise: "microsoft-365"
 tags: ["Microsoft 365","Microsoft Teams","Téléphonie VoIP"]
-image: "/images/blog/ancien-blog/keenton-telephonie-voip-microsoft-teams.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-telephonie-voip-microsoft-teams.jpg"
 imageAlt: "Téléphonie VOIP avec Microsoft Teams"
 readTime: 2
 featured: false
@@ -48,7 +48,7 @@ Notre équipe prend en charge la totalité des problématiques liées à la tél
 
 > *Simplifiez vos habitudes de travail, améliorez votre productivité en combinant Microsoft Office 365 Teams à votre téléphonie tout en gardant le contrôle sur vos frais de communications.*
 
-<img src="/images/blog/ancien-blog/keenton-telephonie-voip-grid.jpg" width="320" height="240" alt="KEENTON Messagerie" />
+![KEENTON Messagerie](../../assets/images/blog/ancien-blog/keenton-telephonie-voip-grid.jpg)
 
 Visitez notre page sur nos offres de téléphonie VOIP, une solution flexible et performante. Nous vous accompagnons et gérons la totalité des problématiques ou demandes de configuration tout au long du contrat.
 

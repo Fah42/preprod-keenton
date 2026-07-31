@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Cas d'usage"
 expertise: "cybersecurite"
 tags: ["Antispam","Antivirus","Cyberattaque","Cybersecurite","Firewall","Ransomware"]
-image: "/images/blog/ancien-blog/keenton-les-ransomwares-et-les-couches-de-securite-en-entreprise.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-les-ransomwares-et-les-couches-de-securite-en-entreprise.jpg"
 imageAlt: "Les ransomwares et l’importance des couches de sécurité en entreprise"
 readTime: 2
 featured: false

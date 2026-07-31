@@ -9,16 +9,26 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getImage } from 'astro:assets';
 
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
+import { resolveLocalImage } from '../lib/imageAssets';
 
 const { title, description, ogImage = '/images/hero-home.png' } = Astro.props;
+const optimizedOgImage = await getImage({
+	src: resolveLocalImage(ogImage),
+	width: 1200,
+	height: 630,
+	fit: 'cover',
+	format: 'webp',
+	quality: 85,
+});
 
 // URLs absolues pour canonical + Open Graph, derivees de `site` dans
 // astro.config.mjs. Sans `site` configure, ces balises sont omises.
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
-const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : undefined;
+const ogImageUrl = Astro.site ? new URL(optimizedOgImage.src, Astro.site).href : undefined;
 ---
 
 <html lang="fr">

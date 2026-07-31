@@ -4,6 +4,7 @@
 // nuage-circuit + puce IA en fond au centre, citation en panneau a droite.
 import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const { eyebrow, text, items = [], cta, quote } = Astro.props;
 ---
@@ -13,10 +14,14 @@ const { eyebrow, text, items = [], cta, quote } = Astro.props;
 		<div class="relative overflow-hidden rounded-2xl bg-linear-to-r from-[#4180cd] via-[#2c5fb2] to-[#1f3b70] text-white">
 			<!-- Fond haute resolution issu de la maquette (ai2.png), cadre du
 			     panneau citation efface. Le degrade CSS sert de secours mobile. -->
-			<img
+			<OptimizedImage
 				src="/images/ia-banner.webp"
 				alt=""
 				aria-hidden="true"
+				width={1200}
+				layout="constrained"
+				fit="cover"
+				loading="lazy"
 				class="absolute inset-0 hidden h-full w-full object-cover md:block"
 			/>
 

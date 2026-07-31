@@ -5,6 +5,7 @@ import Icon from '../ui/Icon.vue';
 const props = defineProps({
   item: { type: Object, required: true },
   instanceKey: { type: String, required: true },
+  brandLogoSrc: { type: String, required: true },
 });
 
 const card = ref(null);
@@ -163,10 +164,10 @@ onBeforeUnmount(() => {
     <div class="flex h-full min-h-0 w-full flex-col">
           <div class="flex h-12 shrink-0 items-center gap-4 border-b border-line bg-surface-alt px-4 sm:px-5">
             <img
-              src="/images/logo-keenton.png"
+              :src="brandLogoSrc"
               alt="Keenton"
-              width="240"
-              height="240"
+              width="24"
+              height="24"
               class="h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6"
             />
             <p class="min-w-0 flex-1 truncate text-center font-mono text-[0.65rem] tracking-[0.08em] text-ink-secondary sm:text-xs">

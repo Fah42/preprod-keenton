@@ -6,7 +6,7 @@
     "titleAccent": "vos équipes restent concentrées",
     "subtitle": "Support, supervision et maintenance pour les serveurs, l'infrastructure, le cloud et les postes de travail : une exploitation suivie, lisible et adaptée à votre organisation.",
     "image": {
-      "src": "/images/hero-infogerance-supervision.png",
+      "src": "/src/assets/expertise-heroes/hero-infogerance-supervision.png",
       "alt": "Équipe d'infogérance supervisant des infrastructures cloud depuis un centre d'opérations"
     },
     "visualSize": "large",

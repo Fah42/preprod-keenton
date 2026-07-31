@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Keenton Apps"
 expertise: "informatique-entreprise"
 tags: ["Solution De Gestion Des Prets"]
-image: "/images/blog/ancien-blog/pretzi-la-solution-de-gestion-des-materiels-pedagogiques-sf.jpg"
+image: "../../assets/images/blog/ancien-blog/pretzi-la-solution-de-gestion-des-materiels-pedagogiques-sf.jpg"
 imageAlt: "Pretzi, La solution de gestion des matériels pédagogiques"
 readTime: 3
 featured: false
@@ -26,11 +26,11 @@ Ne trouvant pas sur le marché des solutions adéquates répondant aux besoins d
 
 Prêt’ZI va vous permettre de saisir les dispositifs et de suivre votre parc de matériel disponible aux prêt. Vous pourrez d’un coup d’œil, prendre connaissance des prêts en retard mais aussi la durée de vie d’un matériel pour anticiper son renouvellement.
 
-[<img src="/images/blog/ancien-blog/keenton-pretzy-tableau-de-bord-1.jpg" width="1834" height="901" alt="keenton pretzi la solution de gestion des matériels pédagogiques tableau de bord" />](/images/blog/ancien-blog/keenton-pretzy-tableau-de-bord-1.jpg "keenton pretzi la solution de gestion des matériels pédagogiques tableau de bord")
+[![keenton pretzi la solution de gestion des matériels pédagogiques tableau de bord](../../assets/images/blog/ancien-blog/keenton-pretzy-tableau-de-bord-1.jpg)](/images/blog/ancien-blog/keenton-pretzy-tableau-de-bord-1.jpg "keenton pretzi la solution de gestion des matériels pédagogiques tableau de bord")
 
 Vos utilisateurs, en plus de connaitre à tout moment ce qui est disponible, pourront en toute autonomie réserver un dispositif et connaitre le statut des prêts fait jusqu’ici.
 
-[<img src="/images/blog/ancien-blog/keenton-pretzy-produit.jpg" width="1834" height="901" alt="keenton pretzi la solution de gestion des matériels pédagogiques fiche" />](/images/blog/ancien-blog/keenton-pretzy-produit.jpg "keenton pretzi la solution de gestion des matériels pédagogiques fiche")
+[![keenton pretzi la solution de gestion des matériels pédagogiques fiche](../../assets/images/blog/ancien-blog/keenton-pretzy-produit.jpg)](/images/blog/ancien-blog/keenton-pretzy-produit.jpg "keenton pretzi la solution de gestion des matériels pédagogiques fiche")
 
 Des notifications par email permettent de valider les prêts mais aussi pour les deux parties de se tenir informé des retards.
 
@@ -38,7 +38,7 @@ Des notifications par email permettent de valider les prêts mais aussi pour les
 
 Chaque dispositif sera saisie avec son code barre rendant les phrases de prêt et de retour beaucoup plus simple et fluide.
 
-<img src="/images/blog/ancien-blog/keenton-pretzy-qrcode-2.png" width="100" height="100" alt="keenton pretzi la solution de gestion des matériels pédagogiques qrcode" />
+![keenton pretzi la solution de gestion des matériels pédagogiques qrcode](../../assets/images/blog/ancien-blog/keenton-pretzy-qrcode-2.png)
 
 ## D’autres cas d’usages
 

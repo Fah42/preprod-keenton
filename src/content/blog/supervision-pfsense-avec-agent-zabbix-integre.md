@@ -6,7 +6,7 @@ author: "Mathieu Amory"
 category: "Contribution"
 expertise: "cybersecurite"
 tags: ["Nos Tutoriels","Supervision","pfSense","Zabbix"]
-image: "/images/blog/ancien-blog/supervision-zabbix-pfsense.jpg"
+image: "../../assets/images/blog/ancien-blog/supervision-zabbix-pfsense.jpg"
 imageAlt: "Supervision pfSense avec agent Zabbix intégré"
 readTime: 4
 featured: false
@@ -16,21 +16,21 @@ legacyUrl: "https://www.keenton.com/supervision-pfsense-avec-agent-zabbix-integr
 
 Bien que pfSense soit une base FreeBSD il existe des particularités notables qu’il est possible de récupérer avec Zabbix. Nous avons d’abord la table d’états (*State Table*) qui nous renseigne sur le nombre de connexions ouvertes et le nombre maximal de connexions simultanées, il est intéressant de surveiller ces deux valeurs pour être alerté avant que le pfSense ne puisse plus accepter de nouvelles connexions (effet DDOS). Ensuite nous avons l’état du buffer mémoire utilisé par le réseau (*MBUF*), une unité `mbuf` correspond à un emplacement mémoire que va utiliser le pfSense pour stocker un paquet réseau qui le traverse. Celui-ci nous informe sur le nombre de `mbufs` maximal, utilisés, en cache, et total (utilisés+cache), si le nombre de `mbufs` total atteint le maximum, le système va paniquer et redémarrer, il est donc impératif de monitorer ces valeurs.
 
-### Données systèmes (FreeBSD)
+## Données systèmes (FreeBSD)
 
 On récupère ici toutes les données relatives au système: processeur, mémoire, système de fichiers, interfaces réseaux, et autres données générales du système. Nous n’allons pas énumérer toutes les valeurs relatives à FreeBSD, nous utiliseront des éléments Zabbix généralistes qui sont quasiment identiques pour chaque système.
 
 Il faut tout de même noter que nous avons étoffé le monitoring de la mémoire et redéfini la majorité des graphiques pour une meilleure visibilité.
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-load-150x150.jpg" width="150" height="150" alt="keenton sauvegarde cloud installation" />](/images/blog/ancien-blog/supervision-zabbix-load.jpg)
+[![keenton sauvegarde cloud installation](../../assets/images/blog/ancien-blog/supervision-zabbix-load-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-load.jpg)
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-memory-150x150.jpg" width="150" height="150" alt="keenton supervision zabbix memory" />](/images/blog/ancien-blog/supervision-zabbix-memory.jpg)
+[![keenton supervision zabbix memory](../../assets/images/blog/ancien-blog/supervision-zabbix-memory-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-memory.jpg)
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-cpu-150x150.jpg" width="150" height="150" alt="keenton supervision zabbix cpu" />](/images/blog/ancien-blog/supervision-zabbix-cpu.jpg)
+[![keenton supervision zabbix cpu](../../assets/images/blog/ancien-blog/supervision-zabbix-cpu-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-cpu.jpg)
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-network-150x150.jpg" width="150" height="150" alt="keenton supervision zabbix network" />](/images/blog/ancien-blog/supervision-zabbix-network.jpg)
+[![keenton supervision zabbix network](../../assets/images/blog/ancien-blog/supervision-zabbix-network-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-network.jpg)
 
-### Données spécifiques à pfSense
+## Données spécifiques à pfSense
 
 On doit maintenant récupérer les autres valeurs intéressantes du pfSense. Pour commencer par la *State Table* nous pouvons jeter un coup d’oeil à ces deux fichiers: `/tmp/rules.limits` et `/tmp/pfctl_si_out`, à l’intérieur desquels nous allons trouver respectivement:
 
@@ -46,11 +46,11 @@ Pour récupérer les valeurs *MBUF* il faut utiliser la commande `netstat -m`, o
 
 Maintenant que nous avons trouvé les données qui nous intéressent, il va falloir analyser ces différents blocs de texte pour en extraire chaque valeur à l’aide d’une commande bien placée.
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-active-connections-150x150.jpg" width="150" height="150" alt="keenton supervision zabbix active connections" />](/images/blog/ancien-blog/supervision-zabbix-active-connections.jpg)
+[![keenton supervision zabbix active connections](../../assets/images/blog/ancien-blog/supervision-zabbix-active-connections-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-active-connections.jpg)
 
-[<img src="/images/blog/ancien-blog/supervision-zabbix-network-memory-buffer-150x150.jpg" width="150" height="150" alt="keenton supervision zabbix network memory buffer" />](/images/blog/ancien-blog/supervision-zabbix-network-memory-buffer.jpg)
+[![keenton supervision zabbix network memory buffer](../../assets/images/blog/ancien-blog/supervision-zabbix-network-memory-buffer-150x150.jpg)](/images/blog/ancien-blog/supervision-zabbix-network-memory-buffer.jpg)
 
-### Configuration Zabbix (Agent-Serveur-Template)
+## Configuration Zabbix (Agent-Serveur-Template)
 
 Le template Zabbix à importer se trouve sur nos dépôts publiques: [Template pfSense](https://code.keenton.com/Zabbix/template-pfsense)
 
@@ -66,6 +66,6 @@ UserParameter=pfsense.mbuf.max,netstat -m | grep "mbuf clusters" | cut -f1 -d ' 
 
 Dans la configuration de l’Agent Zabbix (sur pfSense) il faudra certainement augmenter la valeur de *timeout* (réglée sur 3 secondes par défaut). En cas de soucis pour remonter les données sur le serveur Zabbix, on peut d’abord vérifier et augmenter le *timeout* qui est souvent la source de problème quand on utilise des commandes particulières dans les *User Parameter* Zabbix.
 
-### Conclusion
+## Conclusion
 
 Et voilà, les premières mesures devrait commencer à arriver sur le serveur Zabbix ! Il ne reste plus qu’à attendre que les interfaces réseaux soient découvertes (LDD), puis on pourra créer les screens qui nous intéresse.

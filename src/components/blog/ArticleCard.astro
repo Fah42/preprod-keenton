@@ -1,5 +1,6 @@
 ---
 import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const { post, showTopline = true, alwaysAccent = false } = Astro.props;
 const { title, description, date, category, image, imageAlt } = post.data;
@@ -19,9 +20,12 @@ const formattedDate = formatPostDate(date);
 	{showTopline && <div class="blog-card__topline absolute inset-x-0 top-0 h-[2px]" aria-hidden="true"></div>}
 	{image && (
 		<div class="blog-card__image aspect-[16/9] overflow-hidden border-b border-line bg-surface-alt">
-			<img
+			<OptimizedImage
 				src={image}
 				alt={imageAlt ?? ''}
+				width={640}
+				layout="constrained"
+				fit="cover"
 				loading="lazy"
 				decoding="async"
 				class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"

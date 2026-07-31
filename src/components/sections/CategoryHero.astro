@@ -6,6 +6,7 @@
 // a venir (PlaceholderVisual en bleed), pas une vraie image. Les CTA restent
 // sur les variantes globales du Button (chrome du site, cf. plan).
 import Container from '../ui/Container.astro';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const {
 	eyebrow,
@@ -67,7 +68,18 @@ const heroGridClass = [
 		>
 			{
 				image ? (
-					<img src={image.src} alt={image.alt} class="h-full w-full object-contain" />
+					<OptimizedImage
+						src={image.src}
+						alt={image.alt}
+						width={largeVisual ? 800 : 576}
+						layout="constrained"
+						fit="contain"
+						format="webp"
+						quality={85}
+						loading="eager"
+						fetchpriority="high"
+						class="h-full w-full object-contain"
+					/>
 				) : (
 					<div class="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-line bg-surface-alt">
 						<span class="text-xs font-medium uppercase tracking-[0.14em] text-ink-secondary/70">Illustration à venir</span>

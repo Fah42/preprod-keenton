@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Keenton Apps"
 expertise: "microsoft-365"
 tags: ["Archivage","E-mail","Messagerie","RGPD"]
-image: "/images/blog/ancien-blog/keenton-archivmail-top.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-archivmail-top.jpg"
 imageAlt: "Archiv’Mail, la solution d’archivage d’email"
 readTime: 2
 featured: false
@@ -22,7 +22,7 @@ Mettez fin à l’archivage de vos emails en local (PST) pouvant mettre en péri
 
 ## LA réponse à vos problèmes de gestion des mails
 
-<img src="/images/blog/ancien-blog/keenton-archivmail-explication.jpg" width="795" height="450" alt="Archiv&#39;Mail, explication de notre solution d&#39;archivage d&#39;email" />
+![Archiv&#39;Mail, explication de notre solution d&#39;archivage d&#39;email](../../assets/images/blog/ancien-blog/keenton-archivmail-explication.jpg)
 
 > *Compatible avec la plupart des messageries, **Office 365**, **Google Workspace**, **Microsoft Exchange**, **Kerio Connect**, **Zimbra** ainsi que tous les serveurs compatible IMAP et POP3.*
 
@@ -54,7 +54,7 @@ Notre équipe veille à l’archivage de vos emails et prend en charge toutes le
 
 > *Ne vous souciez plus des quotas de messagerie, simplifiez-vous la vie en centralisant de façon sécurisée tous vos mails disséminés sur votre poste de travail grâce à notre solution KEENTON Archiv’Mail.*
 
-<img src="/images/blog/ancien-blog/grid-messagerie.jpg" width="320" height="240" alt="KEENTON Messagerie" />
+![KEENTON Messagerie](../../assets/images/blog/ancien-blog/grid-messagerie.jpg)
 
 Visitez notre page sur nos offres de solution de messagerie, Office 365, Microsoft Exchange et Kerio Connect mais aussi sur notre redoutable solution Anti-Spam maison.
 

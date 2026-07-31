@@ -1,6 +1,7 @@
 ---
 // Carrousel de références retenu.
 import Container from '../ui/Container.astro';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const { items = [] } = Astro.props;
 const duplicatedItems = [...items, ...items];
@@ -17,7 +18,14 @@ const duplicatedItems = [...items, ...items];
     <div class="reference-marquee__track">
       {duplicatedItems.map((item) => (
         <figure class="home-reference-item flex h-20 w-48 shrink-0 items-center justify-center px-6">
-          <img src={item.src} alt={item.name} class="home-reference-logo max-h-16 max-w-full object-contain" loading="lazy" />
+          <OptimizedImage
+            src={item.src}
+            alt={item.name}
+            width={192}
+            layout="constrained"
+            class="home-reference-logo max-h-16 max-w-full object-contain"
+            loading="lazy"
+          />
         </figure>
       ))}
     </div>

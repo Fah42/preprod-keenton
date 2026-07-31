@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "KEENTON"
 expertise: "informatique-entreprise"
 tags: ["Keenton"]
-image: "/images/blog/ancien-blog/keenton-inauguration-blog.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-inauguration-blog.jpg"
 imageAlt: "Lancement du Blog KEENTON"
 readTime: 1
 featured: false
@@ -14,7 +14,7 @@ draft: false
 legacyUrl: "https://www.keenton.com/lancement-du-blog-keenton/"
 ---
 
-# **Bonjour et bienvenue sur le blog de l’entreprise KEENTON 🙂**
+## **Bonjour et bienvenue sur le blog de l’entreprise KEENTON 🙂**
 
 Nous avons crée cette entreprise afin d’apporter à nos clients une informatique fiable, amener une constance dans la qualité tout au long de la vie des contrats que nous proposons mais aussi pour apporter un regard neuf sur l’informatique en place dans les entreprises.
 

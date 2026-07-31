@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Cas d'usage"
 expertise: "hebergement-cloud"
 tags: ["Sauvegarde Cloud","Synology"]
-image: "/images/blog/ancien-blog/keenton-sauvegarde-3-2-1-1.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-sauvegarde-3-2-1-1.jpg"
 imageAlt: "Sauvegarde 3-2-1 – Discutons Sécurité de vos Données"
 readTime: 3
 featured: false
@@ -18,13 +18,10 @@ La sauvegarde des données est une pratique importante qui permet de protéger s
 
 La sauvegarde 3-2-1 est un concept garantissant en cas de bonne pratique que vous disposerez de sauvegardes fiables face à ces différents scénarios :
 
-### Panne matérielle
-
-### Erreur humaine
-
-### Virus informatique
-
-### Incendie ou inondation
+- Panne matérielle
+- Erreur humaine
+- Virus informatique
+- Incendie ou inondation
 
 ## Rappelons le concept de la sauvegarde 3-2-1
 
@@ -50,7 +47,7 @@ Si un sinistre se produit dans vos locaux (incendie, vol, catastrophe naturelle,
 
 Ce que nous allons rechercher avec une sauvegarde, c’est la rétention ! Cette possibilité de remonter le temps sur un certain nombre de jours. **In-dis-pen-sable** pour faire face aux erreurs humaines ou aux virus dormants comme les ransomwares.
 
-<img src="/images/blog/ancien-blog/keenton-sauvegarde-3-2-1-restauration-retention.jpg" title="keenton_sauvegarde_3-2-1_restauration_retention" width="795" height="220" alt="Keenton Sauvegarde 3-2-1 rétention" />
+![Keenton Sauvegarde 3-2-1 rétention](../../assets/images/blog/ancien-blog/keenton-sauvegarde-3-2-1-restauration-retention.jpg "keenton_sauvegarde_3-2-1_restauration_retention")
 
 ### L’externalisation manuelle sur un disque externe
 
@@ -90,7 +87,7 @@ Jean-François Communier, Directeur de production
 
 Printvallée
 
-<img src="/images/blog/ancien-blog/grid-sauvegarde.jpg" title="keenton_sauvegarde_cloud_com_sm" width="320" height="240" alt="Sauvegarde Cloud" />
+![Sauvegarde Cloud](../../assets/images/blog/ancien-blog/grid-sauvegarde.jpg "keenton_sauvegarde_cloud_com_sm")
 
 Notre solution de sauvegarde cloud prend aussi en charge les postes de travail, les serveurs et les plateformes de virtualisation. Tous les types de fichiers, l’état système ou encore de nombreuses bases de données.
 

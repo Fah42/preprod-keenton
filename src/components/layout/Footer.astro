@@ -2,6 +2,7 @@
 import Container from '../ui/Container.astro';
 import { site, expertises } from '../../data/site.js';
 import { siFacebook, siX } from 'simple-icons';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const year = new Date().getFullYear();
 
@@ -34,12 +35,13 @@ const blogTopics = [
 		<div class="grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[1.1fr_1fr_0.65fr_1.35fr] lg:gap-x-8">
 			<div>
 				<div class="flex h-10 items-center">
-					<img
+					<OptimizedImage
 						src="/images/logo-keenton-white.png"
 						alt="Keenton"
 						class="h-10 w-10"
-						width="240"
-						height="240"
+						width={40}
+						layout="fixed"
+						loading="lazy"
 					/>
 				</div>
 				<p class="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-white/60">

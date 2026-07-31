@@ -6,8 +6,8 @@
     "titleAccent": "pour votre activité",
     "subtitle": "De la connectivité aux services de partage, nous concevons un environnement cohérent, documenté et capable d'évoluer avec vos usages.",
     "image": {
-      "src": "/images/hero-informatique-entreprise.jpg",
-      "alt": "Gardienne reliant les sites d'une infrastructure informatique d'entreprise"
+      "src": "/src/assets/expertise-heroes/hero-informatique-entreprise-reseau.webp",
+      "alt": "Sites d'entreprise interconnectés au sein d'une infrastructure réseau"
     },
     "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },

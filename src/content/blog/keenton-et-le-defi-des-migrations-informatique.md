@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Cas d'usage"
 expertise: "informatique-entreprise"
 tags: ["KEENTON","Acces Internet","Datacenter","Firewall","Hyperviseur","Reseau"]
-image: "/images/blog/ancien-blog/keenton-et-le-defis-des-migrations-informatique-craque.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-et-le-defis-des-migrations-informatique-craque.jpg"
 imageAlt: "KEENTON et le défi des migrations informatique"
 readTime: 3
 featured: false
@@ -38,7 +38,7 @@ Une migration informatique c’est comme traverser un champ de mines : une mauva
 
 Trop risqué de courir tête baissée en espérant survivre à ce défi, il va falloir comprendre l’environnement existant. Cela implique de cartographier tous les composants logiciels, matériels et réseau, ainsi que de comprendre les interdépendances entre eux. Une compréhension claire de l’état actuel permet de définir des objectifs clairs pour la migration.
 
-<img src="/images/blog/ancien-blog/keenton-et-le-defis-des-migrations-informatique-champ-de-mines.jpg" title="keenton_et_le_defis_des_migrations_informatique_champ_de_mines" width="795" height="380" alt="keenton specialiste du télétravail VPN firewall" />
+![keenton specialiste du télétravail VPN firewall](../../assets/images/blog/ancien-blog/keenton-et-le-defis-des-migrations-informatique-champ-de-mines.jpg "keenton_et_le_defis_des_migrations_informatique_champ_de_mines")
 
 ## **Quelques exemples de migration**
 

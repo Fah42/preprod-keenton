@@ -6,7 +6,7 @@
     "titleAccent": "sans friction",
     "subtitle": "CI/CD, Kubernetes, infrastructure as code et observabilité : nous structurons les outils qui rendent vos déploiements plus rapides, plus lisibles et plus reproductibles.",
     "image": {
-      "src": "/images/hero-devops.png",
+      "src": "/src/assets/expertise-heroes/hero-devops.png",
       "alt": "Robots représentant les pratiques CI/CD, Kubernetes, GitOps, Infrastructure as Code et observabilité"
     },
     "visualSize": "large",

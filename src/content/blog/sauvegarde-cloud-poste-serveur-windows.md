@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Nos Tutoriels"
 expertise: "hebergement-cloud"
 tags: ["Sauvegarde Cloud","Securite","Windows"]
-image: "/images/blog/ancien-blog/keenton-sauvegarde-cloud-windows.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-windows.jpg"
 imageAlt: "Sauvegarde Cloud : Poste et Serveur Windows"
 readTime: 2
 featured: false
@@ -32,7 +32,7 @@ Pour une sauvegarde standard, nous choisirons tous les fichiers du système ains
 
 Tout a l’aire de s’être bien passé, vérifions ! Le jour d’aujourd’hui (le 14) est au vert, nous pouvons cliquer dessus pour avoir des précisions, super c’est ok !
 
-[<img src="/images/blog/ancien-blog/keenton-sauvegarde-cloud-historique-1.jpg" width="910" height="405" alt="KEENTON Sauvegarde Cloud Windows Historique" />](/images/blog/ancien-blog/keenton-sauvegarde-cloud-historique-1.jpg)
+[![KEENTON Sauvegarde Cloud Windows Historique](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-historique-1.jpg)](/images/blog/ancien-blog/keenton-sauvegarde-cloud-historique-1.jpg)
 
 ## Restauration partielle
 

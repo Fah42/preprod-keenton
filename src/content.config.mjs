@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 // Collection blog : schema aligne sur le frontmatter defini dans CLAUDE.md
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
@@ -20,10 +20,9 @@ const blog = defineCollection({
       'microsoft-365',
     ]),
     tags: z.array(z.string()).default([]),
-    // Illustration de couverture (chemin public, ex. /images/blog/slug.svg)
-    // et son texte alternatif. Optionnels : sans image, les gabarits gardent
-    // leur placeholder "Illustration a venir".
-    image: z.string().optional(),
+    // Illustration locale validee et importee par Astro. Optionnelle : sans
+    // image, les gabarits gardent leur placeholder "Illustration a venir".
+    image: image().optional(),
     imageAlt: z.string().optional(),
     readTime: z.number().int().positive().optional(),
     // URL publique historique, conservée pour préparer les redirections lors

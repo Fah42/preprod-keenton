@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import { resolveLocalImage } from '../../lib/imageAssets';
+
+const {
+	src,
+	alt = '',
+	format = 'webp',
+	quality = 85,
+	...attributes
+} = Astro.props;
+
+const imageAsset = resolveLocalImage(src);
+---
+
+<Image
+	src={imageAsset}
+	alt={alt}
+	format={format}
+	quality={quality}
+	{...attributes}
+/>

@@ -4,6 +4,7 @@ import {
 	siOvh,
 	siScaleway,
 } from 'simple-icons';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 
 const providers = [
 	{ name: 'OVHcloud', icon: siOvh, french: true, color: '#123F6D' },
@@ -41,9 +42,11 @@ const providers = [
 				>
 					<div class="flex h-16 items-center justify-center gap-3 rounded-[calc(0.75rem-2px)] bg-white px-4">
 						{provider.image ? (
-							<img
+							<OptimizedImage
 								src={provider.image}
 								alt=""
+								width={32}
+								layout="fixed"
 								class="h-8 w-8 shrink-0 object-contain"
 								loading="lazy"
 							/>

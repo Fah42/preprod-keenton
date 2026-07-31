@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Infogérance Poste PC, Mac et Linux"
 expertise: "infogerance"
 tags: ["Adobe","Apple","AutoCAD","Infogerance","Mac","Microsoft Office","Sketchup","Thea Render"]
-image: "/images/blog/ancien-blog/keenton-infogerance-poste-apple-mac-1.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-infogerance-poste-apple-mac-1.jpg"
 imageAlt: "Infogérance Poste Apple Mac"
 readTime: 1
 featured: false

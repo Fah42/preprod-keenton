@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/ui/Section.astro';
@@ -14,6 +15,7 @@ import FAQSection from '../components/sections/FAQSection.astro';
 import StakeholderReasons from '../components/sections/StakeholderReasons.astro';
 import CTASection from '../components/sections/CTASection.astro';
 import RelatedPosts from '../components/blog/RelatedPosts.astro';
+import { resolveLocalImage } from '../lib/imageAssets';
 
 import { site, expertises } from '../data/site.js';
 import {
@@ -38,6 +40,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 // Blocs historiques de l'accueil conservés à la demande : passer à `true`
 // pour les réafficher sans avoir à les reconstruire.
 const showLegacyHomeBlocks = false;
+const structuredLogo = await getImage({
+	src: resolveLocalImage('/images/logo-keenton-full.png'),
+	width: 512,
+	format: 'webp',
+	quality: 90,
+});
 
 // Donnees structurees : identite de l'entreprise + FAQ (rich results Google).
 const organizationSchema = {
@@ -47,7 +55,7 @@ const organizationSchema = {
 	description:
 		"Services informatiques pour entreprises : infogérance, hébergement cloud, cybersécurité, DevOps, Microsoft 365 et automatisation IA.",
 	url: Astro.site?.href,
-	logo: Astro.site ? new URL('/images/logo-keenton-full.png', Astro.site).href : undefined,
+	logo: Astro.site ? new URL(structuredLogo.src, Astro.site).href : undefined,
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'Pantin',

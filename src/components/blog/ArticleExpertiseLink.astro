@@ -1,0 +1,54 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+
+const { expertise } = Astro.props;
+---
+
+{
+	expertise && (
+		<section
+			class="border-y border-line bg-surface py-12 md:py-14"
+			style={`--expertise-accent: ${expertise.accentColor}`}
+			aria-labelledby="article-expertise-title"
+			data-pagefind-ignore
+		>
+			<Container>
+				<div class="expertise-card relative overflow-hidden rounded-2xl border p-7 md:flex md:items-center md:justify-between md:gap-10 md:p-10">
+					<div class="expertise-card__accent absolute inset-y-0 left-0 w-1.5" aria-hidden="true"></div>
+					<div class="max-w-3xl">
+						<p class="font-mono text-xs font-medium uppercase tracking-[0.16em] text-ink-secondary">
+							En lien avec notre expertise
+						</p>
+						<h2 id="article-expertise-title" class="mt-3 text-2xl font-semibold text-ink md:text-3xl">
+							{expertise.title}
+						</h2>
+						<p class="mt-3 text-base leading-relaxed text-ink-secondary md:text-lg">{expertise.short}</p>
+					</div>
+					<div class="mt-7 shrink-0 md:mt-0">
+						<Button href={expertise.href} variant="dark" arrow>
+							Découvrir cette expertise
+						</Button>
+					</div>
+				</div>
+			</Container>
+		</section>
+	)
+}
+
+<style>
+	.expertise-card {
+		border-color: color-mix(in srgb, var(--expertise-accent) 32%, var(--color-line));
+		background:
+			linear-gradient(
+				105deg,
+				color-mix(in srgb, var(--expertise-accent) 8%, var(--color-surface)),
+				var(--color-surface) 62%
+			);
+		box-shadow: var(--shadow-cold);
+	}
+
+	.expertise-card__accent {
+		background: var(--expertise-accent);
+	}
+</style>

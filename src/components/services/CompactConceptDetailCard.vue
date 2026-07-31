@@ -5,6 +5,7 @@ import Icon from '../ui/Icon.vue';
 const props = defineProps({
   item: { type: Object, required: true },
   instanceKey: { type: String, required: true },
+  brandLogoSrc: { type: String, required: true },
 });
 
 const card = ref(null);
@@ -207,7 +208,7 @@ onBeforeUnmount(() => {
           isMicro ? 'h-11 gap-3 px-3.5 sm:px-4' : 'h-12 gap-4 px-4 sm:px-5',
         ]"
       >
-          <img src="/images/logo-keenton.png" alt="Keenton" width="240" height="240" class="h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6" />
+          <img :src="brandLogoSrc" alt="Keenton" width="24" height="24" class="h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6" />
           <p class="min-w-0 flex-1 truncate text-center font-mono text-[0.65rem] tracking-[0.08em] text-ink-secondary sm:text-xs">
             expertise.keenton / fiche technique / {{ item.title.toLowerCase() }}
           </p>

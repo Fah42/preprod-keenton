@@ -3,9 +3,12 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Container from '../../components/ui/Container.astro';
 import MarkdownContent from '../../components/blog/MarkdownContent.astro';
+import ArticleExpertiseLink from '../../components/blog/ArticleExpertiseLink.astro';
+import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import CTASection from '../../components/sections/CTASection.astro';
 import { finalCta } from '../../data/home.js';
 import { formatPostDate, getExpertiseForPost } from '../../lib/blog.js';
+import OptimizedImage from '../../components/ui/OptimizedImage.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -16,9 +19,17 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const expertise = getExpertiseForPost(post);
 const accent = expertise?.accentColor ?? '#29aae3';
+const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && data.expertise === post.data.expertise))
+  .filter((relatedPost) => relatedPost.id !== post.id)
+  .sort((a, b) => b.data.date - a.data.date)
+  .slice(0, 3);
 ---
 
-<BaseLayout title={`${post.data.title} | Keenton`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} | Keenton`}
+  description={post.data.description}
+  ogImage={post.data.image}
+>
   {/* data-pagefind-body : seules les pages portant cet attribut sont indexees
       par Pagefind (etape `pagefind --site dist` de npm run build), donc la
       recherche du blog ne remonte que des articles. */}
@@ -30,7 +41,21 @@ const accent = expertise?.accentColor ?? '#29aae3';
         <div class="mx-auto max-w-4xl">
           <a href="/blog" class="text-sm font-medium text-[var(--post-accent)]" data-pagefind-ignore>← Retour au blog</a>
           <p class="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-[var(--post-accent)]" data-pagefind-ignore>
-            {post.data.category} · {formatPostDate(post.data.date)}{post.data.readTime && ` · ${post.data.readTime} min de lecture`}
+            {
+              expertise ? (
+                <a
+                  href={expertise.href}
+                  class="font-semibold text-ink underline decoration-2 underline-offset-4 transition-opacity hover:opacity-70"
+                  style="text-decoration-color: var(--post-accent)"
+                >
+                  {post.data.category}
+                </a>
+              ) : (
+                post.data.category
+              )
+            }
+            {' · '}
+            {formatPostDate(post.data.date)}{post.data.readTime && ` · ${post.data.readTime} min de lecture`}
           </p>
           <h1 class="mt-5 text-4xl font-bold leading-tight text-ink md:text-5xl" data-pagefind-meta="title">{post.data.title}</h1>
           <p class="mt-6 text-lg leading-relaxed text-ink-secondary" data-pagefind-meta="description">{post.data.description}</p>
@@ -41,11 +66,11 @@ const accent = expertise?.accentColor ?? '#29aae3';
     <Container class="py-14 md:py-20">
       <div class="mx-auto max-w-4xl">
         {post.data.image && (
-          <img
+          <OptimizedImage
             src={post.data.image}
             alt={post.data.imageAlt ?? ''}
-            width="1200"
-            height="630"
+            width={1200}
+            layout="constrained"
             class="mb-12 w-full rounded-2xl border border-line"
           />
         )}
@@ -59,5 +84,14 @@ const accent = expertise?.accentColor ?? '#29aae3';
       </div>
     </Container>
   </div>
+  <ArticleExpertiseLink {expertise} />
+  <RelatedPosts
+    posts={relatedPosts}
+    eyebrow="À lire aussi"
+    title="Pour approfondir le sujet"
+    intro={`D’autres articles liés à l’expertise ${expertise?.title ?? post.data.category}.`}
+    allLabel="Voir tous les articles"
+    allHref={`/blog?expertise=${post.data.expertise}`}
+  />
   <CTASection {...finalCta} />
 </BaseLayout>

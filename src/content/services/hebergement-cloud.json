@@ -6,7 +6,7 @@
     "titleAccent": "pour vos usages",
     "subtitle": "Cloud privé, public ou hybride, hébergement, sauvegarde et haute disponibilité : nous concevons une architecture adaptée à vos charges, à vos exigences et à votre niveau de dépendance acceptable.",
     "image": {
-      "src": "/images/hero-hebergement-cloud-detoure.webp",
+      "src": "/src/assets/expertise-heroes/hero-hebergement-cloud-detoure.webp",
       "alt": "Gardien de pierre portant un datacenter installé sur une île flottante"
     },
     "visualSize": "large",

@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Wifi"
 expertise: "informatique-entreprise"
 tags: ["Wi-Fi"]
-image: "/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-v2-1.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-v2-1.jpg"
 imageAlt: "Comment avoir un WiFi rapide : les éléments clés au-delà des bornes"
 readTime: 8
 featured: false
@@ -52,7 +52,7 @@ Contrairement aux connexions filaires, un réseau sans fil **ne s’arrête pas 
 
 **Face à ces enjeux**, nous proposons une approche pragmatique de la sécurisation Wi-Fi, structurée en **trois niveaux de maturité**. Cette méthode permet d’adapter la stratégie à la **taille de votre organisation**, à vos **moyens humains et techniques**, tout en respectant **l’esprit des recommandations de l’ANSSI**.
 
-<img src="/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-anssi.png" width="200" height="200" alt="keenton comment avoir un wifi rapide les éléments cles au dela des bornes conformité ANSSI" />
+![keenton comment avoir un wifi rapide les éléments cles au dela des bornes conformité ANSSI](../../assets/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-anssi.png)
 
 ### 🔐 Niveau 1 – Les fondamentaux (indispensables)
 
@@ -105,7 +105,7 @@ Le câble reste un choix incontournable en entreprise, notamment pour les postes
 
 **Pour autant**, malgré ces avancées majeures, le sans-fil ne remplace pas totalement le filaire. **En matière de sécurité notamment**, le câble conserve des avantages indéniables. Les connexions filaires offrent une robustesse physique et une isolation naturelle, qui continuent de séduire les environnements sensibles. Le Wi-Fi, même lorsqu’il est très bien sécurisé, reste par définition plus exposé.
 
-<img src="/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-un-futur-avec-moins-de-cables-1.jpg" width="246" height="300" alt="keenton comment avoir un wifi rapide les éléments cles au dela des bornes un futur avec moins de câbles" />
+![keenton comment avoir un wifi rapide les éléments cles au dela des bornes un futur avec moins de câbles](../../assets/images/blog/ancien-blog/keenton-comment-avoir-un-wifi-rapide-les-elements-cles-au-dela-des-bornes-un-futur-avec-moins-de-cables-1.jpg)
 
 ## **KEENTON et le WIFI**
 
@@ -115,7 +115,7 @@ Chez KEENTON, nous maîtrisons l’art de la couverture WiFi. Cependant, comme n
 
 Notre service de suivi garantit un réseau toujours performant, avec une surveillance proactive et des ajustements en fonction de l’évolution de vos besoins.
 
-<img src="/images/blog/ancien-blog/grid-wifi.jpg" title="grid_wifi" width="320" height="240" alt="Sauvegarde Cloud" />
+![Sauvegarde Cloud](../../assets/images/blog/ancien-blog/grid-wifi.jpg "grid_wifi")
 
 Expérimenté en couverture Wifi dans les grands bâtiments complexes, KEENTON propose une étude personnalisée sur site afin de couvrir au mieux et d’équiper les locaux en borne Wifi.
 

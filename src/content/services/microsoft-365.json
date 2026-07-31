@@ -6,7 +6,7 @@
     "titleAccent": "géré de bout en bout",
     "subtitle": "Teams, Outlook, SharePoint, OneDrive, Intune et Entra ID : nous structurons un environnement de travail sécurisé, administrable et réellement adopté par vos équipes.",
     "image": {
-      "src": "/images/hero-microsoft-365.png",
+      "src": "/src/assets/expertise-heroes/hero-microsoft-365.png",
       "alt": "Écosystème Microsoft 365 reliant Outlook, Teams, SharePoint, OneDrive et Entra ID"
     },
     "visualSize": "large",

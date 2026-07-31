@@ -6,6 +6,7 @@
 import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 import Icon from '../ui/Icon.astro';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 import { formatElapsedClock, formatElapsedDate, getElapsedTimeParts } from '../../utils/uptime.js';
 import { formatLiters, getMonthlyProgressValue } from '../../utils/monthlyCounter.js';
 
@@ -44,11 +45,12 @@ const { title, titleAccent, subtitle, image, primaryCta, secondaryCta, highlight
 			></div>
 			{
 				image ? (
-					<img
+					<OptimizedImage
 						src={image.src}
 						alt={image.alt}
-						width="1600"
-						height="1200"
+						width={800}
+						layout="constrained"
+						fit="contain"
 						loading="eager"
 						fetchpriority="high"
 						class="relative h-full w-full object-contain"

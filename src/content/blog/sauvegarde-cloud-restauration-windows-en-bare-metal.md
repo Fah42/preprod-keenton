@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Nos Tutoriels"
 expertise: "hebergement-cloud"
 tags: ["Sauvegarde Cloud","Securite","Windows"]
-image: "/images/blog/ancien-blog/keenton-sauvegarde-cloud-restauration-bare-metal-presentation.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-restauration-bare-metal-presentation.jpg"
 imageAlt: "Sauvegarde Cloud : Restauration Windows en Bare Metal"
 readTime: 3
 featured: false
@@ -24,11 +24,11 @@ Une restauration Bare Metal est tout simplement une restauration « à nu » o
 
 ## Comment lancer une restauration sans système d’exploitation ?
 
-Au démarrage du poste ou du serveur, il faut démarrer le système sur une clé USB, rentrer les identifiants liés à la sauvegarde et pour finir la clé de chiffrement. Vous aurez ensuite accès à la fonctionnalité de restauration qui vous demandera la date du point de restauration. <img src="/images/blog/ancien-blog/keenton-sauvegarde-cloud-bare-metal-restore-usbkey-4.png" width="170" height="71" alt="keenton sauvegarde cloud bare metal restore usbkey" />
+Au démarrage du poste ou du serveur, il faut démarrer le système sur une clé USB, rentrer les identifiants liés à la sauvegarde et pour finir la clé de chiffrement. Vous aurez ensuite accès à la fonctionnalité de restauration qui vous demandera la date du point de restauration. ![keenton sauvegarde cloud bare metal restore usbkey](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-bare-metal-restore-usbkey-4.png)
 
 ## Mise en situation
 
-Votre poste de travail ou votre serveur sous Windows est totalement hors service, crashé, dans un élan d’espoir vous avez tenté toutes les possibilités de réparation mais rien n’y fait… Réinstaller le système d’exploitation pourrait être une option mais vous allez mettre des jours pour que tout soit comme avant : Rôles, fonctionnalités, logiciels avec leurs paramétrages, personnalisations… <img src="/images/blog/ancien-blog/keenton-sauvegarde-cloud-bare-metal-restore-mise-en-situation.jpg" width="218" height="138" alt="keenton sauvegarde cloud bare metal restore mise en situation" /> Nous allons donc faire une restauration totale du système en revenant une journée en arrière. On aurait pu choisir un point de restauration 15 jours avant pour, par exemple, palier à un malware qui aurait résidé dans le système plusieurs jours avant de s’activer.
+Votre poste de travail ou votre serveur sous Windows est totalement hors service, crashé, dans un élan d’espoir vous avez tenté toutes les possibilités de réparation mais rien n’y fait… Réinstaller le système d’exploitation pourrait être une option mais vous allez mettre des jours pour que tout soit comme avant : Rôles, fonctionnalités, logiciels avec leurs paramétrages, personnalisations… ![keenton sauvegarde cloud bare metal restore mise en situation](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-bare-metal-restore-mise-en-situation.jpg) Nous allons donc faire une restauration totale du système en revenant une journée en arrière. On aurait pu choisir un point de restauration 15 jours avant pour, par exemple, palier à un malware qui aurait résidé dans le système plusieurs jours avant de s’activer.
 
 Pour se faire nous démarrons le système sur une clé USB et sans être dépaysé, nous retrouvons l’interface de la solution de sauvegarde.
 

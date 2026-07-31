@@ -9,7 +9,9 @@ const {
 	posts = [],
 	eyebrow = 'Le blog',
 	title = 'Nos derniers articles',
+	intro = 'Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain.',
 	allLabel = 'Tous les articles',
+	allHref = '/blog',
 } = Astro.props;
 ---
 
@@ -17,7 +19,7 @@ const {
 	<Section
 		{eyebrow}
 		{title}
-		intro="Des analyses et des méthodes issues des sujets que nous rencontrons sur le terrain."
+		{intro}
 		theme="muted"
 		spacing="tight"
 		class="border-y border-line"
@@ -28,7 +30,7 @@ const {
 			))}
 		</div>
 		<div class="mt-10">
-			<Button href="/blog" variant="outline">
+			<Button href={allHref} variant="outline">
 				{allLabel}
 			</Button>
 		</div>

@@ -5,6 +5,7 @@
 import Container from '../ui/Container.astro';
 import Icon from '../ui/Icon.astro';
 import PlaceholderVisual from '../ui/PlaceholderVisual.astro';
+import OptimizedImage from '../ui/OptimizedImage.astro';
 import TechnologyLogos from '../services/TechnologyLogos.astro';
 
 const {
@@ -36,9 +37,12 @@ const {
 			{showIllustration && (
 				<div class:list={[reverse && 'lg:order-2']}>
 					{image ? (
-						<img
+						<OptimizedImage
 							src={image.src}
 							alt={image.alt}
+							width={800}
+							layout="constrained"
+							fit="contain"
 							loading="lazy"
 							decoding="async"
 							class="mx-auto h-auto w-full object-contain"

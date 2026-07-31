@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Sauvegarde Cloud"
 expertise: "hebergement-cloud"
 tags: ["NAS","Sauvegarde Cloud","Synology"]
-image: "/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-4.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-4.jpg"
 imageAlt: "Sauvegarde Cloud Synology"
 readTime: 2
 featured: false
@@ -20,9 +20,9 @@ Centraliser les données sur un NAS Synology est un schéma classique au sein de
 
 Une solution de sauvegarde cloud taillée pour les stockages Synology permettant de restaurer à tout instant ! Historique de restauration (rétention) allant de 28 jours jusqu’à l’archivage de 1 an à 3 ans !*\*
 
-<img src="/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-restauration-retention-1.jpg" title="keenton_sauvegarde_cloud_synology_restauration_retention" width="795" height="220" />
+![](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-restauration-retention-1.jpg "keenton_sauvegarde_cloud_synology_restauration_retention")
 
-### Les 6 points clés de notre sauvegarde cloud synology
+## Les 6 points clés de notre sauvegarde cloud Synology
 
 ### Hébergement
 
@@ -64,7 +64,7 @@ Clément Argouarc'h, Directeur de collection
 
 Fluide Glacial
 
-<img src="/images/blog/ancien-blog/grid-sauvegarde.jpg" title="keenton_sauvegarde_cloud_com_sm" width="320" height="240" alt="Sauvegarde Cloud" />
+![Sauvegarde Cloud](../../assets/images/blog/ancien-blog/grid-sauvegarde.jpg "keenton_sauvegarde_cloud_com_sm")
 
 Notre solution de sauvegarde cloud prend aussi en charge les postes de travail, les serveurs et les plateformes de virtualisation. Tous les types de fichiers, l’état système ou encore de nombreuses bases de données.
 

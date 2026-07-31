@@ -6,7 +6,7 @@ author: "Jeremy Donas"
 category: "Hébergement Datacenter"
 expertise: "hebergement-cloud"
 tags: ["Stockage NAS","Synology","Acces Internet","Datacenter","Firewall","Hyperviseur","Reseau"]
-image: "/images/blog/ancien-blog/keenton-heberger-repliquer-votre-stockage-synology-en-datacenter-header.jpg"
+image: "../../assets/images/blog/ancien-blog/keenton-heberger-repliquer-votre-stockage-synology-en-datacenter-header.jpg"
 imageAlt: "Héberger, répliquer votre stockage Synology en Datacenter"
 readTime: 3
 featured: false
