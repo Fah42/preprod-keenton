@@ -5,9 +5,10 @@ export const recruitmentHero = {
 	subtitle:
 		'Chez Keenton, la technique reste proche du terrain, des utilisateurs et des clients. Nous cherchons des personnes curieuses, rigoureuses et généreuses dans leur manière de travailler.',
 	image: {
-		src: '/images/recrutement-pennywise.png',
-		alt: 'Hey kid, wanna join Keenton? I got Internet down here',
-		fit: 'contain',
+		src: '/images/recrutement-portes-keenton.png',
+		alt: 'Une personne devant les portes ouvertes de Keenton, avec une équipe au loin',
+		fit: 'cover',
+		fade: false,
 	},
 	primaryCta: { label: 'Voir les profils', href: '#profils' },
 	secondaryCta: { label: 'Découvrir notre culture', href: '#culture' },
