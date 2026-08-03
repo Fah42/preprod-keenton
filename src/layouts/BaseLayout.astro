@@ -15,7 +15,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { resolveLocalImage } from '../lib/imageAssets';
 
-const { title, description, ogImage = '/images/hero-home.png' } = Astro.props;
+const { title, description, ogImage = '/images/hero-home.png', robots } = Astro.props;
 const optimizedOgImage = await getImage({
 	src: resolveLocalImage(ogImage),
 	width: 1200,
@@ -39,6 +39,7 @@ const ogImageUrl = Astro.site ? new URL(optimizedOgImage.src, Astro.site).href :
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
+		{robots && <meta name="robots" content={robots} />}
 		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Keenton" />

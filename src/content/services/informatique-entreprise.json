@@ -2,9 +2,9 @@
   "description": "Connectivité, réseau, communications, systèmes et contrôle des accès : Keenton conçoit une infrastructure fiable, lisible et adaptée à vos usages.",
   "hero": {
     "eyebrow": "Informatique d'entreprise",
-    "title": "Une infrastructure pensée",
-    "titleAccent": "pour votre activité",
-    "subtitle": "De la connectivité aux services de partage, nous concevons un environnement cohérent, documenté et capable d'évoluer avec vos usages.",
+    "title": "Une architecture au service",
+    "titleAccent": "de votre activité.",
+    "subtitle": "Une infrastructure bien conçue facilite le quotidien des utilisateurs comme celui des équipes informatiques. Chaque composante est pensée pour s'intégrer à l'ensemble, simplifier l'exploitation et accompagner les évolutions de votre entreprise.",
     "image": {
       "src": "/src/assets/expertise-heroes/hero-informatique-entreprise-reseau.webp",
       "alt": "Sites d'entreprise interconnectés au sein d'une infrastructure réseau"
@@ -17,148 +17,56 @@
     {
       "type": "capabilities",
       "eyebrow": "Connectivité Internet",
-      "title": "Des connexions conçues pour assurer la continuité de votre activité",
-      "body": "Une connexion Internet est aujourd’hui essentielle au fonctionnement de l’entreprise. Nous concevons des solutions de connectivité adaptées à vos besoins, en combinant performance, disponibilité et sécurité. De l’accès fibre aux solutions de secours, en passant par l’interconnexion de vos sites et la gestion centralisée de votre réseau, nous construisons une infrastructure fiable et évolutive.",
+      "title": "La connectivité au service de la disponibilité de votre entreprise.",
+      "body": "Une connexion Internet est aujourd'hui indispensable au fonctionnement de l'entreprise. Au-delà du simple accès au réseau, il s'agit de garantir la disponibilité des services, la sécurité des échanges et la continuité d'activité. Qu'il s'agisse d'un accès fibre, d'un lien de secours, de l'interconnexion de plusieurs sites ou de la sécurisation des flux, chaque composante contribue à bâtir une connectivité fiable, résiliente et adaptée à vos besoins.",
+	  "technologyTitle": "Solutions maîtrisées pour la connectivité Internet",
+	  "technologies": [
+		{ "name": "Fortinet", "role": "Sécurité et pilotage des connexions", "icon": "fortinet" },
+		{ "name": "Netgate", "role": "Appliances réseau et pare-feu", "icon": "netgate" },
+		{ "name": "pfSense", "role": "Routage et pare-feu open source", "icon": "pfsense" }
+	  ],
       "items": [
         {
-          "title": "Fibre Dédiée",
-          "subtitle": "FTTO - Fiber To The Office (Fibre professionelle)",
-          "text": "Une connexion Internet exclusivement réservée à votre entreprise, offrant des performances garanties et un niveau de service élevé.",
+          "title": "Fibre dédiée",
+          "subtitle": "FTTO - Fiber To The Office",
+          "text": "Une connexion Internet dédiée offrant des performances garanties, une disponibilité élevée et un niveau de service adapté aux activités critiques.",
           "icon": "zap",
-          "help": "Une fibre dédiée FTTO est réservée à l’entreprise et peut inclure des engagements contractuels sur le débit, la disponibilité et le délai de rétablissement. Elle convient aux usages pour lesquels une coupure ou une baisse de performance aurait un impact direct sur l’activité."
+          "help": "La FTTO est une fibre exclusivement réservée à votre entreprise. Elle garantit un débit symétrique, une faible latence, des engagements de disponibilité (SLA) et des délais d'intervention adaptés aux environnements où la continuité d'activité est essentielle."
         },
         {
-          "title": "Fibre Classique",
-          "subtitle": "FTTH - Fiber To The Home (Fibre grand public)",
-          "text": "Une solution performante et économique pour les entreprises ayant des besoins standards en connectivité.",
+          "title": "Fibre classique",
+          "subtitle": "FTTH - Fiber To The Home",
+          "text": "Une solution performante et économique pour les entreprises dont les besoins ne nécessitent pas de garanties de service spécifiques.",
           "icon": "globe",
-          "compactDetail": {
-            "slug": "fibre-ftth",
-            "eyebrow": "Fiche express",
-            "title": "La fibre FTTH en entreprise",
-            "introduction": "La FTTH s’appuie sur une infrastructure opérateur mutualisée. Elle offre un débit élevé à un coût maîtrisé, sans les garanties contractuelles d’une fibre dédiée.",
-            "facts": [
-              { "label": "Infrastructure", "value": "Réseau mutualisé" },
-              { "label": "Performance", "value": "Débit non garanti" },
-              { "label": "Usage", "value": "Bureautique & cloud" }
-            ]
-          }
+          "help": "La FTTH constitue une excellente solution pour de nombreuses PME. Elle offre des débits élevés à un coût maîtrisé et répond parfaitement aux usages bureautiques, collaboratifs et aux applications cloud lorsque les contraintes de disponibilité restent modérées."
         },
         {
           "title": "Connexion mobile de secours",
           "subtitle": "4G / 5G - Bascule automatique",
-          "text": "Une solution de continuité de service qui utilise le réseau mobile des opérateurs pour prendre automatiquement le relais en cas de coupure de votre accès Internet principal.",
+          "text": "Une connexion mobile qui prend automatiquement le relais en cas de coupure afin d'assurer la continuité de vos services.",
           "icon": "refresh",
-          "detail": {
-            "slug": "redondance",
-            "eyebrow": "Continuité de service",
-            "title": "La redondance Internet, au-delà du simple lien de secours",
-            "introduction": "La redondance consiste à prévoir un second chemin réellement exploitable lorsque l'accès principal devient indisponible. Elle associe plusieurs liens, une stratégie de bascule et une supervision capable de distinguer une coupure franche d'une dégradation progressive.",
-            "flow": ["Accès principal", "Bascule maîtrisée", "Accès de secours"],
-            "sections": [
-              {
-                "title": "Deux chemins suffisamment indépendants",
-                "text": "Deux abonnements ne suffisent pas s'ils dépendent du même opérateur, du même point de raccordement ou du même chemin physique. L'indépendance réelle des parcours doit être vérifiée dès la conception."
-              },
-              {
-                "title": "Une bascule adaptée aux usages",
-                "text": "La bascule peut être automatique ou supervisée. Les flux critiques, les sessions VPN, la téléphonie et les services publiés doivent conserver un comportement prévisible pendant la transition."
-              },
-              {
-                "title": "Un secours testé, pas seulement installé",
-                "text": "Le lien secondaire, les règles du firewall et les procédures de retour à la normale sont testés régulièrement afin d'éviter de découvrir une dépendance le jour de l'incident."
-              }
-            ],
-            "checkpoints": [
-              "Identifier les applications qui doivent rester accessibles.",
-              "Définir le temps de bascule acceptable pour chaque usage.",
-              "Vérifier l'indépendance des opérateurs et des parcours physiques.",
-              "Superviser les deux liens et documenter le retour à la normale."
-            ],
-            "callout": "La bonne architecture n'est pas celle qui multiplie les liens, mais celle dont le comportement en cas de panne est compris, testé et documenté."
-          }
+          "help": "En cas d'interruption de votre accès principal, le firewall bascule automatiquement vers une connexion 4G ou 5G. Les utilisateurs conservent l'accès aux applications métiers, aux services cloud et aux outils collaboratifs, sans intervention manuelle."
         },
         {
           "title": "Connexion satellite de secours",
           "subtitle": "Starlink - Lien de secours indépendant",
-          "text": "Une solution de secours totalement indépendante des réseaux terrestres. Contrairement à la 4G/5G, elle ne dépend ni des infrastructures fibre locales ni de la couverture mobile.",
+          "text": "Une connexion satellite indépendante des infrastructures terrestres pour garantir la continuité de votre activité.",
           "icon": "wifi",
-          "compactDetail": {
-            "slug": "secours-satellite",
-            "size": "mini",
-            "eyebrow": "Fiche express",
-            "title": "Le satellite comme lien de secours",
-            "introduction": "Une liaison indépendante des réseaux fibre et mobile locaux, prévue pour maintenir les usages essentiels lorsque les accès terrestres sont indisponibles.",
-            "facts": [
-              {
-                "label": "Infrastructure",
-                "value": "Réseau satellitaire"
-              },
-              {
-                "label": "Installation",
-                "value": "Vue dégagée du ciel"
-              },
-              {
-                "label": "Usage",
-                "value": "Flux essentiels"
-              }
-            ]
-          }
+          "help": "Contrairement à une connexion mobile, Starlink ne dépend ni du réseau fibre ni des antennes 4G/5G locales. Cette indépendance en fait une solution idéale pour les sites isolés, les environnements sensibles ou les entreprises recherchant un très haut niveau de résilience."
         },
         {
           "title": "Interconnexion des sites",
           "subtitle": "SD-WAN / VPN IPsec",
-          "text": "Reliez l’ensemble de vos agences, bureaux ou entrepôts au sein d’un réseau privé sécurisé. Vos collaborateurs accèdent aux mêmes ressources, quel que soit leur site, tout en bénéficiant d’une connexion sécurisée et centralisée.",
+          "text": "Reliez l'ensemble de vos sites au sein d'un réseau privé sécurisé afin de partager vos ressources en toute transparence.",
           "icon": "link",
-          "compactDetail": {
-            "slug": "interconnexion-sites",
-            "size": "micro",
-            "eyebrow": "En bref",
-            "title": "Un réseau privé entre vos sites",
-            "introduction": "Le SD-WAN et les VPN IPsec relient vos agences, bureaux et entrepôts au sein d’un réseau sécurisé et piloté centralement.",
-            "facts": [
-              {
-                "label": "Architecture",
-                "value": "SD-WAN"
-              },
-              {
-                "label": "Sécurité",
-                "value": "VPN IPsec"
-              },
-              {
-                "label": "Pilotage",
-                "value": "Centralisé"
-              }
-            ]
-          }
+          "help": "Les technologies SD-WAN et VPN IPsec permettent d'interconnecter vos agences, bureaux ou entrepôts dans une infrastructure unique. Les flux sont sécurisés, les politiques réseau centralisées et les utilisateurs accèdent aux mêmes ressources, quel que soit leur site."
         },
         {
           "title": "Firewall",
-          "subtitle": "NGFW / UTM - Sécurité et pilotage du réseau",
-          "text": "Le firewall centralise, sécurise et pilote l’ensemble de vos connexions Internet. Il assure la protection de votre réseau tout en garantissant la continuité de service et l’interconnexion de vos sites.",
+          "subtitle": "NGFW / UTM - Pare-feu intelligent",
+          "text": "Le point central de votre connectivité pour sécuriser, piloter et interconnecter l'ensemble de vos accès Internet.",
           "icon": "shield",
-          "compactDetail": {
-            "slug": "firewall",
-            "size": "micro",
-            "effect": "tooltip",
-            "eyebrow": "En bref",
-            "title": "Le contrôle central de vos flux",
-            "introduction": "Le firewall protège et pilote vos connexions Internet, la continuité de service et les échanges sécurisés entre vos sites.",
-            "facts": [
-              {
-                "label": "Protection",
-                "value": "Filtrage"
-              },
-              {
-                "label": "Continuité",
-                "value": "Multi-WAN"
-              },
-              {
-                "label": "Pilotage",
-                "value": "Centralisé"
-              }
-            ]
-          }
+          "help": "Un NGFW (Next Generation Firewall) est un pare-feu de nouvelle génération qui va bien au-delà du simple filtrage des connexions. En mode UTM (Unified Threat Management), il centralise plusieurs fonctions de sécurité au sein d'un même équipement : pare-feu, VPN, filtrage web, prévention des intrusions (IPS), antivirus ou encore contrôle des applications. Véritable point central du réseau, il applique les politiques de sécurité, pilote les différents liens Internet et peut assurer la bascule automatique vers une connexion de secours afin de maintenir la continuité des services."
         }
       ]
     },
@@ -172,40 +80,47 @@
         "alt": "Réseau informatique distribué dans les différents espaces d'une entreprise"
       },
       "layout": "six",
+	  "technologyTitle": "Constructeurs et solutions réseau maîtrisés",
+	  "technologies": [
+		{ "name": "Cisco", "role": "Commutation, routage et réseau d'entreprise", "icon": "cisco" },
+		{ "name": "Cisco Meraki", "role": "Gestion réseau centralisée dans le cloud", "icon": "cisco-meraki" },
+		{ "name": "HPE Aruba Networking", "role": "Réseau filaire et Wi-Fi professionnel", "icon": "hp-aruba" },
+		{ "name": "Ubiquiti", "role": "Réseau et Wi-Fi administrés", "icon": "ubiquiti" }
+	  ],
       "items": [
         {
           "title": "Câblage",
-          "text": "Une infrastructure cuivre et fibre structurée, correctement identifiée et documentée pour garantir des connexions fiables et simplifier la maintenance comme les évolutions du réseau.",
+          "text": "Une infrastructure cuivre et fibre structurée pour garantir des connexions fiables et durables.",
           "help": "Le câblage est le socle de votre infrastructure réseau. Nous concevons des baies organisées, des panneaux de brassage clairement identifiés et des liaisons cuivre ou fibre adaptées à votre infrastructure. Chaque installation est documentée afin de faciliter les interventions, les extensions futures et le maintien d'une infrastructure propre et pérenne.",
           "icon": "layers"
         },
         {
           "title": "Commutation, routage & segmentation",
-          "text": "Une architecture segmentée pour séparer les usages, maîtriser les accès et organiser les échanges entre les différents environnements de votre entreprise.",
+          "text": "Une architecture réseau organisée pour séparer les usages et contrôler les échanges entre les environnements.",
           "help": "Les commutateurs constituent le cœur de votre réseau local en reliant les différents équipements de l'entreprise. Les usages sont ensuite répartis dans des segments dédiés : postes utilisateurs, Wi-Fi invité, téléphonie IP, objets connectés, serveurs ou réseau d'administration. Le routage contrôle enfin les communications autorisées entre ces environnements afin de renforcer la sécurité, limiter les risques et simplifier l'exploitation.",
           "icon": "shield"
         },
         {
           "title": "Wi-Fi",
-          "text": "Une infrastructure Wi-Fi pensée pour offrir stabilité, mobilité et performances, quels que soient les usages et la densité d'utilisateurs.",
+          "text": "Une couverture Wi-Fi stable et performante, adaptée aux usages et à la densité de vos utilisateurs.",
           "help": "Chaque déploiement est dimensionné selon les contraintes des locaux et les usages réels : couverture radio, capacité, densité d'utilisateurs et gestion des interférences. Des réseaux distincts peuvent être proposés pour les collaborateurs, les visiteurs et les objets connectés, avec une authentification d'entreprise (802.1X), un portail captif invité et le roaming entre les bornes pour une connexion continue lors des déplacements.",
           "icon": "wifi"
         },
         {
           "title": "Sécurité",
-          "text": "Des accès maîtrisés et des équipements protégés pour limiter les risques, contrôler les communications et renforcer la sécurité de votre système d'information.",
+          "text": "Des accès maîtrisés et des communications sécurisées pour protéger votre système d'information.",
           "help": "La sécurité du réseau repose sur plusieurs niveaux de protection complémentaires : pare-feu nouvelle génération, accès VPN sécurisés, authentification multifacteur (MFA), contrôle d'accès au réseau (NAC), filtrage des flux et segmentation des environnements. Ces mécanismes permettent de protéger les utilisateurs, les équipements et les données tout en limitant les déplacements latéraux en cas d'incident.",
           "icon": "lock"
         },
         {
           "title": "Performance & redondance",
-          "text": "Une infrastructure dimensionnée selon vos usages et conçue pour maintenir la continuité de service en cas de défaillance d'un équipement ou d'une liaison.",
+          "text": "Une infrastructure dimensionnée pour assurer les performances et la continuité de vos services.",
           "help": "Les performances du réseau sont adaptées aux besoins actuels tout en anticipant les évolutions de votre entreprise. Selon les exigences de disponibilité, des mécanismes de redondance peuvent être mis en œuvre : double connexion Internet, commutateurs redondants, empilement (stacking), agrégation de liens (LACP), alimentations redondantes ou basculement automatique afin de limiter l'impact d'une panne.",
           "icon": "chart"
         },
         {
           "title": "Supervision",
-          "text": "Une surveillance continue de votre réseau pour détecter les anomalies, suivre les performances et intervenir avant qu'un incident n'impacte les utilisateurs.",
+          "text": "Une surveillance continue pour détecter les anomalies et intervenir avant qu'elles n'impactent vos utilisateurs.",
           "help": "La supervision collecte en permanence les informations de vos équipements réseau : disponibilité, charge des équipements, utilisation des liens, état des interfaces et principaux indicateurs de santé. Des tableaux de bord et des alertes permettent de détecter rapidement une panne, une saturation ou un comportement inhabituel afin de réduire les temps d'interruption et de faciliter les interventions.",
           "icon": "eye"
         }
@@ -217,6 +132,11 @@
       "title": "Des échanges accessibles, quel que soit le lieu de travail",
       "body": "Téléphonie, messagerie, réunions et postes mobiles gagnent à fonctionner comme un ensemble. Nous structurons les outils et les règles d'usage pour que les équipes restent joignables sans complexifier leur quotidien.",
       "layout": "four",
+	  "technologyTitle": "Solutions de téléphonie maîtrisées",
+	  "technologies": [
+		{ "name": "Microsoft Teams Phone", "role": "Téléphonie intégrée à Microsoft Teams", "icon": "microsoft-teams-phone" },
+		{ "name": "3CX", "role": "Téléphonie IP et communications unifiées", "icon": "3cx" }
+	  ],
       "items": [
         { "title": "Téléphonie IP", "text": "Des lignes et des postes adaptés aux habitudes de travail, aux accueils et aux besoins de mobilité.", "icon": "phone" },
         { "title": "Réunions & collaboration", "text": "Les outils de communication sont intégrés à vos usages collaboratifs pour limiter les ruptures entre appel, chat et visioconférence.", "icon": "users" },
@@ -234,6 +154,17 @@
         "alt": "Infrastructure de serveurs virtualisés compatible avec plusieurs systèmes et plateformes"
       },
       "layout": "six",
+	  "technologyTitle": "Constructeurs et plateformes maîtrisés",
+	  "technologies": [
+		{ "name": "HP", "role": "Serveurs et infrastructures physiques", "icon": "hp" },
+		{ "name": "Supermicro", "role": "Serveurs et plateformes matérielles", "icon": "supermicro" },
+		{ "name": "Nutanix", "role": "Infrastructure hyperconvergée", "icon": "nutanix" },
+		{ "name": "Proxmox", "role": "Virtualisation et gestion de clusters", "icon": "proxmox" },
+		{ "name": "Microsoft Hyper-V", "role": "Virtualisation Microsoft", "icon": "microsoft-hyper-v" },
+		{ "name": "VMware", "role": "Virtualisation d'infrastructure", "icon": "vmware" },
+		{ "name": "Veeam", "role": "Sauvegarde et réplication", "icon": "veeam" },
+		{ "name": "HYCU", "role": "Protection des données et reprise", "icon": "hycu" }
+	  ],
       "items": [
         { "title": "Étude des charges", "text": "Les ressources processeur, mémoire et stockage sont dimensionnées à partir des applications, des volumes et des usages réels.", "icon": "chart" },
         { "title": "Virtualisation maîtrisée", "text": "Les services sont regroupés sur une plateforme adaptée pour faciliter les évolutions, les opérations de maintenance et la reprise.", "icon": "layers" },

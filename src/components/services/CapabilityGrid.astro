@@ -30,6 +30,7 @@ const brandLogo = await getImage({
   format: 'webp',
   quality: 90,
 });
+const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWith('-sans-illustration');
 ---
 
 <section class="bg-surface-alt py-16 md:py-24">
@@ -95,13 +96,13 @@ const brandLogo = await getImage({
         ) : (
           <article class:list={[
             'rounded-xl border border-line bg-surface p-6 transition duration-200 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg',
-            !(item.help && instanceKey.endsWith('-original')) && 'hover:-translate-y-1 hover:scale-[1.01]',
+            !(item.help && displayItemHelp) && 'hover:-translate-y-1 hover:scale-[1.01]',
           ]}>
             {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}
             <h3 class="mt-4 font-semibold text-ink">{item.title}</h3>
             {item.subtitle && <p class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{item.subtitle}</p>}
             <p class="mt-2 text-base leading-relaxed text-ink-secondary">{item.text}</p>
-            {item.help && instanceKey.endsWith('-original') && (
+            {item.help && displayItemHelp && (
               <div class="mt-6">
                 <HelpTooltip text={item.help} label={`En savoir plus sur ${item.title}`} triggerText="En savoir plus" client:load />
               </div>

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+import Icon from '../components/ui/Icon.astro';
+
+const usefulLinks = [
+	{
+		title: 'Découvrir nos expertises',
+		text: 'Parcourez nos domaines d’accompagnement et trouvez le bon point de départ.',
+		href: '/#expertises',
+		icon: 'layers',
+	},
+	{
+		title: 'Consulter le blog',
+		text: 'Retrouvez nos analyses, nos conseils et nos retours d’expérience.',
+		href: '/blog',
+		icon: 'folder',
+	},
+	{
+		title: 'Nous contacter',
+		text: 'Expliquez-nous votre besoin et échangeons directement avec notre équipe.',
+		href: '/contact',
+		icon: 'mail',
+	},
+];
+---
+
+<BaseLayout
+	title="Page introuvable | Keenton"
+	description="La page demandée est introuvable. Retrouvez les expertises, le blog et les coordonnées de Keenton."
+	robots="noindex, follow"
+>
+	<section class="relative overflow-hidden bg-dark text-dark-text">
+		<div class="aurora-halos pointer-events-none absolute inset-0" aria-hidden="true"></div>
+		<div class="bg-grid-dark grid-masked pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+		<Container class="relative grid min-h-[38rem] items-center gap-12 py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:py-24">
+			<div>
+				<h1 class="display-title max-w-3xl text-[clamp(3rem,7vw,5.8rem)] text-white">
+					Cette page a quitté le réseau.
+				</h1>
+				<p class="mt-7 max-w-xl text-lg leading-relaxed text-dark-text-secondary">
+					L’adresse a peut-être changé ou la page n’existe plus. Votre connexion fonctionne toujours, nous allons vous remettre sur le bon chemin.
+				</p>
+
+				<div class="mt-10 flex flex-wrap gap-4">
+					<Button href="/" variant="primary" arrow>Retour à l’accueil</Button>
+					<Button href="/contact" variant="secondary">Nous contacter</Button>
+				</div>
+			</div>
+
+			<div class="flex min-h-64 items-center justify-center lg:min-h-96" aria-hidden="true">
+				<div class="display-title bg-linear-to-b from-accent-light to-accent bg-clip-text text-[clamp(8rem,20vw,16rem)] leading-none tracking-[-0.09em] text-transparent opacity-45">
+					404
+				</div>
+			</div>
+		</Container>
+	</section>
+
+	<section class="border-b border-line bg-surface py-16 md:py-20">
+		<Container>
+			<h2 class="text-center text-3xl font-semibold text-ink md:text-4xl">Vous cherchiez peut-être…</h2>
+			<div class="mt-10 grid gap-5 md:grid-cols-3">
+				{
+					usefulLinks.map((link) => (
+						<a
+							href={link.href}
+							class="group rounded-2xl border border-line bg-surface p-7 shadow-cold transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-1 hover:border-accent/55 hover:shadow-cold-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+						>
+							<span class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent-dark transition-colors group-hover:bg-accent group-hover:text-white">
+								<Icon name={link.icon} class="h-5 w-5" />
+							</span>
+							<h3 class="mt-6 text-xl font-semibold text-ink">{link.title}</h3>
+							<p class="mt-3 leading-relaxed text-ink-secondary">{link.text}</p>
+							<span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent-dark">
+								Accéder à la page <span aria-hidden="true">→</span>
+							</span>
+						</a>
+					))
+				}
+			</div>
+		</Container>
+	</section>
+</BaseLayout>
