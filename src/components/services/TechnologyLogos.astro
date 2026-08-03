@@ -89,38 +89,43 @@ const {
 ---
 
 {items.length > 0 && (
-	<ul class="ml-2 inline-flex translate-y-1 flex-wrap items-center gap-1.5 align-baseline" aria-label={title}>
+	<ul class="ml-2 inline-flex h-8 translate-y-1 flex-nowrap items-center gap-1.5 overflow-visible align-baseline" aria-label={title}>
 		{items.map((item) => {
 			const icon = brandIcons[item.icon];
 			const monogram = brandMonograms[item.icon];
 
 			return (
 				<li
-					class="group relative flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-white text-[var(--cat-accent)] shadow-sm"
+					class="group relative h-8 w-8 shrink-0 overflow-visible transition-[width] duration-200 ease-out hover:z-30 hover:w-16 motion-reduce:transition-none"
 				>
-					<span class="sr-only">{item.name} — {item.role}</span>
-					{icon && (
-						<svg
-							viewBox="0 0 24 24"
-							class:list={['fill-current', item.icon === 'cisco' ? 'h-6 w-6' : 'h-5 w-5']}
-							aria-hidden="true"
-						>
-							<path d={icon.path} />
-						</svg>
-					)}
-					{!icon && monogram && (
-						<span
-							class:list={[
-								'leading-none font-bold tracking-[-0.08em]',
-								monogram.length > 2 ? 'text-[0.48rem]' : 'text-[0.62rem]',
-							]}
-							aria-hidden="true"
-						>
-							{monogram}
-						</span>
-					)}
+					<span class="absolute top-1/2 left-0 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-white text-[var(--cat-accent)] shadow-sm transition-[width,height,box-shadow] duration-200 ease-out group-hover:h-16 group-hover:w-16 group-hover:shadow-lg motion-reduce:transition-none">
+						<span class="sr-only">{item.name} — {item.role}</span>
+						{icon && (
+							<svg
+								viewBox="0 0 24 24"
+								class:list={[
+									'relative z-10 fill-current transition-transform duration-200 ease-out group-hover:scale-200 motion-reduce:transform-none',
+									item.icon === 'cisco' ? 'h-6 w-6' : 'h-5 w-5',
+								]}
+								aria-hidden="true"
+							>
+								<path d={icon.path} />
+							</svg>
+						)}
+						{!icon && monogram && (
+							<span
+								class:list={[
+									'relative z-10 leading-none font-bold tracking-[-0.08em] transition-transform duration-200 ease-out group-hover:scale-200 motion-reduce:transform-none',
+									monogram.length > 2 ? 'text-[0.48rem]' : 'text-[0.62rem]',
+								]}
+								aria-hidden="true"
+							>
+								{monogram}
+							</span>
+						)}
+					</span>
 					<span
-						class="pointer-events-none absolute top-full left-1/2 z-20 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2.5 py-1.5 text-[0.8rem] leading-none font-semibold text-white opacity-0 shadow-sm transition-opacity duration-150 group-hover:opacity-100"
+						class="pointer-events-none absolute top-[calc(100%+1.375rem)] left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2.5 py-1.5 text-[0.8rem] leading-none font-semibold text-white opacity-0 shadow-sm transition-opacity duration-150 group-hover:opacity-100"
 						aria-hidden="true"
 					>
 						{item.name}

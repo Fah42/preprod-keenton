@@ -95,7 +95,7 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
           />
         ) : (
           <article class:list={[
-            'rounded-xl border border-line bg-surface p-6 transition duration-200 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg',
+            'relative rounded-xl border border-line bg-surface p-6 transition duration-200 hover:z-20 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg focus-within:z-20',
             !(item.help && displayItemHelp) && 'hover:-translate-y-1 hover:scale-[1.01]',
           ]}>
             {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}

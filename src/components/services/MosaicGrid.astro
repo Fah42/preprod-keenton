@@ -71,7 +71,7 @@ const compactCards = layout === 'four' || layout === 'six';
 				{
 					items.map((item) => (
 						<article class:list={[
-							'relative flex flex-col rounded-xl border border-line bg-surface transition duration-200',
+							'relative flex flex-col rounded-xl border border-line bg-surface transition duration-200 hover:z-20 focus-within:z-20',
 							compactCards ? 'h-full p-4 md:p-5 hover:-translate-y-1 hover:scale-[1.02] hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg' : 'p-7 md:p-8',
 						]}>
 							<div class="h-0.5 w-10 bg-[var(--cat-accent)]"></div>
