@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+
+const legalSections = [
+	{ id: 'editeur', label: 'Éditeur du site' },
+	{ id: 'publication', label: 'Direction de la publication' },
+	{ id: 'hebergement', label: 'Hébergement' },
+	{ id: 'propriete-intellectuelle', label: 'Propriété intellectuelle' },
+	{ id: 'responsabilite', label: 'Responsabilité' },
+	{ id: 'donnees-personnelles', label: 'Données personnelles' },
+	{ id: 'cookies', label: 'Cookies' },
+];
+---
+
+<BaseLayout
+	title="Mentions légales | Keenton"
+	description="Informations légales relatives à l’éditeur, à l’hébergement et à l’utilisation du site Keenton."
+>
+	<section class="border-b border-line bg-surface">
+		<Container class="py-14 md:py-20">
+			<h1 class="max-w-3xl text-4xl font-bold leading-tight text-ink md:text-5xl">Mentions légales</h1>
+			<p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-secondary">
+				Informations relatives à l’éditeur, à l’hébergement et aux conditions d’utilisation du site Keenton.
+			</p>
+			<p class="mt-5 font-mono text-xs uppercase tracking-[0.16em] text-ink-secondary">
+				Dernière mise à jour : 3 août 2026
+			</p>
+		</Container>
+	</section>
+
+	<section class="bg-surface-alt py-14 md:py-20">
+		<Container class="grid items-start gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
+			<aside class="hidden lg:sticky lg:top-28 lg:block">
+				<nav aria-label="Sommaire des mentions légales" class="rounded-xl border border-line bg-surface p-5">
+					<p class="font-mono text-xs uppercase tracking-[0.16em] text-ink-secondary">Sommaire</p>
+					<ul class="mt-4 space-y-3">
+						{
+							legalSections.map((section) => (
+								<li>
+									<a href={`#${section.id}`} class="text-sm leading-snug text-ink-secondary transition-colors hover:text-accent-dark">
+										{section.label}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
+			</aside>
+
+			<div class="max-w-4xl space-y-6">
+				<section id="editeur" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Éditeur du site</h2>
+					<p class="mt-4 leading-relaxed text-ink-secondary">
+						Le présent site, accessible à l’adresse <a href="https://www.keenton.com" class="font-medium text-accent-dark hover:text-accent">www.keenton.com</a>, est édité par :
+					</p>
+
+					<dl class="mt-6 divide-y divide-line border-y border-line text-sm md:text-base">
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">Raison sociale</dt>
+							<dd class="text-ink-secondary">KEENTON</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">Forme juridique</dt>
+							<dd class="text-ink-secondary">Société par actions simplifiée (SAS)</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">Capital social</dt>
+							<dd class="text-ink-secondary">10 000 €</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">Siège social</dt>
+							<dd class="text-ink-secondary">14 rue Scandicci, Tour Essor, 93500 Pantin, France</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">SIRET</dt>
+							<dd class="text-ink-secondary">814 302 428 00036</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">RCS</dt>
+							<dd class="text-ink-secondary">814 302 428 RCS Bobigny</dd>
+						</div>
+						<div class="grid gap-1 py-3 md:grid-cols-[12rem_1fr] md:gap-5">
+							<dt class="font-semibold text-ink">TVA intracommunautaire</dt>
+							<dd class="text-ink-secondary">FR29 814 302 428</dd>
+						</div>
+					</dl>
+
+					<address class="mt-6 not-italic leading-relaxed text-ink-secondary">
+						Téléphone : <a href="tel:+33185097252" class="font-medium text-accent-dark hover:text-accent">01 85 09 72 52</a><br />
+						E-mail : <a href="mailto:contact@keenton.com" class="font-medium text-accent-dark hover:text-accent">contact@keenton.com</a>
+					</address>
+				</section>
+
+				<section id="publication" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Direction de la publication</h2>
+					<p class="mt-4 leading-relaxed text-ink-secondary">
+						Le directeur de la publication est <strong class="font-semibold text-ink">Jérémy Donas</strong>, en sa qualité de président de KEENTON.
+					</p>
+				</section>
+
+				<section id="hebergement" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Hébergement</h2>
+					<p class="mt-4 leading-relaxed text-ink-secondary">Le site est hébergé par :</p>
+					<address class="mt-4 not-italic leading-relaxed text-ink-secondary">
+						<strong class="font-semibold text-ink">KEENTON</strong><br />
+						14 rue Scandicci, Tour Essor<br />
+						93500 Pantin, France<br />
+						<a href="tel:+33185097252" class="font-medium text-accent-dark hover:text-accent">01 85 09 72 52</a>
+					</address>
+				</section>
+
+				<section id="propriete-intellectuelle" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Propriété intellectuelle</h2>
+					<div class="mt-4 space-y-4 leading-relaxed text-ink-secondary">
+						<p>
+							Les contenus présents sur ce site, notamment les textes, illustrations, photographies, éléments graphiques, logos, vidéos et composants logiciels, sont protégés par le droit de la propriété intellectuelle.
+						</p>
+						<p>
+							Sauf autorisation écrite préalable de KEENTON, toute reproduction, représentation, adaptation, publication ou exploitation, totale ou partielle, de ces contenus est interdite, quel que soit le procédé utilisé.
+						</p>
+					</div>
+				</section>
+
+				<section id="responsabilite" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Responsabilité</h2>
+					<div class="mt-4 space-y-4 leading-relaxed text-ink-secondary">
+						<p>
+							KEENTON veille à fournir des informations aussi exactes et à jour que possible. Ces informations sont toutefois communiquées à titre général et peuvent évoluer sans préavis.
+						</p>
+						<p>
+							KEENTON ne peut garantir l’absence totale d’erreur, l’exhaustivité permanente des contenus ni la disponibilité continue du site. Les liens vers des sites tiers sont fournis à titre informatif ; KEENTON n’exerce aucun contrôle sur leur contenu.
+						</p>
+					</div>
+				</section>
+
+				<section id="donnees-personnelles" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Données personnelles</h2>
+					<div class="mt-4 space-y-4 leading-relaxed text-ink-secondary">
+						<p>
+							KEENTON est responsable des traitements réalisés à partir des formulaires du site. Les informations transmises servent uniquement à traiter les demandes de contact, les projets préparés avec le configurateur et les candidatures.
+						</p>
+						<p>
+							Ces données sont accessibles aux membres habilités de KEENTON et aux prestataires techniques strictement nécessaires à leur transmission et à leur traitement. Les candidatures peuvent être conservées pendant la durée du recrutement, puis jusqu’à deux ans après le dernier contact lorsqu’un profil est susceptible d’être considéré pour une opportunité ultérieure.
+						</p>
+						<p>
+							Vous pouvez demander l’accès, la rectification, l’effacement, la limitation ou la portabilité de vos données, ainsi que vous opposer à leur traitement lorsque ce droit s’applique. Pour exercer vos droits, écrivez à <a href="mailto:contact@keenton.com" class="font-medium text-accent-dark hover:text-accent">contact@keenton.com</a> ou à l’adresse postale de KEENTON indiquée plus haut.
+						</p>
+						<p>
+							Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr" class="font-medium text-accent-dark hover:text-accent">Commission nationale de l’informatique et des libertés (CNIL)</a>.
+						</p>
+					</div>
+				</section>
+
+				<section id="cookies" class="scroll-mt-28 rounded-2xl border border-line bg-surface p-6 md:p-8">
+					<h2 class="text-2xl font-bold text-ink">Cookies</h2>
+					<p class="mt-4 leading-relaxed text-ink-secondary">
+						Dans sa version actuelle, le site ne dépose aucun cookie publicitaire ni cookie de mesure d’audience. Cette information sera mise à jour si les outils utilisés par le site évoluent.
+					</p>
+				</section>
+			</div>
+		</Container>
+	</section>
+</BaseLayout>
