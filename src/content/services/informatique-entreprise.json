@@ -165,20 +165,50 @@
     {
       "type": "mosaic",
       "eyebrow": "Réseau d'entreprise",
-      "title": "Les six leviers d'un réseau exploitable",
-      "body": "Seconde proposition : une lecture plus détaillée en six cartes, organisée sur deux lignes. Elle convient lorsqu'il faut expliciter les principaux chantiers réseau.",
+      "title": "Les composantes d'un réseau maîtrisé",
+      "body": "La qualité d'un réseau ne se mesure pas à la performance d'un seul équipement, mais à la cohérence de l'ensemble. Lorsqu'une composante est négligée, c'est toute l'infrastructure qui peut en subir les conséquences. Ces six leviers forment une architecture équilibrée, où chaque élément contribue à la performance, à la sécurité et à la disponibilité de votre réseau.",
       "image": {
         "src": "/src/assets/images/informatique-entreprise/reseau-entreprise.png",
         "alt": "Réseau informatique distribué dans les différents espaces d'une entreprise"
       },
       "layout": "six",
       "items": [
-        { "title": "Câblage", "text": "Un socle physique organisé et documenté.", "icon": "layers" },
-        { "title": "Routage & segmentation", "text": "Des flux maîtrisés entre les différents usages.", "icon": "shield" },
-        { "title": "Wi-Fi", "text": "Une couverture fiable pour les équipes et les visiteurs.", "icon": "wifi" },
-        { "title": "Sécurité", "text": "Des accès et des équipements protégés selon leur rôle.", "icon": "lock" },
-        { "title": "Performance & redondance", "text": "Des capacités adaptées et des points de secours identifiés.", "icon": "chart" },
-        { "title": "Supervision", "text": "Des alertes utiles pour suivre la disponibilité et intervenir.", "icon": "eye" }
+        {
+          "title": "Câblage",
+          "text": "Une infrastructure cuivre et fibre structurée, correctement identifiée et documentée pour garantir des connexions fiables et simplifier la maintenance comme les évolutions du réseau.",
+          "help": "Le câblage est le socle de votre infrastructure réseau. Nous concevons des baies organisées, des panneaux de brassage clairement identifiés et des liaisons cuivre ou fibre adaptées à votre infrastructure. Chaque installation est documentée afin de faciliter les interventions, les extensions futures et le maintien d'une infrastructure propre et pérenne.",
+          "icon": "layers"
+        },
+        {
+          "title": "Commutation, routage & segmentation",
+          "text": "Une architecture segmentée pour séparer les usages, maîtriser les accès et organiser les échanges entre les différents environnements de votre entreprise.",
+          "help": "Les commutateurs constituent le cœur de votre réseau local en reliant les différents équipements de l'entreprise. Les usages sont ensuite répartis dans des segments dédiés : postes utilisateurs, Wi-Fi invité, téléphonie IP, objets connectés, serveurs ou réseau d'administration. Le routage contrôle enfin les communications autorisées entre ces environnements afin de renforcer la sécurité, limiter les risques et simplifier l'exploitation.",
+          "icon": "shield"
+        },
+        {
+          "title": "Wi-Fi",
+          "text": "Une infrastructure Wi-Fi pensée pour offrir stabilité, mobilité et performances, quels que soient les usages et la densité d'utilisateurs.",
+          "help": "Chaque déploiement est dimensionné selon les contraintes des locaux et les usages réels : couverture radio, capacité, densité d'utilisateurs et gestion des interférences. Des réseaux distincts peuvent être proposés pour les collaborateurs, les visiteurs et les objets connectés, avec une authentification d'entreprise (802.1X), un portail captif invité et le roaming entre les bornes pour une connexion continue lors des déplacements.",
+          "icon": "wifi"
+        },
+        {
+          "title": "Sécurité",
+          "text": "Des accès maîtrisés et des équipements protégés pour limiter les risques, contrôler les communications et renforcer la sécurité de votre système d'information.",
+          "help": "La sécurité du réseau repose sur plusieurs niveaux de protection complémentaires : pare-feu nouvelle génération, accès VPN sécurisés, authentification multifacteur (MFA), contrôle d'accès au réseau (NAC), filtrage des flux et segmentation des environnements. Ces mécanismes permettent de protéger les utilisateurs, les équipements et les données tout en limitant les déplacements latéraux en cas d'incident.",
+          "icon": "lock"
+        },
+        {
+          "title": "Performance & redondance",
+          "text": "Une infrastructure dimensionnée selon vos usages et conçue pour maintenir la continuité de service en cas de défaillance d'un équipement ou d'une liaison.",
+          "help": "Les performances du réseau sont adaptées aux besoins actuels tout en anticipant les évolutions de votre entreprise. Selon les exigences de disponibilité, des mécanismes de redondance peuvent être mis en œuvre : double connexion Internet, commutateurs redondants, empilement (stacking), agrégation de liens (LACP), alimentations redondantes ou basculement automatique afin de limiter l'impact d'une panne.",
+          "icon": "chart"
+        },
+        {
+          "title": "Supervision",
+          "text": "Une surveillance continue de votre réseau pour détecter les anomalies, suivre les performances et intervenir avant qu'un incident n'impacte les utilisateurs.",
+          "help": "La supervision collecte en permanence les informations de vos équipements réseau : disponibilité, charge des équipements, utilisation des liens, état des interfaces et principaux indicateurs de santé. Des tableaux de bord et des alertes permettent de détecter rapidement une panne, une saturation ou un comportement inhabituel afin de réduire les temps d'interruption et de faciliter les interventions.",
+          "icon": "eye"
+        }
       ]
     },
     {

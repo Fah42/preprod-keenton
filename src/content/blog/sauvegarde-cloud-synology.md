@@ -20,7 +20,7 @@ Centraliser les données sur un NAS Synology est un schéma classique au sein de
 
 Une solution de sauvegarde cloud taillée pour les stockages Synology permettant de restaurer à tout instant ! Historique de restauration (rétention) allant de 28 jours jusqu’à l’archivage de 1 an à 3 ans !*\*
 
-![](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-restauration-retention-1.jpg "keenton_sauvegarde_cloud_synology_restauration_retention")
+![Schéma de la rétention et de la restauration des sauvegardes cloud Synology](../../assets/images/blog/ancien-blog/keenton-sauvegarde-cloud-synology-restauration-retention-1.jpg "keenton_sauvegarde_cloud_synology_restauration_retention")
 
 ## Les 6 points clés de notre sauvegarde cloud Synology
 

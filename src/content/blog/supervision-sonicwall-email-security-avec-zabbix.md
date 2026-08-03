@@ -38,40 +38,40 @@ Une fois l’hôte créé sur le serveur Zabbix il suffit de le lier au template
 
 Les graphiques ci-dessous sont issues d’un tableau de bord Grafana mais leurs équivalents Zabbix sont bien compris dans le template.
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-cpu-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-cpu.png)
+[![Graphique Grafana de l’utilisation du processeur du SonicWall Email Security](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-cpu-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-cpu.png)
 CPU
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-load-average-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-load-average.png)
+[![Graphique Grafana de la charge moyenne du SonicWall Email Security](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-load-average-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-load-average.png)
 Load Average
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-received-send-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-received-send.png)
+[![Graphique Grafana des e-mails reçus et envoyés](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-received-send-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-received-send.png)
 Received / Send
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-received-vs-good-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-received-vs-good.png)
+[![Graphique Grafana comparant les e-mails reçus aux e-mails légitimes](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-received-vs-good-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-received-vs-good.png)
 Received vs Good
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-queue-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-queue.png)
+[![Graphique Grafana du nombre d’e-mails dans la file d’attente](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-queue-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-mail-queue.png)
 Queue
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-spam-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-spam.png)
+[![Graphique Grafana comparant les spams confirmés et les spams probables](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-spam-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-spam.png)
 Spam vs Likely Spam
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-virus-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-virus.png)
+[![Graphique Grafana des virus détectés dans les e-mails](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-virus-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-virus.png)
 Virus
 
 <!-- -->
 
-[![](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-dha-fraud-policy-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-dha-fraud-policy.png)
+[![Graphique Grafana des détections DHA, fraude et règles de sécurité](../../assets/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-dha-fraud-policy-150x150.png)](/images/blog/ancien-blog/sonicwall-email-security-zabbix-graphique-dha-fraud-policy.png)
 DHA / Fraud / Policy
 
 ## Les Triggers
