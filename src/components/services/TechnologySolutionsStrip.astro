@@ -1,0 +1,65 @@
+---
+import OptimizedImage from '../ui/OptimizedImage.astro';
+
+const {
+	title = 'Solutions maîtrisées',
+	description,
+	items = [],
+} = Astro.props;
+
+const solutionLogos = {
+	'3cx': {
+		src: '/src/assets/images/technologies/3cx.png',
+		className: 'h-auto w-28',
+		width: 144,
+	},
+	'microsoft-teams-phone': {
+		src: '/src/assets/images/technologies/microsoft-teams-phone.png',
+		className: 'h-16 w-16',
+		width: 64,
+	},
+};
+---
+
+{items.length > 0 && (
+	<aside class="mt-10 md:mt-12" aria-labelledby="technology-solutions-title">
+		<header class="text-center">
+			<div class="flex items-center gap-4">
+				<span class="h-px flex-1 bg-linear-to-r from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+				<h3 id="technology-solutions-title" class="shrink-0 whitespace-nowrap font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
+					{title}
+				</h3>
+				<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+			</div>
+			{description && <p class="mx-auto mt-3 max-w-3xl text-balance text-sm leading-relaxed text-ink-secondary">{description}</p>}
+		</header>
+
+		<ul class="mt-6 grid gap-4 sm:grid-cols-2" aria-label={title}>
+			{items.map((item) => {
+				const logo = solutionLogos[item.icon];
+
+				return (
+					<li class="group flex min-h-28 items-center gap-5 rounded-2xl border border-[color-mix(in_srgb,var(--cat-accent)_55%,var(--color-line))] bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none md:min-h-32 md:gap-7 md:px-8">
+						<div class="flex w-28 shrink-0 items-center justify-center" aria-hidden="true">
+							{logo && (
+								<OptimizedImage
+									src={logo.src}
+									alt=""
+									width={logo.width}
+									layout="constrained"
+									fit="contain"
+									loading="lazy"
+									class={logo.className}
+								/>
+							)}
+						</div>
+						<div>
+							<strong class="block text-lg leading-tight font-semibold text-ink md:text-xl">{item.name}</strong>
+							<span class="mt-1.5 block text-sm leading-relaxed text-ink-secondary md:text-base">{item.role}</span>
+						</div>
+					</li>
+				);
+			})}
+		</ul>
+	</aside>
+)}

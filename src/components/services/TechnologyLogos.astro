@@ -89,7 +89,7 @@ const {
 ---
 
 {items.length > 0 && (
-	<ul class="ml-2 inline-flex h-8 translate-y-1 flex-nowrap items-center gap-1.5 overflow-visible align-baseline" aria-label={title}>
+	<ul class="relative z-30 ml-2 inline-flex h-8 translate-y-1 flex-nowrap items-center gap-1.5 overflow-visible align-baseline" aria-label={title}>
 		{items.map((item) => {
 			const icon = brandIcons[item.icon];
 			const monogram = brandMonograms[item.icon];

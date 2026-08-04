@@ -161,11 +161,11 @@ const infogeranceSections = sections.map((section, index) => {
 });
 
 // Informatique d'entreprise utilise les variantes retenues pour chaque sujet :
-// trois sections sans illustration, Réseau et Contrôle d'accès à gauche,
-// puis Serveurs & virtualisation à droite avec son visuel portrait.
+// trois sections sans illustration, Réseau avec son visuel au-dessus des cartes,
+// Contrôle d'accès à gauche, puis Serveurs & virtualisation à droite.
 const informatiqueEntrepriseLayout = new Map([
 	['Connectivité Internet', { showIllustration: false, reverse: false }],
-	["Réseau d'entreprise", { showIllustration: true, reverse: false }],
+	["Réseau d'entreprise", { showIllustration: true, reverse: false, imagePlacement: 'top' }],
 	['Téléphonie & communications unifiées', { showIllustration: false, reverse: false }],
 	['Serveurs & virtualisation', { showIllustration: true, reverse: true }],
 	['Stockage & partage de fichiers', { showIllustration: false, reverse: false }],
@@ -178,6 +178,7 @@ const informatiqueEntrepriseSections = sections.map((section, index) => {
 		block: {
 			...section,
 			showIllustration: layout.showIllustration,
+			...(layout.imagePlacement ? { imagePlacement: layout.imagePlacement } : {}),
 			...(layout.showIllustration && !section.image ? { illustrationIcon: illustrationIconFor(section) } : {}),
 		},
 		reverse: layout.reverse,

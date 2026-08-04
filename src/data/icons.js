@@ -47,6 +47,12 @@ export const icons = {
 	wifi: '<path d="M12 18.5h.01"/><path d="M8.5 15.2a5 5 0 0 1 7 0"/><path d="M5.3 12a9.5 9.5 0 0 1 13.4 0"/><path d="M2.5 8.8a13.5 13.5 0 0 1 19 0"/>',
 	phone:
 		'<path d="M5.5 3.5h3l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5v3c0 1.1-.9 2-2 2C10.5 20 4 13.5 3.5 6.5c-.1-1.1.8-2 2-3Z"/>',
+	smartphone:
+		'<rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M10 5h4"/><path d="M12 18.5h.01"/>',
+	building:
+		'<path d="M4 21V5l8-3 8 3v16"/><path d="M2 21h20"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M8 16h.01M16 16h.01"/><path d="M11 21v-5h2v5"/>',
+	microphone:
+		'<rect x="8.5" y="2.5" width="7" height="12" rx="3.5"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"/><path d="M12 18v3.5"/><path d="M8.5 21.5h7"/>',
 	camera:
 		'<rect x="2.5" y="7" width="19" height="13" rx="2.5"/><circle cx="12" cy="13.5" r="4"/><path d="M8.5 7 10 4.5h4L15.5 7"/>',
 	folder:

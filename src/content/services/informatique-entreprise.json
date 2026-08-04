@@ -129,19 +129,71 @@
     {
       "type": "mosaic",
       "eyebrow": "Téléphonie & communications unifiées",
-      "title": "Des échanges accessibles, quel que soit le lieu de travail",
-      "body": "Téléphonie, messagerie, réunions et postes mobiles gagnent à fonctionner comme un ensemble. Nous structurons les outils et les règles d'usage pour que les équipes restent joignables sans complexifier leur quotidien.",
-      "layout": "four",
-	  "technologyTitle": "Solutions de téléphonie maîtrisées",
+	  "title": "Une téléphonie qui s'adapte à votre façon de travailler.",
+	  "body": "Votre téléphonie ne doit plus être un frein à votre organisation. Bureau, télétravail, mobilité, plusieurs sites ou collaboration avec Microsoft Teams : nous déployons des solutions de téléphonie IP adaptées à votre activité, simples à utiliser et conçues pour évoluer avec votre entreprise.",
+	  "layout": "nine",
+	  "technologyTitle": "Solutions maîtrisées",
+	  "technologyDescription": "Deux plateformes complémentaires, choisies selon vos usages, votre environnement et votre organisation.",
+	  "technologyDisplay": "tiles",
 	  "technologies": [
-		{ "name": "Microsoft Teams Phone", "role": "Téléphonie intégrée à Microsoft Teams", "icon": "microsoft-teams-phone" },
-		{ "name": "3CX", "role": "Téléphonie IP et communications unifiées", "icon": "3cx" }
+		{ "name": "3CX", "role": "Téléphonie IP et communications unifiées", "icon": "3cx" },
+		{ "name": "Microsoft Teams Phone", "role": "Téléphonie intégrée à Microsoft Teams", "icon": "microsoft-teams-phone" }
 	  ],
       "items": [
-        { "title": "Téléphonie IP", "text": "Des lignes et des postes adaptés aux habitudes de travail, aux accueils et aux besoins de mobilité.", "icon": "phone" },
-        { "title": "Réunions & collaboration", "text": "Les outils de communication sont intégrés à vos usages collaboratifs pour limiter les ruptures entre appel, chat et visioconférence.", "icon": "users" },
-        { "title": "Continuité d'activité", "text": "Les appels peuvent rester accessibles lors d'un déplacement, d'un télétravail ou d'une indisponibilité locale selon l'architecture retenue.", "icon": "refresh" },
-        { "title": "Administration lisible", "text": "Numéros, groupes d'appel, horaires et règles de transfert restent documentés et simples à faire évoluer.", "icon": "cog" }
+		{
+		  "title": "Restez joignable partout",
+		  "text": "Votre numéro professionnel vous suit au bureau, en télétravail ou en déplacement.",
+		  "help": "Passez et recevez vos appels depuis un téléphone IP, un ordinateur, un navigateur web ou votre smartphone, tout en conservant votre numéro professionnel.",
+		  "icon": "smartphone"
+		},
+		{
+		  "title": "Ne manquez plus d'appels",
+		  "text": "Chaque appel trouve le bon interlocuteur, même en cas d'absence.",
+		  "help": "Standards automatiques, files d'attente, groupes d'appels, transferts intelligents et messagerie vocale permettent d'améliorer l'accueil téléphonique et de limiter les appels perdus.",
+		  "icon": "phone"
+		},
+		{
+		  "title": "Travaillez en équipe",
+		  "text": "Transférez un appel, voyez qui est disponible et collaborez plus facilement.",
+		  "help": "Statut de présence, transfert assisté, appels de groupe, conférences audio ou vidéo et intégration avec Microsoft Teams facilitent les échanges entre collaborateurs.",
+		  "icon": "users"
+		},
+		{
+		  "title": "Plusieurs sites, une seule téléphonie",
+		  "text": "Tous vos bureaux fonctionnent comme une seule entreprise.",
+		  "help": "Reliez plusieurs agences ou établissements avec une téléphonie unifiée, des numéros internes communs et une gestion centralisée des appels.",
+		  "icon": "building"
+		},
+		{
+		  "title": "Télétravail sans contrainte",
+		  "text": "Le télétravail devient une extension naturelle du bureau.",
+		  "help": "Vos collaborateurs retrouvent leur ligne professionnelle, leurs transferts et leurs fonctionnalités habituelles depuis chez eux, sans manipulation complexe.",
+		  "icon": "globe"
+		},
+		{
+		  "title": "Une téléphonie qui grandit avec vous",
+		  "text": "Ajoutez facilement des utilisateurs et de nouveaux usages.",
+		  "help": "Nouveaux collaborateurs, nouveaux locaux ou évolution de votre organisation : votre solution s'adapte sans remplacer toute votre infrastructure.",
+		  "icon": "chart"
+		},
+		{
+		  "title": "Un accueil téléphonique professionnel",
+		  "text": "Donnez une image plus professionnelle dès le premier appel.",
+		  "help": "Messages d'accueil, standard automatique, musique d'attente, horaires d'ouverture et routage intelligent offrent une meilleure expérience à vos clients.",
+		  "icon": "microphone"
+		},
+		{
+		  "title": "Gardez la maîtrise de vos appels",
+		  "text": "Mesurez l'activité de votre accueil téléphonique.",
+		  "help": "Statistiques, temps d'attente, appels manqués, niveau de service et tableaux de bord permettent d'identifier les axes d'amélioration.",
+		  "icon": "chart"
+		},
+		{
+		  "title": "Changez sans changer vos habitudes",
+		  "text": "Conservez vos numéros et modernisez votre téléphonie.",
+		  "help": "Nous assurons la migration de votre installation existante, la portabilité de vos numéros et la mise en service de votre nouvelle solution sans interruption d'activité.",
+		  "icon": "refresh"
+		}
       ]
     },
     {
