@@ -82,30 +82,43 @@ const brandMonograms = {
 	zabbix: 'ZBX',
 };
 
+const brandViewBoxes = {
+	supermicro: '0 5.5 24 13',
+};
+
 const {
 	title = 'Technologies maîtrisées',
 	items = [],
 } = Astro.props;
+
+const logoWidth = 3;
+const expandedLogoWidth = logoWidth * 2;
+const expandedRowWidth = `${items.length * logoWidth + Math.max(items.length - 1, 0) * 0.375 + expandedLogoWidth - logoWidth}rem`;
 ---
 
 {items.length > 0 && (
-	<ul class="relative z-30 ml-2 inline-flex h-8 translate-y-1 flex-nowrap items-center gap-1.5 overflow-visible align-baseline" aria-label={title}>
+	<ul
+		class="relative z-30 ml-2 inline-flex h-8 translate-y-1 flex-nowrap items-center gap-1.5 overflow-visible align-baseline"
+		style={`width: ${expandedRowWidth}`}
+		aria-label={title}
+	>
 		{items.map((item) => {
 			const icon = brandIcons[item.icon];
 			const monogram = brandMonograms[item.icon];
+			const viewBox = brandViewBoxes[item.icon] ?? '0 0 24 24';
 
 			return (
 				<li
-					class="group relative h-8 w-8 shrink-0 overflow-visible transition-[width] duration-200 ease-out hover:z-30 hover:w-16 motion-reduce:transition-none"
+					class="group relative h-8 w-12 shrink-0 overflow-visible transition-[width] duration-200 ease-out hover:z-30 hover:w-24 motion-reduce:transition-none"
 				>
-					<span class="absolute top-1/2 left-0 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-white text-[var(--cat-accent)] shadow-sm transition-[width,height,box-shadow] duration-200 ease-out group-hover:h-16 group-hover:w-16 group-hover:shadow-lg motion-reduce:transition-none">
+					<span class="absolute top-1/2 left-0 flex h-8 w-12 -translate-y-1/2 items-center justify-center rounded-md border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-white text-[var(--cat-accent)] shadow-sm transition-[width,height,box-shadow] duration-200 ease-out group-hover:h-16 group-hover:w-24 group-hover:shadow-lg motion-reduce:transition-none">
 						<span class="sr-only">{item.name} — {item.role}</span>
 						{icon && (
 							<svg
-								viewBox="0 0 24 24"
+								viewBox={viewBox}
 								class:list={[
 									'relative z-10 fill-current transition-transform duration-200 ease-out group-hover:scale-200 motion-reduce:transform-none',
-									item.icon === 'cisco' ? 'h-6 w-6' : 'h-5 w-5',
+									item.icon === 'cisco' ? 'h-6 w-10' : 'h-5 w-10',
 								]}
 								aria-hidden="true"
 							>
