@@ -110,6 +110,7 @@ const services = defineCollection({
         technologyTitle: z.string().optional(),
         technologyDescription: z.string().optional(),
         technologyDisplay: z.enum(['inline', 'tiles']).default('inline'),
+        technologyPlacement: z.enum(['before', 'after']).default('after'),
         technologies: z.array(z.object({
           name: z.string(),
           role: z.string(),

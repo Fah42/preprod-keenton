@@ -3,9 +3,9 @@ import Container from '../ui/Container.astro';
 import { getImage } from 'astro:assets';
 import Icon from '../ui/Icon.astro';
 import PlaceholderVisual from '../ui/PlaceholderVisual.astro';
-import HelpTooltip from '../ui/HelpTooltip.vue';
 import ConceptDetailCard from './ConceptDetailCard.vue';
 import CompactConceptDetailCard from './CompactConceptDetailCard.vue';
+import FlipDetailCard from './FlipDetailCard.astro';
 import TechnologyLogos from './TechnologyLogos.astro';
 import OptimizedImage from '../ui/OptimizedImage.astro';
 import { resolveLocalImage } from '../../lib/imageAssets';
@@ -93,20 +93,17 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
             brandLogoSrc={brandLogo.src}
             client:load
           />
+        ) : item.help && displayItemHelp ? (
+          <FlipDetailCard item={item} />
         ) : (
           <article class:list={[
             'relative rounded-xl border border-line bg-surface p-6 transition duration-200 hover:z-20 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg focus-within:z-20',
-            !(item.help && displayItemHelp) && 'hover:-translate-y-1 hover:scale-[1.01]',
+            'hover:-translate-y-1 hover:scale-[1.01]',
           ]}>
             {item.icon && <Icon name={item.icon} class="h-6 w-6 text-[var(--cat-accent)]" />}
             <h3 class="mt-4 font-semibold text-ink">{item.title}</h3>
             {item.subtitle && <p class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{item.subtitle}</p>}
             <p class="mt-2 text-base leading-relaxed text-ink-secondary">{item.text}</p>
-            {item.help && displayItemHelp && (
-              <div class="mt-6">
-                <HelpTooltip text={item.help} label={`En savoir plus sur ${item.title}`} triggerText="En savoir plus" client:load />
-              </div>
-            )}
           </article>
         ))}
       </div>

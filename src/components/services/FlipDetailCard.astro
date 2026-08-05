@@ -1,0 +1,124 @@
+---
+import Icon from '../ui/Icon.astro';
+
+const {
+	item,
+	variant = 'capability',
+	compact = false,
+} = Astro.props;
+
+const isMosaic = variant === 'mosaic';
+const detailId = `flip-detail-${item.title
+	.toLowerCase()
+	.normalize('NFD')
+	.replace(/[\u0300-\u036f]/g, '')
+	.replace(/[^a-z0-9]+/g, '-')
+	.replace(/^-|-$/g, '')}`;
+---
+
+<article
+	class="flip-card group relative h-full rounded-xl outline-none transition-[filter] duration-200 hover:z-20 hover:drop-shadow-lg focus-visible:z-20 focus-visible:ring-2 focus-visible:ring-[var(--cat-accent)] focus-visible:ring-offset-2"
+	tabindex="0"
+	aria-describedby={detailId}
+	data-flip-card
+>
+	<div class="flip-card__inner relative h-full">
+		<div
+			class:list={[
+				'flip-card__face relative flex h-full flex-col rounded-xl border border-line bg-surface',
+				isMosaic ? (compact ? 'p-4 md:p-5' : 'p-7 md:p-8') : 'p-6',
+			]}
+		>
+			{isMosaic && <div class="h-0.5 w-10 bg-[var(--cat-accent)]"></div>}
+			{item.icon && (
+				<Icon
+					name={item.icon}
+					class:list={[
+						'text-[var(--cat-accent)]',
+						isMosaic ? (compact ? 'mt-5 h-6 w-6' : 'mt-8 h-7 w-7') : 'h-6 w-6',
+					]}
+				/>
+			)}
+			<h3 class:list={[
+				'font-semibold text-ink',
+				isMosaic ? (compact ? 'mt-4 text-lg' : 'mt-5 text-xl') : 'mt-4',
+			]}>{item.title}</h3>
+			{item.subtitle && <p class="mt-1 text-sm font-medium text-[var(--cat-accent)]">{item.subtitle}</p>}
+			<p class:list={[
+				'text-base leading-relaxed text-ink-secondary',
+				isMosaic ? 'mt-3 max-w-md' : 'mt-2',
+			]}>{item.text}</p>
+			<div class="mt-auto flex justify-end pt-5" aria-hidden="true">
+				<span class="flex h-8 w-8 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-[color-mix(in_srgb,var(--cat-accent)_7%,white)] text-sm text-[var(--cat-accent)]">↻</span>
+			</div>
+		</div>
+
+		<div
+			class:list={[
+				'flip-card__face flip-card__back absolute inset-0 flex h-full flex-col overflow-hidden rounded-xl border border-[color-mix(in_srgb,var(--cat-accent)_72%,black)] bg-[color-mix(in_srgb,var(--cat-accent)_82%,black)] text-white',
+				isMosaic ? (compact ? 'p-4 md:p-5' : 'p-7 md:p-8') : 'p-6',
+			]}
+		>
+			<div class="h-0.5 w-10 shrink-0 bg-white/70"></div>
+			<h3 class:list={['shrink-0 font-semibold text-white', compact ? 'mt-4 text-lg' : 'mt-5 text-xl']}>{item.title}</h3>
+			<p
+				id={detailId}
+				class:list={[
+					'flip-card__detail mt-3 min-h-0 flex-1 overflow-y-auto pr-2 text-white/95',
+					compact ? 'text-sm leading-relaxed' : 'text-[0.95rem] leading-relaxed',
+				]}
+			>{item.help}</p>
+		</div>
+	</div>
+</article>
+
+<style>
+	.flip-card {
+		perspective: 1100px;
+	}
+
+	.flip-card__inner {
+		transform-style: preserve-3d;
+		transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+	}
+
+	.flip-card__face {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+
+	.flip-card__back {
+		transform: rotateY(180deg);
+	}
+
+	.flip-card__detail {
+		overscroll-behavior: contain;
+		scrollbar-color: rgb(255 255 255 / 55%) transparent;
+		scrollbar-width: thin;
+	}
+
+	.flip-card__detail::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	.flip-card__detail::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.flip-card__detail::-webkit-scrollbar-thumb {
+		border-radius: 999px;
+		background: rgb(255 255 255 / 55%);
+	}
+
+	.flip-card:hover .flip-card__inner,
+	.flip-card:focus-visible .flip-card__inner,
+	.flip-card:focus-within .flip-card__inner {
+		transform: rotateY(180deg);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.flip-card__inner {
+			transition: none;
+		}
+	}
+</style>

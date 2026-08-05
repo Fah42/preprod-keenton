@@ -18,30 +18,62 @@ const solutionLogos = {
 		className: 'h-16 w-16',
 		width: 64,
 	},
+	nutanix: {
+		src: '/src/assets/images/technologies/nutanix.png',
+		className: 'h-auto w-36',
+		width: 180,
+	},
+	proxmox: {
+		src: '/src/assets/images/technologies/proxmox-ve.png',
+		className: 'h-auto w-36',
+		width: 180,
+	},
+	vmware: {
+		src: '/src/assets/images/technologies/vmware.png',
+		className: 'h-auto w-36',
+		width: 180,
+	},
+	'microsoft-hyper-v': {
+		src: '/src/assets/images/technologies/microsoft-hyper-v.png',
+		className: 'h-auto w-36',
+		width: 180,
+	},
 };
+
+const fourColumns = items.length === 4;
+const headingId = `technology-solutions-${title
+	.toLowerCase()
+	.normalize('NFD')
+	.replace(/[\u0300-\u036f]/g, '')
+	.replace(/[^a-z0-9]+/g, '-')
+	.replace(/^-|-$/g, '')}`;
 ---
 
 {items.length > 0 && (
-	<aside class="mt-10 md:mt-12" aria-labelledby="technology-solutions-title">
+	<aside class="mt-10 md:mt-12" aria-labelledby={headingId}>
 		<header class="text-center">
 			<div class="flex items-center gap-4">
 				<span class="h-px flex-1 bg-linear-to-r from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
-				<h3 id="technology-solutions-title" class="shrink-0 whitespace-nowrap font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
+				<h3 id={headingId} class="shrink-0 whitespace-nowrap font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
 					{title}
 				</h3>
 				<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
 			</div>
-			{description && <p class="mx-auto mt-3 max-w-3xl text-balance text-sm leading-relaxed text-ink-secondary">{description}</p>}
+			{description && <p class="mx-auto mt-3 max-w-5xl text-sm leading-relaxed text-ink-secondary">{description}</p>}
 		</header>
 
-		<ul class="mt-6 grid gap-4 sm:grid-cols-2" aria-label={title}>
+		<ul class:list={['mt-6 grid gap-4 sm:grid-cols-2', fourColumns && 'xl:grid-cols-4']} aria-label={title}>
 			{items.map((item) => {
 				const logo = solutionLogos[item.icon];
 
 				return (
-					<li class="group flex min-h-28 items-center gap-5 rounded-2xl border border-[color-mix(in_srgb,var(--cat-accent)_55%,var(--color-line))] bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none md:min-h-32 md:gap-7 md:px-8">
-						<div class="flex w-28 shrink-0 items-center justify-center" aria-hidden="true">
-							{logo && (
+					<li class:list={[
+						'group flex min-h-28 items-center gap-5 rounded-2xl border border-[color-mix(in_srgb,var(--cat-accent)_55%,var(--color-line))] bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none md:min-h-32 md:gap-7 md:px-8',
+						fourColumns && 'xl:flex-col xl:justify-center xl:gap-4 xl:px-5 xl:text-center',
+						!logo && 'justify-center text-center',
+					]}>
+						{logo && (
+							<div class:list={['flex w-28 shrink-0 items-center justify-center', fourColumns && 'xl:h-16 xl:w-full']} aria-hidden="true">
 								<OptimizedImage
 									src={logo.src}
 									alt=""
@@ -51,11 +83,11 @@ const solutionLogos = {
 									loading="lazy"
 									class={logo.className}
 								/>
-							)}
-						</div>
+							</div>
+						)}
 						<div>
 							<strong class="block text-lg leading-tight font-semibold text-ink md:text-xl">{item.name}</strong>
-							<span class="mt-1.5 block text-sm leading-relaxed text-ink-secondary md:text-base">{item.role}</span>
+							{item.role && <span class="mt-1.5 block text-sm leading-relaxed text-ink-secondary md:text-base">{item.role}</span>}
 						</div>
 					</li>
 				);

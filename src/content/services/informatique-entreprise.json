@@ -2,12 +2,12 @@
   "description": "Connectivité, réseau, communications, systèmes et contrôle des accès : Keenton conçoit une infrastructure fiable, lisible et adaptée à vos usages.",
   "hero": {
     "eyebrow": "Informatique d'entreprise",
-    "title": "Une architecture au service",
-    "titleAccent": "de votre activité.",
-    "subtitle": "Une infrastructure bien conçue facilite le quotidien des utilisateurs comme celui des équipes informatiques. Chaque composante est pensée pour s'intégrer à l'ensemble, simplifier l'exploitation et accompagner les évolutions de votre entreprise.",
+    "title": "Une informatique pensée",
+    "titleAccent": "pour votre entreprise.",
+    "subtitle": "L'informatique est aujourd'hui au cœur du fonctionnement des entreprises. Réseau, serveurs, stockage, téléphonie, contrôle d'accès ou vidéosurveillance : chaque composant doit fonctionner de manière cohérente pour garantir la performance, la sécurité et la continuité de votre activité.",
     "image": {
-      "src": "/src/assets/expertise-heroes/hero-informatique-entreprise-reseau.webp",
-      "alt": "Sites d'entreprise interconnectés au sein d'une infrastructure réseau"
+      "src": "/src/assets/expertise-heroes/hero-informatique-entreprise-1600.png",
+      "alt": "Sites d'entreprise interconnectés au sein d'une architecture informatique"
     },
     "visualSize": "large",
     "primaryCta": { "label": "Parler de votre projet", "href": "/contact" },
@@ -132,12 +132,13 @@
 	  "title": "Une téléphonie qui s'adapte à votre façon de travailler.",
 	  "body": "Votre téléphonie ne doit plus être un frein à votre organisation. Bureau, télétravail, mobilité, plusieurs sites ou collaboration avec Microsoft Teams : nous déployons des solutions de téléphonie IP adaptées à votre activité, simples à utiliser et conçues pour évoluer avec votre entreprise.",
 	  "layout": "nine",
-	  "technologyTitle": "Solutions maîtrisées",
-	  "technologyDescription": "Deux plateformes complémentaires, choisies selon vos usages, votre environnement et votre organisation.",
+	  "technologyTitle": "Nos solutions de référence",
+	  "technologyDescription": "Deux solutions de téléphonie professionnelles, déployées selon vos usages, vos outils et votre mode de fonctionnement.",
 	  "technologyDisplay": "tiles",
+	  "technologyPlacement": "before",
 	  "technologies": [
-		{ "name": "3CX", "role": "Téléphonie IP et communications unifiées", "icon": "3cx" },
-		{ "name": "Microsoft Teams Phone", "role": "Téléphonie intégrée à Microsoft Teams", "icon": "microsoft-teams-phone" }
+		{ "name": "3CX", "role": "Solution de téléphonie IP flexible et indépendante.", "icon": "3cx" },
+		{ "name": "Microsoft Teams Phone", "role": "Téléphonie collaborative intégrée à Microsoft 365.", "icon": "microsoft-teams-phone" }
 	  ],
       "items": [
 		{
@@ -199,47 +200,99 @@
     {
       "type": "mosaic",
       "eyebrow": "Serveurs & virtualisation",
-      "title": "Un socle applicatif dimensionné pour évoluer sereinement",
-      "body": "Les serveurs restent au cœur de nombreuses applications métier. Nous organisons leur capacité, leur disponibilité et leur administration afin de créer un environnement plus simple à maintenir et à faire évoluer.",
+      "title": "Des fondations solides pour vos applications métier",
+      "body": "Qu'ils soient physiques ou virtualisés, les serveurs doivent répondre aux exigences de performance, de disponibilité et de sécurité de votre entreprise. Nous construisons des infrastructures adaptées à vos usages et les faisons évoluer avec votre activité.",
       "image": {
         "src": "/src/assets/images/informatique-entreprise/serveurs-virtualisation.png",
         "alt": "Infrastructure de serveurs virtualisés compatible avec plusieurs systèmes et plateformes"
       },
       "layout": "six",
-	  "technologyTitle": "Constructeurs et plateformes maîtrisés",
+	  "technologyTitle": "Expertise en virtualisation",
+	  "technologyDescription": "Nous déployons, administrons et faisons évoluer ces plateformes de virtualisation au quotidien.",
+	  "technologyDisplay": "tiles",
+	  "technologyPlacement": "before",
 	  "technologies": [
-		{ "name": "HP", "role": "Serveurs et infrastructures physiques", "icon": "hp" },
-		{ "name": "Supermicro", "role": "Serveurs et plateformes matérielles", "icon": "supermicro" },
 		{ "name": "Nutanix", "role": "Infrastructure hyperconvergée", "icon": "nutanix" },
-		{ "name": "Proxmox", "role": "Virtualisation et gestion de clusters", "icon": "proxmox" },
-		{ "name": "Microsoft Hyper-V", "role": "Virtualisation Microsoft", "icon": "microsoft-hyper-v" },
+		{ "name": "Proxmox VE", "role": "Virtualisation et gestion de clusters", "icon": "proxmox" },
 		{ "name": "VMware", "role": "Virtualisation d'infrastructure", "icon": "vmware" },
-		{ "name": "Veeam", "role": "Sauvegarde et réplication", "icon": "veeam" },
-		{ "name": "HYCU", "role": "Protection des données et reprise", "icon": "hycu" }
+		{ "name": "Microsoft Hyper-V", "role": "Virtualisation Microsoft", "icon": "microsoft-hyper-v" }
 	  ],
       "items": [
-        { "title": "Étude des charges", "text": "Les ressources processeur, mémoire et stockage sont dimensionnées à partir des applications, des volumes et des usages réels.", "icon": "chart" },
-        { "title": "Virtualisation maîtrisée", "text": "Les services sont regroupés sur une plateforme adaptée pour faciliter les évolutions, les opérations de maintenance et la reprise.", "icon": "layers" },
-        { "title": "Disponibilité adaptée", "text": "Les mécanismes de redondance sont choisis selon le niveau de continuité attendu pour chaque service, sans surdimensionnement systématique.", "icon": "refresh" },
-        { "title": "Sauvegarde & reprise", "text": "Les données et configurations critiques sont protégées avec des objectifs de restauration compréhensibles et régulièrement vérifiés.", "icon": "shield-check" },
-        { "title": "Mises à jour & sécurité", "text": "Les systèmes sont maintenus dans le temps afin de limiter les vulnérabilités et de conserver un environnement maîtrisé.", "icon": "lock" },
-        { "title": "Supervision", "text": "Les alertes portent sur la disponibilité, les ressources et les écarts significatifs afin d'intervenir avant qu'un service ne soit dégradé.", "icon": "eye" }
+        {
+          "title": "Conception de l'infrastructure",
+          "text": "Nous concevons une infrastructure adaptée à vos applications, à vos usages et à vos perspectives d'évolution afin d'assurer des performances durables.",
+          "help": "Chaque infrastructure est étudiée selon les ressources nécessaires, les contraintes de vos applications, les volumes de données et les évolutions attendues afin de proposer une solution cohérente, évolutive et pérenne.",
+          "icon": "layers"
+        },
+        {
+          "title": "Infrastructure serveur",
+          "text": "Nous déployons des serveurs physiques ou des plateformes de virtualisation selon les besoins de votre activité afin d'offrir une infrastructure performante, évolutive et simple à administrer.",
+          "help": "Le choix entre serveurs physiques et virtualisation est réalisé en fonction des performances attendues, des contraintes applicatives, de la disponibilité recherchée et des perspectives d'évolution de votre système d'information.",
+          "icon": "database"
+        },
+        {
+          "title": "Continuité de service",
+          "text": "Les solutions de disponibilité sont adaptées à la criticité de vos services afin de limiter les interruptions et de garantir la continuité de votre activité.",
+          "help": "Selon les besoins, des mécanismes de redondance, de réplication ou de haute disponibilité sont mis en œuvre pour maintenir les services essentiels disponibles, même en cas de défaillance.",
+          "icon": "refresh"
+        },
+        {
+          "title": "Protection des données",
+          "text": "Les données et les systèmes sont protégés par une stratégie de sauvegarde adaptée afin de garantir une restauration fiable en cas d'incident.",
+          "help": "Les sauvegardes sont organisées selon des objectifs de restauration définis à l'avance et régulièrement vérifiées afin de garantir leur efficacité lorsque cela devient nécessaire.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Administration & maintenance",
+          "text": "Les serveurs sont administrés et maintenus dans le temps afin de préserver leur stabilité, leurs performances et leur niveau de sécurité.",
+          "help": "Les mises à jour, les opérations de maintenance et le suivi des systèmes sont réalisés de manière planifiée afin de limiter les interruptions et de maintenir un environnement fiable.",
+          "icon": "cog"
+        },
+        {
+          "title": "Supervision & optimisation",
+          "text": "L'infrastructure est surveillée en continu afin de détecter les anomalies, suivre les performances et anticiper les besoins d'évolution.",
+          "help": "La supervision permet d'identifier les variations de performances, les ressources sous tension et les incidents avant qu'ils n'aient un impact sur les utilisateurs ou les applications, tout en facilitant les décisions d'évolution de l'infrastructure.",
+          "icon": "eye"
+        }
       ]
     },
     {
-      "type": "split",
+      "type": "mosaic",
       "eyebrow": "Stockage & partage de fichiers",
-      "title": "Des fichiers accessibles, organisés et protégés",
-      "body": "Les documents de travail doivent être faciles à retrouver et à partager, sans perdre la maîtrise des accès. Nous structurons les espaces de stockage autour des équipes, des projets et des règles de sécurité qui correspondent à votre organisation.",
-      "icon": "folder",
-      "variant": "list",
-      "points": [
-        "Organiser les espaces de partage par équipe, projet ou activité, avec une structure comprise par tous.",
-        "Définir les droits d'accès selon les rôles pour éviter les partages trop larges ou les demandes répétées.",
-        "Permettre la synchronisation des fichiers pour les usages au bureau, sur site ou à distance.",
-        "Accompagner le partage externe avec des règles adaptées aux clients, partenaires et prestataires.",
-        "Prévoir la sauvegarde des données partagées ainsi que les durées de conservation utiles.",
-        "Conserver une organisation simple à administrer lorsque les équipes, projets ou responsabilités évoluent."
+      "title": "Des données disponibles, sécurisées et pérennes.",
+      "body": "Les fichiers de votre entreprise doivent être accessibles, organisés et protégés pour garantir la continuité de votre activité. Nous concevons des solutions de stockage et de partage adaptées à vos usages, à votre organisation et à vos enjeux de sécurité.",
+      "layout": "four",
+      "technologyTitle": "Choisir le bon stockage",
+      "technologyDescription": "Chaque entreprise a des besoins de stockage différents. Nous vous aidons à choisir la solution la plus adaptée à votre activité.",
+      "technologyDisplay": "tiles",
+      "technologyPlacement": "before",
+      "technologies": [
+        { "name": "Serveur de fichiers", "role": "", "icon": "file-server" },
+        { "name": "Stockage NAS", "role": "", "icon": "nas" },
+        { "name": "Stockage Cloud", "role": "", "icon": "cloud-storage" },
+        { "name": "Infrastructure SAN", "role": "", "icon": "san" }
+      ],
+      "items": [
+        {
+          "title": "Organiser les données",
+          "text": "Nous structurons vos espaces de stockage par équipe, projet ou activité afin que chacun retrouve rapidement les documents dont il a besoin.",
+          "icon": "folder"
+        },
+        {
+          "title": "Maîtriser les accès",
+          "text": "Définissez précisément les droits de chaque utilisateur pour protéger vos données tout en facilitant le travail de vos équipes.",
+          "icon": "lock"
+        },
+        {
+          "title": "Partager simplement",
+          "text": "Collaborez facilement en interne et partagez vos fichiers en toute sécurité avec vos clients, partenaires ou prestataires, où qu'ils se trouvent.",
+          "icon": "users"
+        },
+        {
+          "title": "Protéger durablement vos données",
+          "text": "Sauvegardes automatiques, restauration rapide et politiques de conservation assurent la pérennité de vos données et la continuité de votre activité.",
+          "icon": "shield-check"
+        }
       ]
     },
     {
