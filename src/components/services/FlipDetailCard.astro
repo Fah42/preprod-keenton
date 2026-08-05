@@ -5,7 +5,7 @@ const {
 	item,
 	variant = 'capability',
 	compact = false,
-	animation = 'flip',
+	animation = 'iris',
 } = Astro.props;
 
 const isMosaic = variant === 'mosaic';
@@ -50,8 +50,10 @@ const detailId = `flip-detail-${item.title
 				'text-base leading-relaxed text-ink-secondary',
 				isMosaic ? 'mt-3 max-w-md' : 'mt-2',
 			]}>{item.text}</p>
-			<div class="mt-auto flex justify-end pt-5" aria-hidden="true">
-				<span class="flex h-8 w-8 items-center justify-center rounded-full border border-[color-mix(in_srgb,var(--cat-accent)_22%,var(--color-line))] bg-[color-mix(in_srgb,var(--cat-accent)_7%,white)] text-sm text-[var(--cat-accent)]">{animation === 'flip' ? '↻' : '…'}</span>
+			<div class="mt-auto h-8 pt-5" aria-hidden="true">
+				<span class="flip-card__indicator absolute top-[86%] left-[88%] flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center text-[var(--cat-accent)]">
+					<Icon name="arrow-up-left" class="h-6 w-6" />
+				</span>
 			</div>
 		</div>
 
@@ -61,80 +63,102 @@ const detailId = `flip-detail-${item.title
 				isMosaic ? (compact ? 'p-4 md:p-5' : 'p-7 md:p-8') : 'p-6',
 			]}
 		>
-			<div class="h-0.5 w-10 shrink-0 bg-white/70"></div>
-			<h3 class:list={['shrink-0 font-semibold text-white', compact ? 'mt-4 text-lg' : 'mt-5 text-xl']}>{item.title}</h3>
-			<p
-				id={detailId}
-				class:list={[
-					'flip-card__detail mt-3 min-h-0 flex-1 overflow-y-auto pr-2 text-white/95',
-					compact ? 'text-sm leading-relaxed' : 'text-[0.95rem] leading-relaxed',
-				]}
-			>{item.help}</p>
+			{animation === 'brand-fill' && (
+				<div class="flip-card__brand-fill absolute inset-0 overflow-hidden rounded-[inherit]" aria-hidden="true">
+					<span class="flip-card__brand-block flip-card__brand-block--top-left"></span>
+					<span class="flip-card__brand-block flip-card__brand-block--top-right"></span>
+					<span class="flip-card__brand-block flip-card__brand-block--middle-left"></span>
+					<span class="flip-card__brand-block flip-card__brand-block--middle-right"></span>
+					<span class="flip-card__brand-block flip-card__brand-block--bottom-left"></span>
+					<span class="flip-card__brand-block flip-card__brand-block--bottom-right"></span>
+				</div>
+			)}
+			<div class="flip-card__back-content relative z-10 flex h-full min-h-0 flex-col">
+				<div class="h-0.5 w-10 shrink-0 bg-white/70"></div>
+				<p
+					id={detailId}
+					class:list={[
+						'flip-card__detail mt-5 min-h-0 flex-1 overflow-y-auto pr-2 text-white/95',
+						compact ? 'text-sm leading-relaxed' : 'text-[0.95rem] leading-relaxed',
+					]}
+				>{item.help}</p>
+			</div>
 		</div>
 	</div>
 </article>
 
 <style>
-	.flip-card {
-		perspective: 1100px;
-	}
-
-	.flip-card[data-card-animation='flip'] .flip-card__inner {
-		transform-style: preserve-3d;
-		transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
-	}
-
-	.flip-card[data-card-animation='flip'] .flip-card__face {
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
-	}
-
-	.flip-card[data-card-animation='flip'] .flip-card__back {
-		transform: rotateY(180deg);
-	}
-
-	.flip-card:not([data-card-animation='flip']) .flip-card__front {
+	.flip-card .flip-card__front {
 		z-index: 1;
 	}
 
-	.flip-card:not([data-card-animation='flip']) .flip-card__back {
+	.flip-card .flip-card__back {
 		z-index: 2;
 		pointer-events: none;
-		opacity: 0;
-		transform: none;
-	}
-
-	.flip-card[data-card-animation='fade'] .flip-card__face {
-		transition: opacity 320ms ease;
-	}
-
-	.flip-card[data-card-animation='center-reveal'] .flip-card__back,
-	.flip-card[data-card-animation='side-wipe'] .flip-card__back,
-	.flip-card[data-card-animation='bottom-wipe'] .flip-card__back,
-	.flip-card[data-card-animation='iris'] .flip-card__back,
-	.flip-card[data-card-animation='diagonal-wipe'] .flip-card__back {
 		opacity: 1;
 		transition: clip-path 440ms cubic-bezier(0.22, 0.61, 0.36, 1);
-	}
-
-	.flip-card[data-card-animation='center-reveal'] .flip-card__back {
-		clip-path: inset(0 50% round 0.75rem);
-	}
-
-	.flip-card[data-card-animation='side-wipe'] .flip-card__back {
-		clip-path: inset(0 0 0 100% round 0.75rem);
-	}
-
-	.flip-card[data-card-animation='bottom-wipe'] .flip-card__back {
-		clip-path: inset(100% 0 0 0 round 0.75rem);
-	}
-
-	.flip-card[data-card-animation='iris'] .flip-card__back {
 		clip-path: circle(0 at 88% 86%);
 	}
 
-	.flip-card[data-card-animation='diagonal-wipe'] .flip-card__back {
-		clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+	.flip-card[data-card-animation='brand-fill'] .flip-card__back {
+		border-color: transparent;
+		background: transparent;
+		clip-path: none;
+	}
+
+	.flip-card__brand-block {
+		position: absolute;
+		display: block;
+		width: 50%;
+		height: 33.3334%;
+		border-radius: 0.3rem;
+		background: var(--cat-accent);
+		opacity: 0;
+		transition:
+			transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1) 70ms,
+			border-radius 420ms ease 70ms,
+			opacity 80ms ease;
+	}
+
+	.flip-card__brand-block--top-left {
+		top: 0;
+		left: 0;
+		transform: translate(38.6%, 78.9%) scale(0.18);
+	}
+
+	.flip-card__brand-block--top-right {
+		top: 0;
+		right: 0;
+		transform: translate(-38.6%, 78.9%) scale(0.18);
+	}
+
+	.flip-card__brand-block--middle-left {
+		top: 33.3333%;
+		left: 0;
+		transform: translate(38.6%, 0) scale(0.18);
+	}
+
+	.flip-card__brand-block--middle-right {
+		top: 33.3333%;
+		right: 0;
+		transform: translate(-38.6%, 0) scale(0.18);
+	}
+
+	.flip-card__brand-block--bottom-left {
+		bottom: 0;
+		left: 0;
+		transform: translate(38.6%, -78.9%) scale(0.18);
+	}
+
+	.flip-card__brand-block--bottom-right {
+		right: 0;
+		bottom: 0;
+		transform: translate(-38.6%, -78.9%) scale(0.18);
+	}
+
+	.flip-card[data-card-animation='brand-fill'] .flip-card__back-content {
+		opacity: 0;
+		transition: opacity 180ms ease 300ms;
 	}
 
 	.flip-card__detail {
@@ -156,54 +180,39 @@ const detailId = `flip-detail-${item.title
 		background: rgb(255 255 255 / 55%);
 	}
 
-	.flip-card[data-card-animation='flip']:hover .flip-card__inner,
-	.flip-card[data-card-animation='flip']:focus-visible .flip-card__inner,
-	.flip-card[data-card-animation='flip']:focus-within .flip-card__inner {
-		transform: rotateY(180deg);
-	}
-
-	.flip-card[data-card-animation='fade']:hover .flip-card__front,
-	.flip-card[data-card-animation='fade']:focus-visible .flip-card__front,
-	.flip-card[data-card-animation='fade']:focus-within .flip-card__front {
-		opacity: 0;
-	}
-
-	.flip-card:not([data-card-animation='flip']):hover .flip-card__back,
-	.flip-card:not([data-card-animation='flip']):focus-visible .flip-card__back,
-	.flip-card:not([data-card-animation='flip']):focus-within .flip-card__back {
+	.flip-card:hover .flip-card__back,
+	.flip-card:focus-visible .flip-card__back,
+	.flip-card:focus-within .flip-card__back {
 		pointer-events: auto;
-		opacity: 1;
-		transform: none;
-	}
-
-	.flip-card[data-card-animation='center-reveal']:hover .flip-card__back,
-	.flip-card[data-card-animation='center-reveal']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='center-reveal']:focus-within .flip-card__back,
-	.flip-card[data-card-animation='side-wipe']:hover .flip-card__back,
-	.flip-card[data-card-animation='side-wipe']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='side-wipe']:focus-within .flip-card__back,
-	.flip-card[data-card-animation='bottom-wipe']:hover .flip-card__back,
-	.flip-card[data-card-animation='bottom-wipe']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='bottom-wipe']:focus-within .flip-card__back {
-		clip-path: inset(0 round 0.75rem);
-	}
-
-	.flip-card[data-card-animation='iris']:hover .flip-card__back,
-	.flip-card[data-card-animation='iris']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='iris']:focus-within .flip-card__back {
 		clip-path: circle(150% at 88% 86%);
 	}
 
-	.flip-card[data-card-animation='diagonal-wipe']:hover .flip-card__back,
-	.flip-card[data-card-animation='diagonal-wipe']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='diagonal-wipe']:focus-within .flip-card__back {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	.flip-card[data-card-animation='brand-fill']:hover .flip-card__back,
+	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__back,
+	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__back {
+		clip-path: none;
+	}
+
+	.flip-card[data-card-animation='brand-fill']:hover .flip-card__brand-block,
+	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__brand-block,
+	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__brand-block {
+		border-radius: 0;
+		opacity: 1;
+		transform: translate(0, 0) scale(1.02);
+	}
+
+	.flip-card[data-card-animation='brand-fill']:hover .flip-card__back-content,
+	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__back-content,
+	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__back-content {
+		opacity: 1;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.flip-card__inner,
 		.flip-card__face,
-		.flip-card__back {
+		.flip-card__back,
+		.flip-card__brand-block,
+		.flip-card__back-content {
 			transition: none;
 		}
 	}

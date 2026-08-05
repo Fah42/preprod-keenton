@@ -31,8 +31,6 @@ const brandLogo = await getImage({
   quality: 90,
 });
 const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWith('-sans-illustration');
-const connectivityAnimations = ['fade', 'center-reveal', 'side-wipe', 'bottom-wipe', 'iris', 'diagonal-wipe'];
-const isConnectivityAnimationTest = eyebrow === 'Connectivité Internet';
 ---
 
 <section class="bg-surface-alt py-16 md:py-24">
@@ -98,7 +96,7 @@ const isConnectivityAnimationTest = eyebrow === 'Connectivité Internet';
         ) : item.help && displayItemHelp ? (
           <FlipDetailCard
             item={item}
-            animation={isConnectivityAnimationTest ? connectivityAnimations[index] : 'flip'}
+            animation={eyebrow === 'Connectivité Internet' && index === 0 ? 'brand-fill' : 'iris'}
           />
         ) : (
           <article class:list={[

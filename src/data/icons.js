@@ -33,6 +33,7 @@ export const icons = {
 		'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.5 3.8 5.6 3.8 9S14.4 18.5 12 21c-2.4-2.5-3.8-5.6-3.8-9S9.6 5.5 12 3Z"/>',
 	eye: '<path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>',
 	chevron: '<path d="M9 5.5 15.5 12 9 18.5"/>',
+	'arrow-up-left': '<path d="M17 17 7 7"/><path d="M7 14V7h7"/>',
 	check: '<path d="m5 13 4.5 4.5L19 7"/>',
 	'check-circle': '<circle cx="12" cy="12" r="9"/><path d="m8.3 12.3 2.4 2.4 5-5.4"/>',
 	award: '<circle cx="12" cy="8.5" r="5.5"/><path d="m15 13 1.6 8L12 18.3 7.4 21 9 13"/>',

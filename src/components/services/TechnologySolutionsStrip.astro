@@ -5,7 +5,6 @@ const {
 	title = 'Solutions maîtrisées',
 	description,
 	items = [],
-	alignWithSplitLayout = false,
 } = Astro.props;
 
 const solutionLogos = {
@@ -63,20 +62,14 @@ const headingId = `technology-solutions-${title
 			{description && <p class="mx-auto mt-3 max-w-5xl text-sm leading-relaxed text-ink-secondary">{description}</p>}
 		</header>
 
-		<ul class:list={[
-			'mt-6 grid gap-4 sm:grid-cols-2',
-			fourColumns && !alignWithSplitLayout && 'xl:grid-cols-4',
-			fourColumns && alignWithSplitLayout && 'xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_2rem_minmax(0,1fr)_minmax(0,1fr)]',
-		]} aria-label={title}>
-			{items.map((item, index) => {
+		<ul class:list={['mt-6 grid gap-4 sm:grid-cols-2', fourColumns && 'xl:grid-cols-4']} aria-label={title}>
+			{items.map((item) => {
 				const logo = solutionLogos[item.icon];
 
 				return (
 					<li class:list={[
 						'group flex min-h-28 items-center gap-5 rounded-2xl border border-[color-mix(in_srgb,var(--cat-accent)_55%,var(--color-line))] bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none md:min-h-32 md:gap-7 md:px-8',
 						fourColumns && 'xl:flex-col xl:justify-center xl:gap-4 xl:px-5 xl:text-center',
-						fourColumns && alignWithSplitLayout && index === 2 && 'xl:col-start-4',
-						fourColumns && alignWithSplitLayout && index === 3 && 'xl:col-start-5',
 						!logo && 'justify-center text-center',
 					]}>
 						{logo && (

@@ -57,12 +57,11 @@ const compactCards = layout === 'four' || layout === 'six' || layout === 'nine';
 				title={technologyTitle}
 				description={technologyDescription}
 				items={technologies}
-				alignWithSplitLayout={sideIllustration && Boolean(image)}
 			/>
 		)}
 		<div class:list={[
 			showTechnologyTilesBeforeCards ? 'mt-8 md:mt-10' : 'mt-10',
-			sideIllustration && 'grid gap-10 lg:items-center lg:gap-16',
+			sideIllustration && 'grid gap-4 lg:items-center',
 			sideIllustration && image && 'lg:grid-cols-2',
 			sideIllustration && !image && (reverse ? 'lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)]'),
 		]}>
