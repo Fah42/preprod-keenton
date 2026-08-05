@@ -57,6 +57,7 @@ const compactCards = layout === 'four' || layout === 'six' || layout === 'nine';
 				title={technologyTitle}
 				description={technologyDescription}
 				items={technologies}
+				alignWithSplitLayout={sideIllustration && Boolean(image)}
 			/>
 		)}
 		<div class:list={[

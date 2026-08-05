@@ -296,23 +296,36 @@
       ]
     },
     {
-      "type": "split",
+      "type": "mosaic",
       "eyebrow": "Contrôle d'accès & vidéosurveillance",
-      "title": "Définir des droits d'accès cohérents",
-      "body": "Les badges et lecteurs doivent refléter l'organisation réelle, y compris lorsqu'une personne change de rôle ou qu'un prestataire intervient temporairement.",
+      "title": "Sécuriser vos accès et protéger vos locaux.",
+      "body": "Contrôlez les accès à vos bâtiments et surveillez les zones sensibles grâce à des solutions connectées, adaptées à votre organisation et intégrées à votre système d'information.",
       "image": {
         "src": "/src/assets/images/informatique-entreprise/controle-acces-videosurveillance.png",
         "alt": "Entrée d'entreprise équipée d'un contrôle d'accès et d'une caméra de vidéosurveillance"
       },
-      "icon": "lock",
-      "variant": "list",
-      "points": [
-        "Définir les zones accessibles : accueil, bureaux, locaux techniques, stock ou espaces sensibles.",
-        "Associer les droits à des profils lisibles plutôt qu'à une succession d'exceptions individuelles.",
-        "Appliquer les horaires d'accès adaptés aux équipes, aux astreintes et aux périodes de fermeture.",
-        "Créer des accès temporaires pour les visiteurs, prestataires ou interventions ponctuelles.",
-        "Retirer ou ajuster les droits lorsqu'une personne change de rôle ou quitte l'organisation.",
-        "Conserver une vue claire des droits attribués et des événements utiles en cas de besoin."
+      "layout": "four",
+      "items": [
+        {
+          "title": "Contrôler les accès",
+          "text": "Définissez précisément qui peut accéder à chaque bâtiment, zone ou local selon les profils, les horaires ou les besoins temporaires.",
+          "icon": "door"
+        },
+        {
+          "title": "Assurer la traçabilité",
+          "text": "Consultez l'historique des accès et des événements afin de répondre aux besoins de sécurité, d'audit ou d'investigation.",
+          "icon": "clipboard"
+        },
+        {
+          "title": "Surveiller les espaces",
+          "text": "Visualisez vos locaux en temps réel, consultez les enregistrements et retrouvez rapidement les séquences utiles en cas d'incident.",
+          "icon": "camera"
+        },
+        {
+          "title": "Gérer les utilisateurs",
+          "text": "Administrez les utilisateurs localement ou synchronisez-les avec votre annuaire d'entreprise afin de simplifier la gestion des accès et l'évolution des droits.",
+          "icon": "users"
+        }
       ]
     }
   ]

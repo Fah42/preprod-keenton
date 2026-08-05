@@ -20,6 +20,8 @@ export const icons = {
 	scale:
 		'<path d="M15 3.5h5.5V9"/><path d="M9 20.5H3.5V15"/><path d="M20.5 3.5 14 10"/><path d="M3.5 20.5 10 14"/>',
 	lock: '<rect x="4.5" y="10.5" width="15" height="9.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2"/>',
+	door: '<path d="M4 21h16"/><path d="M6 21V3.5h12V21"/><path d="M14.5 12h.01"/>',
+	clipboard: '<rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M8.5 9h7M8.5 13h7M8.5 17h4"/>',
 	users:
 		'<circle cx="9" cy="7.5" r="3.5"/><path d="M2.5 20.5v-1.5a4.5 4.5 0 0 1 4.5-4.5h4a4.5 4.5 0 0 1 4.5 4.5v1.5"/><path d="M16 4.3a3.5 3.5 0 0 1 0 6.4"/><path d="M18.5 14.6a4.5 4.5 0 0 1 3 4.2v1.7"/>',
 	monitor:
