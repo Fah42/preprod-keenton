@@ -5,6 +5,7 @@ const {
 	title = 'Solutions maîtrisées',
 	description,
 	items = [],
+	repeatHeaderAfterTiles = false,
 } = Astro.props;
 
 const solutionLogos = {
@@ -93,5 +94,18 @@ const headingId = `technology-solutions-${title
 				);
 			})}
 		</ul>
+
+		{repeatHeaderAfterTiles && (
+			<header class="mt-8 text-center md:mt-10">
+				<div class="flex items-center gap-4">
+					<span class="h-px flex-1 bg-linear-to-r from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+					<h3 class="shrink-0 whitespace-nowrap font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
+						{title}
+					</h3>
+					<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
+				</div>
+				{description && <p class="mx-auto mt-3 max-w-5xl text-sm leading-relaxed text-ink-secondary">{description}</p>}
+			</header>
+		)}
 	</aside>
 )}

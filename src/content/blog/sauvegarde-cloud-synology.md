@@ -1,6 +1,8 @@
 ---
 title: "Sauvegarde Cloud Synology"
 description: "Découvrez notre solution de sauvegarde cloud taillée pour les stockages Synology. Hébergement en datacentre français, chiffrement bout en bout. #synology #sauvegardecloud #cloud"
+seoTitle: "Sauvegarde cloud pour NAS Synology"
+seoDescription: "Protégez votre NAS Synology avec une sauvegarde cloud hébergée en datacenter français, chiffrée de bout en bout et supervisée par Keenton."
 date: "2021-05-20"
 author: "Jeremy Donas"
 category: "Sauvegarde Cloud"

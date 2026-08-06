@@ -1,6 +1,8 @@
 ---
 title: "Supervision pfSense avec agent Zabbix intégré"
 description: "Bien que pfSense soit une base FreeBSD il existe des particularités notables qu’il est possible de récupérer avec Zabbix. Nous avons d’abord la table d’états (State Table) qui nous renseigne sur le nombre de connexions ouvertes et le nombre"
+seoTitle: "Superviser pfSense avec l’agent Zabbix"
+seoDescription: "Configurez l’agent Zabbix intégré à pfSense pour superviser la table d’états, les connexions, la mémoire, le processeur et les interfaces réseau."
 date: "2017-05-05"
 author: "Mathieu Amory"
 category: "Contribution"

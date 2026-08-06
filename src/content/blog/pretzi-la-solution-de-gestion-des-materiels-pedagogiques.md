@@ -1,6 +1,8 @@
 ---
 title: "Pretzi, La solution de gestion des matériels pédagogiques"
 description: "Pret'zy est une solution de prêt de matériel pédagogique dans le milieu éducatif. Il va vous permettre de suivre votre parc de matériel disponible aux prêt."
+seoTitle: "Pretzi : gérer le prêt de matériel pédagogique"
+seoDescription: "Découvrez Pretzi, la solution de gestion des prêts de matériel pédagogique conçue pour suivre les équipements, les disponibilités et les emprunteurs."
 date: "2020-06-04"
 author: "Jeremy Donas"
 category: "Keenton Apps"

@@ -1,6 +1,8 @@
 ---
 title: "Infogérance 24/7 : ce que cela change vraiment"
 description: "Supervision proactive, engagements de service et maintenance planifiée : les effets concrets d'une exploitation continue."
+seoTitle: "Infogérance 24/7 : supervision et continuité"
+seoDescription: "Comprenez ce que couvre une infogérance 24/7 : supervision proactive, maintenance planifiée, engagements de service et gestion des incidents."
 date: "2026-02-08"
 author: "Keenton"
 category: "Infogérance"

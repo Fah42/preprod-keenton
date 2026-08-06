@@ -1,6 +1,8 @@
 ---
 title: "Téléphonie VOIP avec Microsoft Teams"
 description: "Notre solution de Téléphonie VOIP Microsoft Teams tout en gardant le contrôle sur les communications et sans passer par les licences MS365 E5 coûteuses. #office365 #microsoftteams #voip"
+seoTitle: "Téléphonie VoIP avec Microsoft Teams"
+seoDescription: "Intégrez la téléphonie VoIP à Microsoft Teams tout en conservant la maîtrise des communications, des numéros et des coûts de licences Microsoft 365."
 date: "2022-01-19"
 author: "Jeremy Donas"
 category: "Keenton Apps"

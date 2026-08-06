@@ -1,6 +1,8 @@
 ---
 title: "Lancement du Blog KEENTON"
 description: "Bonjour et bienvenue sur le blog de l’entreprise KEENTON. Actualité, Cas d'usage, Contribution, Tutoriels."
+seoTitle: "Lancement du blog informatique Keenton"
+seoDescription: "Découvrez le lancement du blog Keenton et les sujets abordés par nos équipes : actualités, cas d’usage, contributions techniques et tutoriels."
 date: "2017-04-13"
 author: "Jeremy Donas"
 category: "KEENTON"

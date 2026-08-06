@@ -1,6 +1,8 @@
 ---
 title: "Gero : l'IA en entreprise, souveraine et hébergée en France"
 description: "Déployer une IA d'entreprise sans dépendre d'un hyperscaler : conseil, infrastructure et run avec Gero, la stack IA souveraine de Keenton hébergée en France."
+seoTitle: "Gero : une IA souveraine hébergée en France"
+seoDescription: "Découvrez Gero, la plateforme IA souveraine de Keenton, hébergée en France pour intégrer modèles, RAG et automatisations aux données de l’entreprise."
 date: "2026-07-18"
 author: "Keenton"
 category: "Automatisation & IA"

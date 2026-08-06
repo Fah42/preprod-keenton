@@ -1,6 +1,8 @@
 ---
 title: "Sauvegarde Cloud : Poste et Serveur Windows"
 description: "Découvrez comment sauvegarder et restaurer un poste ou un serveur sous Windows avec la solution de Sauvegarde Cloud KEENTON"
+seoTitle: "Sauvegarde cloud des postes et serveurs Windows"
+seoDescription: "Découvrez comment sauvegarder et restaurer les postes et serveurs Windows avec une solution cloud supervisée et administrée par les équipes Keenton."
 date: "2017-09-25"
 author: "Jeremy Donas"
 category: "Nos Tutoriels"

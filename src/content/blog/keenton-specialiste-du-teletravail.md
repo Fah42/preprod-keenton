@@ -1,6 +1,8 @@
 ---
 title: "KEENTON, spécialiste du télétravail"
 description: "KEENTON présente sa sélection de solution de télétravail afin d'améliorer la communication et la collaboration à distance."
+seoTitle: "Solutions de télétravail pour entreprises"
+seoDescription: "Découvrez les solutions Keenton pour sécuriser le télétravail, faciliter la collaboration et maintenir l’accès aux outils de l’entreprise à distance."
 date: "2020-04-28"
 author: "Jeremy Donas"
 category: "Cas d'usage"

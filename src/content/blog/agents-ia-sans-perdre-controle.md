@@ -1,6 +1,8 @@
 ---
 title: "Agents IA : automatiser sans perdre le contrôle"
 description: "Périmètre, permissions, validation humaine et traçabilité : les garde-fous d'un agent IA utile."
+seoTitle: "Agents IA d’entreprise : automatiser avec contrôle"
+seoDescription: "Découvrez comment cadrer les permissions, la validation humaine et la traçabilité pour déployer des agents IA utiles sans perdre le contrôle."
 date: "2026-02-21"
 author: "Keenton"
 category: "Automatisation & IA"

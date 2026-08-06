@@ -1,6 +1,8 @@
 ---
 title: "Héberger, répliquer votre stockage Synology en Datacenter"
 description: "L’hébergement de votre stockage Synology en Datacenter offre une solution robuste pour protéger vos informations critiques tout en assurant un accès continu, où que vous soyez."
+seoTitle: "Synology en datacenter : héberger et répliquer"
+seoDescription: "Hébergez ou répliquez votre stockage Synology en datacenter pour protéger les données critiques et garantir leur disponibilité en cas d’incident."
 date: "2024-09-09"
 author: "Jeremy Donas"
 category: "Hébergement Datacenter"

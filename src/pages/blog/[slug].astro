@@ -26,8 +26,8 @@ const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && d
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Keenton`}
-  description={post.data.description}
+  title={`${post.data.seoTitle ?? post.data.title} | Keenton`}
+  description={post.data.seoDescription ?? post.data.description}
   ogImage={post.data.image}
 >
   {/* data-pagefind-body : seules les pages portant cet attribut sont indexees

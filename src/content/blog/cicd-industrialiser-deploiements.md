@@ -1,6 +1,8 @@
 ---
 title: "CI/CD : industrialiser vos déploiements"
 description: "Les principes d'une chaîne de livraison fiable, traçable et réversible, du commit à la production."
+seoTitle: "CI/CD : industrialiser des déploiements fiables"
+seoDescription: "Structurez une chaîne CI/CD fiable, traçable et réversible afin d’automatiser les tests et de sécuriser chaque mise en production."
 date: "2026-03-02"
 author: "Keenton"
 category: "Plateformes DevOps"

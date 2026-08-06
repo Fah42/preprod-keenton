@@ -1,6 +1,8 @@
 ---
 title: "Les ransomwares et l’importance des couches de sécurité en entreprise"
 description: "KEENTON guide les entreprises à la mise en place de différentes couches de sécurité pour lutter contre les ransomwares. #ransomware #cybersecurity #cyberattack"
+seoTitle: "Ransomwares : renforcer les couches de sécurité"
+seoDescription: "Découvrez comment plusieurs couches de sécurité complémentaires limitent les risques de ransomware et protègent les accès, les postes et les données."
 date: "2021-06-30"
 author: "Jeremy Donas"
 category: "Cas d'usage"

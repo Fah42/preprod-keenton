@@ -1,6 +1,8 @@
 ---
 title: "Sauvegarde 3-2-1 – Discutons Sécurité de vos Données"
 description: "Protégez vos données en toute simplicité : sauvegardez-les à trois endroits, sur deux types de stockage, avec une copie hors site. #sauvegarde #sauvegarde321"
+seoTitle: "Sauvegarde 3-2-1 : sécuriser les données"
+seoDescription: "Appliquez la règle de sauvegarde 3-2-1 pour conserver trois copies sur deux supports différents, dont une copie externalisée et disponible en cas d’incident."
 date: "2023-10-31"
 author: "Jeremy Donas"
 category: "Cas d'usage"

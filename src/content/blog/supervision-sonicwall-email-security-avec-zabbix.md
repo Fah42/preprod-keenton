@@ -1,6 +1,8 @@
 ---
 title: "Supervision Sonicwall Email Security avec Zabbix"
 description: "Il est toujours important de garder un œil sur sa solution antispam, nous allons dans ce guide expliquer comment superviser la solution Sonicwall Email Security avec Zabbix."
+seoTitle: "Superviser SonicWall Email Security avec Zabbix"
+seoDescription: "Apprenez à superviser SonicWall Email Security avec Zabbix afin de suivre l’antispam, les files de messages, les virus détectés et la charge du service."
 date: "2018-05-25"
 author: "Jeremy Donas"
 category: "Nos Tutoriels"

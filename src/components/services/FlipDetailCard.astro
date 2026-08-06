@@ -5,7 +5,6 @@ const {
 	item,
 	variant = 'capability',
 	compact = false,
-	animation = 'iris',
 } = Astro.props;
 
 const isMosaic = variant === 'mosaic';
@@ -22,7 +21,6 @@ const detailId = `flip-detail-${item.title
 	tabindex="0"
 	aria-describedby={detailId}
 	data-flip-card
-	data-card-animation={animation}
 >
 	<div class="flip-card__inner relative h-full">
 		<div
@@ -63,16 +61,6 @@ const detailId = `flip-detail-${item.title
 				isMosaic ? (compact ? 'p-4 md:p-5' : 'p-7 md:p-8') : 'p-6',
 			]}
 		>
-			{animation === 'brand-fill' && (
-				<div class="flip-card__brand-fill absolute inset-0 overflow-hidden rounded-[inherit]" aria-hidden="true">
-					<span class="flip-card__brand-block flip-card__brand-block--top-left"></span>
-					<span class="flip-card__brand-block flip-card__brand-block--top-right"></span>
-					<span class="flip-card__brand-block flip-card__brand-block--middle-left"></span>
-					<span class="flip-card__brand-block flip-card__brand-block--middle-right"></span>
-					<span class="flip-card__brand-block flip-card__brand-block--bottom-left"></span>
-					<span class="flip-card__brand-block flip-card__brand-block--bottom-right"></span>
-				</div>
-			)}
 			<div class="flip-card__back-content relative z-10 flex h-full min-h-0 flex-col">
 				<div class="h-0.5 w-10 shrink-0 bg-white/70"></div>
 				<p
@@ -98,67 +86,6 @@ const detailId = `flip-detail-${item.title
 		opacity: 1;
 		transition: clip-path 440ms cubic-bezier(0.22, 0.61, 0.36, 1);
 		clip-path: circle(0 at 88% 86%);
-	}
-
-	.flip-card[data-card-animation='brand-fill'] .flip-card__back {
-		border-color: transparent;
-		background: transparent;
-		clip-path: none;
-	}
-
-	.flip-card__brand-block {
-		position: absolute;
-		display: block;
-		width: 50%;
-		height: 33.3334%;
-		border-radius: 0.3rem;
-		background: var(--cat-accent);
-		opacity: 0;
-		transition:
-			transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1) 70ms,
-			border-radius 420ms ease 70ms,
-			opacity 80ms ease;
-	}
-
-	.flip-card__brand-block--top-left {
-		top: 0;
-		left: 0;
-		transform: translate(38.6%, 78.9%) scale(0.18);
-	}
-
-	.flip-card__brand-block--top-right {
-		top: 0;
-		right: 0;
-		transform: translate(-38.6%, 78.9%) scale(0.18);
-	}
-
-	.flip-card__brand-block--middle-left {
-		top: 33.3333%;
-		left: 0;
-		transform: translate(38.6%, 0) scale(0.18);
-	}
-
-	.flip-card__brand-block--middle-right {
-		top: 33.3333%;
-		right: 0;
-		transform: translate(-38.6%, 0) scale(0.18);
-	}
-
-	.flip-card__brand-block--bottom-left {
-		bottom: 0;
-		left: 0;
-		transform: translate(38.6%, -78.9%) scale(0.18);
-	}
-
-	.flip-card__brand-block--bottom-right {
-		right: 0;
-		bottom: 0;
-		transform: translate(-38.6%, -78.9%) scale(0.18);
-	}
-
-	.flip-card[data-card-animation='brand-fill'] .flip-card__back-content {
-		opacity: 0;
-		transition: opacity 180ms ease 300ms;
 	}
 
 	.flip-card__detail {
@@ -187,31 +114,10 @@ const detailId = `flip-detail-${item.title
 		clip-path: circle(150% at 88% 86%);
 	}
 
-	.flip-card[data-card-animation='brand-fill']:hover .flip-card__back,
-	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__back,
-	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__back {
-		clip-path: none;
-	}
-
-	.flip-card[data-card-animation='brand-fill']:hover .flip-card__brand-block,
-	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__brand-block,
-	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__brand-block {
-		border-radius: 0;
-		opacity: 1;
-		transform: translate(0, 0) scale(1.02);
-	}
-
-	.flip-card[data-card-animation='brand-fill']:hover .flip-card__back-content,
-	.flip-card[data-card-animation='brand-fill']:focus-visible .flip-card__back-content,
-	.flip-card[data-card-animation='brand-fill']:focus-within .flip-card__back-content {
-		opacity: 1;
-	}
-
 	@media (prefers-reduced-motion: reduce) {
 		.flip-card__inner,
 		.flip-card__face,
 		.flip-card__back,
-		.flip-card__brand-block,
 		.flip-card__back-content {
 			transition: none;
 		}

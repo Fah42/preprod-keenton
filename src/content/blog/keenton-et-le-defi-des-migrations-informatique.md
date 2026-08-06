@@ -1,6 +1,8 @@
 ---
 title: "KEENTON et le défi des migrations informatique"
 description: "Chez KEENTON nous comprenons l’importance cruciale d’une migration réussie sans encombre. Défiez-nous ! Expliquez-nous votre projet de migration !"
+seoTitle: "Migration informatique : réussir sans interruption"
+seoDescription: "Préparez une migration informatique fiable pour vos serveurs, réseaux, messageries ou datacenters tout en préservant les données et la continuité."
 date: "2024-04-08"
 author: "Jeremy Donas"
 category: "Cas d'usage"

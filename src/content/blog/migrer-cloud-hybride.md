@@ -1,6 +1,8 @@
 ---
 title: "Migrer vers le cloud hybride sans interrompre l'activité"
 description: "Une méthode progressive pour déplacer des charges critiques vers un cloud hybride sans coupure ni perte de données."
+seoTitle: "Migrer vers le cloud hybride sans interruption"
+seoDescription: "Découvrez une méthode progressive pour migrer vos applications et données vers un cloud hybride sans interrompre l’activité ni perdre de données."
 date: "2026-03-26"
 author: "Keenton"
 category: "Hébergement & Cloud"

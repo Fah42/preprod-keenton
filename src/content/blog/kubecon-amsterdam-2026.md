@@ -1,6 +1,8 @@
 ---
 title: "Amsterdam, mars 2026 : bienvenue dans le monde d'après"
 description: "Retour de KubeCon Amsterdam 2026 : GitOps à l'ère des agents IA, FluxCD Agent Skills, MCP, la plateforme Sylva d'Orange et les 10 ans de Cilium."
+seoTitle: "KubeCon 2026 : GitOps, agents IA et Cilium"
+seoDescription: "Retour sur KubeCon Amsterdam 2026 : GitOps, agents IA, FluxCD Agent Skills, MCP, plateforme Sylva et dix années d’évolution de Cilium."
 date: "2026-07-16"
 author: "Keenton"
 category: "Plateformes DevOps"

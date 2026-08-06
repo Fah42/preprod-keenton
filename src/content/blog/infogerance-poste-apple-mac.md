@@ -1,6 +1,8 @@
 ---
 title: "Infogérance Poste Apple Mac"
 description: "Découvrez une de nos grandes spécialités, l'infogérance de poste Apple macOS et notre connaissance dans les environnements Apple."
+seoTitle: "Infogérance Mac et postes Apple"
+seoDescription: "Découvrez comment Keenton administre, sécurise et maintient les postes Apple et les environnements macOS au sein des systèmes d’information."
 date: "2021-03-05"
 author: "Jeremy Donas"
 category: "Infogérance Poste PC, Mac et Linux"

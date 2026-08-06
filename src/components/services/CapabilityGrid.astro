@@ -94,10 +94,7 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
             client:load
           />
         ) : item.help && displayItemHelp ? (
-          <FlipDetailCard
-            item={item}
-            animation={eyebrow === 'Connectivité Internet' && index === 0 ? 'brand-fill' : 'iris'}
-          />
+          <FlipDetailCard item={item} />
         ) : (
           <article class:list={[
             'relative rounded-xl border border-line bg-surface p-6 transition duration-200 hover:z-20 hover:border-[var(--cat-accent)] hover:bg-[color-mix(in_srgb,var(--cat-accent)_5%,white)] hover:ring-2 hover:ring-[var(--cat-accent)] hover:shadow-lg focus-within:z-20',

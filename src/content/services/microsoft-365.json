@@ -1,5 +1,6 @@
 {
-  "description": "Messagerie, Teams, SharePoint, Intune et Entra ID : Keenton déploie et gère votre environnement Microsoft 365.",
+  "description": "Keenton déploie, sécurise et administre Microsoft 365 pour votre entreprise : Exchange, Teams, SharePoint, OneDrive, Intune et Entra ID.",
+  "seoTitle": "Microsoft 365 pour entreprises",
   "hero": {
     "eyebrow": "Microsoft 365",
     "title": "Votre environnement Microsoft",

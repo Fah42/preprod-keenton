@@ -1,6 +1,8 @@
 ---
 title: "Archiv’Mail, la solution d’archivage d’email"
 description: "Notre solution KEENTON Archiv'Mail propulsée par MailStore archive automatiquement vos emails dans une zone disponible et sécurisée #Archivage #Mail #Mailstore #RGPD"
+seoTitle: "Archiv’Mail : archivage sécurisé des emails"
+seoDescription: "Archiv’Mail automatise l’archivage des emails avec MailStore afin de faciliter la recherche, la conservation et la conformité de votre messagerie."
 date: "2021-09-07"
 author: "Jeremy Donas"
 category: "Keenton Apps"

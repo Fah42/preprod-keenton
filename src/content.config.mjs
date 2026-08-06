@@ -7,6 +7,8 @@ const blog = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
     date: z.coerce.date(),
     author: z.string().default('Keenton'),
     category: z.string(),
@@ -81,6 +83,7 @@ const services = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/services' }),
   schema: z.object({
     description: z.string(),
+    seoTitle: z.string(),
     hero: z.object({
       eyebrow: z.string(),
       title: z.string(),

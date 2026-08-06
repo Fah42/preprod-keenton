@@ -1,6 +1,8 @@
 ---
 title: "5 signaux qu'une attaque approche votre système"
 description: "Les indicateurs faibles à surveiller avant qu'une compromission ne devienne une crise."
+seoTitle: "Cyberattaque : 5 signaux faibles à surveiller"
+seoDescription: "Identifiez cinq signaux faibles annonçant une cyberattaque afin de détecter une compromission, enquêter rapidement et limiter son impact sur votre SI."
 date: "2026-03-14"
 author: "Keenton"
 category: "Cybersécurité"

@@ -1,6 +1,8 @@
 ---
 title: "Comment avoir un WiFi rapide : les éléments clés au-delà des bornes"
 description: "Avoir un wifi rapide et fiable ne se résume pas simplement à acheter la dernière borne wifi haut de gamme. Plusieurs facteurs entrent en jeu pour garantir une performance optimale."
+seoTitle: "Wi-Fi d’entreprise : améliorer débit et stabilité"
+seoDescription: "Découvrez les éléments qui déterminent réellement la qualité d’un Wi-Fi d’entreprise : accès Internet, réseau, câblage, couverture et configuration."
 date: "2025-04-03"
 author: "Jeremy Donas"
 category: "Wifi"

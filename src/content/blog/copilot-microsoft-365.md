@@ -1,6 +1,8 @@
 ---
 title: "Copilot dans Microsoft 365 : par où commencer"
 description: "Permissions, gouvernance, pilote et adoption : les prérequis avant un déploiement utile de Copilot."
+seoTitle: "Copilot Microsoft 365 : préparer son déploiement"
+seoDescription: "Préparez le déploiement de Copilot dans Microsoft 365 en maîtrisant les permissions, la gouvernance des données, le pilote et l’adoption des équipes."
 date: "2026-01-27"
 author: "Keenton"
 category: "Microsoft 365"

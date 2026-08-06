@@ -1,6 +1,8 @@
 ---
 title: "Sauvegarde Cloud : Restauration Windows en Bare Metal"
 description: "Découvrez comment réaliser une restauration baremetal d'un poste ou un serveur sous Windows avec la solution de Sauvegarde Cloud KEENTON"
+seoTitle: "Restauration bare metal d’un serveur Windows"
+seoDescription: "Suivez les étapes d’une restauration bare metal pour remettre en service un poste ou un serveur Windows depuis une sauvegarde cloud complète."
 date: "2017-11-05"
 author: "Jeremy Donas"
 category: "Nos Tutoriels"

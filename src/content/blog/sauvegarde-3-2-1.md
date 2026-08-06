@@ -1,6 +1,8 @@
 ---
 title: "Sauvegarde 3-2-1 : construire un véritable plan de reprise"
 description: "Copies externalisées, immutabilité, RPO, RTO et tests : passer de la sauvegarde à une capacité de reprise vérifiée."
+seoTitle: "Sauvegarde 3-2-1 : construire un PRA fiable"
+seoDescription: "Transformez vos sauvegardes en véritable capacité de reprise grâce aux copies externalisées, à l’immutabilité, aux objectifs RPO et RTO et aux tests."
 date: "2026-01-15"
 author: "Keenton"
 category: "Hébergement & Cloud"
