@@ -137,25 +137,45 @@
     },
     {
       "type": "mosaic",
-      "eyebrow": "Nos Datacenters",
-      "title": "Savoir où résident vos services et dans quelles conditions",
-      "body": "Le lieu et les conditions d'hébergement font partie de l'architecture. Les plateformes sont exploitées dans des datacenters en France, avec des dispositifs de redondance et une documentation qui vous permet de garder une vision claire de vos charges.",
+      "eyebrow": "Nos datacenters",
+      "title": "Des infrastructures françaises certifiées pour vos services les plus exigeants",
+      "body": "Le choix d'un datacenter ne se limite pas à son emplacement. Il conditionne la disponibilité, la sécurité et la conformité de vos infrastructures. Nous nous appuyons sur des datacenters situés en France, sélectionnés pour leur niveau d'exigence, leurs certifications et leur capacité à répondre aux besoins des entreprises.",
       "image": {
         "src": "/images/hebergement-cloud/datacenters.png",
         "alt": "Datacenters interconnectés installés sur des îles flottantes"
       },
-      "technologyTitle": "Technologies déployées dans nos datacenters",
-      "technologies": [
-        { "name": "Nutanix", "role": "Hyperconvergence", "icon": "nutanix" },
-        { "name": "FortiGate", "role": "Sécurité réseau", "icon": "fortinet" },
-        { "name": "Cisco", "role": "Réseau & switching", "icon": "cisco" }
-      ],
-      "layout": "four",
+      "layout": "six",
       "items": [
-        { "title": "Hébergement en France", "text": "Les environnements peuvent être localisés en France pour répondre aux attentes de proximité et de maîtrise des données.", "icon": "globe" },
-        { "title": "Redondance", "text": "Les alimentations, connectivités et composants critiques sont conçus pour limiter l'impact d'une défaillance.", "icon": "refresh" },
-        { "title": "Normes & exigences", "text": "Les contraintes de qualité, de sécurité ou de données sensibles sont prises en compte dans le choix des sites d'hébergement.", "icon": "shield-check" },
-        { "title": "Réversibilité", "text": "Les éléments utiles à une évolution ou à une sortie de plateforme sont documentés avec votre environnement.", "icon": "link" }
+        {
+          "title": "Hébergement en France",
+          "text": "Vos infrastructures peuvent être hébergées exclusivement en France afin de garantir la localisation de vos données et de répondre à vos exigences de proximité, de souveraineté et de conformité.",
+          "icon": "globe"
+        },
+        {
+          "title": "Certification HDS",
+          "text": "Pour les environnements manipulant des données de santé, nous proposons un hébergement au sein de datacenters certifiés HDS, conformes aux exigences réglementaires françaises.",
+          "icon": "shield-check"
+        },
+        {
+          "title": "Certification ISO 27001",
+          "text": "Les datacenters sélectionnés répondent aux exigences de la norme ISO 27001, garantissant un système de management de la sécurité de l'information reconnu à l'international.",
+          "icon": "award"
+        },
+        {
+          "title": "Datacenters Tier III & Tier IV",
+          "text": "Les niveaux Tier III et Tier IV définissent la disponibilité et la résilience d'un datacenter. Ces infrastructures sont conçues pour assurer la continuité des services, même en cas de maintenance ou de défaillance.",
+          "icon": "refresh"
+        },
+        {
+          "title": "Colocation",
+          "text": "Nous proposons des solutions de colocation adaptées à vos besoins, de l'hébergement d'une unité (1U) jusqu'à la baie complète, avec les services d'exploitation et d'accompagnement associés.",
+          "icon": "database"
+        },
+        {
+          "title": "Accompagnement de votre projet",
+          "text": "Au-delà de l'hébergement, nous vous accompagnons dans la conception et le déploiement de votre infrastructure : équipements, réseau, connectivité, sécurité et mise en service.",
+          "icon": "users"
+        }
       ]
     }
   ]
