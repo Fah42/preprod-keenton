@@ -110,6 +110,7 @@ const services = defineCollection({
         stats: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
         columns: z.array(contentColumn).optional(),
         layout: z.enum(['four', 'six', 'nine']).optional(),
+        itemsDisplay: z.enum(['cards', 'checklist']).default('cards'),
         technologyTitle: z.string().optional(),
         technologyDescription: z.string().optional(),
         technologyDisplay: z.enum(['inline', 'tiles']).default('inline'),

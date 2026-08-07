@@ -35,8 +35,10 @@ const {
 	{type === 'mosaic' && <MosaicGrid {...block} reverse={reverse} />}
 	{type === 'split' && (
 		<AlternatingFeature {...block} reverse={reverse}>
-			{showCloudProviders && <CloudProvidersStrip />}
-			{showOperatingSystems && <OperatingSystemsStrip />}
+			<Fragment slot="before-points">
+				{showCloudProviders && <CloudProvidersStrip />}
+				{showOperatingSystems && <OperatingSystemsStrip />}
+			</Fragment>
 		</AlternatingFeature>
 	)}
 </div>

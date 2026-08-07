@@ -5,13 +5,16 @@ import {
 	siScaleway,
 } from 'simple-icons';
 import OptimizedImage from '../ui/OptimizedImage.astro';
+import MethodologiesDivider from './MethodologiesDivider.astro';
+import azureLogo from '../../assets/images/cloud-providers/microsoft-azure.webp';
+import googleCloudLogo from '../../assets/images/cloud-providers/google-cloud.png';
 
 const providers = [
 	{ name: 'OVHcloud', icon: siOvh, french: true, color: '#123F6D' },
 	{ name: 'Scaleway', icon: siScaleway, french: true, color: '#4F0599' },
-	{ name: 'Microsoft Azure', image: '/images/cloud-providers/microsoft-azure.webp' },
+	{ name: 'Microsoft Azure', image: azureLogo },
 	{ name: 'Amazon Web Services', icon: siAmazonwebservices, color: '#232F3E' },
-	{ name: 'Google Cloud', image: '/images/cloud-providers/google-cloud.png' },
+	{ name: 'Google Cloud', image: googleCloudLogo },
 ];
 ---
 
@@ -34,7 +37,7 @@ const providers = [
 			providers.map((provider) => (
 				<li
 					class:list={[
-						'w-48 shrink-0 snap-start rounded-xl p-[2px] lg:w-auto',
+						'group w-48 shrink-0 snap-start rounded-xl p-[2px] lg:w-auto',
 						provider.french
 							? 'bg-[linear-gradient(110deg,#0055A4_0%,#0055A4_31%,#ffffff_46%,#ffffff_54%,#EF4135_69%,#EF4135_100%)]'
 							: 'bg-line',
@@ -42,19 +45,26 @@ const providers = [
 				>
 					<div class="flex min-h-28 flex-col items-center justify-center gap-3 rounded-[calc(0.75rem-2px)] bg-white px-4 py-5 md:min-h-32">
 						{provider.image ? (
-							<OptimizedImage
-								src={provider.image}
-								alt=""
-								width={64}
-								layout="fixed"
-								class="h-12 w-16 shrink-0 object-contain"
-								loading="lazy"
-							/>
+							<div class="relative h-12 w-16 shrink-0">
+								<span
+									class="absolute inset-0 bg-[color-mix(in_srgb,var(--cat-accent)_65%,white)] opacity-100 transition-opacity duration-200 group-hover:opacity-0 motion-reduce:transition-none"
+									style={`mask-image: url("${provider.image.src}"); -webkit-mask-image: url("${provider.image.src}"); mask-position: center; -webkit-mask-position: center; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-size: contain; -webkit-mask-size: contain;`}
+									aria-hidden="true"
+								></span>
+								<OptimizedImage
+									src={provider.image}
+									alt=""
+									width={64}
+									layout="fixed"
+									class="h-12 w-16 object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none"
+									loading="lazy"
+								/>
+							</div>
 						) : (
 							<svg
 								viewBox="0 0 24 24"
-								class="h-12 w-16 shrink-0 fill-current"
-								style={`color: ${provider.color}`}
+								class="h-12 w-16 shrink-0 fill-current text-[color-mix(in_srgb,var(--cat-accent)_65%,white)] transition-colors duration-200 group-hover:text-[var(--brand-color)] motion-reduce:transition-none"
+								style={`--brand-color: ${provider.color}`}
 								aria-hidden="true"
 							>
 								<path d={provider.icon.path} />
@@ -66,4 +76,5 @@ const providers = [
 			))
 		}
 	</ul>
+	<MethodologiesDivider />
 </aside>

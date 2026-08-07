@@ -66,6 +66,7 @@ const {
 				) : (
 					<p class="mt-4 leading-relaxed text-ink-secondary">{body}</p>
 				)}
+				<slot name="before-points" />
 				{
 					variant === 'list' && (
 						<ul class="mt-6 grid gap-x-8 gap-y-3 border-t border-line pt-5 sm:grid-flow-col sm:grid-rows-3">

@@ -267,6 +267,7 @@
       "technologyDescription": "Chaque entreprise a des besoins de stockage différents. Nous vous aidons à choisir la solution la plus adaptée à votre activité.",
       "technologyDisplay": "tiles",
       "technologyPlacement": "before",
+      "itemsDisplay": "checklist",
       "technologies": [
         { "name": "Serveur de fichiers", "role": "", "icon": "file-server" },
         { "name": "Stockage NAS", "role": "", "icon": "nas" },

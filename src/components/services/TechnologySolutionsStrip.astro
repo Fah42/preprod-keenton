@@ -1,5 +1,12 @@
 ---
 import OptimizedImage from '../ui/OptimizedImage.astro';
+import MethodologiesDivider from './MethodologiesDivider.astro';
+import threeCxLogo from '../../assets/images/technologies/3cx.png';
+import hyperVLogo from '../../assets/images/technologies/microsoft-hyper-v.png';
+import teamsPhoneLogo from '../../assets/images/technologies/microsoft-teams-phone.png';
+import nutanixLogo from '../../assets/images/technologies/nutanix.svg';
+import proxmoxLogo from '../../assets/images/technologies/proxmox-ve.svg';
+import vmwareLogo from '../../assets/images/technologies/vmware.svg';
 
 const {
 	title = 'Solutions maîtrisées',
@@ -9,33 +16,36 @@ const {
 
 const solutionLogos = {
 	'3cx': {
-		src: '/src/assets/images/technologies/3cx.png',
-		className: 'h-auto w-28',
+		src: threeCxLogo,
+		className: 'h-14 w-28',
 		width: 144,
 	},
 	'microsoft-teams-phone': {
-		src: '/src/assets/images/technologies/microsoft-teams-phone.png',
+		src: teamsPhoneLogo,
 		className: 'h-16 w-16',
 		width: 64,
 	},
 	nutanix: {
-		src: '/src/assets/images/technologies/nutanix.png',
-		className: 'h-auto w-36',
-		width: 180,
+		src: nutanixLogo,
+		className: 'h-14 w-20',
+		width: 80,
+		isSvg: true,
 	},
 	proxmox: {
-		src: '/src/assets/images/technologies/proxmox-ve.png',
-		className: 'h-auto w-36',
-		width: 180,
+		src: proxmoxLogo,
+		className: 'h-14 w-14',
+		width: 56,
+		isSvg: true,
 	},
 	vmware: {
-		src: '/src/assets/images/technologies/vmware.png',
-		className: 'h-auto w-36',
-		width: 180,
+		src: vmwareLogo,
+		className: 'h-14 w-14',
+		width: 56,
+		isSvg: true,
 	},
 	'microsoft-hyper-v': {
-		src: '/src/assets/images/technologies/microsoft-hyper-v.png',
-		className: 'h-auto w-36',
+		src: hyperVLogo,
+		className: 'h-14 w-36',
 		width: 180,
 	},
 };
@@ -72,16 +82,38 @@ const headingId = `technology-solutions-${title
 						!logo && 'justify-center text-center',
 					]}>
 						{logo && (
-							<div class:list={['flex w-28 shrink-0 items-center justify-center', fourColumns && 'xl:h-16 xl:w-full']} aria-hidden="true">
-								<OptimizedImage
-									src={logo.src}
-									alt=""
-									width={logo.width}
-									layout="constrained"
-									fit="contain"
-									loading="lazy"
-									class={logo.className}
-								/>
+							<div class:list={['relative flex w-36 shrink-0 items-center justify-center', fourColumns && 'xl:h-16 xl:w-full']} aria-hidden="true">
+								<span
+									class:list={[logo.className, 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color-mix(in_srgb,var(--cat-accent)_65%,white)] opacity-100 transition-opacity duration-200 group-hover:opacity-0 motion-reduce:transition-none']}
+									style={`mask-image: url("${logo.src.src}"); -webkit-mask-image: url("${logo.src.src}"); mask-position: center; -webkit-mask-position: center; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-size: contain; -webkit-mask-size: contain;`}
+								></span>
+								{logo.isSvg ? (
+									<img
+										src={logo.src.src}
+										alt=""
+										width={logo.width}
+										height={logo.width}
+										loading="lazy"
+										decoding="async"
+										class:list={[
+											logo.className,
+											'object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none',
+										]}
+									/>
+								) : (
+									<OptimizedImage
+										src={logo.src}
+										alt=""
+										width={logo.width}
+										layout="constrained"
+										fit="contain"
+										loading="lazy"
+										class:list={[
+											logo.className,
+											'object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none',
+										]}
+									/>
+								)}
 							</div>
 						)}
 						<div>
@@ -94,15 +126,7 @@ const headingId = `technology-solutions-${title
 		</ul>
 
 		{repeatHeaderAfterTiles && (
-			<header class="mt-8 text-center md:mt-10">
-				<div class="flex items-center gap-4">
-					<span class="h-px flex-1 bg-linear-to-r from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
-					<h3 class="shrink-0 whitespace-nowrap font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--cat-accent)]">
-						Nos Méthodologies
-					</h3>
-					<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
-				</div>
-			</header>
+			<MethodologiesDivider />
 		)}
 	</aside>
 )}
