@@ -4,12 +4,24 @@ import MethodologiesDivider from './MethodologiesDivider.astro';
 import threeCxLogo from '../../assets/images/technologies/3cx.png';
 import hyperVLogo from '../../assets/images/technologies/microsoft-hyper-v.png';
 import teamsPhoneLogo from '../../assets/images/technologies/microsoft-teams-phone.png';
+import magentoLogo from '../../assets/images/technologies/magento.png';
 import nutanixLogo from '../../assets/images/technologies/nutanix.svg';
 import proxmoxLogo from '../../assets/images/technologies/proxmox-ve.svg';
 import vmwareLogo from '../../assets/images/technologies/vmware.svg';
+import woocommerceLogo from '../../assets/images/technologies/woocommerce.png';
+import {
+	siArgo,
+	siAstro,
+	siCilium,
+	siFlux,
+	siKubernetes,
+	siPrestashop,
+	siWordpress,
+} from 'simple-icons';
 
 const {
 	title = 'Solutions maîtrisées',
+	description,
 	items = [],
 	repeatHeaderAfterTiles = false,
 } = Astro.props;
@@ -48,9 +60,31 @@ const solutionLogos = {
 		className: 'h-14 w-36',
 		width: 180,
 	},
+	magento: {
+		src: magentoLogo,
+		className: 'h-14 w-14',
+		width: 64,
+	},
+	woocommerce: {
+		src: woocommerceLogo,
+		className: 'h-14 w-28',
+		width: 144,
+	},
+};
+
+const simpleSolutionIcons = {
+	wordpress: siWordpress,
+	astro: siAstro,
+	prestashop: siPrestashop,
+	kubernetes: siKubernetes,
+	argocd: siArgo,
+	fluxcd: siFlux,
+	cilium: siCilium,
 };
 
 const fourColumns = items.length === 4;
+const fiveColumns = items.length === 5;
+const compactColumns = fourColumns || fiveColumns;
 const headingId = `technology-solutions-${title
 	.toLowerCase()
 	.normalize('NFD')
@@ -69,20 +103,23 @@ const headingId = `technology-solutions-${title
 				</h3>
 				<span class="h-px flex-1 bg-linear-to-l from-transparent to-[color-mix(in_srgb,var(--cat-accent)_45%,transparent)]" aria-hidden="true"></span>
 			</div>
+			{description && <p class="mt-3 text-sm leading-relaxed text-ink-secondary md:text-base">{description}</p>}
 		</header>
 
-		<ul class:list={['mt-6 grid gap-4 sm:grid-cols-2', fourColumns && 'xl:grid-cols-4']} aria-label={title}>
+		<ul class:list={['mt-6 grid gap-4 sm:grid-cols-2', fourColumns && 'xl:grid-cols-4', fiveColumns && 'xl:grid-cols-5']} aria-label={title}>
 			{items.map((item) => {
 				const logo = solutionLogos[item.icon];
+				const simpleIcon = simpleSolutionIcons[item.icon];
+				const hasVisual = logo || simpleIcon;
 
 				return (
 					<li class:list={[
 						'group flex min-h-28 items-center gap-5 rounded-2xl border border-[color-mix(in_srgb,var(--cat-accent)_55%,var(--color-line))] bg-white px-6 py-5 transition duration-200 hover:-translate-y-1 hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none md:min-h-32 md:gap-7 md:px-8',
-						fourColumns && 'xl:flex-col xl:justify-center xl:gap-4 xl:px-5 xl:text-center',
-						!logo && 'justify-center text-center',
+						compactColumns && 'xl:flex-col xl:justify-center xl:gap-4 xl:px-5 xl:text-center',
+						!hasVisual && 'justify-center text-center',
 					]}>
 						{logo && (
-							<div class:list={['relative flex w-36 shrink-0 items-center justify-center', fourColumns && 'xl:h-16 xl:w-full']} aria-hidden="true">
+							<div class:list={['relative flex w-36 shrink-0 items-center justify-center', compactColumns && 'xl:h-16 xl:w-full']} aria-hidden="true">
 								<span
 									class:list={[logo.className, 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[color-mix(in_srgb,var(--cat-accent)_65%,white)] opacity-100 transition-opacity duration-200 group-hover:opacity-0 motion-reduce:transition-none']}
 									style={`mask-image: url("${logo.src.src}"); -webkit-mask-image: url("${logo.src.src}"); mask-position: center; -webkit-mask-position: center; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-size: contain; -webkit-mask-size: contain;`}
@@ -114,6 +151,23 @@ const headingId = `technology-solutions-${title
 										]}
 									/>
 								)}
+							</div>
+						)}
+						{simpleIcon && (
+							<div class:list={['relative flex h-16 w-36 shrink-0 items-center justify-center', compactColumns && 'xl:w-full']} aria-hidden="true">
+								<svg
+									viewBox="0 0 24 24"
+									class="h-14 w-28 fill-[color-mix(in_srgb,var(--cat-accent)_65%,white)] transition-opacity duration-200 group-hover:opacity-0 motion-reduce:transition-none"
+								>
+									<path d={simpleIcon.path} />
+								</svg>
+								<svg
+									viewBox="0 0 24 24"
+									class="absolute h-14 w-28 opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none"
+									style={`fill: #${simpleIcon.hex};`}
+								>
+									<path d={simpleIcon.path} />
+								</svg>
 							</div>
 						)}
 						<div>

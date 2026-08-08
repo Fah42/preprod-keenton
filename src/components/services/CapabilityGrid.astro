@@ -7,6 +7,7 @@ import ConceptDetailCard from './ConceptDetailCard.vue';
 import CompactConceptDetailCard from './CompactConceptDetailCard.vue';
 import FlipDetailCard from './FlipDetailCard.astro';
 import TechnologyLogos from './TechnologyLogos.astro';
+import TechnologySolutionsStrip from './TechnologySolutionsStrip.astro';
 import OptimizedImage from '../ui/OptimizedImage.astro';
 import { resolveLocalImage } from '../../lib/imageAssets';
 
@@ -22,8 +23,13 @@ const {
   reverse = false,
   instanceKey = 'capabilities',
   technologyTitle,
+  technologyDescription,
+  technologyDisplay = 'inline',
+  technologyPlacement = 'after',
   technologies = [],
 } = Astro.props;
+const showTechnologyTiles = technologyDisplay === 'tiles' && technologies.length > 0;
+const showTechnologyTilesBeforeCards = showTechnologyTiles && technologyPlacement === 'before';
 const brandLogo = await getImage({
   src: resolveLocalImage('/images/logo-keenton.png'),
   width: 48,
@@ -35,10 +41,10 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
 
 <section class="bg-surface-alt py-16 md:py-24">
   <Container>
-    <header class:list={[technologies.length > 0 ? 'max-w-none' : 'max-w-5xl']}>
+    <header class:list={[technologies.length > 0 && !showTechnologyTiles ? 'max-w-none' : 'max-w-5xl']}>
       {eyebrow && <h2 class="font-mono text-3xl font-semibold tracking-[-0.04em] text-[var(--cat-accent)] md:text-4xl">{eyebrow}</h2>}
       <h3 class="mt-3 text-xl font-semibold text-ink md:text-2xl">{title}</h3>
-      {technologies.length > 0 ? (
+      {technologies.length > 0 && !showTechnologyTiles ? (
         <div class="mt-5 leading-relaxed text-ink-secondary">
           <span>{body}</span>
           <TechnologyLogos title={technologyTitle} items={technologies} />
@@ -47,8 +53,16 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
         body && <p class="mt-5 leading-relaxed text-ink-secondary">{body}</p>
       )}
     </header>
+    {showTechnologyTilesBeforeCards && (
+      <TechnologySolutionsStrip
+        title={technologyTitle}
+        description={technologyDescription}
+        items={technologies}
+        repeatHeaderAfterTiles
+      />
+    )}
     <div class:list={[
-      'mt-10',
+      showTechnologyTilesBeforeCards ? 'mt-8 md:mt-10' : 'mt-10',
       showIllustration && 'grid gap-10 lg:items-center lg:gap-16',
       showIllustration && image && 'lg:grid-cols-2',
       showIllustration && !image && (reverse ? 'lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]' : 'lg:grid-cols-[minmax(0,3fr)_minmax(0,7fr)]'),
@@ -108,5 +122,12 @@ const displayItemHelp = instanceKey.endsWith('-original') || instanceKey.endsWit
         ))}
       </div>
     </div>
+    {showTechnologyTiles && !showTechnologyTilesBeforeCards && (
+      <TechnologySolutionsStrip
+        title={technologyTitle}
+        description={technologyDescription}
+        items={technologies}
+      />
+    )}
   </Container>
 </section>

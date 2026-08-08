@@ -66,49 +66,57 @@
     {
       "type": "capabilities",
       "eyebrow": "Hébergement Web",
-      "title": "Un environnement web construit autour de votre projet",
-      "body": "Vos sites et applications ont besoin d'un hébergement maintenu, sécurisé et capable d'évoluer. Nous organisons l'environnement web, les bases de données, les sauvegardes et l'exploitation quotidienne avec un accompagnement adapté à votre projet.",
+      "title": "Un hébergement web pensé dans son ensemble",
+      "body": "Nos hébergements web sont construits autour de vos projets, du site unique aux architectures plus complexes nécessitant plusieurs serveurs, bases de données ou services dédiés. Chaque environnement est dimensionné et organisé selon vos applications, vos usages et vos méthodes de travail.",
       "image": {
         "src": "/images/hebergement-cloud/hebergement-web-portrait.png",
         "alt": "Architecture d'hébergement web reliant CDN, WAF, certificats SSL, répartition de charge et serveurs web"
       },
       "imageSize": "compact",
-      "technologyTitle": "Technologies pour l'hébergement web",
+      "technologyTitle": "Technologies web maîtrisées",
+      "technologyDescription": "Des technologies adaptées aux sites institutionnels, aux plateformes sur mesure et aux projets e-commerce.",
+      "technologyDisplay": "tiles",
+      "technologyPlacement": "before",
       "technologies": [
-        { "name": "WordPress", "role": "CMS", "icon": "wordpress" },
-        { "name": "Plesk", "role": "Administration d'hébergement", "icon": "plesk" },
-        { "name": "NGINX", "role": "Serveur web et reverse proxy", "icon": "nginx" },
-        { "name": "Dokploy", "role": "Déploiement applicatif", "icon": "dokploy" }
+        { "name": "WordPress", "role": "Gestion de contenu", "icon": "wordpress" },
+        { "name": "Astro", "role": "Sites web performants", "icon": "astro" },
+        { "name": "PrestaShop", "role": "Commerce en ligne", "icon": "prestashop" },
+        { "name": "WooCommerce", "role": "E-commerce avec WordPress", "icon": "woocommerce" },
+        { "name": "Magento", "role": "Plateformes e-commerce", "icon": "magento" }
       ],
       "items": [
-        { "title": "Hébergement sur mesure", "text": "L'espace et les ressources sont configurés selon le projet afin de concilier sécurité, performances et capacité d'évolution.", "icon": "cog" },
-        { "title": "Migration clé en main", "text": "La préparation et la bascule sont prises en charge pour déplacer un site ou une application sans laisser les équipes seules face à la migration.", "icon": "refresh" },
-        { "title": "Sécurité", "text": "Pare-feu, prévention des intrusions, certificats et mises à jour contribuent à protéger l'environnement web.", "icon": "shield-check" },
-        { "title": "Redondance", "text": "Répartition de charge et réplication peuvent être prévues lorsque la disponibilité du service le justifie.", "icon": "layers" },
-        { "title": "CMS & applications", "text": "WordPress, PrestaShop, Magento, Odoo et les environnements dédiés sont accompagnés avec les outils adaptés.", "icon": "globe" },
-        { "title": "Infogérance", "text": "La maintenance quotidienne de l'hébergement est suivie pour que vos équipes se concentrent sur leur projet plutôt que sur la plateforme.", "icon": "users" }
+        { "title": "Protection & performance", "text": "WAF, SSL Offloading et mécanismes de cache protègent les applications, accélèrent leur accès et réduisent la charge supportée par les serveurs web.", "icon": "shield-check" },
+        { "title": "Sauvegarde & restauration", "text": "Sites, bases de données et configurations sont sauvegardés afin de disposer de points de restauration fiables en cas d'erreur, de corruption ou d'incident.", "icon": "cloud-download" },
+        { "title": "Gestion des agences web", "text": "Nous cadrons les interventions de vos agences, gérons leurs accès et accompagnons les changements de prestataire pour garder la maîtrise de votre hébergement.", "icon": "users" },
+        { "title": "Déploiement & CI/CD", "text": "Vos processus de développement peuvent être intégrés à l'hébergement afin d'automatiser les déploiements et de faciliter la mise en production des nouvelles versions.", "icon": "refresh" },
+        { "title": "Interface Plesk ou Dokploy", "text": "Administrez simplement vos sites et applications avec Plesk ou Dokploy, selon les technologies et les besoins de votre projet.", "icon": "cog" },
+        { "title": "Migration clé en main", "text": "Nous prenons en charge la préparation, le transfert, les tests et la bascule de vos sites et applications afin de maîtriser leur migration vers nos infrastructures.", "icon": "layers" }
       ]
     },
     {
       "type": "mosaic",
       "eyebrow": "Infrastructure sur mesure",
-      "title": "Lorsque les contraintes demandent une architecture dédiée",
-      "body": "Certaines applications nécessitent des choix spécifiques de performance, de disponibilité ou de conformité. Nous cadrons les exigences, concevons l'architecture puis préparons les conditions de recette et d'exploitation avant la mise en production.",
-      "technologyTitle": "Technologies pour l'infrastructure sur mesure",
+      "title": "Lorsque vos exigences nécessitent une infrastructure dédiée",
+      "body": "Nous concevons et déployons une infrastructure entièrement adaptée à votre projet, puis prenons en charge son maintien en conditions opérationnelles. Vous disposez d'une plateforme prête à accueillir votre production, sans avoir à gérer l'infrastructure qui la supporte.",
+      "technologyTitle": "Infrastructures maîtrisées",
+      "technologyDescription": "Nous déployons, administrons et faisons évoluer ces plateformes d'infrastructure et de virtualisation au quotidien.",
+      "technologyDisplay": "tiles",
+      "technologyPlacement": "before",
       "technologies": [
-        { "name": "Kubernetes", "role": "Orchestration de conteneurs", "icon": "kubernetes" },
-        { "name": "Argo CD", "role": "GitOps", "icon": "argocd" },
-        { "name": "Flux CD", "role": "GitOps", "icon": "fluxcd" },
-        { "name": "Cilium", "role": "Réseau et sécurité Kubernetes", "icon": "cilium" }
+        { "name": "Nutanix", "role": "Infrastructure hyperconvergée", "icon": "nutanix" },
+        { "name": "Proxmox VE", "role": "Virtualisation et gestion de clusters", "icon": "proxmox" },
+        { "name": "VMware", "role": "Virtualisation d'infrastructure", "icon": "vmware" },
+        { "name": "Microsoft Hyper-V", "role": "Virtualisation Microsoft", "icon": "microsoft-hyper-v" },
+        { "name": "Kubernetes", "role": "Orchestration de conteneurs", "icon": "kubernetes" }
       ],
       "layout": "six",
       "items": [
-        { "title": "Cadrage", "text": "Les contraintes de charge, de disponibilité, de sécurité et d'exploitation sont clarifiées avec vos équipes.", "icon": "search" },
-        { "title": "Architecture", "text": "Les composants nécessaires sont sélectionnés et documentés pour former un environnement cohérent.", "icon": "layers" },
-        { "title": "Haute disponibilité", "text": "Les points de redondance sont définis là où une interruption aurait un impact significatif.", "icon": "refresh" },
-        { "title": "Sécurité", "text": "Les accès, flux et protections sont intégrés dès la conception de la plateforme.", "icon": "shield" },
-        { "title": "Recette", "text": "Les conditions de validation, de charge et de bascule sont préparées avant le passage en production.", "icon": "check-circle" },
-        { "title": "Exploitation", "text": "La supervision, la documentation et les procédures nécessaires sont prévues pour faire vivre la plateforme.", "icon": "eye" }
+        { "title": "Conception sur mesure", "text": "Nous définissons avec vous l'architecture adaptée à vos contraintes : calcul, stockage, réseau, disponibilité et performance. Nos équipes prennent ensuite en charge sa mise en œuvre complète.", "icon": "layers" },
+        { "title": "Plateforme clé en main", "text": "L'infrastructure est préparée, configurée et testée avant sa mise en production. Vous récupérez une plateforme opérationnelle et pouvez vous concentrer sur vos applications et votre production.", "icon": "check-circle" },
+        { "title": "Sécurité intégrée", "text": "Firewall, segmentation réseau et protections avancées sont conçus et administrés par nos équipes. L'accès à l'administration de votre plateforme est sécurisé au travers d'un environnement Zero Trust.", "icon": "shield" },
+        { "title": "Sauvegarde multi-sites", "text": "Les sauvegardes sont croisées entre nos deux datacenters et complétées par un troisième point de sauvegarde externe afin de conserver plusieurs copies indépendantes de vos données.", "icon": "cloud-download" },
+        { "title": "PRA sur mesure", "text": "Le plan de reprise est construit selon vos exigences de continuité, avec différents niveaux possibles : restauration depuis les sauvegardes, réplication différée ou réplication en temps réel vers notre second datacenter.", "icon": "refresh" },
+        { "title": "Maintien en conditions opérationnelles", "text": "Nous assurons la supervision, la maintenance et l'évolution de l'infrastructure afin que vos équipes puissent se concentrer sur l'exploitation de leurs applications et leur production.", "icon": "eye" }
       ]
     },
     {
