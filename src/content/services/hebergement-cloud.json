@@ -42,8 +42,8 @@
     {
       "type": "mosaic",
       "eyebrow": "Instances / VPS / Machines virtuelles",
-      "title": "Des ressources de calcul qui suivent vos applications",
-      "body": "Instances, VPS et machines virtuelles permettent d'adapter les ressources aux besoins réels des applications, sans immobiliser une infrastructure surdimensionnée. Leur exploitation reste suivie afin de préserver disponibilité, performance et capacité d'évolution.",
+      "title": "Des machines virtuelles prêtes pour les environnements exigeants",
+      "body": "Nos machines virtuelles ne se limitent pas à des ressources de calcul. Elles s'intègrent dans un environnement sécurisé, supervisé et résilient, avec des services conçus pour répondre aux exigences de vos applications en production.",
       "technologyTitle": "Technologies pour les instances et machines virtuelles",
       "technologies": [
         { "name": "Nutanix AHV", "role": "Virtualisation", "icon": "nutanix" },
@@ -51,12 +51,16 @@
         { "name": "Puppet", "role": "Gestion de configuration", "icon": "puppet" },
         { "name": "Foreman", "role": "Provisionnement et cycle de vie", "icon": "foreman" }
       ],
-      "layout": "four",
+      "itemsDisplay": "checklist",
       "items": [
-        { "title": "Dimensionnement", "text": "Processeur, mémoire et stockage sont définis à partir des charges observées et des besoins attendus.", "icon": "chart" },
-        { "title": "Provisionnement", "text": "Les machines sont préparées avec les systèmes, accès et paramètres nécessaires à une mise en service maîtrisée.", "icon": "layers" },
-        { "title": "Supervision", "text": "Disponibilité, capacité et signaux utiles sont suivis pour intervenir avant qu'un service ne se dégrade.", "icon": "eye" },
-        { "title": "Évolution", "text": "Les ressources peuvent être ajustées lorsque le trafic, les usages ou les applications changent.", "icon": "refresh" }
+        { "title": "Ressources à la demande", "text": "Processeur, mémoire et stockage sont dimensionnés selon les besoins de vos applications et peuvent être ajustés lorsque les charges évoluent.", "icon": "chart" },
+        { "title": "Réseau & connectivité", "text": "Réseaux privés, adressage IP, accès Internet et interconnexion avec vos autres infrastructures sont intégrés à l'architecture de vos instances.", "icon": "link" },
+        { "title": "Firewall managé", "text": "Un firewall piloté par nos équipes protège vos environnements et contrôle les flux entrants et sortants. IPS, contrôle applicatif et fonctions avancées de sécurité permettent d'adapter la protection aux services exposés.", "icon": "shield" },
+        { "title": "Administration Zero Trust", "text": "L'administration de vos VPS s'effectue au travers d'un accès Zero Trust afin de sécuriser les connexions d'administration et de limiter l'exposition directe des services sensibles sur Internet.", "icon": "lock" },
+        { "title": "Sauvegarde multi-sites", "text": "Les sauvegardes sont croisées entre nos deux datacenters et complétées par un troisième point de sauvegarde externe afin de conserver plusieurs copies indépendantes de vos données.", "icon": "cloud-download" },
+        { "title": "Plan de reprise d'activité", "text": "Un PRA peut être mis en place vers notre second datacenter avec plusieurs niveaux de reprise : restauration depuis les sauvegardes sous 24 h, réplication avec un objectif d'environ 1 h ou réplication en temps réel.", "icon": "refresh" },
+        { "title": "Supervision", "text": "Disponibilité, ressources et capacité sont supervisées afin de détecter les anomalies, d'anticiper les saturations et de suivre le bon fonctionnement de vos machines.", "icon": "eye" },
+        { "title": "Accompagnement Premium", "text": "Nos équipes vous accompagnent dans la conception, le déploiement et l'exploitation de vos environnements : architecture, réseau, sécurité, systèmes et évolution de vos infrastructures.", "icon": "users" }
       ]
     },
     {
@@ -149,7 +153,8 @@
         {
           "title": "Hébergement en France",
           "text": "Vos infrastructures peuvent être hébergées exclusivement en France afin de garantir la localisation de vos données et de répondre à vos exigences de proximité, de souveraineté et de conformité.",
-          "icon": "globe"
+          "icon": "globe",
+          "madeInFrance": true
         },
         {
           "title": "Certification HDS",
@@ -172,7 +177,7 @@
           "icon": "database"
         },
         {
-          "title": "Accompagnement de votre projet",
+          "title": "Accompagnement",
           "text": "Au-delà de l'hébergement, nous vous accompagnons dans la conception et le déploiement de votre infrastructure : équipements, réseau, connectivité, sécurité et mise en service.",
           "icon": "users"
         }

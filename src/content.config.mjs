@@ -74,6 +74,7 @@ const serviceItem = z.object({
   subtitle: z.string().optional(),
   text: z.string(),
   icon: z.string().optional(),
+  madeInFrance: z.boolean().default(false),
   help: z.string().optional(),
   detail: conceptDetail.optional(),
   compactDetail: compactConceptDetail.optional(),

@@ -104,7 +104,11 @@ const compactCards = layout === 'four' || layout === 'six' || layout === 'nine';
 							<article class:list={[
 								'relative flex flex-col rounded-xl border border-line bg-surface transition duration-200 hover:z-20 focus-within:z-20',
 								compactCards ? 'h-full p-4 md:p-5 hover:-translate-y-1 hover:scale-[1.02] hover:border-[var(--cat-accent)] hover:ring-1 hover:ring-[var(--cat-accent)] hover:shadow-lg' : 'p-7 md:p-8',
-							]}>
+							]}
+							style={item.madeInFrance
+								? 'border: 2px solid transparent; background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box, linear-gradient(110deg, #0055A4 0%, #0055A4 31%, #ffffff 46%, #ffffff 54%, #EF4135 69%, #EF4135 100%) border-box;'
+								: undefined}
+							>
 								<div class="h-0.5 w-10 bg-[var(--cat-accent)]"></div>
 								{item.icon && <Icon name={item.icon} class:list={[compactCards ? 'mt-5 h-6 w-6' : 'mt-8 h-7 w-7', 'text-[var(--cat-accent)]']} />}
 								<h3 class:list={[compactCards ? 'mt-4 text-lg' : 'mt-5 text-xl', 'font-semibold text-ink']}>{item.title}</h3>
@@ -117,7 +121,11 @@ const compactCards = layout === 'four' || layout === 'six' || layout === 'nine';
 				<ul class="grid gap-x-12 gap-y-5 md:grid-cols-2">
 					{items.map((item) => (
 						<li class="flex gap-3 text-base leading-relaxed text-ink-secondary">
-							<span class="shrink-0 font-semibold text-[var(--cat-accent)]" aria-hidden="true">✓</span>
+							{item.icon ? (
+								<Icon name={item.icon} class="mt-0.5 h-5 w-5 shrink-0 text-[var(--cat-accent)]" />
+							) : (
+								<span class="shrink-0 font-semibold text-[var(--cat-accent)]" aria-hidden="true">✓</span>
+							)}
 							<div>
 								<h3 class="font-semibold text-ink">{item.title}</h3>
 								<p class="mt-1">{item.text}</p>
