@@ -18,6 +18,7 @@ const {
 	showIllustration = true,
 	variant = 'simple',
 	points = [],
+	items = [],
 	stats = [],
 	columns = [],
 	technologyTitle,
@@ -119,6 +120,23 @@ const {
 				}
 			</div>
 		</div>
+		{items.length > 0 && (
+			<ul class="mt-10 grid gap-x-10 gap-y-7 border-t border-line pt-8 md:grid-cols-2 lg:grid-cols-3">
+				{items.map((item) => (
+					<li class="flex gap-4">
+						{item.icon ? (
+							<Icon name={item.icon} class="mt-0.5 h-6 w-6 shrink-0 text-[var(--cat-accent)]" />
+						) : (
+							<span class="shrink-0 font-semibold text-[var(--cat-accent)]" aria-hidden="true">✓</span>
+						)}
+						<div>
+							<h3 class="font-semibold text-ink">{item.title}</h3>
+							<p class="mt-2 text-base leading-relaxed text-ink-secondary">{item.text}</p>
+						</div>
+					</li>
+				))}
+			</ul>
+		)}
 		<slot />
 	</Container>
 </section>

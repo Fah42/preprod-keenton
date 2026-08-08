@@ -121,30 +121,31 @@
     },
     {
       "type": "split",
-      "eyebrow": "Sauvegarde externalisée & PRA",
-      "title": "Des données protégées et des restaurations préparées",
-      "body": "Une sauvegarde n'a de valeur que si elle reste disponible après un incident et peut être restaurée au bon moment. Les copies sont externalisées, chiffrées et suivies afin de préparer une reprise adaptée à la valeur de vos données.",
+      "eyebrow": "Plan de reprise d'activité",
+      "title": "Préparer la reprise avant d'en avoir besoin",
+      "body": "Datacenter interne, infrastructure hébergée ou second site physique : nous concevons et mettons en œuvre un PRA adapté à votre environnement existant. Le site de secours peut être déployé dans nos datacenters ou sur l'infrastructure de votre choix, puis piloté par nos équipes ou les vôtres.",
       "image": {
         "src": "/src/assets/images/hebergement-cloud/sauvegarde-externalisee-pra.png",
-        "alt": "Infrastructure externalisée protégée et prête pour un plan de reprise d'activité"
+        "alt": "Infrastructure de secours prête à accueillir un plan de reprise d'activité"
       },
-      "technologyTitle": "Technologies pour la sauvegarde et le PRA",
+      "technologyTitle": "Technologies maîtrisées pour le plan de reprise d'activité",
       "technologies": [
-        { "name": "Velero", "role": "Sauvegarde Kubernetes", "icon": "velero" },
-        { "name": "S3", "role": "Stockage objet compatible S3", "icon": "amazon-s3" },
-        { "name": "Nutanix", "role": "Réplication inter-datacenter avec Protection Policies", "icon": "nutanix" },
+        { "name": "Nutanix", "role": "Réplication et reprise", "icon": "nutanix" },
+        { "name": "Proxmox VE", "role": "Réplication et haute disponibilité", "icon": "proxmox" },
+        { "name": "VMware", "role": "Réplication et reprise", "icon": "vmware" },
+        { "name": "Microsoft Hyper-V", "role": "Virtualisation Microsoft", "icon": "microsoft-hyper-v" },
+        { "name": "IBM", "role": "Infrastructure et résilience", "icon": "ibm" },
         { "name": "Veeam", "role": "Sauvegarde et réplication", "icon": "veeam" },
-        { "name": "HYCU", "role": "Protection des données Nutanix", "icon": "hycu" }
+        { "name": "HYCU", "role": "Protection des données", "icon": "hycu" }
       ],
-      "icon": "cloud-download",
-      "variant": "list",
-      "points": [
-        "Sauvegarder les fichiers et, lorsque c'est nécessaire, l'état complet des postes, serveurs ou machines virtuelles.",
-        "Chiffrer les accès, les transferts et le stockage afin de protéger les données tout au long de leur parcours.",
-        "Répliquer les sauvegardes dans des datacenters distincts pour limiter l'exposition à un incident localisé.",
-        "Surveiller les exécutions afin de détecter rapidement une sauvegarde incomplète ou en échec.",
-        "Prendre en charge les restaurations partielles ou complètes lorsque la situation l'exige.",
-        "Définir les durées de conservation et les objectifs de reprise, puis les vérifier par des tests réguliers."
+      "icon": "refresh",
+      "items": [
+        { "title": "Architecture de secours sur mesure", "text": "Nous concevons le PRA autour de votre infrastructure existante, de vos applications et de leur criticité afin de définir les ressources nécessaires à la reprise.", "icon": "layers" },
+        { "title": "Site de reprise au choix", "text": "Nos datacenters, un datacenter tiers ou un second site de votre entreprise peuvent accueillir l'infrastructure de secours selon vos contraintes et votre organisation.", "icon": "globe" },
+        { "title": "Plusieurs niveaux de réplication", "text": "Sauvegarde, réplication différée ou temps réel permettent d'adapter la protection des données et les délais de reprise aux exigences de chaque service.", "icon": "refresh" },
+        { "title": "Connectivité & bascule", "text": "Réseaux, interconnexions, accès et mécanismes de bascule sont préparés afin de permettre la remise en service de votre environnement sur le site de secours.", "icon": "link" },
+        { "title": "Exploitation flexible", "text": "Le PRA peut être piloté par nos équipes, administré par les vôtres ou exploité conjointement selon votre organisation et le niveau d'accompagnement souhaité.", "icon": "users" },
+        { "title": "Tests de reprise", "text": "Des scénarios de reprise permettent de vérifier les procédures, la disponibilité des données et le redémarrage des services avant qu'un incident réel ne survienne.", "icon": "check-circle" }
       ]
     },
     {
